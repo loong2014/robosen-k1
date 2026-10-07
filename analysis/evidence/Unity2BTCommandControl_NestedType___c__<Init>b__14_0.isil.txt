@@ -1,0 +1,38 @@
+Type: Unity2BTCommandControl_NestedType___c
+Method: System.Void <Init>b__14_0()
+
+ISIL (辅助阅读，不等同完整源码):
+	001 Move [X31-32], X30
+	002 Move [X31+16], X20
+	003 Move [X31+24], X19
+	004 Move W8, [0x289145F]
+	005 Move X19, [0x25CDE70]
+	006 Move TEMP, X8
+	007 And TEMP, TEMP, 1
+	008 Compare TEMP, 1
+	009 JumpIfEqual {18}
+	010 Move X0, [0x25CDE70]
+	011 Call 0x1F16E38
+	012 Move X0, [0x25CE978]
+	013 Call 0x1F16E38
+	014 Move X0, [0x25CE980]
+	015 Call 0x1F16E38
+	016 Move W8, 1
+	017 Move [X20+1119], W8
+	018 Move X0, [X19]
+	019 Move X20, [0x25CE980]
+	020 Move W8, [X0+228]
+	021 Move X19, [0x25CE978]
+	022 Compare W8, 0
+	023 JumpIfNotEqual {25}
+	024 Call 0x1F16FB8
+	025 Move X0, [X20]
+	026 Move X1, X31
+	027 Call Debug.Log, X0
+	028 Move X0, [X19]
+	029 Move X20, [X31+16]
+	030 Move X19, [X31+24]
+	031 Move X1, X31
+	032 Move X30, [X31+32]
+	033 Call Debug.Log, X0
+	034 Return 

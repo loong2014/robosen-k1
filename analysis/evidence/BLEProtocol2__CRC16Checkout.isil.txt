@@ -1,0 +1,50 @@
+Type: BLEProtocol2
+Method: System.Void CRC16Checkout(ref System.Byte _h, ref System.Byte _l, System.Byte[] _data)
+
+ISIL (辅助阅读，不等同完整源码):
+	001 Move [X31-48], X30
+	002 Move [X31+16], X22
+	003 Move [X31+24], X21
+	004 Move [X31+32], X20
+	005 Move [X31+40], X19
+	006 Move X21, X2
+	007 Move X19, X1
+	008 Move W8, [0x2890476]
+	009 Move X20, X0
+	010 Move TEMP, X8
+	011 And TEMP, TEMP, 1
+	012 Compare TEMP, 1
+	013 JumpIfEqual {18}
+	014 Move X0, [0x25CD190]
+	015 Call 0x1F16E38
+	016 Move W8, 1
+	017 Move [X22+1142], W8
+	018 Move [X31+12], W31
+	019 Compare X21, 0
+	020 JumpIfEqual {46}
+	021 Move X8, [0x25CD190]
+	022 Move X0, [X8]
+	023 Move W8, [X0+228]
+	024 Compare W8, 0
+	025 JumpIfNotEqual {27}
+	026 Call 0x1F16FB8
+	027 Add X0, X31, 12
+	028 Move W1, 0xFFFF
+	029 Move X2, X21
+	030 Call BLEProtocol2.Crc16, X0, X1, X2, X3
+	031 Move W8, [X31+12]
+	032 Move X22, [X31+16]
+	033 Move X21, [X31+24]
+	034 Add W9, W8, 255
+	035 NotImplemented "Instruction CMP not yet implemented."
+	036 NotImplemented "Instruction CSEL not yet implemented."
+	037 Move W9, W9
+	038 ShiftRight W9, 8
+	039 And W9, W9, 0x7FFFFFFF
+	040 Move [X20], W9
+	041 Move [X19], W8
+	042 Move X20, [X31+32]
+	043 Move X19, [X31+40]
+	044 Move X30, [X31+48]
+	045 Return 
+	046 Call 0x1F170E4

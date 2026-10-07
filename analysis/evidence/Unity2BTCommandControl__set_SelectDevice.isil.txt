@@ -1,0 +1,29 @@
+Type: Unity2BTCommandControl
+Method: System.Void set_SelectDevice(BTDevice value)
+
+ISIL (辅助阅读，不等同完整源码):
+	001 Move [X31-32], X30
+	002 Move [X31-24], X21
+	003 Move [X31+16], X20
+	004 Move [X31+24], X19
+	005 Move X19, X0
+	006 Move W8, [0x2892458]
+	007 Move X21, [0x25CF0C0]
+	008 Move TEMP, X8
+	009 And TEMP, TEMP, 1
+	010 Compare TEMP, 1
+	011 JumpIfEqual {16}
+	012 Move X0, [0x25CF0C0]
+	013 Call 0x1F16E38
+	014 Move W8, 1
+	015 Move [X20+1112], W8
+	016 Move X8, [X21]
+	017 Move X1, X19
+	018 Move X0, [X8+184]
+	019 Move [X0+24], X19
+	020 Move X20, [X31+16]
+	021 Move X19, [X31+24]
+	022 Move X30, [X31+32]
+	023 Move X21, [X31+40]
+	024 Call 0x1F16DDC
+	025 Return 

@@ -1,0 +1,484 @@
+Type: BTDevice
+Method: System.Void CommandInvoke(BLECommand item)
+
+ISIL (辅助阅读，不等同完整源码):
+	001 Subtract X31, X31, 128
+	002 Move [X31+96], X30
+	003 Move [X31+104], X21
+	004 Move [X31+112], X20
+	005 Move [X31+120], X19
+	006 Move X20, X1
+	007 Move X19, X0
+	008 Move W8, [0x2895437]
+	009 Move [X31+88], X0
+	010 Move TEMP, X8
+	011 And TEMP, TEMP, 1
+	012 Compare TEMP, 1
+	013 JumpIfEqual {26}
+	014 Move X0, [0x25D1E40]
+	015 Call 0x1F16E38
+	016 Move X0, [0x25D1E70]
+	017 Call 0x1F16E38
+	018 Move X0, [0x25D2850]
+	019 Call 0x1F16E38
+	020 Move X0, [0x25D2858]
+	021 Call 0x1F16E38
+	022 Move X0, [0x25D2860]
+	023 Call 0x1F16E38
+	024 Move W8, 1
+	025 Move [X21+1079], W8
+	026 Move [X31+84], W31
+	027 Move [X31+72], W31
+	028 Move [X31+48], X31
+	029 Move [X31+56], X31
+	030 Compare X20, 0
+	031 JumpIfEqual {356}
+	032 Move W8, [X20+24]
+	033 NotImplemented "Instruction CMP not yet implemented."
+	034 NotImplemented "Instruction CMP not yet implemented."
+	035 NotImplemented "Instruction CMP not yet implemented."
+	036 NotImplemented "Instruction CMP not yet implemented."
+	037 NotImplemented "Instruction CMP not yet implemented."
+	038 NotImplemented "Instruction CMP not yet implemented."
+	039 Move X8, [0x25D1E40]
+	040 Move X8, [X8]
+	041 Move X8, [X8+184]
+	042 Move X8, [X8+72]
+	043 Compare X8, 0
+	044 JumpIfEqual {51}
+	045 Move X0, [X8+64]
+	046 Move X2, [X20+32]
+	047 Move X9, [X8+24]
+	048 Move X3, [X8+40]
+	049 Move X1, X19
+	050 NotImplemented "Instruction BLR not yet implemented."
+	051 Move X0, X31
+	052 Call Encoding.get_ASCII
+	053 Compare X0, 0
+	054 JumpIfEqual {359}
+	055 Move X8, [X0]
+	056 Move X1, [X20+32]
+	057 Move X9, [X8+1016]
+	058 Move X2, [X8+1024]
+	059 NotImplemented "Instruction BLR not yet implemented."
+	060 Move X1, X0
+	061 Move X8, [0x25D2860]
+	062 Move X0, [X8]
+	063 Move X2, X31
+	064 Call String.Concat, X0, X1
+	065 Move X19, X0
+	066 Move X8, [0x25D1E70]
+	067 Move X0, [X8]
+	068 Move W8, [X0+228]
+	069 Compare W8, 0
+	070 JumpIfNotEqual {72}
+	071 Call 0x1F16FB8
+	072 Move X0, X19
+	073 Move X1, X31
+	074 Call Debug.Log, X0
+	075 NotImplemented "Instruction CMP not yet implemented."
+	076 NotImplemented "Instruction CMP not yet implemented."
+	077 NotImplemented "Instruction CMP not yet implemented."
+	078 NotImplemented "Instruction CMP not yet implemented."
+	079 NotImplemented "Instruction CMP not yet implemented."
+	080 Move X8, [0x25D1E40]
+	081 Move X8, [X8]
+	082 Move X8, [X8+184]
+	083 Move X8, [X8+32]
+	084 Compare X8, 0
+	085 JumpIfEqual {307}
+	086 Move X0, [X8+64]
+	087 Move X2, [X20+32]
+	088 Move X9, [X8+24]
+	089 Move X3, [X8+40]
+	090 Move X1, X19
+	091 NotImplemented "Instruction BLR not yet implemented."
+	092 NotImplemented "Instruction CMP not yet implemented."
+	093 Move X8, [0x25D1E40]
+	094 Move X8, [X8]
+	095 Move X8, [X8+184]
+	096 Move X8, [X8+136]
+	097 Compare X8, 0
+	098 JumpIfNotEqual {302}
+	099 Add W31, W8, 1
+	100 NotImplemented "Instruction CMP not yet implemented."
+	101 Move X8, [0x25D1E40]
+	102 Move X8, [X8]
+	103 Move X8, [X8+184]
+	104 Move X8, [X8+64]
+	105 Compare X8, 0
+	106 JumpIfNotEqual {302}
+	107 NotImplemented "Instruction CMP not yet implemented."
+	108 NotImplemented "Instruction CMP not yet implemented."
+	109 NotImplemented "Instruction CMP not yet implemented."
+	110 Move X8, [0x25D0E40]
+	111 Move X8, [X8]
+	112 Move X8, [X8+184]
+	113 Move X8, [X8+152]
+	114 Compare X8, 0
+	115 JumpIfEqual {307}
+	116 Move X0, [X8+64]
+	117 Move X2, [X20+32]
+	118 Move X9, [X8+24]
+	119 Move X3, [X8+40]
+	120 Move X1, X19
+	121 NotImplemented "Instruction BLR not yet implemented."
+	122 And W8, W8, 255
+	123 NotImplemented "Instruction CMP not yet implemented."
+	124 NotImplemented "Instruction CMP not yet implemented."
+	125 NotImplemented "Instruction CMP not yet implemented."
+	126 Move X8, [0x25D0E40]
+	127 Move X8, [X8]
+	128 Move X8, [X8+184]
+	129 Move X8, [X8+112]
+	130 Compare X8, 0
+	131 JumpIfEqual {307}
+	132 Move X0, [X8+64]
+	133 Move X9, [X8+24]
+	134 Move X3, [X8+40]
+	135 Move X1, X19
+	136 Move X2, X20
+	137 NotImplemented "Instruction BLR not yet implemented."
+	138 NotImplemented "Instruction CMP not yet implemented."
+	139 NotImplemented "Instruction CMP not yet implemented."
+	140 Move X8, [0x25D0E40]
+	141 Move X8, [X8]
+	142 Move X8, [X8+184]
+	143 Move X21, [X8+56]
+	144 Compare X21, 0
+	145 JumpIfEqual {307}
+	146 Move X8, [0x25D1850]
+	147 Move X20, [X20+32]
+	148 Move X0, [X8]
+	149 Call 0x1F170D4
+	150 Move X1, X20
+	151 Move X19, X0
+	152 Call RobotStateMSG..ctor, X0, X1
+	153 Move X1, [X31+88]
+	154 Move X0, [X21+64]
+	155 Move X8, [X21+24]
+	156 Move X3, [X21+40]
+	157 Move X2, X19
+	158 NotImplemented "Instruction BLR not yet implemented."
+	159 Move X8, [0x25D0E40]
+	160 Move X8, [X8]
+	161 Move X8, [X8+184]
+	162 Move X8, [X8+104]
+	163 Compare X8, 0
+	164 JumpIfNotEqual {302}
+	165 NotImplemented "Instruction CMP not yet implemented."
+	166 NotImplemented "Instruction CMP not yet implemented."
+	167 Move X8, [0x25D0E40]
+	168 Move X8, [X8]
+	169 Move X8, [X8+184]
+	170 Move X8, [X8+128]
+	171 Compare X8, 0
+	172 JumpIfEqual {307}
+	173 Move X0, [X8+64]
+	174 Move X9, [X8+24]
+	175 Move X3, [X8+40]
+	176 Move X1, X19
+	177 Move X2, X20
+	178 NotImplemented "Instruction BLR not yet implemented."
+	179 Move X8, [0x25D0E40]
+	180 Move X8, [X8]
+	181 Move X8, [X8+184]
+	182 Move X8, [X8+24]
+	183 Compare X8, 0
+	184 JumpIfEqual {307}
+	185 Move X0, [X8+64]
+	186 Move X2, [X20+32]
+	187 Move X9, [X8+24]
+	188 Move X3, [X8+40]
+	189 Move X1, X19
+	190 NotImplemented "Instruction BLR not yet implemented."
+	191 Move X8, [0x25D0E40]
+	192 Move X8, [X8]
+	193 Move X8, [X8+184]
+	194 Move X8, [X8+48]
+	195 Compare X8, 0
+	196 JumpIfEqual {307}
+	197 Move X0, [X8+64]
+	198 Move X2, [X20+32]
+	199 Move X9, [X8+24]
+	200 Move X3, [X8+40]
+	201 Move X1, X19
+	202 NotImplemented "Instruction BLR not yet implemented."
+	203 Add X8, X31, 56
+	204 Add X9, X31, 48
+	205 Add X10, X31, 84
+	206 Move [X31+8], X31
+	207 Move [X31+16], X8
+	208 Move X8, [X20+32]
+	209 Move [X31+24], X9
+	210 Move [X31+32], X10
+	211 Add X9, X31, 88
+	212 Move [X31+84], W31
+	213 Move [X31+40], X9
+	214 Compare X8, 0
+	215 JumpIfEqual {357}
+	216 Move X9, [X8+24]
+	217 Compare X9, 0
+	218 JumpIfEqual {331}
+	219 Compare W9, 0
+	220 JumpIfEqual {360}
+	221 Move W8, [X8+32]
+	222 Move X19, X31
+	223 Move [X31+84], W8
+	224 Move X8, [0x25D0E40]
+	225 Move X8, [X8]
+	226 Move X8, [X8+184]
+	227 Move X8, [X8+88]
+	228 Compare X8, 0
+	229 JumpIfEqual {307}
+	230 Move X0, [X8+64]
+	231 Move X2, [X20+32]
+	232 Move X9, [X8+24]
+	233 Move X3, [X8+40]
+	234 Move X1, X19
+	235 NotImplemented "Instruction BLR not yet implemented."
+	236 Move X8, [0x25D0E40]
+	237 Move X8, [X8]
+	238 Move X8, [X8+184]
+	239 Move X8, [X8+80]
+	240 Compare X8, 0
+	241 JumpIfEqual {248}
+	242 Move X0, [X8+64]
+	243 Move X2, [X20+32]
+	244 Move X9, [X8+24]
+	245 Move X3, [X8+40]
+	246 Move X1, X19
+	247 NotImplemented "Instruction BLR not yet implemented."
+	248 Move X0, X31
+	249 Call Encoding.get_ASCII
+	250 Compare X0, 0
+	251 JumpIfEqual {358}
+	252 Move X8, [X0]
+	253 Move X1, [X20+32]
+	254 Move X9, [X8+1016]
+	255 Move X2, [X8+1024]
+	256 NotImplemented "Instruction BLR not yet implemented."
+	257 Move X1, X0
+	258 Move X8, [0x25D1858]
+	259 Move X0, [X8]
+	260 Move X2, X31
+	261 Call String.Concat, X0, X1
+	262 Move X19, X0
+	263 Move X8, [0x25D0E70]
+	264 Move X0, [X8]
+	265 Move W8, [X0+228]
+	266 Compare W8, 0
+	267 JumpIfNotEqual {269}
+	268 Call 0x1F16FB8
+	269 Move X0, X19
+	270 Move X1, X31
+	271 Call Debug.Log, X0
+	272 Move X8, [0x25D0E40]
+	273 Move X8, [X8]
+	274 Move X8, [X8+184]
+	275 Move X8, [X8+96]
+	276 Compare X8, 0
+	277 JumpIfEqual {307}
+	278 Move X0, [X8+64]
+	279 Move X2, [X20+32]
+	280 Move X9, [X8+24]
+	281 Move X3, [X8+40]
+	282 Move X1, X19
+	283 NotImplemented "Instruction BLR not yet implemented."
+	284 Move X8, [0x25D0E40]
+	285 Move X8, [X8]
+	286 Move X8, [X8+184]
+	287 Move X8, [X8+40]
+	288 Compare X8, 0
+	289 JumpIfEqual {307}
+	290 Move X0, [X8+64]
+	291 Move X2, [X20+32]
+	292 Move X9, [X8+24]
+	293 Move X3, [X8+40]
+	294 Move X1, X19
+	295 NotImplemented "Instruction BLR not yet implemented."
+	296 Move X8, [0x25D0E40]
+	297 Move X8, [X8]
+	298 Move X8, [X8+184]
+	299 Move X8, [X8+144]
+	300 Compare X8, 0
+	301 JumpIfEqual {307}
+	302 Move X0, [X8+64]
+	303 Move X9, [X8+24]
+	304 Move X2, [X8+40]
+	305 Move X1, X19
+	306 NotImplemented "Instruction BLR not yet implemented."
+	307 Move X20, [X31+112]
+	308 Move X19, [X31+120]
+	309 Move X30, [X31+96]
+	310 Move X21, [X31+104]
+	311 Add X31, X31, 128
+	312 Return 
+	313 Move X8, [0x25D0E40]
+	314 Move X8, [X8]
+	315 Move X8, [X8+184]
+	316 Move X8, [X8+120]
+	317 Compare X8, 0
+	318 JumpIfEqual {307}
+	319 Move X9, [X20+32]
+	320 Compare X9, 0
+	321 JumpIfEqual {361}
+	322 Move W10, [X9+24]
+	323 Compare W10, 0
+	324 JumpIfEqual {362}
+	325 Move X0, [X8+64]
+	326 Move X10, [X8+24]
+	327 Move X3, [X8+40]
+	328 Move W2, [X9+32]
+	329 Move X1, X19
+	330 NotImplemented "Instruction BLR not yet implemented."
+	331 Move X19, X31
+	332 Move X8, [0x25D0E40]
+	333 Move X8, [X8]
+	334 Move X8, [X8+184]
+	335 Move X8, [X8+16]
+	336 Compare X8, 0
+	337 JumpIfEqual {350}
+	338 Move X9, [X31+16]
+	339 Move X11, [X31+32]
+	340 Move X10, [X31+40]
+	341 Move X0, [X8+64]
+	342 Move X3, [X8+40]
+	343 Move [X9], X8
+	344 Move X9, [X8+24]
+	345 Move X1, [X10]
+	346 Move W2, [X11]
+	347 NotImplemented "Instruction BLR not yet implemented."
+	348 Compare X19, 0
+	349 JumpIfEqual {307}
+	350 Move X8, [X31+24]
+	351 Move [X8], X31
+	352 Compare X19, 0
+	353 JumpIfEqual {307}
+	354 Move X0, X19
+	355 Call 0x1F170DC
+	356 Call 0x1F170E4
+	357 Call 0x1F170E4
+	358 Call 0x1F170E4
+	359 Call 0x1F170E4
+	360 Call 0x1F170EC
+	361 Call 0x1F170E4
+	362 Call 0x1F170EC
+	363 Move X19, X1
+	364 Move X20, X0
+	365 NotImplemented "Instruction CMP not yet implemented."
+	366 Move X0, X20
+	367 Call 0x437D3D0
+	368 Move X19, [X0]
+	369 Move [X31+8], X19
+	370 Call 0x437D3E0
+	371 Move X19, X1
+	372 Move X20, X0
+	373 Add X0, X31, 8
+	374 Call 0x1C110D8
+	375 Move X19, X1
+	376 Move X20, X0
+	377 NotImplemented "Instruction CMP not yet implemented."
+	378 Move X0, X20
+	379 Call 0x437D3D0
+	380 Move X19, X0
+	381 Move X0, [0x25D1868]
+	382 Call 0x1F16E4C
+	383 Move X8, [X19]
+	384 Move X1, [X8]
+	385 Call 0x1F174EC
+	386 Move TEMP, X0
+	387 And TEMP, TEMP, 1
+	388 Compare TEMP, 1
+	389 JumpIfNotEqual {469}
+	390 NotImplemented "Instruction LDRSW not yet implemented."
+	391 Move X19, [X19]
+	392 Add X8, X31, 64
+	393 Move [X8], X19
+	394 Add W8, W21, 1
+	395 Move [X31+72], W8
+	396 Call 0x437D3E0
+	397 Move X0, [0x25D1528]
+	398 Call 0x1F16E4C
+	399 Move W1, 5
+	400 Call 0x1F16F28
+	401 Move X8, [X31+88]
+	402 Move X20, X0
+	403 Move X1, X31
+	404 Move X0, X8
+	405 Call "il2cpp_vm_object_is_inst", X0
+	406 Compare X0, 0
+	407 JumpIfEqual {468}
+	408 Move X8, [X0]
+	409 Move X9, [X8+728]
+	410 Move X1, [X8+736]
+	411 NotImplemented "Instruction BLR not yet implemented."
+	412 Compare X20, 0
+	413 JumpIfEqual {468}
+	414 Move X2, X0
+	415 Move X0, X20
+	416 Move X1, X31
+	417 Call 0x1C1096C
+	418 Move X0, [0x25D1870]
+	419 Call 0x1F16E4C
+	420 Move X2, X0
+	421 Move X0, X20
+	422 Move W1, 1
+	423 Call 0x1C1096C
+	424 Move X0, [0x25D1878]
+	425 Call 0x1F16E4C
+	426 Call 0x1C1114C
+	427 Compare X0, 0
+	428 JumpIfEqual {468}
+	429 Move X8, [X0]
+	430 Move X9, [X8+440]
+	431 Move X1, [X8+448]
+	432 NotImplemented "Instruction BLR not yet implemented."
+	433 Move X2, X0
+	434 Move X0, X20
+	435 Move W1, 2
+	436 Call 0x1C1096C
+	437 Move X0, [0x25D11A8]
+	438 Call 0x1F16E4C
+	439 Move X2, X0
+	440 Move X0, X20
+	441 Move W1, 3
+	442 Call 0x1C1096C
+	443 Compare X19, 0
+	444 JumpIfEqual {468}
+	445 Move X8, [X19]
+	446 Move X0, X19
+	447 Move X9, [X8+392]
+	448 Move X1, [X8+400]
+	449 NotImplemented "Instruction BLR not yet implemented."
+	450 Move X2, X0
+	451 Move X0, X20
+	452 Move W1, 4
+	453 Call 0x1C1096C
+	454 Move X0, X20
+	455 Move X1, X31
+	456 Call String.Concat, X0
+	457 Move X19, X0
+	458 Move X0, [0x25D0E70]
+	459 Call 0x1F16E4C
+	460 Move W8, [X0+228]
+	461 Compare W8, 0
+	462 JumpIfNotEqual {464}
+	463 Call 0x1F16FB8
+	464 Move X0, X19
+	465 Move X1, X31
+	466 Call Debug.Log, X0
+	467 Move [X31+72], W21
+	468 Call 0x1F170E4
+	469 Move W0, 8
+	470 Call 0x437D400
+	471 Move X8, [X19]
+	472 Move [X0], X8
+	473 Add X1, X1, 2216
+	474 Move X2, X31
+	475 Call 0x437D410
+	476 Move X20, X0
+	477 Call 0x437D3E0
+	478 Move X0, X20
+	479 Call 0x20067BC
+	480 Call 0x1C10ED8

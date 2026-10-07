@@ -1,0 +1,69 @@
+Type: BTDevice_NestedType_BTDeviceType
+Method: System.Collections.Generic.List`1<System.String> get_DevStart_C0C1()
+
+ISIL (辅助阅读，不等同完整源码):
+	001 Move [X31-32], X30
+	002 Move [X31-24], X21
+	003 Move [X31+16], X20
+	004 Move [X31+24], X19
+	005 Move W8, [0x2892449]
+	006 Move X21, [0x25CAFF0]
+	007 Move X19, [0x25CAFF8]
+	008 Move TEMP, X8
+	009 And TEMP, TEMP, 1
+	010 Compare TEMP, 1
+	011 JumpIfEqual {20}
+	012 Move X0, [0x25CB090]
+	013 Call 0x1F16E38
+	014 Move X0, [0x25CAFF8]
+	015 Call 0x1F16E38
+	016 Move X0, [0x25CAFF0]
+	017 Call 0x1F16E38
+	018 Move W8, 1
+	019 Move [X20+1097], W8
+	020 Move X0, [X21]
+	021 Call 0x1F170D4
+	022 Move X1, [X19]
+	023 Move X19, X0
+	024 Call List`1<Object>..ctor, X0
+	025 Move W8, [0x2892444]
+	026 Move TEMP, X8
+	027 And TEMP, TEMP, 1
+	028 Compare TEMP, 1
+	029 JumpIfEqual {34}
+	030 Move X0, [0x25CF920]
+	031 Call 0x1F16E38
+	032 Move W8, 1
+	033 Move [X20+1092], W8
+	034 Compare X19, 0
+	035 JumpIfEqual {65}
+	036 Move X9, [0x25CF920]
+	037 Move X10, [0x25CB090]
+	038 Move W11, [X19+28]
+	039 Move X8, [X19+16]
+	040 Move X1, [X9]
+	041 Move X9, [X10]
+	042 Add W10, W11, 1
+	043 Move [X19+28], W10
+	044 Compare X8, 0
+	045 JumpIfEqual {65}
+	046 NotImplemented "Instruction LDRSW not yet implemented."
+	047 Move W11, [X8+24]
+	048 NotImplemented "Instruction CMP not yet implemented."
+	049 Add X0, X8, X10
+	050 Add W9, W10, 1
+	051 Move [X19+24], W9
+	052 Move [X0+32], X1
+	053 Call 0x1F16DDC
+	054 Move X8, [X9+32]
+	055 Move X0, X19
+	056 Move X8, [X8+192]
+	057 Move X2, [X8+112]
+	058 Call List`1<Object>.AddWithResize, X0, X1
+	059 Move X0, X19
+	060 Move X20, [X31+16]
+	061 Move X19, [X31+24]
+	062 Move X30, [X31+32]
+	063 Move X21, [X31+40]
+	064 Return X0
+	065 Call 0x1F170E4

@@ -1,0 +1,42 @@
+Type: Unity2BTCommandControl_NestedType___c__DisplayClass21_0
+Method: System.Void <ConnectDev>b__6(System.String _address, System.String _character)
+
+ISIL (辅助阅读，不等同完整源码):
+	001 Move [X31-32], X30
+	002 Move [X31-24], X21
+	003 Move [X31+16], X20
+	004 Move [X31+24], X19
+	005 Move X19, X1
+	006 Move X20, X0
+	007 Move W8, [0x2891467]
+	008 Move TEMP, X8
+	009 And TEMP, TEMP, 1
+	010 Compare TEMP, 1
+	011 JumpIfEqual {18}
+	012 Move X0, [0x25CDE70]
+	013 Call 0x1F16E38
+	014 Move X0, [0x25CE9E8]
+	015 Call 0x1F16E38
+	016 Move W8, 1
+	017 Move [X21+1127], W8
+	018 Move X0, [X20+24]
+	019 Compare X0, 0
+	020 JumpIfEqual {38}
+	021 Move X1, X19
+	022 Move X21, [0x25CDE70]
+	023 Move X20, [0x25CE9E8]
+	024 Call BTDevice.OnConnect, X0, X1
+	025 Move X0, [X21]
+	026 Move W8, [X0+228]
+	027 Compare W8, 0
+	028 JumpIfNotEqual {30}
+	029 Call 0x1F16FB8
+	030 Move X0, [X20]
+	031 Move X20, [X31+16]
+	032 Move X19, [X31+24]
+	033 Move X1, X31
+	034 Move X30, [X31+32]
+	035 Move X21, [X31+40]
+	036 Call Debug.Log, X0
+	037 Return 
+	038 Call 0x1F170E4

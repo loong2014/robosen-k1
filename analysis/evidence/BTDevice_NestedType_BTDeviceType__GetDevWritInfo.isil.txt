@@ -1,0 +1,194 @@
+Type: BTDevice_NestedType_BTDeviceType
+Method: System.ValueTuple`2<System.String, System.String> GetDevWritInfo(System.String _devname)
+
+ISIL (辅助阅读，不等同完整源码):
+	001 Subtract X31, X31, 160
+	002 Move [X31+112], X30
+	003 Move [X31+120], X23
+	004 Move [X31+128], X22
+	005 Move [X31+136], X21
+	006 Move [X31+144], X20
+	007 Move [X31+152], X19
+	008 Move X19, X0
+	009 Move W8, [0x289344F]
+	010 Move TEMP, X8
+	011 And TEMP, TEMP, 1
+	012 Compare TEMP, 1
+	013 JumpIfEqual {28}
+	014 Move X0, [0x25D0760]
+	015 Call 0x1F16E38
+	016 Move X0, [0x25D0768]
+	017 Call 0x1F16E38
+	018 Move X0, [0x25D0770]
+	019 Call 0x1F16E38
+	020 Move X0, [0x25D0778]
+	021 Call 0x1F16E38
+	022 Move X0, [0x25D0780]
+	023 Call 0x1F16E38
+	024 Move X0, [0x25CC160]
+	025 Call 0x1F16E38
+	026 Move W8, 1
+	027 Move [X20+1103], W8
+	028 Move [X31+64], X31
+	029 Move [X31+72], X31
+	030 Move [X31+80], X31
+	031 Move [X31+48], X31
+	032 Move [X31+56], X31
+	033 Call BTDeviceType.get_DevStart_F0F1
+	034 Compare X0, 0
+	035 JumpIfEqual {152}
+	036 Move X23, [0x25D0778]
+	037 Move X22, [0x25D0768]
+	038 Move X21, [0x25D0760]
+	039 Add X8, X31, 24
+	040 Move X1, [X23]
+	041 Call List`1<Object>.GetEnumerator, X0
+	042 Move X8, [X31+40]
+	043 NotImplemented "Instruction LDUR not yet implemented."
+	044 Move [X31+80], X8
+	045 Add X8, X31, 64
+	046 Move [X31+4], V0
+	047 Move [X31+24], X31
+	048 Move [X31+32], X8
+	049 Move X1, [X22]
+	050 Add X0, X31, 64
+	051 Call Enumerator<Object>.MoveNext, X0
+	052 Move TEMP, X0
+	053 And TEMP, TEMP, 1
+	054 Compare TEMP, 1
+	055 JumpIfNotEqual {77}
+	056 Compare X19, 0
+	057 JumpIfEqual {150}
+	058 Move X1, [X31+80]
+	059 Move X0, X19
+	060 Move X2, X31
+	061 Call String.StartsWith, X0, X1
+	062 Move TEMP, X0
+	063 And TEMP, TEMP, 1
+	064 Compare TEMP, 1
+	065 JumpIfNotEqual {49}
+	066 Call BTDeviceType.get_Service_F0
+	067 Move X20, X0
+	068 Call BTDeviceType.get_Characteristic_F1
+	069 Move X2, X0
+	070 Move X8, [0x25D0780]
+	071 Move [X31+8], X31
+	072 Move [X31+16], X31
+	073 Move X3, [X8]
+	074 Add X0, X31, 8
+	075 Move X1, X20
+	076 Call ValueTuple`2<Object, Object>..ctor, X0, X1, X2
+	077 Move X1, [X21]
+	078 Add X0, X31, 64
+	079 Call Enumerator<Object>.Dispose, X0
+	080 Call BTDeviceType.get_DevStart_C0C1
+	081 Compare X0, 0
+	082 JumpIfEqual {152}
+	083 Move X1, [X23]
+	084 Add X8, X31, 24
+	085 Call List`1<Object>.GetEnumerator, X0
+	086 Move X8, [X31+40]
+	087 NotImplemented "Instruction LDUR not yet implemented."
+	088 Move [X31+80], X8
+	089 Add X8, X31, 64
+	090 Move [X31+4], V0
+	091 Move [X31+24], X31
+	092 Move [X31+32], X8
+	093 Move X1, [X22]
+	094 Add X0, X31, 64
+	095 Call Enumerator<Object>.MoveNext, X0
+	096 Move TEMP, X0
+	097 And TEMP, TEMP, 1
+	098 Compare TEMP, 1
+	099 JumpIfNotEqual {128}
+	100 Compare X19, 0
+	101 JumpIfEqual {151}
+	102 Move X1, [X31+80]
+	103 Move X0, X19
+	104 Move X2, X31
+	105 Call String.StartsWith, X0, X1
+	106 Move TEMP, X0
+	107 And TEMP, TEMP, 1
+	108 Compare TEMP, 1
+	109 JumpIfNotEqual {93}
+	110 Call BTDeviceType.get_Service_C0
+	111 Move X19, X0
+	112 Call BTDeviceType.get_Characteristic_C1
+	113 Move X2, X0
+	114 Move X8, [0x25D0780]
+	115 Move [X31+8], X31
+	116 Move [X31+16], X31
+	117 Move X3, [X8]
+	118 Add X0, X31, 8
+	119 Move X1, X19
+	120 Call ValueTuple`2<Object, Object>..ctor, X0, X1, X2
+	121 NotImplemented "Instruction LDUR not yet implemented."
+	122 Move X1, [X21]
+	123 Add X0, X31, 64
+	124 Move [X31+3], V0
+	125 Call Enumerator<Object>.Dispose, X0
+	126 Move V0, [X31+3]
+	127 Move [X31+6], V0
+	128 Move X1, [X21]
+	129 Add X0, X31, 64
+	130 Call Enumerator<Object>.Dispose, X0
+	131 Add X0, X31, 96
+	132 Move X8, [0x25CC160]
+	133 Move X9, [0x25D0780]
+	134 Move [X31+96], X31
+	135 Move [X31+104], X31
+	136 Move X1, [X8]
+	137 Move X3, [X9]
+	138 Move X2, X1
+	139 Call ValueTuple`2<Object, Object>..ctor, X0, X1, X2
+	140 Move X0, [X31+96]
+	141 Move X1, [X31+104]
+	142 Move X20, [X31+144]
+	143 Move X19, [X31+152]
+	144 Move X22, [X31+128]
+	145 Move X21, [X31+136]
+	146 Move X30, [X31+112]
+	147 Move X23, [X31+120]
+	148 Add X31, X31, 160
+	149 Return X0
+	150 Call 0x1F170E4
+	151 Call 0x1F170E4
+	152 Call 0x1F170E4
+	153 Move X20, X0
+	154 NotImplemented "Instruction CMP not yet implemented."
+	155 Move X0, X20
+	156 Call 0x437D3D0
+	157 Move X19, [X0]
+	158 Move [X31+24], X19
+	159 Call 0x437D3E0
+	160 Move X0, [X31+32]
+	161 Move X1, [X21]
+	162 Call Enumerator<Object>.Dispose, X0
+	163 Compare X19, 0
+	164 Invalid "Jump target not found in method."
+	165 Move X0, X19
+	166 Call 0x1F170DC
+	167 Move X20, X0
+	168 Add X0, X31, 24
+	169 Call 0x1C11168
+	170 Move X20, X0
+	171 NotImplemented "Instruction CMP not yet implemented."
+	172 Move X0, X20
+	173 Call 0x437D3D0
+	174 Move X20, [X0]
+	175 Move [X31+24], X20
+	176 Call 0x437D3E0
+	177 Move X0, [X31+32]
+	178 Move X1, [X21]
+	179 Call Enumerator<Object>.Dispose, X0
+	180 Compare X20, 0
+	181 JumpIfEqual {80}
+	182 Move X0, X20
+	183 Call 0x1F170DC
+	184 Move X20, X0
+	185 Add X0, X31, 24
+	186 Call 0x1C11168
+	187 Move X0, X20
+	188 Call 0x20067BC
+	189 Call 0x1C10ED8
+

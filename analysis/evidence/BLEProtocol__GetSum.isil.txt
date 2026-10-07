@@ -1,0 +1,31 @@
+Type: BLEProtocol
+Method: System.Byte GetSum(System.Byte[] data)
+
+ISIL (辅助阅读，不等同完整源码):
+	001 Move [X31-16], X30
+	002 Compare X0, 0
+	003 JumpIfEqual {27}
+	004 Move W11, [X0+24]
+	005 Move W10, 2
+	006 Move X8, X0
+	007 NotImplemented "Instruction CMP not yet implemented."
+	008 NotImplemented "Instruction CSEL not yet implemented."
+	009 NotImplemented "Instruction CSEL not yet implemented."
+	010 NotImplemented "Instruction CMP not yet implemented."
+	011 Move W0, W31
+	012 Move W0, W31
+	013 Subtract X9, X9, 2
+	014 Add X8, X8, 34
+	015 Subtract X10, X10, 2
+	016 Compare X10, 0
+	017 JumpIfEqual {26}
+	018 Move W11, [X8+1]
+	019 Subtract X9, X9, 1
+	020 Subtract X10, X10, 1
+	021 Add W0, W11, W0
+	022 Compare X9, 0
+	023 JumpIfNotEqual {16}
+	024 Move X30, [X31+16]
+	025 Return X0
+	026 Call 0x1F170EC
+	027 Call 0x1F170E4

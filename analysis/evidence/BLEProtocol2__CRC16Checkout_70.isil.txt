@@ -1,0 +1,43 @@
+Type: BLEProtocol2
+Method: System.Boolean CRC16Checkout(System.Byte[] _data, System.Int32 _crcHL)
+
+ISIL (辅助阅读，不等同完整源码):
+	001 Subtract X31, X31, 48
+	002 Move [X31+16], X30
+	003 Move [X31+24], X21
+	004 Move [X31+32], X20
+	005 Move [X31+40], X19
+	006 Move W19, W1
+	007 Move X20, X0
+	008 Move W8, [0x288F478]
+	009 Move TEMP, X8
+	010 And TEMP, TEMP, 1
+	011 Compare TEMP, 1
+	012 JumpIfEqual {17}
+	013 Move X0, [0x25CC190]
+	014 Call 0x1F16E38
+	015 Move W8, 1
+	016 Move [X21+1144], W8
+	017 Move [X31+12], W31
+	018 Compare X20, 0
+	019 JumpIfEqual {39}
+	020 Move X8, [0x25CC190]
+	021 Move X0, [X8]
+	022 Move W8, [X0+228]
+	023 Compare W8, 0
+	024 JumpIfNotEqual {26}
+	025 Call 0x1F16FB8
+	026 Add X0, X31, 12
+	027 Move W1, 0xFFFF
+	028 Move X2, X20
+	029 Call BLEProtocol2.Crc16, X0, X1, X2, X3
+	030 Move W8, [X31+12]
+	031 Move X30, [X31+16]
+	032 Move X21, [X31+24]
+	033 NotImplemented "Instruction CMP not yet implemented."
+	034 Move X20, [X31+32]
+	035 Move X19, [X31+40]
+	036 NotImplemented "Instruction CSET not yet implemented."
+	037 Add X31, X31, 48
+	038 Return X0
+	039 Call 0x1F170E4

@@ -1,0 +1,196 @@
+Type: Unity2BTCommandControl_NestedType___c__DisplayClass21_0
+Method: System.Void <ConnectDev>b__7(System.String _address, System.String _character, System.Byte[] _datas)
+
+ISIL (辅助阅读，不等同完整源码):
+	001 Subtract X31, X31, 128
+	002 Move [X31+64], X30
+	003 Move [X31+80], X24
+	004 Move [X31+88], X23
+	005 Move [X31+96], X22
+	006 Move [X31+104], X21
+	007 Move [X31+112], X20
+	008 Move [X31+120], X19
+	009 Move X19, X3
+	010 Move W8, [0x2891468]
+	011 Move X24, [0x25CE528]
+	012 Move X20, X2
+	013 Move X21, X1
+	014 Move X22, X0
+	015 Move TEMP, X8
+	016 And TEMP, TEMP, 1
+	017 Compare TEMP, 1
+	018 JumpIfEqual {39}
+	019 Move X0, [0x25CDE70]
+	020 Call 0x1F16E38
+	021 Move X0, [0x25CE528]
+	022 Call 0x1F16E38
+	023 Move X0, [0x25CE9D8]
+	024 Call 0x1F16E38
+	025 Move X0, [0x25CE0C0]
+	026 Call 0x1F16E38
+	027 Move X0, [0x25CE9F0]
+	028 Call 0x1F16E38
+	029 Move X0, [0x25CE9F8]
+	030 Call 0x1F16E38
+	031 Move X0, [0x25CEA00]
+	032 Call 0x1F16E38
+	033 Move X0, [0x25CEA08]
+	034 Call 0x1F16E38
+	035 Move X0, [0x25CE870]
+	036 Call 0x1F16E38
+	037 Move W8, 1
+	038 Move [X23+1128], W8
+	039 Move X0, [X24]
+	040 Move W1, 9
+	041 Call 0x1F16F28
+	042 Move X8, [X22+32]
+	043 Compare X8, 0
+	044 JumpIfEqual {191}
+	045 Move X22, X0
+	046 Move X0, X8
+	047 Move X1, X31
+	048 Call "il2cpp_vm_object_is_inst", X0
+	049 Compare X0, 0
+	050 JumpIfEqual {191}
+	051 Move X8, [X0]
+	052 Move X9, [X8+728]
+	053 Move X1, [X8+736]
+	054 NotImplemented "Instruction BLR not yet implemented."
+	055 Compare X22, 0
+	056 JumpIfEqual {191}
+	057 Move W8, [X22+24]
+	058 Compare W8, 0
+	059 JumpIfEqual {190}
+	060 Move X23, X22
+	061 Move X1, X0
+	062 Move [X23+32], X0
+	063 Move X0, X23
+	064 Call 0x1F16DDC
+	065 NotImplemented "Instruction LDUR not yet implemented."
+	066 And W31, W8, 0xFFFFFFFE
+	067 Move X0, X22
+	068 Move X8, [0x25CE870]
+	069 Move X1, [X8]
+	070 Move X23, [0x25CE9D8]
+	071 Move [X0+40], X1
+	072 Call 0x1F16DDC
+	073 Move X0, [X23]
+	074 Move W8, [X0+83]
+	075 Move TEMP, X8
+	076 And TEMP, TEMP, 2
+	077 Compare TEMP, 2
+	078 JumpIfNotEqual {80}
+	079 Call 0x1F16E50
+	080 Move X1, [X0+32]
+	081 Call 0x1F16E1C
+	082 Compare X0, 0
+	083 JumpIfEqual {191}
+	084 Move X8, [X0]
+	085 Move X9, [X8+440]
+	086 Move X1, [X8+448]
+	087 NotImplemented "Instruction BLR not yet implemented."
+	088 Move W8, [X22+24]
+	089 NotImplemented "Instruction CMP not yet implemented."
+	090 Move X23, X22
+	091 Move X1, X0
+	092 Move [X23+48], X0
+	093 Move X0, X23
+	094 Call 0x1F16DDC
+	095 NotImplemented "Instruction LDUR not yet implemented."
+	096 And W31, W8, 0xFFFFFFFC
+	097 Move X23, X22
+	098 Move X8, [0x25CEA00]
+	099 Move X1, [X8]
+	100 Move [X23+56], X1
+	101 Move X0, X23
+	102 Call 0x1F16DDC
+	103 Move X0, X19
+	104 Move X1, X31
+	105 Call BitConverter.ToString, X0
+	106 NotImplemented "Instruction LDUR not yet implemented."
+	107 NotImplemented "Instruction CMP not yet implemented."
+	108 Move X23, X22
+	109 Move X1, X0
+	110 Move [X23+64], X0
+	111 Move X0, X23
+	112 Call 0x1F16DDC
+	113 NotImplemented "Instruction LDUR not yet implemented."
+	114 NotImplemented "Instruction CMP not yet implemented."
+	115 Move X23, X22
+	116 Move X8, [0x25CE9F8]
+	117 Move X1, [X8]
+	118 Move [X23+72], X1
+	119 Move X0, X23
+	120 Call 0x1F16DDC
+	121 NotImplemented "Instruction LDUR not yet implemented."
+	122 NotImplemented "Instruction CMP not yet implemented."
+	123 Move X23, X22
+	124 Move X1, X21
+	125 Move [X23+80], X21
+	126 Move X0, X23
+	127 Call 0x1F16DDC
+	128 NotImplemented "Instruction LDUR not yet implemented."
+	129 And W31, W8, 0xFFFFFFF8
+	130 Move X23, X22
+	131 Move X8, [0x25CEA08]
+	132 Move X1, [X8]
+	133 Move [X23+88], X1
+	134 Move X0, X23
+	135 Call 0x1F16DDC
+	136 NotImplemented "Instruction LDUR not yet implemented."
+	137 NotImplemented "Instruction CMP not yet implemented."
+	138 Move X0, X22
+	139 Move X24, [0x25CDE70]
+	140 Move X23, [0x25CE0C0]
+	141 Move X1, X20
+	142 Move [X0+96], X20
+	143 Call 0x1F16DDC
+	144 Move X0, X22
+	145 Move X1, X31
+	146 Call String.Concat, X0
+	147 Move X8, [X24]
+	148 Move X22, X0
+	149 Move W9, [X8+228]
+	150 Compare W9, 0
+	151 JumpIfNotEqual {154}
+	152 Move X0, X8
+	153 Call 0x1F16FB8
+	154 Move X0, X22
+	155 Move X1, X31
+	156 Call Debug.Log, X0
+	157 Move X8, [X23]
+	158 Move X8, [X8+184]
+	159 Move X22, [X8]
+	160 Compare X22, 0
+	161 JumpIfEqual {181}
+	162 Add X0, X31, 8
+	163 Move X1, X21
+	164 Move X8, [0x25CE9F0]
+	165 Move X2, X20
+	166 Move X3, X19
+	167 Move [X31+8], X31
+	168 Move [X31+16], X31
+	169 Move X4, [X8]
+	170 Move [X31+24], X31
+	171 Call ValueTuple`3<Object, Object, Object>..ctor, X0, X1, X2, X3
+	172 NotImplemented "Instruction LDUR not yet implemented."
+	173 Move X8, [X31+24]
+	174 Add X1, X31, 32
+	175 Move X9, [X22+24]
+	176 Move X0, [X22+64]
+	177 Move X2, [X22+40]
+	178 Move [X31+2], V0
+	179 Move [X31+48], X8
+	180 NotImplemented "Instruction BLR not yet implemented."
+	181 Move X20, [X31+112]
+	182 Move X19, [X31+120]
+	183 Move X30, [X31+64]
+	184 Move X22, [X31+96]
+	185 Move X21, [X31+104]
+	186 Move X24, [X31+80]
+	187 Move X23, [X31+88]
+	188 Add X31, X31, 128
+	189 Return 
+	190 Call 0x1F170EC
+	191 Call 0x1F170E4
+

@@ -1,0 +1,17 @@
+[
+  {
+    "file": "apk/split_UnityDataAssetPack.apk",
+    "sha256": "9e69685cd4fc1c26a4ea21777081c5a37401fb1f2e99f63bae28c21d020c5b27",
+    "entries": 577
+  },
+  {
+    "file": "apk/split_config.arm64_v8a.apk",
+    "sha256": "966a92ad9d73b3aa4e88705eed56f8d043158fc455a4d09a1e70cbc375a52c19",
+    "entries": 20
+  },
+  {
+    "file": "apk/base.apk",
+    "sha256": "e340922ccbffab7a83e51c578214e3329fd4f0107e33eecbb3a67cb00503865a",
+    "entries": 203
+  }
+]

@@ -1,0 +1,256 @@
+Type: BLEProtocol
+Method: BLECommand TransferDataToCommand(System.Byte[] data)
+
+ISIL (辅助阅读，不等同完整源码):
+	001 Move [X31-80], X30
+	002 Move [X31+16], X26
+	003 Move [X31+24], X25
+	004 Move [X31+32], X24
+	005 Move [X31+40], X23
+	006 Move [X31+48], X22
+	007 Move [X31+56], X21
+	008 Move [X31+64], X20
+	009 Move [X31+72], X19
+	010 Move W8, [0x289146F]
+	011 Move X22, [0x25CE0C8]
+	012 Move X20, [0x25CE0D0]
+	013 Move X19, X0
+	014 Move TEMP, X8
+	015 And TEMP, TEMP, 1
+	016 Compare TEMP, 1
+	017 JumpIfEqual {36}
+	018 Move X0, [0x25CE188]
+	019 Call 0x1F16E38
+	020 Move X0, [0x25CA478]
+	021 Call 0x1F16E38
+	022 Move X0, [0x25CEA20]
+	023 Call 0x1F16E38
+	024 Move X0, [0x25CEA28]
+	025 Call 0x1F16E38
+	026 Move X0, [0x25CDEE8]
+	027 Call 0x1F16E38
+	028 Move X0, [0x25CDF80]
+	029 Call 0x1F16E38
+	030 Move X0, [0x25CE0D0]
+	031 Call 0x1F16E38
+	032 Move X0, [0x25CE0C8]
+	033 Call 0x1F16E38
+	034 Move W8, 1
+	035 Move [X21+1135], W8
+	036 Move X0, [X22]
+	037 Call 0x1F170D4
+	038 Move X1, [X20]
+	039 Move X21, X0
+	040 Call List`1<Byte>..ctor, X0
+	041 Compare X19, 0
+	042 JumpIfEqual {251}
+	043 Move W9, [X19+24]
+	044 NotImplemented "Instruction CMP not yet implemented."
+	045 Move W23, W31
+	046 Move X24, [0x25CDEE8]
+	047 Move X25, [0x25CDF80]
+	048 Move W8, W31
+	049 Move W22, W31
+	050 Move TEMP, 0
+	051 Not TEMP
+	052 Move W20, TEMP
+	053 NotImplemented "Instruction CMP not yet implemented."
+	054 Add W31, W8, 1
+	055 Compare W8, 0
+	056 JumpIfEqual {139}
+	057 NotImplemented "Instruction CMP not yet implemented."
+	058 NotImplemented "Instruction CMP not yet implemented."
+	059 Add X8, X19, W23
+	060 Move W22, [X8+32]
+	061 Add W8, W23, W22
+	062 NotImplemented "Instruction CMP not yet implemented."
+	063 Compare X21, 0
+	064 JumpIfEqual {251}
+	065 Move W10, [X21+28]
+	066 Move X8, [X21+16]
+	067 Move X9, [X24]
+	068 Add W10, W10, 1
+	069 Move [X21+28], W10
+	070 Compare X8, 0
+	071 JumpIfEqual {251}
+	072 NotImplemented "Instruction LDRSW not yet implemented."
+	073 Move W11, [X8+24]
+	074 NotImplemented "Instruction CMP not yet implemented."
+	075 Add W9, W10, 1
+	076 Add X8, X8, X10
+	077 Move [X21+24], W9
+	078 Move [X8+32], W22
+	079 NotImplemented "Instruction CMP not yet implemented."
+	080 NotImplemented "Instruction CMP not yet implemented."
+	081 NotImplemented "Instruction CMP not yet implemented."
+	082 NotImplemented "Instruction CMP not yet implemented."
+	083 Subtract W26, W22, 2
+	084 Move W8, [X19+24]
+	085 NotImplemented "Instruction CMP not yet implemented."
+	086 Compare X21, 0
+	087 JumpIfEqual {251}
+	088 Add X9, X19, W23
+	089 Move W10, [X21+28]
+	090 Move X8, [X21+16]
+	091 Move W1, [X9+32]
+	092 Move X9, [X24]
+	093 Add W10, W10, 1
+	094 Move [X21+28], W10
+	095 Compare X8, 0
+	096 JumpIfEqual {251}
+	097 NotImplemented "Instruction LDRSW not yet implemented."
+	098 Move W11, [X8+24]
+	099 NotImplemented "Instruction CMP not yet implemented."
+	100 Add W9, W10, 1
+	101 Add X8, X8, X10
+	102 Move [X21+24], W9
+	103 Move [X8+32], W1
+	104 Move X8, [X9+32]
+	105 Move X0, X21
+	106 Move X8, [X8+192]
+	107 Move X2, [X8+112]
+	108 Call List`1<Byte>.AddWithResize, X0, X1
+	109 Subtract W26, W26, 1
+	110 Add W23, W23, 1
+	111 Subtract W23, W23, 1
+	112 Move W8, 4
+	113 Move W23, W9
+	114 NotImplemented "Instruction CMP not yet implemented."
+	115 Add X26, X19, W23
+	116 Add X26, X26, 32
+	117 Move W0, [X26]
+	118 Call BLECommand.GetType, X0
+	119 Move W8, [X19+24]
+	120 NotImplemented "Instruction CMP not yet implemented."
+	121 Compare X21, 0
+	122 JumpIfEqual {251}
+	123 Move W10, [X21+28]
+	124 Move X8, [X21+16]
+	125 Move W1, [X26]
+	126 Move X9, [X24]
+	127 Add W10, W10, 1
+	128 Move [X21+28], W10
+	129 Compare X8, 0
+	130 JumpIfEqual {251}
+	131 NotImplemented "Instruction LDRSW not yet implemented."
+	132 Move W11, [X8+24]
+	133 Move W20, W0
+	134 NotImplemented "Instruction CMP not yet implemented."
+	135 Add W9, W10, 1
+	136 Add X8, X8, X10
+	137 Move [X21+24], W9
+	138 Move [X8+32], W1
+	139 NotImplemented "Instruction CMP not yet implemented."
+	140 Add X8, X19, W23
+	141 Move W8, [X8+32]
+	142 NotImplemented "Instruction CMP not yet implemented."
+	143 Move W8, W31
+	144 Compare X21, 0
+	145 JumpIfEqual {251}
+	146 Move X1, [X25]
+	147 Move X0, X21
+	148 Call List`1<Byte>.ToArray, X0
+	149 Move W8, [X19+24]
+	150 NotImplemented "Instruction CMP not yet implemented."
+	151 Add X8, X19, W23
+	152 Move W1, [X8+32]
+	153 Call BLEProtocol.CheckSum, X0, X1
+	154 Move TEMP, X0
+	155 And TEMP, TEMP, 1
+	156 Compare TEMP, 1
+	157 JumpIfNotEqual {160}
+	158 Move W23, [X19+24]
+	159 Move W8, 5
+	160 Move TEMP, 0
+	161 Not TEMP
+	162 Move W8, TEMP
+	163 Move X8, [X9+32]
+	164 Move X0, X21
+	165 Move X8, [X8+192]
+	166 Move X2, [X8+112]
+	167 Call List`1<Byte>.AddWithResize, X0, X1
+	168 Move W8, 3
+	169 Move X8, W23
+	170 Add X10, X8, 1
+	171 NotImplemented "Instruction CMP not yet implemented."
+	172 Add X8, X19, X10
+	173 Move W8, [X8+32]
+	174 NotImplemented "Instruction CMP not yet implemented."
+	175 NotImplemented "Instruction CSET not yet implemented."
+	176 NotImplemented "Instruction CSEL not yet implemented."
+	177 Move X8, [X9+32]
+	178 Move X0, X21
+	179 Move W1, W22
+	180 Move X8, [X8+192]
+	181 Move X2, [X8+112]
+	182 Call List`1<Byte>.AddWithResize, X0, X1
+	183 Move W8, 2
+	184 Move W9, [X19+24]
+	185 Add W23, W23, 1
+	186 NotImplemented "Instruction CMP not yet implemented."
+	187 NotImplemented "Instruction CMP not yet implemented."
+	188 Subtract W1, W22, 2
+	189 NotImplemented "Instruction CSET not yet implemented."
+	190 Compare W8, 0
+	191 JumpIfEqual {226}
+	192 Move X8, [0x25C9478]
+	193 Move X0, [X8]
+	194 Call 0x1F16F28
+	195 Move X22, X0
+	196 Move X0, X21
+	197 Move X8, [0x25CDA20]
+	198 Move W1, 2
+	199 Move X2, [X8]
+	200 Call 0x2364ACC, X0, X1
+	201 Move X8, [0x25CDA28]
+	202 Move X1, [X8]
+	203 Call Enumerable.ToArray, X0
+	204 Compare X0, 0
+	205 JumpIfEqual {251}
+	206 Move X1, X22
+	207 Move W2, W31
+	208 Move X3, X31
+	209 Call Array.CopyTo, X0, X1, X2
+	210 Move X8, [0x25CD188]
+	211 Move X0, [X8]
+	212 Call 0x1F170D4
+	213 NotImplemented "Instruction CMP not yet implemented."
+	214 Move X21, X0
+	215 Move W1, 255
+	216 Move X2, X19
+	217 Move W8, W31
+	218 Move TEMP, 1
+	219 Not TEMP
+	220 Move W1, TEMP
+	221 Move TEMP, 0
+	222 Not TEMP
+	223 Move W20, TEMP
+	224 Compare W8, 0
+	225 Invalid "Jump target not found in method."
+	226 Move X20, [X31+64]
+	227 Move X19, [X31+72]
+	228 Move X22, [X31+48]
+	229 Move X21, [X31+56]
+	230 Move X24, [X31+32]
+	231 Move X23, [X31+40]
+	232 Move X26, [X31+16]
+	233 Move X25, [X31+24]
+	234 Move X30, [X31+80]
+	235 Call BLECommand.GetFailureCommand
+	236 Return X0
+	237 Move W1, W20
+	238 Move X2, X22
+	239 Call BLECommand..ctor, X0, X1, X2
+	240 Move X0, X21
+	241 Move X20, [X31+64]
+	242 Move X19, [X31+72]
+	243 Move X22, [X31+48]
+	244 Move X21, [X31+56]
+	245 Move X24, [X31+32]
+	246 Move X23, [X31+40]
+	247 Move X26, [X31+16]
+	248 Move X25, [X31+24]
+	249 Move X30, [X31+80]
+	250 Return X0
+	251 Call 0x1F170E4
+	252 Call 0x1F170EC

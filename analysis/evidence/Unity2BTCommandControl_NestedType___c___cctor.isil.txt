@@ -1,0 +1,33 @@
+Type: Unity2BTCommandControl_NestedType___c
+Method: System.Void .cctor()
+
+ISIL (辅助阅读，不等同完整源码):
+	001 Move [X31-32], X30
+	002 Move [X31+16], X20
+	003 Move [X31+24], X19
+	004 Move W8, [0x289145E]
+	005 Move X20, [0x25CE8B8]
+	006 Move TEMP, X8
+	007 And TEMP, TEMP, 1
+	008 Compare TEMP, 1
+	009 JumpIfEqual {14}
+	010 Move X0, [0x25CE8B8]
+	011 Call 0x1F16E38
+	012 Move W8, 1
+	013 Move [X19+1118], W8
+	014 Move X0, [X20]
+	015 Call 0x1F170D4
+	016 Move X1, X31
+	017 Move X19, X0
+	018 Call Object..ctor, X0
+	019 Move X8, [X20]
+	020 Move X1, X19
+	021 Move X8, [X8+184]
+	022 Move [X8], X19
+	023 Move X8, [X20]
+	024 Move X20, [X31+16]
+	025 Move X19, [X31+24]
+	026 Move X0, [X8+184]
+	027 Move X30, [X31+32]
+	028 Call 0x1F16DDC
+	029 Return 

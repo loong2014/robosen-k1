@@ -1,0 +1,251 @@
+Type: BLEProtocol2
+Method: System.Collections.Generic.List`1<BLECommand> GetCommandsFormList(System.Collections.Generic.List`1<System.Byte> _Data)
+
+ISIL (辅助阅读，不等同完整源码):
+	001 Subtract X31, X31, 144
+	002 Move [X31+48], X29
+	003 Move [X31+56], X30
+	004 Move [X31+64], X28
+	005 Move [X31+72], X27
+	006 Move [X31+80], X26
+	007 Move [X31+88], X25
+	008 Move [X31+96], X24
+	009 Move [X31+104], X23
+	010 Move [X31+112], X22
+	011 Move [X31+120], X21
+	012 Move [X31+128], X20
+	013 Move [X31+136], X19
+	014 Move X23, [0x25D27E8]
+	015 Move X19, [0x25D27F0]
+	016 Move W8, [0x2895472]
+	017 Move X22, [0x25D27F8]
+	018 Move X21, [0x25D2800]
+	019 Move X20, X0
+	020 Move TEMP, X8
+	021 And TEMP, TEMP, 1
+	022 Compare TEMP, 1
+	023 JumpIfEqual {60}
+	024 Move X0, [0x25D2190]
+	025 Call 0x1F16E38
+	026 Move X0, [0x25D2808]
+	027 Call 0x1F16E38
+	028 Move X0, [0x25D2810]
+	029 Call 0x1F16E38
+	030 Move X0, [0x25D2818]
+	031 Call 0x1F16E38
+	032 Move X0, [0x25D2820]
+	033 Call 0x1F16E38
+	034 Move X0, [0x25D2828]
+	035 Call 0x1F16E38
+	036 Move X0, [0x25D2830]
+	037 Call 0x1F16E38
+	038 Move X0, [0x25D20F8]
+	039 Call 0x1F16E38
+	040 Move X0, [0x25D2838]
+	041 Call 0x1F16E38
+	042 Move X0, [0x25D2840]
+	043 Call 0x1F16E38
+	044 Move X0, [0x25D1F80]
+	045 Call 0x1F16E38
+	046 Move X0, [0x25D27F0]
+	047 Call 0x1F16E38
+	048 Move X0, [0x25D2800]
+	049 Call 0x1F16E38
+	050 Move X0, [0x25D2100]
+	051 Call 0x1F16E38
+	052 Move X0, [0x25D2848]
+	053 Call 0x1F16E38
+	054 Move X0, [0x25D27E8]
+	055 Call 0x1F16E38
+	056 Move X0, [0x25D27F8]
+	057 Call 0x1F16E38
+	058 Move W8, 1
+	059 Move [X24+1138], W8
+	060 Move X0, [X23]
+	061 Move [X31+24], X31
+	062 Move [X31+32], X31
+	063 Move [X31+40], X31
+	064 Move [X31+16], X31
+	065 Call 0x1F170D4
+	066 Move X1, [X19]
+	067 Move X19, X0
+	068 Call List`1<Object>..ctor, X0
+	069 Move X0, [X22]
+	070 Call 0x1F170D4
+	071 Move X1, [X21]
+	072 Move X21, X0
+	073 Call List`1<Object>..ctor, X0
+	074 Compare X20, 0
+	075 JumpIfEqual {227}
+	076 Move W8, [X20+24]
+	077 NotImplemented "Instruction CMP not yet implemented."
+	078 Move X23, [0x25D2848]
+	079 Move X24, [0x25D20F8]
+	080 Move X25, [0x25D1F80]
+	081 Move X26, [0x25D2840]
+	082 Move X27, [0x25D2828]
+	083 Move X28, [0x25D2838]
+	084 Move X2, [X23]
+	085 Move X0, X20
+	086 Move W1, W31
+	087 Call List`1<Byte>.get_Item, X0, X1
+	088 And W8, W0, 255
+	089 NotImplemented "Instruction CMP not yet implemented."
+	090 Move X2, [X23]
+	091 Move X0, X20
+	092 Move W1, 1
+	093 Call List`1<Byte>.get_Item, X0, X1
+	094 And W8, W0, 255
+	095 NotImplemented "Instruction CMP not yet implemented."
+	096 Move X2, [X23]
+	097 Move X0, X20
+	098 Move W1, 2
+	099 Call List`1<Byte>.get_Item, X0, X1
+	100 Move X2, [X23]
+	101 Move W22, W0
+	102 Move X0, X20
+	103 Move W1, 3
+	104 Call List`1<Byte>.get_Item, X0, X1
+	105 Move W8, [X20+24]
+	106 And W29, W0, 255
+	107 NotImplemented "Instruction BFM not yet implemented."
+	108 Subtract W8, W8, 4
+	109 NotImplemented "Instruction CMP not yet implemented."
+	110 Move X3, [X24]
+	111 Add W2, W29, 4
+	112 Move X0, X20
+	113 Move W1, W31
+	114 Call List`1<Byte>.GetRange, X0, X1, X2
+	115 Compare X0, 0
+	116 JumpIfEqual {227}
+	117 Move X1, [X25]
+	118 Call List`1<Byte>.ToArray, X0
+	119 Move X3, [X26]
+	120 Move X22, X0
+	121 Add W2, W29, 4
+	122 Move X0, X20
+	123 Move W1, W31
+	124 Call List`1<Byte>.RemoveRange, X0, X1, X2
+	125 Compare X21, 0
+	126 JumpIfEqual {227}
+	127 Move W10, [X21+28]
+	128 Move X8, [X21+16]
+	129 Move X9, [X27]
+	130 Add W10, W10, 1
+	131 Move [X21+28], W10
+	132 Compare X8, 0
+	133 JumpIfEqual {227}
+	134 NotImplemented "Instruction LDRSW not yet implemented."
+	135 Move W11, [X8+24]
+	136 NotImplemented "Instruction CMP not yet implemented."
+	137 Add X0, X8, X10
+	138 Add W9, W10, 1
+	139 Move X1, X22
+	140 Move [X21+24], W9
+	141 Move [X0+32], X22
+	142 Call 0x1F16DDC
+	143 Move X2, [X28]
+	144 Move X0, X20
+	145 Move W1, W31
+	146 Call List`1<Byte>.RemoveAt, X0, X1
+	147 Move W8, [X20+24]
+	148 NotImplemented "Instruction CMP not yet implemented."
+	149 Move X8, [X9+32]
+	150 Move X0, X21
+	151 Move X1, X22
+	152 Move X8, [X8+192]
+	153 Move X2, [X8+112]
+	154 Call List`1<Object>.AddWithResize, X0, X1
+	155 Compare X21, 0
+	156 JumpIfEqual {227}
+	157 Move X8, [0x25D2830]
+	158 Move X23, [0x25D2810]
+	159 Move X24, [0x25D2190]
+	160 Move X25, [0x25D2820]
+	161 Move X22, [0x25D2808]
+	162 Move X1, [X8]
+	163 Add X8, X31, 24
+	164 Move X0, X21
+	165 Add X20, X31, 24
+	166 Call List`1<Object>.GetEnumerator, X0
+	167 Move [X31], X31
+	168 Move [X31+8], X20
+	169 Move X1, [X23]
+	170 Add X0, X31, 24
+	171 Call Enumerator<Object>.MoveNext, X0
+	172 Move TEMP, X0
+	173 And TEMP, TEMP, 1
+	174 Compare TEMP, 1
+	175 JumpIfNotEqual {208}
+	176 Move X0, [X24]
+	177 Move X20, [X31+40]
+	178 Move W8, [X0+228]
+	179 Compare W8, 0
+	180 JumpIfNotEqual {182}
+	181 Call 0x1F16FB8
+	182 Add X1, X31, 16
+	183 Move X0, X20
+	184 Call BLEProtocol2.TransferDataToCommand, X0, X1
+	185 Compare X19, 0
+	186 JumpIfEqual {226}
+	187 Move W10, [X19+28]
+	188 Move X8, [X19+16]
+	189 Move X1, [X31+16]
+	190 Move X9, [X25]
+	191 Add W10, W10, 1
+	192 Move [X19+28], W10
+	193 Compare X8, 0
+	194 JumpIfEqual {226}
+	195 NotImplemented "Instruction LDRSW not yet implemented."
+	196 Move W11, [X8+24]
+	197 NotImplemented "Instruction CMP not yet implemented."
+	198 Add X0, X8, X10
+	199 Add W9, W10, 1
+	200 Move [X19+24], W9
+	201 Move [X0+32], X1
+	202 Call 0x1F16DDC
+	203 Move X8, [X9+32]
+	204 Move X8, [X8+192]
+	205 Move X2, [X8+112]
+	206 Move X0, X19
+	207 Call List`1<Object>.AddWithResize, X0, X1
+	208 Move X1, [X22]
+	209 Add X0, X31, 24
+	210 Call Enumerator<Object>.Dispose, X0
+	211 Move X0, X19
+	212 Move X20, [X31+128]
+	213 Move X19, [X31+136]
+	214 Move X22, [X31+112]
+	215 Move X21, [X31+120]
+	216 Move X24, [X31+96]
+	217 Move X23, [X31+104]
+	218 Move X26, [X31+80]
+	219 Move X25, [X31+88]
+	220 Move X28, [X31+64]
+	221 Move X27, [X31+72]
+	222 Move X29, [X31+48]
+	223 Move X30, [X31+56]
+	224 Add X31, X31, 144
+	225 Return X0
+	226 Call 0x1F170E4
+	227 Call 0x1F170E4
+	228 Move X20, X0
+	229 NotImplemented "Instruction CMP not yet implemented."
+	230 Move X0, X20
+	231 Call 0x437D3D0
+	232 Move X20, [X0]
+	233 Move [X31], X20
+	234 Call 0x437D3E0
+	235 Move X0, [X31+8]
+	236 Move X1, [X22]
+	237 Call Enumerator<Object>.Dispose, X0
+	238 Compare X20, 0
+	239 JumpIfEqual {211}
+	240 Move X0, X20
+	241 Call 0x1F170DC
+	242 Move X20, X0
+	243 Add X0, X31, 0
+	244 Call 0x1C11240
+	245 Move X0, X20
+	246 Call 0x20067BC
+	247 Call 0x1C10ED8

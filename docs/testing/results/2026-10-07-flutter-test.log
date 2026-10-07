@@ -1,0 +1,16 @@
+00:00 +0: loading /Users/xinzhang/Documents/ChatGPT/K-One/apps/kone_app/test/diagnostic_log_test.dart
+00:00 +0: /Users/xinzhang/Documents/ChatGPT/K-One/apps/kone_app/test/diagnostic_log_test.dart: local log rotates and preserves recent entries in send order
+00:00 +1: /Users/xinzhang/Documents/ChatGPT/K-One/apps/kone_app/test/codec_test.dart: 96 original ARM64 encoder vectors match
+00:00 +2: /Users/xinzhang/Documents/ChatGPT/K-One/apps/kone_app/test/codec_test.dart: every notification split preserves all frames
+00:00 +3: /Users/xinzhang/Documents/ChatGPT/K-One/apps/kone_app/test/codec_test.dart: checksum noise, partial disconnect and boundaries
+00:00 +4: /Users/xinzhang/Documents/ChatGPT/K-One/apps/kone_app/test/codec_test.dart: checksum noise, partial disconnect and boundaries
+00:00 +5: /Users/xinzhang/Documents/ChatGPT/K-One/apps/kone_app/test/codec_test.dart: checksum noise, partial disconnect and boundaries
+00:00 +6: /Users/xinzhang/Documents/ChatGPT/K-One/apps/kone_app/test/codec_test.dart: checksum noise, partial disconnect and boundaries
+00:00 +7: /Users/xinzhang/Documents/ChatGPT/K-One/apps/kone_app/test/session_test.dart: release drops direction queued behind an in-flight write
+00:00 +8: /Users/xinzhang/Documents/ChatGPT/K-One/apps/kone_app/test/widget_test.dart: offline project can be created, edited, saved and reopened
+00:00 +9: /Users/xinzhang/Documents/ChatGPT/K-One/apps/kone_app/test/widget_test.dart: offline project can be created, edited, saved and reopened
+00:00 +10: /Users/xinzhang/Documents/ChatGPT/K-One/apps/kone_app/test/widget_test.dart: offline project can be created, edited, saved and reopened
+00:00 +11: /Users/xinzhang/Documents/ChatGPT/K-One/apps/kone_app/test/session_test.dart: release stops periodic movement; disconnect never resumes old direction
+00:01 +12: /Users/xinzhang/Documents/ChatGPT/K-One/apps/kone_app/test/session_test.dart: release stops periodic movement; disconnect never resumes old direction
+00:02 +13: /Users/xinzhang/Documents/ChatGPT/K-One/apps/kone_app/test/session_test.dart: disconnect cancels pending ACK instead of reporting success
+00:02 +14: All tests passed!

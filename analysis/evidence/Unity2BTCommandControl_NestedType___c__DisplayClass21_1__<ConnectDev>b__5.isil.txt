@@ -1,0 +1,64 @@
+Type: Unity2BTCommandControl_NestedType___c__DisplayClass21_1
+Method: System.Void <ConnectDev>b__5(System.String Key, System.Int32 MtuNum)
+
+ISIL (辅助阅读，不等同完整源码):
+	001 Move [X31-64], X30
+	002 Move [X31+16], X24
+	003 Move [X31+24], X23
+	004 Move [X31+32], X22
+	005 Move [X31+40], X21
+	006 Move [X31+48], X20
+	007 Move [X31+56], X19
+	008 Move W8, [0x2891469]
+	009 Move X23, [0x25CEA10]
+	010 Move X22, [0x25CDE70]
+	011 Move W21, W2
+	012 Move X20, X1
+	013 Move X19, X0
+	014 Move TEMP, X8
+	015 And TEMP, TEMP, 1
+	016 Compare TEMP, 1
+	017 Invalid "Jump target not found in method."
+	018 Move X0, [0x25CDE70]
+	019 Call 0x1F16E38
+	020 Move X0, [0x25CEA10]
+	021 Call 0x1F16E38
+	022 Move W8, 1
+	023 Move [X24+1129], W8
+	024 Add X1, X31, 12
+	025 Move X8, [0x25CA1D0]
+	026 Move [X31+12], W21
+	027 Move X0, [X8+72]
+	028 Call 0x1F16FC0
+	029 Move X8, [X23]
+	030 Move X2, X0
+	031 Move X1, X20
+	032 Move X3, X31
+	033 Move X0, X8
+	034 Call String.Format, X0, X1, X2
+	035 Move X8, [X22]
+	036 Move X20, X0
+	037 Move W9, [X8+228]
+	038 Compare W9, 0
+	039 JumpIfNotEqual {42}
+	040 Move X0, X8
+	041 Call 0x1F16FB8
+	042 Move X0, X20
+	043 Move X1, X31
+	044 Call Debug.Log, X0
+	045 Move X0, [X19+32]
+	046 Compare X0, 0
+	047 JumpIfEqual {59}
+	048 Move X1, [X19+16]
+	049 Move X2, [X19+24]
+	050 Call <>c__DisplayClass21_0.<ConnectDev>g__SetBleNotifition|4, X0, X1, X2
+	051 Move X20, [X31+48]
+	052 Move X19, [X31+56]
+	053 Move X22, [X31+32]
+	054 Move X21, [X31+40]
+	055 Move X24, [X31+16]
+	056 Move X23, [X31+24]
+	057 Move X30, [X31+64]
+	058 Return 
+	059 Call 0x1F170E4
+

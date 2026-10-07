@@ -1,0 +1,166 @@
+Type: BLEProtocol2
+Method: System.Boolean TransferDataToCommand(System.Byte[] data, out BLECommand bLECommand)
+
+ISIL (辅助阅读，不等同完整源码):
+	001 Subtract X31, X31, 96
+	002 Move [X31+16], X30
+	003 Move [X31+24], X27
+	004 Move [X31+32], X26
+	005 Move [X31+40], X25
+	006 Move [X31+48], X24
+	007 Move [X31+56], X23
+	008 Move [X31+64], X22
+	009 Move [X31+72], X21
+	010 Move [X31+80], X20
+	011 Move [X31+88], X19
+	012 Move X19, X1
+	013 Move X20, X0
+	014 Move W8, [0x2890473]
+	015 Move TEMP, X8
+	016 And TEMP, TEMP, 1
+	017 Compare TEMP, 1
+	018 JumpIfEqual {33}
+	019 Move X0, [0x25CD188]
+	020 Call 0x1F16E38
+	021 Move X0, [0x25CD190]
+	022 Call 0x1F16E38
+	023 Move X0, [0x25CDA30]
+	024 Call 0x1F16E38
+	025 Move X0, [0x25CDA20]
+	026 Call 0x1F16E38
+	027 Move X0, [0x25CDA38]
+	028 Call 0x1F16E38
+	029 Move X0, [0x25CDA28]
+	030 Call 0x1F16E38
+	031 Move W8, 1
+	032 Move [X21+1139], W8
+	033 Move [X31+12], W31
+	034 Move [X31+8], W31
+	035 Compare X20, 0
+	036 JumpIfEqual {161}
+	037 Move W8, [X20+24]
+	038 NotImplemented "Instruction CMP not yet implemented."
+	039 Move W9, [X20+32]
+	040 NotImplemented "Instruction CMP not yet implemented."
+	041 Move W9, [X20+33]
+	042 NotImplemented "Instruction CMP not yet implemented."
+	043 NotImplemented "Instruction LDRH not yet implemented."
+	044 Subtract W8, W8, 4
+	045 NotImplemented "Instruction REV not yet implemented."
+	046 NotImplemented "Instruction CMP not yet implemented."
+	047 Move X0, X20
+	048 Move X8, [0x25CDA30]
+	049 Move X1, [X8]
+	050 Call 0x2358000, X0
+	051 Move W21, W0
+	052 Move X0, X20
+	053 Move X23, [0x25CDA38]
+	054 Move W8, [X20+24]
+	055 Move X2, [X23]
+	056 Subtract W1, W8, 1
+	057 Call 0x2364DA0, X0, X1
+	058 Move X24, [0x25CDA28]
+	059 Move X1, [X24]
+	060 Call Enumerable.ToArray, X0
+	061 Move X22, X0
+	062 Move X25, [0x25CD190]
+	063 Move X8, [X25]
+	064 Move W9, [X8+228]
+	065 Compare W9, 0
+	066 JumpIfNotEqual {69}
+	067 Move X0, X8
+	068 Call 0x1F16FB8
+	069 Move X0, X22
+	070 Move W1, W21
+	071 Call BLEProtocol2.CheckSum, X0, X1
+	072 Move TEMP, X0
+	073 And TEMP, TEMP, 1
+	074 Compare TEMP, 1
+	075 JumpIfNotEqual {141}
+	076 Move X8, [X20+24]
+	077 NotImplemented "Instruction CMP not yet implemented."
+	078 Move X9, 0xFFFD
+	079 Or X10, X31, -1
+	080 NotImplemented "Instruction MOVK not yet implemented."
+	081 Move X22, [0x25CDA20]
+	082 Move X0, X20
+	083 Add X9, X9, X8
+	084 Add X8, X10, X8
+	085 Add X10, X20, 32
+	086 Move X2, [X22]
+	087 Move W1, 2
+	088 NotImplemented "Instruction SBFM not yet implemented."
+	089 NotImplemented "Instruction SBFM not yet implemented."
+	090 Move W27, [X10]
+	091 Move W26, [X10]
+	092 Call 0x2364ACC, X0, X1
+	093 Move W8, [X20+24]
+	094 Move X2, [X23]
+	095 Subtract W1, W8, 5
+	096 Call 0x2364DA0, X0, X1
+	097 Move X1, [X24]
+	098 Call Enumerable.ToArray, X0
+	099 Move X8, [X25]
+	100 Move X21, X0
+	101 Move W9, [X8+228]
+	102 Compare W9, 0
+	103 JumpIfNotEqual {106}
+	104 Move X0, X8
+	105 Call 0x1F16FB8
+	106 Add X1, X31, 12
+	107 Add X2, X31, 8
+	108 Move X0, X21
+	109 Call BLEProtocol2.CRC16Checkout, X0, X1, X2
+	110 Move W8, [X31+12]
+	111 NotImplemented "Instruction CMP not yet implemented."
+	112 Move W8, [X31+8]
+	113 NotImplemented "Instruction CMP not yet implemented."
+	114 Move W8, [X20+24]
+	115 NotImplemented "Instruction CMP not yet implemented."
+	116 NotImplemented "Instruction CMP not yet implemented."
+	117 NotImplemented "Instruction LDRH not yet implemented."
+	118 NotImplemented "Instruction REV16 not yet implemented."
+	119 Call BLECommand.GetType, X0
+	120 Move X2, [X22]
+	121 Move W21, W0
+	122 Move X0, X20
+	123 Move W1, 6
+	124 Call 0x2364ACC, X0, X1
+	125 Move W8, [X20+24]
+	126 Move X2, [X23]
+	127 Subtract W1, W8, 9
+	128 Call 0x2364DA0, X0, X1
+	129 Move X1, [X24]
+	130 Call Enumerable.ToArray, X0
+	131 Move X22, X0
+	132 Move X8, [0x25CD188]
+	133 Move X8, [X8]
+	134 Move X0, X8
+	135 Call 0x1F170D4
+	136 Move W1, W21
+	137 Move X2, X22
+	138 Move X20, X0
+	139 Call BLECommand..ctor, X0, X1, X2
+	140 Move W21, 1
+	141 Call BLECommand.GetFailureCommand
+	142 Move X20, X0
+	143 Move W21, W31
+	144 Move X0, X19
+	145 Move X1, X20
+	146 Move [X19], X20
+	147 Call 0x1F16DDC
+	148 Move W0, W21
+	149 Move X20, [X31+80]
+	150 Move X19, [X31+88]
+	151 Move X22, [X31+64]
+	152 Move X21, [X31+72]
+	153 Move X24, [X31+48]
+	154 Move X23, [X31+56]
+	155 Move X26, [X31+32]
+	156 Move X25, [X31+40]
+	157 Move X30, [X31+16]
+	158 Move X27, [X31+24]
+	159 Add X31, X31, 96
+	160 Return X0
+	161 Call 0x1F170E4
+	162 Call 0x1F170EC

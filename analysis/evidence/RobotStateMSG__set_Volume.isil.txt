@@ -1,0 +1,6 @@
+Type: RobotStateMSG
+Method: System.Void set_Volume(System.Int32 value)
+
+ISIL (辅助阅读，不等同完整源码):
+	001 Move [X0+24], W1
+	002 Return 

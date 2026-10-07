@@ -1,0 +1,60 @@
+Type: Unity2BTCommandControl
+Method: System.Void remove_OnDisconneted(System.Action`1<System.String> value)
+
+ISIL (辅助阅读，不等同完整源码):
+	001 Move [X31-64], X30
+	002 Move [X31+16], X24
+	003 Move [X31+24], X23
+	004 Move [X31+32], X22
+	005 Move [X31+40], X21
+	006 Move [X31+48], X20
+	007 Move [X31+56], X19
+	008 Move X19, X0
+	009 Move W8, [0x2897454]
+	010 Move X23, [0x25D40C0]
+	011 Move TEMP, X8
+	012 And TEMP, TEMP, 1
+	013 Compare TEMP, 1
+	014 JumpIfEqual {21}
+	015 Move X0, [0x25D4750]
+	016 Call 0x1F16E38
+	017 Move X0, [0x25D40C0]
+	018 Call 0x1F16E38
+	019 Move W8, 1
+	020 Move [X20+1108], W8
+	021 Move X8, [X23]
+	022 Move X8, [X8+184]
+	023 Move X24, [0x25D4750]
+	024 Move X20, [X8+8]
+	025 Move X0, X20
+	026 Move X1, X19
+	027 Move X2, X31
+	028 Call Delegate.Remove, X0, X1
+	029 Compare X0, 0
+	030 JumpIfEqual {38}
+	031 Move X22, [X24]
+	032 Move X21, X0
+	033 Move X1, X22
+	034 Call 0x1F16FBC
+	035 Move X1, X0
+	036 Compare X0, 0
+	037 JumpIfNotEqual {39}
+	038 Move X1, X31
+	039 Move X8, [X23]
+	040 Move X2, X20
+	041 Move X8, [X8+184]
+	042 Add X0, X8, 8
+	043 Call 0x1F4F9FC
+	044 NotImplemented "Instruction CMP not yet implemented."
+	045 Move X20, X0
+	046 Move X20, [X31+48]
+	047 Move X19, [X31+56]
+	048 Move X22, [X31+32]
+	049 Move X21, [X31+40]
+	050 Move X24, [X31+16]
+	051 Move X23, [X31+24]
+	052 Move X30, [X31+64]
+	053 Return 
+	054 Move X0, X21
+	055 Move X1, X22
+	056 Call 0x1F17464

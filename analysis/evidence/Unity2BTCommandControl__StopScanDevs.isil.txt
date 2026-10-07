@@ -1,0 +1,43 @@
+Type: Unity2BTCommandControl
+Method: System.Void StopScanDevs()
+
+ISIL (辅助阅读，不等同完整源码):
+	001 Move [X31-32], X30
+	002 Move [X31+16], X20
+	003 Move [X31+24], X19
+	004 Move X19, X0
+	005 Move W8, [0x289245B]
+	006 Move TEMP, X8
+	007 And TEMP, TEMP, 1
+	008 Compare TEMP, 1
+	009 JumpIfEqual {16}
+	010 Move X0, [0x25CEE70]
+	011 Call 0x1F16E38
+	012 Move X0, [0x25CF968]
+	013 Call 0x1F16E38
+	014 Move W8, 1
+	015 Move [X20+1115], W8
+	016 Move W8, [X19+16]
+	017 Compare W8, 0
+	018 Invalid "Jump target not found in method."
+	019 Move X0, X31
+	020 Call BluetoothLEHardwareInterface.StopScan
+	021 Move [X19+16], W31
+	022 Move X20, [X31+16]
+	023 Move X19, [X31+24]
+	024 Move X30, [X31+32]
+	025 Return 
+	026 Move X8, [0x25CEE70]
+	027 Move X0, [X8]
+	028 Move W8, [X0+228]
+	029 Compare W8, 0
+	030 Invalid "Jump target not found in method."
+	031 Call 0x1F16FB8
+	032 Move X1, X31
+	033 Move X8, [0x25CF968]
+	034 Move X20, [X31+16]
+	035 Move X19, [X31+24]
+	036 Move X0, [X8]
+	037 Move X30, [X31+32]
+	038 Call Debug.Log, X0
+	039 Return 

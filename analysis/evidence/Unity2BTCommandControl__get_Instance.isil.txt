@@ -1,0 +1,24 @@
+Type: Unity2BTCommandControl
+Method: Unity2BTCommandControl get_Instance()
+
+ISIL (辅助阅读，不等同完整源码):
+	001 Move [X31-32], X30
+	002 Move [X31+16], X20
+	003 Move [X31+24], X19
+	004 Move W8, [0x2892455]
+	005 Move X20, [0x25CF0C0]
+	006 Move TEMP, X8
+	007 And TEMP, TEMP, 1
+	008 Compare TEMP, 1
+	009 JumpIfEqual {14}
+	010 Move X0, [0x25CF0C0]
+	011 Call 0x1F16E38
+	012 Move W8, 1
+	013 Move [X19+1109], W8
+	014 Move X8, [X20]
+	015 Move X20, [X31+16]
+	016 Move X19, [X31+24]
+	017 Move X8, [X8+184]
+	018 Move X0, [X8+16]
+	019 Move X30, [X31+32]
+	020 Return X0

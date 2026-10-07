@@ -1,0 +1,415 @@
+[
+  {
+    "name": "InstructMoves",
+    "decimal": 0,
+    "hex": "0x00",
+    "evidence": "cpp2il/DiffableCs/Assembly-CSharp/BLECommand.cs",
+    "status": "enum confirmed; payload not implied"
+  },
+  {
+    "name": "MoveNorth",
+    "decimal": 1,
+    "hex": "0x01",
+    "evidence": "cpp2il/DiffableCs/Assembly-CSharp/BLECommand.cs",
+    "status": "enum confirmed; payload not implied"
+  },
+  {
+    "name": "MoveNE",
+    "decimal": 2,
+    "hex": "0x02",
+    "evidence": "cpp2il/DiffableCs/Assembly-CSharp/BLECommand.cs",
+    "status": "enum confirmed; payload not implied"
+  },
+  {
+    "name": "MoveEast",
+    "decimal": 3,
+    "hex": "0x03",
+    "evidence": "cpp2il/DiffableCs/Assembly-CSharp/BLECommand.cs",
+    "status": "enum confirmed; payload not implied"
+  },
+  {
+    "name": "MoveSE",
+    "decimal": 4,
+    "hex": "0x04",
+    "evidence": "cpp2il/DiffableCs/Assembly-CSharp/BLECommand.cs",
+    "status": "enum confirmed; payload not implied"
+  },
+  {
+    "name": "MoveSouth",
+    "decimal": 5,
+    "hex": "0x05",
+    "evidence": "cpp2il/DiffableCs/Assembly-CSharp/BLECommand.cs",
+    "status": "enum confirmed; payload not implied"
+  },
+  {
+    "name": "MoveSW",
+    "decimal": 6,
+    "hex": "0x06",
+    "evidence": "cpp2il/DiffableCs/Assembly-CSharp/BLECommand.cs",
+    "status": "enum confirmed; payload not implied"
+  },
+  {
+    "name": "MoveWest",
+    "decimal": 7,
+    "hex": "0x07",
+    "evidence": "cpp2il/DiffableCs/Assembly-CSharp/BLECommand.cs",
+    "status": "enum confirmed; payload not implied"
+  },
+  {
+    "name": "MoveNW",
+    "decimal": 8,
+    "hex": "0x08",
+    "evidence": "cpp2il/DiffableCs/Assembly-CSharp/BLECommand.cs",
+    "status": "enum confirmed; payload not implied"
+  },
+  {
+    "name": "RegularMoves",
+    "decimal": 9,
+    "hex": "0x09",
+    "evidence": "cpp2il/DiffableCs/Assembly-CSharp/BLECommand.cs",
+    "status": "enum confirmed; payload not implied"
+  },
+  {
+    "name": "Transform",
+    "decimal": 10,
+    "hex": "0x0A",
+    "evidence": "cpp2il/DiffableCs/Assembly-CSharp/BLECommand.cs",
+    "status": "enum confirmed; payload not implied"
+  },
+  {
+    "name": "HandShake",
+    "decimal": 11,
+    "hex": "0x0B",
+    "evidence": "cpp2il/DiffableCs/Assembly-CSharp/BLECommand.cs",
+    "status": "enum confirmed; payload not implied"
+  },
+  {
+    "name": "StopMove",
+    "decimal": 12,
+    "hex": "0x0C",
+    "evidence": "cpp2il/DiffableCs/Assembly-CSharp/BLECommand.cs",
+    "status": "enum confirmed; payload not implied"
+  },
+  {
+    "name": "VoiceControl",
+    "decimal": 13,
+    "hex": "0x0D",
+    "evidence": "cpp2il/DiffableCs/Assembly-CSharp/BLECommand.cs",
+    "status": "enum confirmed; payload not implied"
+  },
+  {
+    "name": "NoneUsed",
+    "decimal": 14,
+    "hex": "0x0E",
+    "evidence": "cpp2il/DiffableCs/Assembly-CSharp/BLECommand.cs",
+    "status": "enum confirmed; payload not implied"
+  },
+  {
+    "name": "States",
+    "decimal": 15,
+    "hex": "0x0F",
+    "evidence": "cpp2il/DiffableCs/Assembly-CSharp/BLECommand.cs",
+    "status": "enum confirmed; payload not implied"
+  },
+  {
+    "name": "GetUserActionName",
+    "decimal": 16,
+    "hex": "0x10",
+    "evidence": "cpp2il/DiffableCs/Assembly-CSharp/BLECommand.cs",
+    "status": "enum confirmed; payload not implied"
+  },
+  {
+    "name": "GyrosOfforOn",
+    "decimal": 17,
+    "hex": "0x11",
+    "evidence": "cpp2il/DiffableCs/Assembly-CSharp/BLECommand.cs",
+    "status": "enum confirmed; payload not implied"
+  },
+  {
+    "name": "RobotAutoOff",
+    "decimal": 19,
+    "hex": "0x13",
+    "evidence": "cpp2il/DiffableCs/Assembly-CSharp/BLECommand.cs",
+    "status": "enum confirmed; payload not implied"
+  },
+  {
+    "name": "GetOffActionName",
+    "decimal": 20,
+    "hex": "0x14",
+    "evidence": "cpp2il/DiffableCs/Assembly-CSharp/BLECommand.cs",
+    "status": "enum confirmed; payload not implied"
+  },
+  {
+    "name": "OfficialMoves",
+    "decimal": 21,
+    "hex": "0x15",
+    "evidence": "cpp2il/DiffableCs/Assembly-CSharp/BLECommand.cs",
+    "status": "enum confirmed; payload not implied"
+  },
+  {
+    "name": "GetFolderActionNames",
+    "decimal": 22,
+    "hex": "0x16",
+    "evidence": "cpp2il/DiffableCs/Assembly-CSharp/BLECommand.cs",
+    "status": "enum confirmed; payload not implied"
+  },
+  {
+    "name": "FolderActionNameMovesOrActionProgress",
+    "decimal": 23,
+    "hex": "0x17",
+    "evidence": "cpp2il/DiffableCs/Assembly-CSharp/BLECommand.cs",
+    "status": "enum confirmed; payload not implied"
+  },
+  {
+    "name": "GetFolderAudioNames",
+    "decimal": 24,
+    "hex": "0x18",
+    "evidence": "cpp2il/DiffableCs/Assembly-CSharp/BLECommand.cs",
+    "status": "enum confirmed; payload not implied"
+  },
+  {
+    "name": "PlayAudioInFolder",
+    "decimal": 25,
+    "hex": "0x19",
+    "evidence": "cpp2il/DiffableCs/Assembly-CSharp/BLECommand.cs",
+    "status": "enum confirmed; payload not implied"
+  },
+  {
+    "name": "SetAutoTurn",
+    "decimal": 26,
+    "hex": "0x1A",
+    "evidence": "cpp2il/DiffableCs/Assembly-CSharp/BLECommand.cs",
+    "status": "enum confirmed; payload not implied"
+  },
+  {
+    "name": "SetAutoPose",
+    "decimal": 27,
+    "hex": "0x1B",
+    "evidence": "cpp2il/DiffableCs/Assembly-CSharp/BLECommand.cs",
+    "status": "enum confirmed; payload not implied"
+  },
+  {
+    "name": "前进",
+    "decimal": 51,
+    "hex": "0x33",
+    "evidence": "cpp2il/DiffableCs/Assembly-CSharp/BLECommand.cs",
+    "status": "enum confirmed; payload not implied"
+  },
+  {
+    "name": "后退",
+    "decimal": 52,
+    "hex": "0x34",
+    "evidence": "cpp2il/DiffableCs/Assembly-CSharp/BLECommand.cs",
+    "status": "enum confirmed; payload not implied"
+  },
+  {
+    "name": "开火",
+    "decimal": 54,
+    "hex": "0x36",
+    "evidence": "cpp2il/DiffableCs/Assembly-CSharp/BLECommand.cs",
+    "status": "enum confirmed; payload not implied"
+  },
+  {
+    "name": "左转",
+    "decimal": 55,
+    "hex": "0x37",
+    "evidence": "cpp2il/DiffableCs/Assembly-CSharp/BLECommand.cs",
+    "status": "enum confirmed; payload not implied"
+  },
+  {
+    "name": "右转",
+    "decimal": 56,
+    "hex": "0x38",
+    "evidence": "cpp2il/DiffableCs/Assembly-CSharp/BLECommand.cs",
+    "status": "enum confirmed; payload not implied"
+  },
+  {
+    "name": "左移",
+    "decimal": 57,
+    "hex": "0x39",
+    "evidence": "cpp2il/DiffableCs/Assembly-CSharp/BLECommand.cs",
+    "status": "enum confirmed; payload not implied"
+  },
+  {
+    "name": "右移",
+    "decimal": 58,
+    "hex": "0x3A",
+    "evidence": "cpp2il/DiffableCs/Assembly-CSharp/BLECommand.cs",
+    "status": "enum confirmed; payload not implied"
+  },
+  {
+    "name": "人前进",
+    "decimal": 59,
+    "hex": "0x3B",
+    "evidence": "cpp2il/DiffableCs/Assembly-CSharp/BLECommand.cs",
+    "status": "enum confirmed; payload not implied"
+  },
+  {
+    "name": "车前进",
+    "decimal": 60,
+    "hex": "0x3C",
+    "evidence": "cpp2il/DiffableCs/Assembly-CSharp/BLECommand.cs",
+    "status": "enum confirmed; payload not implied"
+  },
+  {
+    "name": "SetRobotLit",
+    "decimal": 110,
+    "hex": "0x6E",
+    "evidence": "cpp2il/DiffableCs/Assembly-CSharp/BLECommand.cs",
+    "status": "enum confirmed; payload not implied"
+  },
+  {
+    "name": "CreatNewRobotActionFileAndDone",
+    "decimal": 220,
+    "hex": "0xDC",
+    "evidence": "cpp2il/DiffableCs/Assembly-CSharp/BLECommand.cs",
+    "status": "enum confirmed; payload not implied"
+  },
+  {
+    "name": "DeleteActionByFilePath",
+    "decimal": 221,
+    "hex": "0xDD",
+    "evidence": "cpp2il/DiffableCs/Assembly-CSharp/BLECommand.cs",
+    "status": "enum confirmed; payload not implied"
+  },
+  {
+    "name": "WriteDataToNewFileAndWriteSuccess",
+    "decimal": 227,
+    "hex": "0xE3",
+    "evidence": "cpp2il/DiffableCs/Assembly-CSharp/BLECommand.cs",
+    "status": "enum confirmed; payload not implied"
+  },
+  {
+    "name": "WriteDataToNewFileDone",
+    "decimal": 222,
+    "hex": "0xDE",
+    "evidence": "cpp2il/DiffableCs/Assembly-CSharp/BLECommand.cs",
+    "status": "enum confirmed; payload not implied"
+  },
+  {
+    "name": "InEditor",
+    "decimal": 230,
+    "hex": "0xE6",
+    "evidence": "cpp2il/DiffableCs/Assembly-CSharp/BLECommand.cs",
+    "status": "enum confirmed; payload not implied"
+  },
+  {
+    "name": "ExitEditor",
+    "decimal": 231,
+    "hex": "0xE7",
+    "evidence": "cpp2il/DiffableCs/Assembly-CSharp/BLECommand.cs",
+    "status": "enum confirmed; payload not implied"
+  },
+  {
+    "name": "MoveJoint",
+    "decimal": 232,
+    "hex": "0xE8",
+    "evidence": "cpp2il/DiffableCs/Assembly-CSharp/BLECommand.cs",
+    "status": "enum confirmed; payload not implied"
+  },
+  {
+    "name": "RobotUpJoint",
+    "decimal": 233,
+    "hex": "0xE9",
+    "evidence": "cpp2il/DiffableCs/Assembly-CSharp/BLECommand.cs",
+    "status": "enum confirmed; payload not implied"
+  },
+  {
+    "name": "UnLockAllJoint",
+    "decimal": 234,
+    "hex": "0xEA",
+    "evidence": "cpp2il/DiffableCs/Assembly-CSharp/BLECommand.cs",
+    "status": "enum confirmed; payload not implied"
+  },
+  {
+    "name": "LockAllJoint",
+    "decimal": 235,
+    "hex": "0xEB",
+    "evidence": "cpp2il/DiffableCs/Assembly-CSharp/BLECommand.cs",
+    "status": "enum confirmed; payload not implied"
+  },
+  {
+    "name": "OneJointLockControl",
+    "decimal": 236,
+    "hex": "0xEC",
+    "evidence": "cpp2il/DiffableCs/Assembly-CSharp/BLECommand.cs",
+    "status": "enum confirmed; payload not implied"
+  },
+  {
+    "name": "JointLockControl",
+    "decimal": 237,
+    "hex": "0xED",
+    "evidence": "cpp2il/DiffableCs/Assembly-CSharp/BLECommand.cs",
+    "status": "enum confirmed; payload not implied"
+  },
+  {
+    "name": "PlayAudioControl",
+    "decimal": 238,
+    "hex": "0xEE",
+    "evidence": "cpp2il/DiffableCs/Assembly-CSharp/BLECommand.cs",
+    "status": "enum confirmed; payload not implied"
+  },
+  {
+    "name": "GetRobotSN",
+    "decimal": 241,
+    "hex": "0xF1",
+    "evidence": "cpp2il/DiffableCs/Assembly-CSharp/BLECommand.cs",
+    "status": "enum confirmed; payload not implied"
+  },
+  {
+    "name": "RobotNormalPos",
+    "decimal": 244,
+    "hex": "0xF4",
+    "evidence": "cpp2il/DiffableCs/Assembly-CSharp/BLECommand.cs",
+    "status": "enum confirmed; payload not implied"
+  },
+  {
+    "name": "RobotOnUSBMode",
+    "decimal": 245,
+    "hex": "0xF5",
+    "evidence": "cpp2il/DiffableCs/Assembly-CSharp/BLECommand.cs",
+    "status": "enum confirmed; payload not implied"
+  },
+  {
+    "name": "GetRobotKindName",
+    "decimal": 246,
+    "hex": "0xF6",
+    "evidence": "cpp2il/DiffableCs/Assembly-CSharp/BLECommand.cs",
+    "status": "enum confirmed; payload not implied"
+  },
+  {
+    "name": "GetRobotVersion",
+    "decimal": 247,
+    "hex": "0xF7",
+    "evidence": "cpp2il/DiffableCs/Assembly-CSharp/BLECommand.cs",
+    "status": "enum confirmed; payload not implied"
+  },
+  {
+    "name": "GetRobotVersionDate",
+    "decimal": 248,
+    "hex": "0xF8",
+    "evidence": "cpp2il/DiffableCs/Assembly-CSharp/BLECommand.cs",
+    "status": "enum confirmed; payload not implied"
+  },
+  {
+    "name": "GetFileNameDoneorRobotShutDown",
+    "decimal": 250,
+    "hex": "0xFA",
+    "evidence": "cpp2il/DiffableCs/Assembly-CSharp/BLECommand.cs",
+    "status": "enum confirmed; payload not implied"
+  },
+  {
+    "name": "NonType",
+    "decimal": 255,
+    "hex": "0xFF",
+    "evidence": "cpp2il/DiffableCs/Assembly-CSharp/BLECommand.cs",
+    "status": "enum confirmed; payload not implied"
+  },
+  {
+    "name": "FailureCommand",
+    "decimal": -1,
+    "hex": "-1",
+    "evidence": "cpp2il/DiffableCs/Assembly-CSharp/BLECommand.cs",
+    "status": "enum confirmed; payload not implied"
+  }
+]

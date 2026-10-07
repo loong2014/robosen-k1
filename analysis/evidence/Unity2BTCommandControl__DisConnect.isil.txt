@@ -1,0 +1,51 @@
+Type: Unity2BTCommandControl
+Method: System.Void DisConnect()
+
+ISIL (辅助阅读，不等同完整源码):
+	001 Move [X31-16], X30
+	002 Move [X31-8], X19
+	003 Move W8, [0x289245D]
+	004 Move TEMP, X8
+	005 And TEMP, TEMP, 1
+	006 Compare TEMP, 1
+	007 Invalid "Jump target not found in method."
+	008 Move X0, [0x25CEE70]
+	009 Call 0x1F16E38
+	010 Move X0, [0x25CF970]
+	011 Call 0x1F16E38
+	012 Move W8, 1
+	013 Move [X19+1117], W8
+	014 Move W8, [0x28914AF]
+	015 Compare W8, 0
+	016 Invalid "Jump target not found in method."
+	017 Move X0, [0x25CE0C0]
+	018 Call 0x1F16E38
+	019 Move W8, 1
+	020 Move [X19+1199], W8
+	021 Move X8, [0x25CE0C0]
+	022 Move X8, [X8]
+	023 Move X8, [X8+184]
+	024 Move X8, [X8+24]
+	025 Compare X8, 0
+	026 Invalid "Jump target not found in method."
+	027 Move X0, [X8+16]
+	028 Move X1, X31
+	029 Move X2, X31
+	030 Move X30, [X31+16]
+	031 Move X19, [X31+24]
+	032 Call BluetoothLEHardwareInterface.DisconnectPeripheral, X0, X1
+	033 Return 
+	034 Move X8, [0x25CDE70]
+	035 Move X0, [X8]
+	036 Move W8, [X0+228]
+	037 Compare W8, 0
+	038 Invalid "Jump target not found in method."
+	039 Call 0x1F16FB8
+	040 Move X1, X31
+	041 Move X8, [0x25CE970]
+	042 Move X0, [X8]
+	043 Move X30, [X31+16]
+	044 Move X19, [X31+24]
+	045 Call Debug.Log, X0
+	046 Return 
+

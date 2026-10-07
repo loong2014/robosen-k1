@@ -1,0 +1,489 @@
+{
+  "native_encoder_va": "0x2040048",
+  "native_checksum_va": "0x204377c",
+  "native_cases": 96,
+  "stream_chunk_sizes": 31,
+  "cases": [
+    {
+      "command": 11,
+      "payload_length": 0,
+      "frame": "ff ff 02 0b 0d"
+    },
+    {
+      "command": 15,
+      "payload_length": 0,
+      "frame": "ff ff 02 0f 11"
+    },
+    {
+      "command": 12,
+      "payload_length": 0,
+      "frame": "ff ff 02 0c 0e"
+    },
+    {
+      "command": 13,
+      "payload_length": 1,
+      "frame": "ff ff 03 0d 32 42"
+    },
+    {
+      "command": 232,
+      "payload_length": 3,
+      "frame": "ff ff 05 e8 01 02 03 f3"
+    },
+    {
+      "command": 248,
+      "payload_length": 0,
+      "frame": "ff ff 02 f8 fa"
+    },
+    {
+      "command": 115,
+      "payload_length": 0,
+      "frame": "ff ff 02 73 75"
+    },
+    {
+      "command": 149,
+      "payload_length": 0,
+      "frame": "ff ff 02 95 97"
+    },
+    {
+      "command": 111,
+      "payload_length": 0,
+      "frame": "ff ff 02 6f 71"
+    },
+    {
+      "command": 116,
+      "payload_length": 0,
+      "frame": "ff ff 02 74 76"
+    },
+    {
+      "command": 10,
+      "payload_length": 0,
+      "frame": "ff ff 02 0a 0c"
+    },
+    {
+      "command": 186,
+      "payload_length": 0,
+      "frame": "ff ff 02 ba bc"
+    },
+    {
+      "command": 196,
+      "payload_length": 0,
+      "frame": "ff ff 02 c4 c6"
+    },
+    {
+      "command": 131,
+      "payload_length": 0,
+      "frame": "ff ff 02 83 85"
+    },
+    {
+      "command": 172,
+      "payload_length": 0,
+      "frame": "ff ff 02 ac ae"
+    },
+    {
+      "command": 218,
+      "payload_length": 0,
+      "frame": "ff ff 02 da dc"
+    },
+    {
+      "command": 171,
+      "payload_length": 1,
+      "frame": "ff ff 03 ab ed 9b"
+    },
+    {
+      "command": 121,
+      "payload_length": 1,
+      "frame": "ff ff 03 79 e8 64"
+    },
+    {
+      "command": 172,
+      "payload_length": 1,
+      "frame": "ff ff 03 ac ad 5c"
+    },
+    {
+      "command": 225,
+      "payload_length": 1,
+      "frame": "ff ff 03 e1 d8 bc"
+    },
+    {
+      "command": 177,
+      "payload_length": 1,
+      "frame": "ff ff 03 b1 d2 86"
+    },
+    {
+      "command": 88,
+      "payload_length": 1,
+      "frame": "ff ff 03 58 19 74"
+    },
+    {
+      "command": 229,
+      "payload_length": 1,
+      "frame": "ff ff 03 e5 b1 99"
+    },
+    {
+      "command": 81,
+      "payload_length": 1,
+      "frame": "ff ff 03 51 ed 41"
+    },
+    {
+      "command": 21,
+      "payload_length": 1,
+      "frame": "ff ff 03 15 c1 d9"
+    },
+    {
+      "command": 64,
+      "payload_length": 1,
+      "frame": "ff ff 03 40 46 89"
+    },
+    {
+      "command": 127,
+      "payload_length": 2,
+      "frame": "ff ff 04 7f 51 b8 8c"
+    },
+    {
+      "command": 220,
+      "payload_length": 2,
+      "frame": "ff ff 04 dc 1a aa a4"
+    },
+    {
+      "command": 89,
+      "payload_length": 2,
+      "frame": "ff ff 04 59 4e 9b 46"
+    },
+    {
+      "command": 169,
+      "payload_length": 2,
+      "frame": "ff ff 04 a9 5b 7c 84"
+    },
+    {
+      "command": 68,
+      "payload_length": 2,
+      "frame": "ff ff 04 44 a0 68 50"
+    },
+    {
+      "command": 7,
+      "payload_length": 2,
+      "frame": "ff ff 04 07 d2 60 3d"
+    },
+    {
+      "command": 249,
+      "payload_length": 2,
+      "frame": "ff ff 04 f9 9c 8a 23"
+    },
+    {
+      "command": 146,
+      "payload_length": 2,
+      "frame": "ff ff 04 92 df ae 23"
+    },
+    {
+      "command": 118,
+      "payload_length": 2,
+      "frame": "ff ff 04 76 f2 ec 58"
+    },
+    {
+      "command": 173,
+      "payload_length": 2,
+      "frame": "ff ff 04 ad d8 32 bb"
+    },
+    {
+      "command": 33,
+      "payload_length": 8,
+      "frame": "ff ff 0a 21 34 f9 4d 32 de f2 92 e0 19"
+    },
+    {
+      "command": 36,
+      "payload_length": 8,
+      "frame": "ff ff 0a 24 91 09 58 4d 24 6b 23 7e 9d"
+    },
+    {
+      "command": 245,
+      "payload_length": 8,
+      "frame": "ff ff 0a f5 5a b4 d8 98 e6 b2 20 2b 60"
+    },
+    {
+      "command": 213,
+      "payload_length": 8,
+      "frame": "ff ff 0a d5 33 b1 91 76 0f 7b 95 04 ed"
+    },
+    {
+      "command": 78,
+      "payload_length": 8,
+      "frame": "ff ff 0a 4e 74 ec 4c fe 48 0a b9 9d aa"
+    },
+    {
+      "command": 182,
+      "payload_length": 8,
+      "frame": "ff ff 0a b6 cc 32 74 0f bc 36 f8 11 3c"
+    },
+    {
+      "command": 14,
+      "payload_length": 8,
+      "frame": "ff ff 0a 0e 5d f4 2e 45 f9 3a ea 52 4b"
+    },
+    {
+      "command": 49,
+      "payload_length": 8,
+      "frame": "ff ff 0a 31 6a 5c d4 0e 7b 3c 14 17 c5"
+    },
+    {
+      "command": 208,
+      "payload_length": 8,
+      "frame": "ff ff 0a d0 97 e5 c7 69 5d 2c 83 1e b0"
+    },
+    {
+      "command": 206,
+      "payload_length": 8,
+      "frame": "ff ff 0a ce 0e e5 b2 4e a3 ab d6 5c 4b"
+    },
+    {
+      "command": 133,
+      "payload_length": 16,
+      "frame": "ff ff 12 85 b9 8c 2a ad b9 eb 4c 1d 5e 11 a3 a6 84 ae e0 f3 7d"
+    },
+    {
+      "command": 119,
+      "payload_length": 16,
+      "frame": "ff ff 12 77 1b db ba 4a f4 28 a9 4a 53 1e b9 90 29 f7 b4 a8 c8"
+    },
+    {
+      "command": 54,
+      "payload_length": 16,
+      "frame": "ff ff 12 36 45 b1 ed db b8 4c ca 3e 35 43 41 60 53 f3 05 a1 17"
+    },
+    {
+      "command": 178,
+      "payload_length": 16,
+      "frame": "ff ff 12 b2 f1 d7 f3 b4 75 53 35 01 84 ec 5a cb db 09 ce 06 7e"
+    },
+    {
+      "command": 243,
+      "payload_length": 16,
+      "frame": "ff ff 12 f3 92 6f dc 4d 32 32 c1 ee 46 64 f2 52 01 79 e7 71 02"
+    },
+    {
+      "command": 75,
+      "payload_length": 16,
+      "frame": "ff ff 12 4b 3a 3e ce 04 45 49 fc 86 40 16 36 28 20 1d d1 c6 3f"
+    },
+    {
+      "command": 225,
+      "payload_length": 16,
+      "frame": "ff ff 12 e1 56 eb 67 ea 72 9c c9 f9 4e f2 4f 8d d7 68 40 8c 7c"
+    },
+    {
+      "command": 112,
+      "payload_length": 16,
+      "frame": "ff ff 12 70 44 06 7e 02 c4 b2 8c fc c0 3b 3e 45 9c 88 8c 8e 06"
+    },
+    {
+      "command": 188,
+      "payload_length": 16,
+      "frame": "ff ff 12 bc e0 22 55 51 f9 2a f6 2f ac 6a a3 5a 22 88 7e 42 3b"
+    },
+    {
+      "command": 208,
+      "payload_length": 16,
+      "frame": "ff ff 12 d0 24 96 fb 6d b8 53 d4 7f a1 be 14 b5 96 0d a8 7d 52"
+    },
+    {
+      "command": 191,
+      "payload_length": 20,
+      "frame": "ff ff 16 bf a3 c4 4f 1f b0 43 d3 65 ec 0a f2 42 23 95 89 5d 94 d9 c7 ed be"
+    },
+    {
+      "command": 131,
+      "payload_length": 20,
+      "frame": "ff ff 16 83 57 d3 bd 83 ee 5d 33 76 bc b7 c3 d4 5c 6b 15 fb 9c 97 67 59 cb"
+    },
+    {
+      "command": 24,
+      "payload_length": 20,
+      "frame": "ff ff 16 18 3f f8 5b 48 ce d3 ee 62 71 cb ee 64 51 dc 27 55 71 a5 9a 04 e4"
+    },
+    {
+      "command": 129,
+      "payload_length": 20,
+      "frame": "ff ff 16 81 4b 8b 76 88 a2 86 76 da 53 b3 3e 7c e6 32 75 cd 24 db cc 53 1b"
+    },
+    {
+      "command": 157,
+      "payload_length": 20,
+      "frame": "ff ff 16 9d 43 66 9b d6 90 df 3d 5e 92 55 0a 69 88 86 7f 9a 33 58 8b 13 81"
+    },
+    {
+      "command": 207,
+      "payload_length": 20,
+      "frame": "ff ff 16 cf 27 da c5 5e f2 51 28 90 de 0a c3 21 bc d9 d2 e7 2f 26 52 90 55"
+    },
+    {
+      "command": 7,
+      "payload_length": 20,
+      "frame": "ff ff 16 07 09 8f 26 66 93 36 d6 80 a9 1c ab c8 a5 09 08 eb be 64 d6 9c cd"
+    },
+    {
+      "command": 143,
+      "payload_length": 20,
+      "frame": "ff ff 16 8f bf 01 a7 49 a4 17 bb cd e9 12 fc 31 b3 8f ce 5a 4a f8 dc 72 ba"
+    },
+    {
+      "command": 253,
+      "payload_length": 20,
+      "frame": "ff ff 16 fd 69 dd c6 df 44 5a 53 30 ee 66 9f 24 80 58 ef 87 60 02 ec be 90"
+    },
+    {
+      "command": 194,
+      "payload_length": 20,
+      "frame": "ff ff 16 c2 9f b1 38 3f cd 03 51 fb 19 44 d8 09 05 29 24 6d 8c f1 ea 70 8f"
+    },
+    {
+      "command": 202,
+      "payload_length": 128,
+      "frame": "ff ff 82 ca f2 cc e1 54 98 5b 88 a6 ab 23 af 7b 8b e3 6a bd 68 80 b0 35 c5 05 fa da 81 5f bc 01 a1 08 b1 6f aa 8c ca c6 34 d9 ae 5a 43 ca 5c fc 6f 1e 59 c6 0d 22 14 15 04 33 85 5c d9 84 bb 27 75 c7 f6 26 4b 54 84 40 0c 2c 25 36 47 84 51 41 06 2a d1 7c b9 dc b5 6d af 78 96 7f 78 9c e4 8c 6d 75 9a 2f 2d 8f 75 f7 d2 24 20 f1 13 3e 56 62 53 48 e1 25 d2 6f bc 67 c6 1e f4 c9 87 8a 67 1f 10 60 1c 58 fc"
+    },
+    {
+      "command": 230,
+      "payload_length": 128,
+      "frame": "ff ff 82 e6 26 1c 6a db af ed 0e 3f 19 7e 50 df 99 ee 40 cf d8 e2 ab 37 16 0b 7a 9f 5c 0a 60 03 33 c3 66 dc f8 e2 cd 88 a0 83 0f 5c 24 b4 c9 e0 d3 6e 05 ac 67 f0 40 d1 fe e1 a7 80 ce 02 ab ac be e3 29 7a 51 47 d5 47 ad 84 6b 78 5f 74 b0 ff a1 95 81 37 cd 11 9a 5e e2 95 15 23 15 44 ed af 67 bb 38 f3 ea 0c 4d a7 c0 49 2c 8b fe d6 fa 57 8d e2 00 73 9f d5 7d ba 4e 25 48 0a c5 51 59 ae 6b 90 b7 fc ff"
+    },
+    {
+      "command": 217,
+      "payload_length": 128,
+      "frame": "ff ff 82 d9 44 28 73 35 7b 87 18 64 c3 f4 cf 45 75 48 72 4e 53 17 6c 08 e1 7d 52 28 65 05 a8 12 6e d1 3b 62 73 c2 64 d1 4c b8 88 cc 3b 0c 9b 3c 40 d7 b4 c4 3f c5 a3 53 6e c5 1a 2d 72 7d 0f 90 c3 d5 f6 83 74 21 6e d5 db ea e1 05 9c d1 08 30 06 11 69 bc c5 55 04 78 ca 0b 1b 84 2e 78 dd 5c 91 48 47 e4 8c cd e4 57 51 91 ba c1 16 c5 7a 2f 02 f5 f5 55 b0 65 13 9f 88 c0 2b 85 00 af 2f 27 5d 9c 8a 0d c8"
+    },
+    {
+      "command": 14,
+      "payload_length": 128,
+      "frame": "ff ff 82 0e 7d 1e 6c be b7 90 18 5f d6 b3 6b 31 3e 48 fb 45 94 b5 f7 2b 89 6d c1 99 bd 47 4b 28 ee 00 a0 33 bf 30 ea b3 0c 68 63 e9 2b 51 72 2e 50 dc 7c dc a7 da 1d 60 de 8c 8c 1e 61 ee c6 86 7c 62 5b ca 09 d6 64 4b b3 2d fd 79 8c 2c 96 b3 b7 58 78 6d d2 83 28 fd 92 14 4d a9 f8 63 66 34 ff 99 2e 28 2f 09 d4 be a3 88 1f 13 1f 74 ee 63 e9 de 6b 20 d6 61 6b ed d4 9c db 5d e5 e4 28 d3 2b 9e 23 23 c6"
+    },
+    {
+      "command": 119,
+      "payload_length": 128,
+      "frame": "ff ff 82 77 2e 65 6d 39 5f 2d 1c d2 62 6b 65 b4 a3 52 56 47 d2 bc 2d 33 f8 92 61 07 64 2f e7 a3 3c aa 6a 84 1f e0 68 71 13 ae fb 04 a0 84 ff d9 21 c1 f0 b5 f4 40 17 fe 92 2f fa 9a d0 92 31 67 2e a7 9f dc 1e 5c a3 1d 6e e8 d2 1f 52 e5 1c e7 d2 94 39 27 bd ca 75 13 5c 34 8f 88 c0 f0 7f 0d 67 14 ae 58 05 2c 33 0d 45 4c 27 37 2e dc b7 2e c3 40 47 22 28 b1 0f f4 a1 63 f4 10 56 c8 40 d5 0d c9 a7 74 af"
+    },
+    {
+      "command": 179,
+      "payload_length": 128,
+      "frame": "ff ff 82 b3 58 10 6f 36 ce ea df 4f 99 a5 0d a0 e0 d4 2c 10 ef 3c 8a 27 14 c9 bc 78 b2 d6 fb c4 52 cf 4d 68 cb a6 28 40 b4 84 1b d5 3a 00 c5 1f 49 54 4f 05 a0 a2 d5 9d 42 73 e0 6c e2 f9 a7 ee 08 0a 8a c2 84 a9 79 d5 d9 43 b6 75 70 15 2a 04 f2 cf 00 56 cb 42 23 37 77 34 a4 72 3f 0e fa 39 a8 3d 73 8c 3c 06 0f db 2a 4a 72 84 c8 a3 48 77 52 c0 45 31 af ed 5f 19 64 26 73 80 bc 6d 3a 1a 43 37 06 4c da"
+    },
+    {
+      "command": 195,
+      "payload_length": 128,
+      "frame": "ff ff 82 c3 81 56 59 0b fb 02 1f f5 09 26 5d f8 14 d1 2d a2 92 6b 56 8f 55 48 c1 d8 49 8d b1 3d 5a 3b de 65 6e 73 2a 3e ab a1 bb c0 ea 8e 24 15 5c 59 10 a3 99 74 f4 26 f1 0d 95 c6 fb d7 ae 8f d7 f3 c3 a8 d7 86 d0 84 be cc 6d ad d9 69 4f 90 bb 70 42 10 3e 19 c0 9b 81 4c 2e 28 77 25 fc 0b f6 c1 a1 b2 0a e3 f1 5e 38 51 b5 29 33 52 95 0a c5 d7 02 1b 61 6a d6 41 67 86 60 07 eb 0b fe ef d0 09 5f 2b db"
+    },
+    {
+      "command": 27,
+      "payload_length": 128,
+      "frame": "ff ff 82 1b b5 50 36 33 bb fd 63 ef 45 89 fb b3 05 3a fd 5c eb 57 35 ac c0 16 fb a9 a9 9e 38 4d ef b4 0d fe 9a e8 65 0e bc 64 e8 92 98 58 49 fa 9c e4 ff 9a e8 14 fe 41 51 4e 34 c7 f2 0c 6c b6 e4 e8 6e ea 87 d1 03 c5 f5 2c c3 da 7b 1c c2 ac fa b3 fd 1a 0b c6 a4 2d 7f f7 ca 26 1b c7 25 55 42 a4 0e cc f2 97 ac a9 ab 8d f9 62 13 32 02 17 24 32 26 6f 45 20 be df 19 e9 ac 33 77 9e fd 49 87 25 f8 d8 73"
+    },
+    {
+      "command": 245,
+      "payload_length": 128,
+      "frame": "ff ff 82 f5 17 8d a0 5c 3e 51 4b e6 ae 6a 0e d9 21 6a 8f e1 2f 2b fb 86 64 b4 3d d5 f4 0c 21 9c b8 2d 28 0a 16 38 b8 ec 28 04 8d 40 b7 24 ca fe 3a 0a 8a 9e f5 10 80 1d db 7c 59 af be a6 23 7c 44 6e ab c6 52 fe b4 9c 5b 47 4c 03 bb bf f0 09 f6 6c cc e4 24 9b ee d8 68 d5 58 a3 3a a4 af 28 61 b6 85 90 20 23 78 12 1c 6c c8 e5 2f b3 2d da 5a d9 2f fb 69 03 10 af 4f fb 61 69 ff 73 b7 15 8f a2 06 5c d7"
+    },
+    {
+      "command": 180,
+      "payload_length": 128,
+      "frame": "ff ff 82 b4 de f6 18 80 58 c4 64 19 96 f7 57 05 6b 79 1a bb 59 8d fa f6 33 3d b7 37 56 30 1b 9c ad ca 97 4d 85 4b 8f 01 ab 8b fd 03 61 5e 09 7e 29 cf 09 87 ef 11 b2 52 ca 97 b8 cb 40 5d b1 4e 69 09 52 99 df 2e 19 fd ea 83 1b c0 f9 ce 15 a1 fe b4 6d fc ad 8b bd 94 04 e5 7e 2e 46 8c dd ba 48 56 61 15 2f 4a 5f 7f ec b6 65 57 52 34 be 52 0d f2 d6 aa 83 63 43 50 14 c5 9b 0d b6 b8 3c 0d 75 bb d9 9d ad"
+    },
+    {
+      "command": 45,
+      "payload_length": 252,
+      "frame": "ff ff fe 2d 88 d7 7f 49 f5 3a 2b 13 4a 78 64 6c 6f c5 59 02 2f 4d cb 29 eb 7e 18 d6 b0 6a 4f 58 0e 6a 17 5f 55 f5 07 2e 7a 8c 58 33 c3 72 c7 7b 1c 93 2f fc f5 65 7a 52 c9 54 95 ba 22 a8 ba 51 af 24 31 5d 62 ce 2f 3d 31 3e 1f 6d 5e 30 d7 e7 f2 70 4a dd c6 a3 27 85 3d ae 06 2e 14 20 2d 52 b9 56 d5 00 2e 16 e7 6b fb 45 76 13 41 bf 4c 7c 1b 2e 37 21 29 3c aa cb b1 54 6f 94 3a c6 42 35 e0 74 b3 03 fb 85 db 7f c0 b7 06 7d b7 22 f9 16 34 76 72 6b dd 13 52 00 08 49 29 b1 58 ad 61 f7 23 6d 21 c7 3b 43 f7 a8 83 28 22 ab ab 8d 4b ad 80 ef 21 ca f1 f8 8b 1f a9 13 65 3d 27 74 3e 92 b3 56 48 6c ba 11 38 36 f1 6b fa 27 d9 6d 3d 47 9f 8a d6 3c 32 97 df 8e 6e ff cc f4 cb 4a 07 36 03 c3 c5 f4 3c 70 40 94 46 dc 2e 8e 7e ba d8 3e 9a 75 87 26 d3 4d 5c 01 b6 52 22 f9 93 6d 4f 12 f6"
+    },
+    {
+      "command": 206,
+      "payload_length": 252,
+      "frame": "ff ff fe ce 86 cd 6e c4 e8 62 b0 e5 00 52 14 b3 24 ef 9c 96 0a a6 0e 32 ad b7 57 a8 29 51 08 6b 82 82 8a 80 37 b5 75 7e 58 67 2b 9b 56 5d 61 c2 ab 41 9b b0 a6 23 3f 4e 05 77 14 27 7a 4a 15 ac 95 63 72 bd 6b fa 78 db 0d 7d 95 23 28 1f f9 77 74 24 14 bb 4f 0a ce fb a0 18 7b 95 02 6a 3e e6 32 58 d6 e7 17 f9 79 1a 2e c3 cd 04 bf b1 9b b2 f1 0c 92 5b 3d 84 99 4d e9 f8 ac e2 c1 95 d1 9c 88 77 44 e1 af ce e9 a9 a9 cb 2d 25 bd 87 5d 91 52 38 e4 3d 2c fc d4 fe 07 11 12 3c 3b 5f a4 96 29 a2 bb 46 15 09 13 ab b5 77 fb a5 1d 13 5f 37 f1 a6 df a3 12 0d cd f2 fd 65 22 05 72 d9 b5 c0 ba a2 f0 99 e4 f8 76 fd 35 71 58 b8 b9 df 09 42 d9 12 c3 55 d0 4a 3a 71 d5 c3 c7 2e a1 27 3f e8 dc 35 31 13 9d 34 47 96 21 cc 1e 62 47 a4 4c 50 ae cf e0 cb a7 4c e9 20 af 08 b2 2c 32 cf f8 5f 61"
+    },
+    {
+      "command": 24,
+      "payload_length": 252,
+      "frame": "ff ff fe 18 98 95 f2 67 72 e2 da ac 80 f5 51 c2 3d 6d 18 63 83 a2 09 1b ae c6 a5 44 61 12 21 50 95 86 e2 28 a3 dd a8 55 ae 24 d8 74 0d fa 8f 93 6f a3 b8 06 4f 26 9d 06 65 47 66 d4 3c 7c 3c 70 08 98 9d f7 ea 37 79 15 af 68 f6 10 ed c7 5d 2c 79 da 87 b8 d3 0c db 14 43 87 20 70 95 a0 21 3b b3 82 53 d2 88 64 44 b5 cb ed 11 7a cf 45 85 af 75 27 46 28 15 07 71 30 0d 9c 83 ff 84 39 a9 73 8c ba 2a b1 1c 48 86 56 7b 0f 6d 3b 58 50 db f8 13 22 89 78 62 d4 66 35 ef f0 13 7c 7c 88 35 0c 49 61 b9 80 d9 6e 8e f4 d4 02 34 a0 3f 75 09 4c 66 25 a0 25 9e f8 ba 9e 2e a1 f2 e2 73 29 44 11 dc da d6 48 a5 85 31 37 c7 b2 0b e2 f0 4a 3d 42 bc a4 ba 85 2f ff ca b1 ae 23 cd 80 09 d5 30 b0 15 a3 f6 08 81 35 f6 f1 f2 a2 de 92 7b db 8a 3d 0c bd 1b 73 9e 3a 72 87 ee 79 94 32 23 79 2a e1 f7"
+    },
+    {
+      "command": 205,
+      "payload_length": 252,
+      "frame": "ff ff fe cd 26 fd a7 ee b0 a6 82 3f 18 63 32 06 2c de d8 36 4c bd 3c df e8 d9 dc 4e 47 63 18 fe 0c d5 39 01 6b 71 48 76 22 d0 7a 57 ba 98 08 83 ae b1 20 77 48 65 8c 56 73 c5 94 bd a4 12 4a b0 62 06 8d 55 95 d7 d3 cf 7e cf dd f7 59 27 99 26 5b e1 d3 d2 92 48 94 a0 cd d4 18 cd f2 a9 e6 0c c8 70 74 4e b1 c7 8e 45 5a 0e ba 7d 1a 84 1b 4c b2 43 f7 ab 64 c4 5d 95 5e c1 e7 86 58 f8 7d c7 01 b1 83 d0 46 29 d1 59 29 e3 84 55 c0 01 f9 cd 05 b9 29 76 5c ba 38 59 78 b9 12 60 97 36 55 5b 47 ba b5 70 7b ef ea 76 e2 34 c3 82 d0 07 c2 cc 40 f3 f0 52 c9 8f 33 ad 41 79 22 a0 21 6b 94 ae b3 30 37 05 0a f5 5c df 9a 53 42 3e 4c cd 8f 40 62 b5 82 c2 28 77 4f e3 c7 2d c7 b1 10 b5 0d fc 2c 0f 3f 85 16 d3 bc 0d bd 9c 02 6a 0f 39 93 a2 b2 1b 3b 59 d5 0c b0 e0 6d 28 63 79 5f 19 76 99 61"
+    },
+    {
+      "command": 26,
+      "payload_length": 252,
+      "frame": "ff ff fe 1a e1 39 d9 d2 f5 06 b6 f4 b3 bb c2 39 59 d0 f0 66 39 66 cc ed ed 43 15 2e 1f 5c 06 97 33 4d e0 23 54 cf 8e e6 4b 00 71 e0 7f fb e7 4b 99 59 0a 75 dd a6 85 3d 27 24 5f f3 35 ec bb 4f 73 9a a3 9e c1 9d 2f d0 6a d1 3a d6 1a f8 4f cd 74 00 89 d5 b3 2f 40 e8 5e aa 2b a7 6e 91 13 61 3c 29 3b 9f ba 76 33 cc 72 ed f5 b8 ea 83 e7 5e 09 71 22 5b 5b fe 88 52 d7 f6 c8 04 cf a4 09 1f 93 21 fe 1d f9 52 0b 46 0f 65 e2 5b 30 00 2f 3a dd 0c 4b f9 57 2b 9e 46 87 31 b9 19 3d e8 8c 5c 13 b4 cc 15 4d d4 74 ef bb a3 6c ea d5 e0 23 9c af f8 c8 11 62 73 7d 7d a8 61 aa 5b 6a 8b 84 46 a6 f0 b3 e9 fb ac 1e 66 7c 32 9f 42 7d 2a be 22 3a 4c 52 af 3b e2 fb 57 19 0a eb c9 78 ed 2f d9 b1 d8 12 0b 5e 15 c0 af 71 10 7e 01 d1 19 cd 6c 0b 00 ae 14 88 30 65 61 ec 7a 35 0a 05 2e 74 73 b5"
+    },
+    {
+      "command": 113,
+      "payload_length": 252,
+      "frame": "ff ff fe 71 d2 3c 14 d3 85 43 9d c9 72 56 d8 0c 95 40 bd dd 5e 32 f9 ec 03 1b f0 e0 00 d1 71 6c d7 a7 e2 31 45 60 81 2f 51 b9 b9 21 d6 ca 07 5c de e7 8b dc 3b a9 ef 1b d4 92 0b af 35 ab 7e 03 f2 d1 0a 8b 34 bf 29 60 ac cb 4c 87 52 e7 3d b1 2c 46 f8 d2 3c 84 b6 db c5 b6 b5 7c 39 ad 08 a3 37 94 c8 08 89 67 f6 4e ff fe c5 7c 62 cc 3b 4f b2 af b6 67 1d c0 14 3e f4 bc d0 1c 1c 3a 5a e6 55 26 35 de 90 d1 68 9b be bb 53 b4 8f 99 d2 ad 72 cb e3 87 6d b5 27 82 e3 be 76 a2 f4 c0 49 4b ac 87 a3 80 5c aa 96 3e e1 9a 42 09 c1 e4 61 77 e6 42 09 17 5f 81 d3 2c a7 b7 ba e1 ba 39 2f 1e 06 97 c8 58 37 83 d6 e0 ea 7c 7b b5 8c 34 71 39 82 ab 75 90 da ec 56 e8 35 3a dc 98 49 1d 1e 2d 1d 00 bd a8 3a 24 82 09 4a b5 62 41 b1 18 60 d2 62 15 65 21 82 5c af 2e 35 5c 7a d2 d5 cc c5 e5 17"
+    },
+    {
+      "command": 175,
+      "payload_length": 252,
+      "frame": "ff ff fe af 76 48 34 0e 41 a6 09 04 d6 5c bd 1f e3 d1 92 c1 e1 5d a7 25 aa a3 84 39 c0 28 bb da ec 35 f0 6c 8f 9f 5c 44 06 5d 1a f3 6a 08 08 8a a2 b0 e1 7f de 66 ea fa b6 90 df 3c 46 f3 7e c1 d7 22 b6 bc b9 74 03 1c bc 60 f7 93 76 db 10 cc 7b 58 f3 04 3a 9d 9a 2d 12 7a 4c 62 c3 72 c0 c6 69 61 07 8b 6b 6a 7b fe dc 1b ff 28 59 75 32 e5 38 b5 e5 40 9c f1 54 36 78 61 06 e9 1e 91 92 7f ea ef 6f 54 64 5a 8a 63 b6 5d 91 5a c0 52 8a 12 4b e3 d1 1c 9d c8 0b e3 6a 16 9a 33 a8 7b b2 f2 ab 4c 65 56 17 1d 30 9b ff 7f 36 fa 6c 88 09 97 0b cb 3e e0 68 74 9b 63 f0 ba 35 ae 34 e6 2f 7a fd 44 45 9f 95 c4 42 8a 4d b9 42 77 e9 6d dc 55 5a ea 76 5f cb 61 95 15 c2 c7 14 ab b0 83 25 6f 9d 27 b4 4b d8 ec 78 d9 64 bf 77 c3 20 b4 c4 45 31 7a 80 4a 56 43 96 32 c8 7a 93 4b 85 3d f2 dd ab"
+    },
+    {
+      "command": 87,
+      "payload_length": 252,
+      "frame": "ff ff fe 57 cd c8 31 e0 3e 17 76 e5 e7 a4 26 d5 67 be 52 a9 7f 54 79 4a ea f1 04 b6 5c f2 76 00 2b 84 eb 5c 92 71 f0 cf 0c 24 cf b0 93 58 60 83 d9 86 34 c6 f9 bf 9b 27 f4 76 84 ca ff 6d 33 92 76 50 9e 9b fa cd d6 39 80 d6 92 33 94 47 2b f5 09 9d 92 bb b1 72 5f a3 b1 c1 6b 9e 5d c0 f2 1d 1e 53 61 d1 22 0d e3 20 28 8e ba c7 17 37 42 db 51 ef c8 f5 f6 88 db 61 47 9f 72 a8 65 f7 60 f7 b3 26 95 ce 94 28 06 bb 88 60 67 a2 8b 91 71 a3 01 5b 37 b9 0a 55 7c d5 ae a1 95 1f 81 8d 46 63 86 04 e6 4e a8 dc 41 e2 4e 56 c5 b4 84 85 d0 b0 47 62 6f 2d 5b d2 49 63 28 48 86 a0 e8 04 d4 b1 0a 6b 72 08 e3 52 a3 64 b1 d8 c5 69 b8 a9 d5 b0 9c 9c 91 c8 df 4c e6 86 d3 10 08 0f 7d 98 ba 93 fb 76 29 53 49 e3 f9 fa 7c d8 78 bd 61 97 81 b2 6f be 84 96 c5 b4 c5 21 92 b3 b5 93 06 bc 6c f0 d9"
+    },
+    {
+      "command": 71,
+      "payload_length": 252,
+      "frame": "ff ff fe 47 43 1a a8 ec fa dc cf 30 99 53 4e 0c 6d a8 36 f3 d2 86 3f b7 1c 76 97 80 39 c1 f4 bc 42 08 e2 2a cb fd d3 45 c5 25 61 4a cd 6c ba f7 70 1d 27 42 e8 5a f6 92 72 04 7a 61 d0 a0 66 5d 31 9c 45 a8 c7 e2 db 49 59 f4 11 20 8c 12 f3 48 28 ce ac ca 07 76 50 53 db e3 0c d7 ce 09 b1 23 cf 28 6c 5b 3a ce 6e 92 19 84 92 17 8c 9a 34 a0 d7 7e 1a 52 46 e8 2e 67 e3 62 a8 24 00 72 17 71 79 b5 2a d9 1b 85 0a 58 dc 50 8a 30 98 48 a5 42 33 fe 34 62 11 89 da dc 6a c9 91 cf 65 20 d8 62 0a a5 56 d2 f3 a5 40 c3 31 3b 74 a8 26 4d 36 82 63 cd 4e d8 0a 41 35 cc 02 91 28 b0 87 ab 92 cd 2c 5c 4c 46 32 10 14 42 89 2b ad 05 f2 81 7b 3f 43 78 0e de cd 71 89 57 9a bf 6d e4 02 3f 71 c8 ad 30 df ef f7 e9 4e cb 08 ed e5 99 5a 73 65 be a1 d6 38 4f e5 2b 73 71 50 e0 0e ba 97 e0 30 54 9a"
+    },
+    {
+      "command": 25,
+      "payload_length": 252,
+      "frame": "ff ff fe 19 6f 2f 10 e9 df c7 4d 89 9e e4 41 cd e2 25 81 87 46 62 31 b7 42 df 9b 4f c6 54 c9 60 52 d2 b7 e4 69 2c 7d 36 66 25 7d fc 50 35 7e 1e b6 de 3e c7 7c 6e 0f 63 ba f2 b7 f2 a4 d5 96 62 7b c3 41 21 b6 a2 5e 4e a1 54 1b 20 34 03 eb 5b ff e7 6f 91 60 ba f2 d1 38 9a 30 f0 f8 7c 51 bc 04 73 87 d5 db f7 a0 4f e5 18 5f d0 f0 b9 ab d3 d5 0d 77 c0 62 01 19 e8 8e b4 c1 dc 84 da cd 2c 7d 13 ac c7 a6 6f 6a 30 e8 75 f8 73 36 66 37 7b 41 09 dd c4 0f b6 f4 24 1b 51 8e cb dd 27 99 42 9a e5 20 37 68 81 76 86 cb 82 c1 26 3c 35 b2 c6 3a 67 6d 58 b2 ba 1d 3e a2 3a 09 af 51 6b 6d 57 41 1d 1f 9d 39 32 9d 7d 70 a3 00 94 09 79 19 7c 0f 8d 63 a1 89 29 f8 c4 52 60 c5 fa ac 6e 1d 32 b1 53 1e 3e 6b 14 f1 7e 17 f5 f5 33 1a be e7 39 a1 28 86 f4 10 56 31 da 8c fb db b7 b5 72 15 5a 1e"
+    },
+    {
+      "command": 98,
+      "payload_length": 253,
+      "frame": "ff ff ff 62 11 8b 4c 7c 09 48 9b 2b bb a2 6a 4e 77 8e d8 31 63 82 98 8f 91 f1 f1 e1 9d 7c 92 4a f1 55 17 d8 0d bf 6f 67 3d cf 67 67 d7 ff 3b 81 d5 de 98 9f 9f 93 e1 0a 4d 88 5a 63 9f 77 76 fe 17 48 5a 76 9c 3c a3 b2 e9 09 4b 0a a1 88 c1 c2 3f 5d 5c df dd 60 86 99 c1 ab 7c ec fb bd 03 8e e2 9a 3d 2d db 1b c2 49 28 b3 93 c4 3f 67 09 a6 9b 4a 53 2d d1 d3 64 ed 77 5d ec b4 64 34 96 c9 24 8c 12 56 00 5d af 97 90 53 ac de e4 a9 13 2f 98 fb 48 14 c2 6e 3d 53 36 7f f5 76 f9 60 4e 1d cb c7 d7 df 03 3c 1f 6e 25 d7 02 3e d5 25 66 90 1f d0 ea 03 ec 01 b1 08 fc b4 dd e0 8a ac 43 77 9d fa 33 de 4a 0f 77 1f dd 8f 15 f7 5c fd 15 ec b1 72 cc c5 5d 83 b0 ba 32 e7 42 d6 80 28 d0 dd 92 48 a0 e9 48 f4 8d 0d 82 d8 36 36 cb 63 08 99 fb 4d f3 b7 20 85 1a d6 17 29 9a c3 f7 c8 c3 b3 9b e4"
+    },
+    {
+      "command": 103,
+      "payload_length": 253,
+      "frame": "ff ff ff 67 6c 5f e9 84 2e e6 a6 bd 9e 02 54 ce 89 53 ba b6 e4 cc d7 74 4a f0 b2 c5 c7 f7 5a a0 72 54 de d9 b3 09 bd d8 d9 16 b0 a6 45 bb 66 d5 66 1c e3 5e 49 88 2a c2 0c 32 f3 a2 a5 df 3f 9d c2 6d cf 05 a2 a7 2a 99 f5 30 d8 aa dc be 4a 17 06 f0 1e 74 be 90 e9 33 7a 32 05 13 bc 91 cb e5 f5 ad 07 05 e1 e8 78 fb bb a0 25 10 a6 ec 20 d2 ef c5 5c 37 c3 32 b4 21 a6 dc 2d d2 3c 62 75 91 f4 30 4c d6 83 22 0e a7 1c 72 5a f4 be d0 47 a9 be 16 17 ed 37 95 aa 8b 80 4c a2 12 d0 9b 0a b0 90 d2 ce 48 3f 49 60 fd 4a 12 6d ee 7b b1 0d be 6a 4d d8 ec b8 d6 d2 3e 8e 80 0d 8d ce 0f a4 ba a7 2e a4 1c 71 cd ec 20 30 ef b5 fc a6 e8 f8 bc 18 4f 1a 65 d6 6b 6c 15 82 a5 5e 58 fc e1 09 89 ed 64 c1 7d b8 ce b5 65 b8 4c 30 ce fd c3 87 5f e0 41 ab c5 6d 65 f1 79 01 c6 9d 9d bc 6d af a1 cc 6e"
+    },
+    {
+      "command": 6,
+      "payload_length": 253,
+      "frame": "ff ff ff 06 6a 58 d5 d5 5a 51 c4 7f 21 79 e8 62 1f 8c 02 d9 96 10 ec 13 da e0 46 b9 7b b9 6f 7b 38 56 d6 14 10 d3 f6 34 d1 b0 fd 55 95 81 3c 60 34 b0 a3 5a 7d 6d 9d e6 47 da 5e 7a f3 47 ae 48 1f 3a 2c 31 22 c2 16 f7 d4 c4 de 45 66 79 e1 a7 83 33 5f 11 d9 75 8c d8 f4 fb bd 7f 95 45 c6 5d f0 54 e7 4b 62 da db 4f 3b 0f 3a 8b 84 3a d5 33 f3 01 85 0c 6b 94 c1 b4 f9 f3 d1 e0 9d 2b b0 44 7e 7f 69 68 d5 04 39 9d 51 2f 50 9a af c0 91 d3 90 d1 72 6e 2c f8 cd c7 05 e5 e2 18 97 a9 45 5d 3e f3 3f 93 4c 8b 7d 54 54 6e 0e 4a 2f 8f e8 29 0f a5 f4 69 92 e9 3b 87 1b 81 8d 54 e7 06 47 74 6d 08 bd 11 3c f4 69 c9 ac 32 15 4d 22 f4 8d b4 75 db 4a 97 e7 72 8b 2d 1a 9b e8 fc ca 81 00 e0 40 e6 64 83 65 f9 eb 97 21 fc 9e e2 af a3 7d aa b1 44 e6 b8 0e 1d 3e 71 40 e2 50 4d 9b 9f a0 c1 13 31"
+    },
+    {
+      "command": 41,
+      "payload_length": 253,
+      "frame": "ff ff ff 29 70 75 5d ad 9a 64 24 fa 7f 13 86 b8 a6 4c ea c0 48 08 68 f7 17 02 d6 91 3b 89 39 c3 1f f6 8f 39 41 14 b4 a3 bc a5 f4 48 44 84 5f 97 b8 35 03 ec 42 4d bb ad ba 6e fb 53 6c e4 e4 b8 d3 e7 4a 39 22 a2 f0 22 a5 ba ac c5 7c 2c 6c 7e 36 79 51 5f be a0 82 11 7c 23 ff d9 68 55 cc 54 52 7a 6b a2 ef f5 e9 b4 f9 7c fb 22 2e 50 1b d1 2b 3a 77 7e 3c c5 1d 13 77 f3 20 2e 2b c2 b1 c5 c2 56 fa 41 ba 42 15 b6 17 aa 8d 16 ee 4c 1a 70 17 20 9d 37 4d 2a f5 2b 0e 69 d2 6f a2 b5 3b 6e 87 8b 35 4e ee 91 13 c4 ec 51 4b c5 48 bc 42 f3 4c 4e 2f 44 14 bf 45 20 58 d3 bf a8 da 89 c0 7a bd 77 39 7e 56 74 1f 69 35 6c cc 38 57 fa a5 2c d4 ce 43 0d c2 1a 14 eb 9d d1 84 f7 18 e4 a4 e9 93 a0 4c 1e f0 9b 17 ae f8 e5 15 0b be 17 9d 9d bf 14 53 28 47 51 a9 76 0c e7 ef 25 2d 68 04 ba 52 2a"
+    },
+    {
+      "command": 253,
+      "payload_length": 253,
+      "frame": "ff ff ff fd 74 34 33 87 85 fb e7 03 7b 64 23 84 c8 6a 5e 2b 57 d2 ee 82 b1 a3 c9 eb 23 86 f6 56 05 84 d2 7f 66 03 e0 b0 d0 66 4c 0a f8 d8 ac 89 4f 20 ef ae ea 0d 4e c1 45 fe 2d 47 a7 84 e0 11 ce 23 86 28 96 73 e9 08 f3 39 b3 43 9c 96 9d 02 14 69 93 09 67 d3 56 15 4f b7 54 78 00 34 53 b7 94 98 a3 86 e0 84 3b eb 82 ea 9f 9f 18 b7 e8 0b 74 96 b0 85 d0 b1 31 b6 d8 16 ff 09 23 9e 38 bf b2 fd fc 82 b8 3c 59 cd 69 50 df 61 6d 65 72 10 54 a9 b6 d3 02 23 36 98 7c 46 ac fa a0 b7 85 8b ff d9 4a ef 85 b8 a5 0d d6 04 3e 5b 44 18 53 82 5a 27 3e 35 3d a2 1b 3f dd b8 19 32 9a d1 12 ed ad a3 b1 4e b6 f9 07 10 f8 fd d7 1e 47 be 78 65 46 f8 72 f2 67 f1 d7 34 08 42 46 6b dc a7 94 3c 22 db fd 14 1e a5 8d fd 3b 7e d7 8a 72 c6 11 af 2c 4d 2d 6c e0 80 e2 9f 04 67 9c 3f 33 42 6d 66 ea e5"
+    },
+    {
+      "command": 234,
+      "payload_length": 253,
+      "frame": "ff ff ff ea 93 76 92 9e e9 bf 12 bd 71 c1 66 3b da 27 81 45 13 db b4 57 18 02 b3 39 5d df ca 70 6f 95 85 6e 38 67 b0 be b2 83 bc d3 92 86 8b 3a 91 33 23 25 96 0b bf e2 2b 27 00 1b 9b 79 b9 da d5 72 a5 d1 ba fd f7 61 b8 8f af be 55 7b dd 8e 05 1a 43 d2 45 e3 57 75 8b 34 9c 76 d0 40 c5 4f 65 20 75 d5 00 ce b1 09 1b 12 51 7b 41 6e 2a 0f 31 ab e9 57 e4 82 8c 7e 6e e4 da 8e 94 24 cf 9c c3 48 cc 9e 7c 66 93 07 a9 35 4b df 4f 6f e5 25 6f 67 c0 79 e6 c8 59 de 90 c0 3d e4 34 a9 27 60 de 76 19 65 38 53 1d 7b 7c ec 19 5e df 28 c7 74 a4 d0 40 00 15 93 4d 18 42 f8 46 36 45 32 42 e2 b4 ed 33 22 9e b6 1f 2a 01 30 0f 4e 08 c8 4e ba 46 8f ed b4 e0 6d ba 0d bc 6a 2b 36 1e 4c 20 af cb d4 0a 75 aa ee c8 8b ad 7d 97 a8 75 f6 60 d6 8f b2 f6 88 e1 1b 28 7d 18 ce fc 37 eb 43 d0 9d 38 7c"
+    },
+    {
+      "command": 86,
+      "payload_length": 253,
+      "frame": "ff ff ff 56 a3 15 ec 03 19 dc 86 2a aa d5 7a 6b 21 d3 d3 66 95 60 a0 c5 3d 08 da f7 23 92 3a 10 74 d9 6a f3 c6 a0 a7 f4 cb 58 53 20 6d 99 7d 49 c6 ff ae 10 25 5c 88 1f 7c 18 b0 6c 76 17 cb dc cc 94 a1 c0 ee e0 79 84 9e 68 ec b7 7d b6 8d d3 47 f0 54 da f1 a1 4e f5 c4 08 26 9b 1b a6 d4 00 24 ce b4 d9 35 e6 b2 3d 8d e3 fd e3 5a f4 55 72 4f d3 20 7a 19 d9 38 5c 88 ef 94 3b a6 a6 90 fe dd 91 27 95 7f 32 83 ab c8 fc 44 fd ee a8 b3 78 39 5e 34 11 31 e8 89 e3 ad be fc da 15 e0 fc c6 b4 c7 d0 9b 03 64 57 87 1c 51 f4 3a 41 48 a9 4d 93 f9 d6 0c 0e 2a ee ab 27 30 68 90 03 b2 8c ba 55 9f d1 fe d8 39 39 fa d6 73 9a 57 a3 7c 4b cf c1 bf 3c 22 9b 8f bd 97 53 31 58 3f 7d 96 14 50 1e be bc d2 79 fa 92 76 1c bd 56 f0 ee ef f6 ab da ac 0d 06 98 ee 55 bf 19 61 54 b5 49 29 6c 07 6d 99"
+    },
+    {
+      "command": 64,
+      "payload_length": 253,
+      "frame": "ff ff ff 40 19 8f a7 cf 0e 67 14 66 8a ab 42 08 bf 65 79 13 51 ad af df bc 83 f6 0f 70 e8 92 61 64 6e 14 06 ef 98 ca 6d 01 d2 60 1e f8 04 77 9e 30 6e 4f ca de ec 0c 43 3f 83 e5 8b fa b0 a1 4c 62 17 b1 7c c0 76 4f fe 8f ef 1f 2f bf 10 aa c2 84 e5 34 d0 76 0d 3a 10 80 2d f0 db 6e 94 81 89 00 f0 f9 c5 9b cd 29 2b a6 cd 7f b0 cf 73 af ee 0e 84 ff ce 55 91 47 40 6f d7 0b a5 ec c7 1f 3a bd 8a 7f b4 45 a7 18 07 49 1e b4 0d a5 29 fe d0 ab 4a 4f 5b 5e cc 84 62 c9 d6 f1 b2 6f d8 fd ba 02 fb 61 77 af 84 33 59 27 55 24 70 8e f4 63 1b f1 93 73 bc ae 90 66 77 46 86 75 ef 37 f6 a9 03 10 09 0b 74 84 b7 df f6 14 e3 96 93 66 2f 17 b1 6b 7f b9 6f 9c 31 35 e2 d4 98 62 da 66 d4 ff 0d 2a 83 3e f1 08 b4 dd ad e7 20 b0 9b 73 23 25 eb 58 08 23 52 62 41 7a b7 ba 76 45 34 d6 7a a8 0c 31 3f"
+    },
+    {
+      "command": 152,
+      "payload_length": 253,
+      "frame": "ff ff ff 98 44 70 93 97 ab 2f 68 5f 1c a6 35 eb 45 3d 30 07 2f d5 55 74 c2 1b 85 23 d0 2d b4 df 49 5c 83 7c 01 32 9c cf cb a4 0f 71 3e ad f6 32 67 12 1a 70 78 7e 92 5b b1 e4 18 1b 37 67 c0 3d 91 cf df 41 8c 7e 7b 40 06 01 0e 35 da fa e3 7e 1e ad 1b 73 6d 9b e7 21 43 27 08 39 29 85 ac c0 9e b5 e2 89 61 d6 7b 9c a3 0a 0f a4 a5 2b 88 a9 78 dc f8 d7 a5 62 3d 70 a3 84 12 70 6e a0 32 e4 72 89 52 29 b0 0c d9 44 18 10 52 f8 55 16 0c 5f 6f 0f 03 ec 20 66 fa 38 c6 0d ff fe c3 00 c5 bc a2 28 c2 45 55 eb 1f c0 af 0f 55 8a f3 04 0b 39 28 fb d1 1a 57 dc f1 80 6d 4d d4 8a 0b e1 05 99 bc 91 ee e9 e2 bf 40 f8 06 5e ee 8f a7 44 e4 5e c6 b2 31 ab 61 2b eb 5e 31 02 75 b7 d9 2a 90 87 90 06 e2 8d 80 a6 d8 60 7f e9 5d 7b de f9 1c 72 aa c6 bf e9 f3 c1 b9 0a 58 1d db 29 5a 69 1a 97 5f 9f"
+    },
+    {
+      "command": 215,
+      "payload_length": 253,
+      "frame": "ff ff ff d7 06 7e e7 ac a5 7a fb 9c f2 6c 58 10 74 56 6c 15 ab b7 99 f9 b9 79 1b a4 e4 22 89 46 19 37 b6 2f b6 b9 e3 de ec 84 e6 c2 b8 f8 54 ec dd 25 b9 a1 d7 e4 c1 8c 39 9b 33 90 cf 7b 12 1a c8 cf 96 7f de d0 75 01 15 09 78 fd fe ff 41 fc 33 82 36 f0 22 13 60 fa e2 3a fb 53 ea eb 14 d0 19 81 e4 49 d5 1d 4d 37 8d 79 2c 74 d0 8b e5 6b 16 b5 30 18 72 9d 25 48 6a 88 9f 68 39 4b ff 68 d0 2f 3a 00 12 c6 ef ce 4b 4f ea 99 87 b2 d0 f7 f6 eb 5d 0e 88 d2 b6 f5 6e 2b bd ad 9d 08 e3 05 ce 56 5e 2f 75 86 2a ad 3e 2a 87 6e 9c 86 b0 70 c8 60 4d 9a 08 69 4f a6 01 2d 89 df 07 fd a1 ee 32 4d 93 ee 0c a9 e5 58 6d 45 46 41 6e 0b 8c a2 bc 5a aa 16 8a 8a a7 ca 4d ab 24 ea f6 05 08 9b 4b c2 d8 58 84 db 73 7f b6 2b e6 a3 f1 22 a4 44 b8 90 43 82 99 18 cf 95 3b 57 03 df 31 db 9b 38 f2 2e"
+    }
+  ],
+  "scope": "Original encoder/checksum executed; allocation and List helpers stubbed. No BLE/hardware validation."
+}

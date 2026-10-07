@@ -1,0 +1,4184 @@
+[
+  {
+    "file": "__c__DisplayClass24_0._Open_b__0.210c1c8.asm",
+    "va": "0210c200",
+    "literal_index": 7292,
+    "value": "OnIcon"
+  },
+  {
+    "file": "__c__DisplayClass24_0._Open_b__0.210c1c8.asm",
+    "va": "0210c228",
+    "literal_index": 7292,
+    "value": "OnIcon"
+  },
+  {
+    "file": "__c._TeachingTipCheck_b__99_7.2098a08.asm",
+    "va": "02098a24",
+    "literal_index": 3869,
+    "value": "DelayBtn"
+  },
+  {
+    "file": "__c._TeachingTipCheck_b__99_7.2098a08.asm",
+    "va": "02098a44",
+    "literal_index": 3869,
+    "value": "DelayBtn"
+  },
+  {
+    "file": "__c._InitStep1Panel_b__59_1.20c3f70.asm",
+    "va": "020c3f98",
+    "literal_index": 17443,
+    "value": "服务器选择"
+  },
+  {
+    "file": "__c._InitStep1Panel_b__59_1.20c3f70.asm",
+    "va": "020c3fbc",
+    "literal_index": 17443,
+    "value": "服务器选择"
+  },
+  {
+    "file": "_Start_d__10.MoveNext.21242ac.asm",
+    "va": "02124324",
+    "literal_index": 9423,
+    "value": "The <color=#0050FF>count is: </color>"
+  },
+  {
+    "file": "_Start_d__10.MoveNext.21242ac.asm",
+    "va": "02124330",
+    "literal_index": 4710,
+    "value": "Fonts/ARIAL"
+  },
+  {
+    "file": "_Start_d__10.MoveNext.21242ac.asm",
+    "va": "0212433c",
+    "literal_index": 9422,
+    "value": "The <#0050FF>count is: </color>{0}"
+  },
+  {
+    "file": "_Start_d__10.MoveNext.21242ac.asm",
+    "va": "02124348",
+    "literal_index": 4708,
+    "value": "Fonts & Materials/LiberationSans SDF - Drop Shadow"
+  },
+  {
+    "file": "_Start_d__10.MoveNext.21242ac.asm",
+    "va": "021244a8",
+    "literal_index": 4708,
+    "value": "Fonts & Materials/LiberationSans SDF - Drop Shadow"
+  },
+  {
+    "file": "_Start_d__10.MoveNext.21242ac.asm",
+    "va": "021245e8",
+    "literal_index": 4710,
+    "value": "Fonts/ARIAL"
+  },
+  {
+    "file": "_Start_d__10.MoveNext.21242ac.asm",
+    "va": "021246ec",
+    "literal_index": 9422,
+    "value": "The <#0050FF>count is: </color>{0}"
+  },
+  {
+    "file": "_Start_d__10.MoveNext.21242ac.asm",
+    "va": "021247c8",
+    "literal_index": 9423,
+    "value": "The <color=#0050FF>count is: </color>"
+  },
+  {
+    "file": "__c__DisplayClass21_0._ConnectDev_g__SetBleNotifition_4.204281c.asm",
+    "va": "0204288c",
+    "literal_index": 10722,
+    "value": "Unity2BTCommandControl: Subscribe Start"
+  },
+  {
+    "file": "__c__DisplayClass21_0._ConnectDev_g__SetBleNotifition_4.204281c.asm",
+    "va": "020428a8",
+    "literal_index": 10722,
+    "value": "Unity2BTCommandControl: Subscribe Start"
+  },
+  {
+    "file": "_GetRobotInfos_d__31.MoveNext.20a64b4.asm",
+    "va": "020a64e8",
+    "literal_index": 37,
+    "value": "\t"
+  },
+  {
+    "file": "_GetRobotInfos_d__31.MoveNext.20a64b4.asm",
+    "va": "020a662c",
+    "literal_index": 37,
+    "value": "\t"
+  },
+  {
+    "file": "BTDeviceType.get_Characteristic_C1.20419a4.asm",
+    "va": "020419b8",
+    "literal_index": 1181,
+    "value": "0000FFE1-0000-1000-8000-00805f9b34fb"
+  },
+  {
+    "file": "BTDeviceType.get_Characteristic_C1.20419a4.asm",
+    "va": "020419c4",
+    "literal_index": 1181,
+    "value": "0000FFE1-0000-1000-8000-00805f9b34fb"
+  },
+  {
+    "file": "_StartMicrophoneRecording_d__13.MoveNext.20390b0.asm",
+    "va": "0203916c",
+    "literal_index": 8647,
+    "value": "Start Mic"
+  },
+  {
+    "file": "_StartMicrophoneRecording_d__13.MoveNext.20390b0.asm",
+    "va": "02039178",
+    "literal_index": 7887,
+    "value": "RecordEnd"
+  },
+  {
+    "file": "_StartMicrophoneRecording_d__13.MoveNext.20390b0.asm",
+    "va": "02039184",
+    "literal_index": 7886,
+    "value": "RecordClip"
+  },
+  {
+    "file": "_StartMicrophoneRecording_d__13.MoveNext.20390b0.asm",
+    "va": "0203921c",
+    "literal_index": 8647,
+    "value": "Start Mic"
+  },
+  {
+    "file": "_StartMicrophoneRecording_d__13.MoveNext.20390b0.asm",
+    "va": "020394d4",
+    "literal_index": 7886,
+    "value": "RecordClip"
+  },
+  {
+    "file": "_StartMicrophoneRecording_d__13.MoveNext.20390b0.asm",
+    "va": "020395cc",
+    "literal_index": 7887,
+    "value": "RecordEnd"
+  },
+  {
+    "file": "BTDeviceType.get_DevStart_F0F1.2041230.asm",
+    "va": "020412a8",
+    "literal_index": 8892,
+    "value": "T9-"
+  },
+  {
+    "file": "BTDeviceType.get_DevStart_F0F1.2041230.asm",
+    "va": "020412c4",
+    "literal_index": 8892,
+    "value": "T9-"
+  },
+  {
+    "file": "BTDeviceType.get_DevStart_F0F1.2041230.asm",
+    "va": "02041330",
+    "literal_index": 6190,
+    "value": "K1-"
+  },
+  {
+    "file": "BTDeviceType.get_DevStart_F0F1.2041230.asm",
+    "va": "0204133c",
+    "literal_index": 6190,
+    "value": "K1-"
+  },
+  {
+    "file": "BTDeviceType.get_DevStart_F0F1.2041230.asm",
+    "va": "020413b0",
+    "literal_index": 6191,
+    "value": "K1AI-"
+  },
+  {
+    "file": "BTDeviceType.get_DevStart_F0F1.2041230.asm",
+    "va": "020413bc",
+    "literal_index": 6191,
+    "value": "K1AI-"
+  },
+  {
+    "file": "BTDeviceType.get_DevStart_F0F1.2041230.asm",
+    "va": "02041430",
+    "literal_index": 7179,
+    "value": "OP-M-"
+  },
+  {
+    "file": "BTDeviceType.get_DevStart_F0F1.2041230.asm",
+    "va": "0204143c",
+    "literal_index": 7179,
+    "value": "OP-M-"
+  },
+  {
+    "file": "BTDeviceType.get_DevStart_F0F1.2041230.asm",
+    "va": "020414b0",
+    "literal_index": 2678,
+    "value": "CXGFN-"
+  },
+  {
+    "file": "BTDeviceType.get_DevStart_F0F1.2041230.asm",
+    "va": "020414bc",
+    "literal_index": 2678,
+    "value": "CXGFN-"
+  },
+  {
+    "file": "BTDeviceType.get_DevStart_F0F1.2041230.asm",
+    "va": "02041530",
+    "literal_index": 11273,
+    "value": "XGZGFN-"
+  },
+  {
+    "file": "BTDeviceType.get_DevStart_F0F1.2041230.asm",
+    "va": "0204153c",
+    "literal_index": 11273,
+    "value": "XGZGFN-"
+  },
+  {
+    "file": "BTDeviceType.get_DevStart_F0F1.2041230.asm",
+    "va": "020415b0",
+    "literal_index": 2673,
+    "value": "CTGEN-"
+  },
+  {
+    "file": "BTDeviceType.get_DevStart_F0F1.2041230.asm",
+    "va": "020415bc",
+    "literal_index": 2673,
+    "value": "CTGEN-"
+  },
+  {
+    "file": "BTDeviceType.get_DevStart_F0F1.2041230.asm",
+    "va": "02041630",
+    "literal_index": 2677,
+    "value": "CXGEN-"
+  },
+  {
+    "file": "BTDeviceType.get_DevStart_F0F1.2041230.asm",
+    "va": "0204163c",
+    "literal_index": 2677,
+    "value": "CXGEN-"
+  },
+  {
+    "file": "BTDeviceType.get_DevStart_F0F1.2041230.asm",
+    "va": "020416b0",
+    "literal_index": 11272,
+    "value": "XGZGEN-"
+  },
+  {
+    "file": "BTDeviceType.get_DevStart_F0F1.2041230.asm",
+    "va": "020416bc",
+    "literal_index": 11272,
+    "value": "XGZGEN-"
+  },
+  {
+    "file": "BTDeviceType.get_DevStart_F0F1.2041230.asm",
+    "va": "02041730",
+    "literal_index": 4818,
+    "value": "GSEG-"
+  },
+  {
+    "file": "BTDeviceType.get_DevStart_F0F1.2041230.asm",
+    "va": "0204173c",
+    "literal_index": 4818,
+    "value": "GSEG-"
+  },
+  {
+    "file": "_TeachingTipCheck_d__99.MoveNext.209ffd4.asm",
+    "va": "020a025c",
+    "literal_index": 17380,
+    "value": "提示编辑速度"
+  },
+  {
+    "file": "_TeachingTipCheck_d__99.MoveNext.209ffd4.asm",
+    "va": "020a0268",
+    "literal_index": 17374,
+    "value": "提示创建动作块{0}"
+  },
+  {
+    "file": "_TeachingTipCheck_d__99.MoveNext.209ffd4.asm",
+    "va": "020a0274",
+    "literal_index": 17373,
+    "value": "提示创建关节块"
+  },
+  {
+    "file": "_TeachingTipCheck_d__99.MoveNext.209ffd4.asm",
+    "va": "020a0280",
+    "literal_index": 17378,
+    "value": "提示编辑循环次数"
+  },
+  {
+    "file": "_TeachingTipCheck_d__99.MoveNext.209ffd4.asm",
+    "va": "020a028c",
+    "literal_index": 17377,
+    "value": "提示编辑延时"
+  },
+  {
+    "file": "_TeachingTipCheck_d__99.MoveNext.209ffd4.asm",
+    "va": "020a0298",
+    "literal_index": 17375,
+    "value": "提示点击执行"
+  },
+  {
+    "file": "_TeachingTipCheck_d__99.MoveNext.209ffd4.asm",
+    "va": "020a02a4",
+    "literal_index": 17379,
+    "value": "提示编辑角度"
+  },
+  {
+    "file": "_TeachingTipCheck_d__99.MoveNext.209ffd4.asm",
+    "va": "020a0a6c",
+    "literal_index": 17379,
+    "value": "提示编辑角度"
+  },
+  {
+    "file": "_TeachingTipCheck_d__99.MoveNext.209ffd4.asm",
+    "va": "020a0df0",
+    "literal_index": 17374,
+    "value": "提示创建动作块{0}"
+  },
+  {
+    "file": "_TeachingTipCheck_d__99.MoveNext.209ffd4.asm",
+    "va": "020a0f10",
+    "literal_index": 17378,
+    "value": "提示编辑循环次数"
+  },
+  {
+    "file": "_TeachingTipCheck_d__99.MoveNext.209ffd4.asm",
+    "va": "020a0ffc",
+    "literal_index": 17380,
+    "value": "提示编辑速度"
+  },
+  {
+    "file": "_TeachingTipCheck_d__99.MoveNext.209ffd4.asm",
+    "va": "020a10e8",
+    "literal_index": 17377,
+    "value": "提示编辑延时"
+  },
+  {
+    "file": "_TeachingTipCheck_d__99.MoveNext.209ffd4.asm",
+    "va": "020a12f0",
+    "literal_index": 17373,
+    "value": "提示创建关节块"
+  },
+  {
+    "file": "_TeachingTipCheck_d__99.MoveNext.209ffd4.asm",
+    "va": "020a14a4",
+    "literal_index": 17375,
+    "value": "提示点击执行"
+  },
+  {
+    "file": "_BleEnableCheck_d__53.MoveNext.20b30f4.asm",
+    "va": "020b31bc",
+    "literal_index": 886,
+    "value": "-->检测蓝牙开启状态"
+  },
+  {
+    "file": "_BleEnableCheck_d__53.MoveNext.20b30f4.asm",
+    "va": "020b31c8",
+    "literal_index": 12694,
+    "value": "android.permission.BLUETOOTH_CONNECT"
+  },
+  {
+    "file": "_BleEnableCheck_d__53.MoveNext.20b30f4.asm",
+    "va": "020b31d4",
+    "literal_index": 12691,
+    "value": "android.permission.ACCESS_FINE_LOCATION"
+  },
+  {
+    "file": "_BleEnableCheck_d__53.MoveNext.20b30f4.asm",
+    "va": "020b31e0",
+    "literal_index": 12695,
+    "value": "android.permission.BLUETOOTH_SCAN"
+  },
+  {
+    "file": "_BleEnableCheck_d__53.MoveNext.20b30f4.asm",
+    "va": "020b31ec",
+    "literal_index": 12690,
+    "value": "android.permission.ACCESS_COARSE_LOCATION"
+  },
+  {
+    "file": "_BleEnableCheck_d__53.MoveNext.20b30f4.asm",
+    "va": "020b31f8",
+    "literal_index": 17285,
+    "value": "当前安卓SDK版本:{0}"
+  },
+  {
+    "file": "_BleEnableCheck_d__53.MoveNext.20b30f4.asm",
+    "va": "020b3204",
+    "literal_index": 1004,
+    "value": "."
+  },
+  {
+    "file": "_BleEnableCheck_d__53.MoveNext.20b30f4.asm",
+    "va": "020b32a4",
+    "literal_index": 1004,
+    "value": "."
+  },
+  {
+    "file": "_BleEnableCheck_d__53.MoveNext.20b30f4.asm",
+    "va": "020b32a8",
+    "literal_index": 886,
+    "value": "-->检测蓝牙开启状态"
+  },
+  {
+    "file": "_BleEnableCheck_d__53.MoveNext.20b30f4.asm",
+    "va": "020b332c",
+    "literal_index": 17285,
+    "value": "当前安卓SDK版本:{0}"
+  },
+  {
+    "file": "_BleEnableCheck_d__53.MoveNext.20b30f4.asm",
+    "va": "020b3384",
+    "literal_index": 12691,
+    "value": "android.permission.ACCESS_FINE_LOCATION"
+  },
+  {
+    "file": "_BleEnableCheck_d__53.MoveNext.20b30f4.asm",
+    "va": "020b33a8",
+    "literal_index": 12690,
+    "value": "android.permission.ACCESS_COARSE_LOCATION"
+  },
+  {
+    "file": "_BleEnableCheck_d__53.MoveNext.20b30f4.asm",
+    "va": "020b33f4",
+    "literal_index": 12695,
+    "value": "android.permission.BLUETOOTH_SCAN"
+  },
+  {
+    "file": "_BleEnableCheck_d__53.MoveNext.20b30f4.asm",
+    "va": "020b3418",
+    "literal_index": 12694,
+    "value": "android.permission.BLUETOOTH_CONNECT"
+  },
+  {
+    "file": "_BleEnableCheck_d__53.MoveNext.20b30f4.asm",
+    "va": "020b3540",
+    "literal_index": 8919,
+    "value": "TEXT_CBCS_002"
+  },
+  {
+    "file": "_BleEnableCheck_d__53.MoveNext.20b30f4.asm",
+    "va": "020b3554",
+    "literal_index": 8919,
+    "value": "TEXT_CBCS_002"
+  },
+  {
+    "file": "__c__DisplayClass17_0._Open_b__1.20d110c.asm",
+    "va": "020d11c8",
+    "literal_index": 9066,
+    "value": "TEXT_RJLS_004"
+  },
+  {
+    "file": "__c__DisplayClass17_0._Open_b__1.20d110c.asm",
+    "va": "020d11d8",
+    "literal_index": 9066,
+    "value": "TEXT_RJLS_004"
+  },
+  {
+    "file": "__c__DisplayClass17_0._Open_b__1.20d110c.asm",
+    "va": "020d1244",
+    "literal_index": 9064,
+    "value": "TEXT_RJLS_0001"
+  },
+  {
+    "file": "__c__DisplayClass17_0._Open_b__1.20d110c.asm",
+    "va": "020d1250",
+    "literal_index": 9064,
+    "value": "TEXT_RJLS_0001"
+  },
+  {
+    "file": "Unity2BTCommandControl.ScanDevs.2041e00.asm",
+    "va": "02041e5c",
+    "literal_index": 154,
+    "value": " Can't ScanDevs"
+  },
+  {
+    "file": "Unity2BTCommandControl.ScanDevs.2041e00.asm",
+    "va": "02041eb0",
+    "literal_index": 154,
+    "value": " Can't ScanDevs"
+  },
+  {
+    "file": "__BleEnableCheck_g__GetBluetoothEnabledResult1_24_1_d.MoveNext.20a3484.asm",
+    "va": "020a34fc",
+    "literal_index": 17628,
+    "value": "蓝牙连接界面打开提示窗口！"
+  },
+  {
+    "file": "__BleEnableCheck_g__GetBluetoothEnabledResult1_24_1_d.MoveNext.20a3484.asm",
+    "va": "020a35a8",
+    "literal_index": 17628,
+    "value": "蓝牙连接界面打开提示窗口！"
+  },
+  {
+    "file": "__c._Init_b__14_0.20420f4.asm",
+    "va": "02042120",
+    "literal_index": 10717,
+    "value": "Unity2BTCommandControl :Init true"
+  },
+  {
+    "file": "__c._Init_b__14_0.20420f4.asm",
+    "va": "0204212c",
+    "literal_index": 2541,
+    "value": "Bluetooth LE Powered ON"
+  },
+  {
+    "file": "__c._Init_b__14_0.20420f4.asm",
+    "va": "02042148",
+    "literal_index": 2541,
+    "value": "Bluetooth LE Powered ON"
+  },
+  {
+    "file": "__c._Init_b__14_0.20420f4.asm",
+    "va": "02042150",
+    "literal_index": 10717,
+    "value": "Unity2BTCommandControl :Init true"
+  },
+  {
+    "file": "_ShowInstallWXTip_d__44.MoveNext.20f5484.asm",
+    "va": "020f54d4",
+    "literal_index": 17444,
+    "value": "未安装微信"
+  },
+  {
+    "file": "_ShowInstallWXTip_d__44.MoveNext.20f5484.asm",
+    "va": "020f54e0",
+    "literal_index": 15426,
+    "value": "s"
+  },
+  {
+    "file": "_ShowInstallWXTip_d__44.MoveNext.20f5484.asm",
+    "va": "020f54ec",
+    "literal_index": 17267,
+    "value": "开始唤醒微信"
+  },
+  {
+    "file": "_ShowInstallWXTip_d__44.MoveNext.20f5484.asm",
+    "va": "020f5544",
+    "literal_index": 17444,
+    "value": "未安装微信"
+  },
+  {
+    "file": "_ShowInstallWXTip_d__44.MoveNext.20f5484.asm",
+    "va": "020f55a8",
+    "literal_index": 15426,
+    "value": "s"
+  },
+  {
+    "file": "_ShowInstallWXTip_d__44.MoveNext.20f5484.asm",
+    "va": "020f55c8",
+    "literal_index": 17267,
+    "value": "开始唤醒微信"
+  },
+  {
+    "file": "__c__DisplayClass15_0._DownloadAction_g__ActionInfoResult_0.20b9cbc.asm",
+    "va": "020b9d40",
+    "literal_index": 12629,
+    "value": "action_file_name : "
+  },
+  {
+    "file": "__c__DisplayClass15_0._DownloadAction_g__ActionInfoResult_0.20b9cbc.asm",
+    "va": "020b9d4c",
+    "literal_index": 4799,
+    "value": "GET"
+  },
+  {
+    "file": "__c__DisplayClass15_0._DownloadAction_g__ActionInfoResult_0.20b9cbc.asm",
+    "va": "020b9d58",
+    "literal_index": 13132,
+    "value": "code"
+  },
+  {
+    "file": "__c__DisplayClass15_0._DownloadAction_g__ActionInfoResult_0.20b9cbc.asm",
+    "va": "020b9d64",
+    "literal_index": 13753,
+    "value": "file_url"
+  },
+  {
+    "file": "__c__DisplayClass15_0._DownloadAction_g__ActionInfoResult_0.20b9cbc.asm",
+    "va": "020b9d70",
+    "literal_index": 13380,
+    "value": "data"
+  },
+  {
+    "file": "__c__DisplayClass15_0._DownloadAction_g__ActionInfoResult_0.20b9cbc.asm",
+    "va": "020b9d7c",
+    "literal_index": 17615,
+    "value": "获取下载信息异常"
+  },
+  {
+    "file": "__c__DisplayClass15_0._DownloadAction_g__ActionInfoResult_0.20b9cbc.asm",
+    "va": "020b9d88",
+    "literal_index": 13754,
+    "value": "file_url : "
+  },
+  {
+    "file": "__c__DisplayClass15_0._DownloadAction_g__ActionInfoResult_0.20b9cbc.asm",
+    "va": "020b9d94",
+    "literal_index": 12628,
+    "value": "action_file_name"
+  },
+  {
+    "file": "__c__DisplayClass15_0._DownloadAction_g__ActionInfoResult_0.20b9cbc.asm",
+    "va": "020b9e18",
+    "literal_index": 13132,
+    "value": "code"
+  },
+  {
+    "file": "__c__DisplayClass15_0._DownloadAction_g__ActionInfoResult_0.20b9cbc.asm",
+    "va": "020b9e5c",
+    "literal_index": 13380,
+    "value": "data"
+  },
+  {
+    "file": "__c__DisplayClass15_0._DownloadAction_g__ActionInfoResult_0.20b9cbc.asm",
+    "va": "020b9e8c",
+    "literal_index": 13753,
+    "value": "file_url"
+  },
+  {
+    "file": "__c__DisplayClass15_0._DownloadAction_g__ActionInfoResult_0.20b9cbc.asm",
+    "va": "020b9edc",
+    "literal_index": 12628,
+    "value": "action_file_name"
+  },
+  {
+    "file": "__c__DisplayClass15_0._DownloadAction_g__ActionInfoResult_0.20b9cbc.asm",
+    "va": "020b9f34",
+    "literal_index": 13754,
+    "value": "file_url : "
+  },
+  {
+    "file": "__c__DisplayClass15_0._DownloadAction_g__ActionInfoResult_0.20b9cbc.asm",
+    "va": "020b9f88",
+    "literal_index": 12629,
+    "value": "action_file_name : "
+  },
+  {
+    "file": "__c__DisplayClass15_0._DownloadAction_g__ActionInfoResult_0.20b9cbc.asm",
+    "va": "020ba058",
+    "literal_index": 17615,
+    "value": "获取下载信息异常"
+  },
+  {
+    "file": "__c__DisplayClass15_0._DownloadAction_g__ActionInfoResult_0.20b9cbc.asm",
+    "va": "020ba0d4",
+    "literal_index": 4799,
+    "value": "GET"
+  },
+  {
+    "file": "__DownloadAction_g__DownloadActionToRobot_2_d.MoveNext.20ba260.asm",
+    "va": "020ba294",
+    "literal_index": 8977,
+    "value": "TEXT_DLAC_0031"
+  },
+  {
+    "file": "__DownloadAction_g__DownloadActionToRobot_2_d.MoveNext.20ba260.asm",
+    "va": "020ba2a0",
+    "literal_index": 8977,
+    "value": "TEXT_DLAC_0031"
+  },
+  {
+    "file": "__DownloadAction_g__DownloadActionToRobot_2_d.MoveNext.20ba260.asm",
+    "va": "020ba30c",
+    "literal_index": 8978,
+    "value": "TEXT_DLAC_0032"
+  },
+  {
+    "file": "__DownloadAction_g__DownloadActionToRobot_2_d.MoveNext.20ba260.asm",
+    "va": "020ba318",
+    "literal_index": 8978,
+    "value": "TEXT_DLAC_0032"
+  },
+  {
+    "file": "BTDeviceType.get_DevStart_OP40CX.2040ae4.asm",
+    "va": "02040af8",
+    "literal_index": 2678,
+    "value": "CXGFN-"
+  },
+  {
+    "file": "BTDeviceType.get_DevStart_OP40CX.2040ae4.asm",
+    "va": "02040b04",
+    "literal_index": 2678,
+    "value": "CXGFN-"
+  },
+  {
+    "file": "_CreatAudioRects_d__26.MoveNext.20ad08c.asm",
+    "va": "020ad134",
+    "literal_index": 796,
+    "value": "*.wav"
+  },
+  {
+    "file": "_CreatAudioRects_d__26.MoveNext.20ad08c.asm",
+    "va": "020ad140",
+    "literal_index": 17303,
+    "value": "录音个数{0}"
+  },
+  {
+    "file": "_CreatAudioRects_d__26.MoveNext.20ad08c.asm",
+    "va": "020ad388",
+    "literal_index": 796,
+    "value": "*.wav"
+  },
+  {
+    "file": "_CreatAudioRects_d__26.MoveNext.20ad08c.asm",
+    "va": "020ad3c8",
+    "literal_index": 17303,
+    "value": "录音个数{0}"
+  },
+  {
+    "file": "_BeginRecording_d__37.MoveNext.20ac9c0.asm",
+    "va": "020aca00",
+    "literal_index": 16597,
+    "value": "{0:00}:{1:00}"
+  },
+  {
+    "file": "_BeginRecording_d__37.MoveNext.20ac9c0.asm",
+    "va": "020acb3c",
+    "literal_index": 16597,
+    "value": "{0:00}:{1:00}"
+  },
+  {
+    "file": "_BeginRecording_d__37.MoveNext.20ac9c0.asm",
+    "va": "020acc84",
+    "literal_index": 16597,
+    "value": "{0:00}:{1:00}"
+  },
+  {
+    "file": "BTDevice.SendData.2031bec.asm",
+    "va": "02031c54",
+    "literal_index": 17154,
+    "value": "发送数据到机器-->"
+  },
+  {
+    "file": "BTDevice.SendData.2031bec.asm",
+    "va": "02031c60",
+    "literal_index": 17588,
+    "value": "给未知类型的机器发送数据"
+  },
+  {
+    "file": "BTDevice.SendData.2031bec.asm",
+    "va": "02031c6c",
+    "literal_index": 882,
+    "value": "-->"
+  },
+  {
+    "file": "BTDevice.SendData.2031bec.asm",
+    "va": "02031c78",
+    "literal_index": 15426,
+    "value": "s"
+  },
+  {
+    "file": "BTDevice.SendData.2031bec.asm",
+    "va": "02031d48",
+    "literal_index": 17588,
+    "value": "给未知类型的机器发送数据"
+  },
+  {
+    "file": "BTDevice.SendData.2031bec.asm",
+    "va": "02031d9c",
+    "literal_index": 15426,
+    "value": "s"
+  },
+  {
+    "file": "BTDevice.SendData.2031bec.asm",
+    "va": "02031dbc",
+    "literal_index": 17154,
+    "value": "发送数据到机器-->"
+  },
+  {
+    "file": "BTDevice.SendData.2031bec.asm",
+    "va": "02031e50",
+    "literal_index": 882,
+    "value": "-->"
+  },
+  {
+    "file": "__c._TeachingTipCheck_b__99_10.2098a64.asm",
+    "va": "02098a80",
+    "literal_index": 6860,
+    "value": "MoveValueBtn"
+  },
+  {
+    "file": "__c._TeachingTipCheck_b__99_10.2098a64.asm",
+    "va": "02098aa0",
+    "literal_index": 6860,
+    "value": "MoveValueBtn"
+  },
+  {
+    "file": "BTDeviceType.get_DevStart_DHF.2040c24.asm",
+    "va": "02040c38",
+    "literal_index": 3622,
+    "value": "DHF-M-"
+  },
+  {
+    "file": "BTDeviceType.get_DevStart_DHF.2040c24.asm",
+    "va": "02040c44",
+    "literal_index": 3622,
+    "value": "DHF-M-"
+  },
+  {
+    "file": "__c__DisplayClass21_1._ConnectDev_b__5.2042cec.asm",
+    "va": "02042d0c",
+    "literal_index": 6558,
+    "value": "MTU返回-->{0},{1}"
+  },
+  {
+    "file": "__c__DisplayClass21_1._ConnectDev_b__5.2042cec.asm",
+    "va": "02042d34",
+    "literal_index": 6558,
+    "value": "MTU返回-->{0},{1}"
+  },
+  {
+    "file": "_Start_d__46.MoveNext.20f9560.asm",
+    "va": "020f96b0",
+    "literal_index": 12698,
+    "value": "android.permission.RECORD_AUDIO"
+  },
+  {
+    "file": "_Start_d__46.MoveNext.20f9560.asm",
+    "va": "020f96bc",
+    "literal_index": 12696,
+    "value": "android.permission.CAMERA"
+  },
+  {
+    "file": "_Start_d__46.MoveNext.20f9560.asm",
+    "va": "020f96c8",
+    "literal_index": 0,
+    "value": ""
+  },
+  {
+    "file": "_Start_d__46.MoveNext.20f9560.asm",
+    "va": "020f985c",
+    "literal_index": 0,
+    "value": ""
+  },
+  {
+    "file": "_Start_d__46.MoveNext.20f9560.asm",
+    "va": "020f9b04",
+    "literal_index": 12696,
+    "value": "android.permission.CAMERA"
+  },
+  {
+    "file": "_Start_d__46.MoveNext.20f9560.asm",
+    "va": "020f9b2c",
+    "literal_index": 12698,
+    "value": "android.permission.RECORD_AUDIO"
+  },
+  {
+    "file": "_GetMDataAndShow_d__112.MoveNext.206bfa4.asm",
+    "va": "0206c074",
+    "literal_index": 17439,
+    "value": "有默认音乐"
+  },
+  {
+    "file": "_GetMDataAndShow_d__112.MoveNext.206bfa4.asm",
+    "va": "0206c080",
+    "literal_index": 17504,
+    "value": "没有音乐"
+  },
+  {
+    "file": "_GetMDataAndShow_d__112.MoveNext.206bfa4.asm",
+    "va": "0206c08c",
+    "literal_index": 15859,
+    "value": "tempaudio.wav"
+  },
+  {
+    "file": "_GetMDataAndShow_d__112.MoveNext.206bfa4.asm",
+    "va": "0206c098",
+    "literal_index": 17266,
+    "value": "开始加载文件"
+  },
+  {
+    "file": "_GetMDataAndShow_d__112.MoveNext.206bfa4.asm",
+    "va": "0206c0a4",
+    "literal_index": 17438,
+    "value": "有音乐数据"
+  },
+  {
+    "file": "_GetMDataAndShow_d__112.MoveNext.206bfa4.asm",
+    "va": "0206c0b0",
+    "literal_index": 0,
+    "value": ""
+  },
+  {
+    "file": "_GetMDataAndShow_d__112.MoveNext.206bfa4.asm",
+    "va": "0206c15c",
+    "literal_index": 17266,
+    "value": "开始加载文件"
+  },
+  {
+    "file": "_GetMDataAndShow_d__112.MoveNext.206bfa4.asm",
+    "va": "0206c2ac",
+    "literal_index": 17438,
+    "value": "有音乐数据"
+  },
+  {
+    "file": "_GetMDataAndShow_d__112.MoveNext.206bfa4.asm",
+    "va": "0206c2f4",
+    "literal_index": 15859,
+    "value": "tempaudio.wav"
+  },
+  {
+    "file": "_GetMDataAndShow_d__112.MoveNext.206bfa4.asm",
+    "va": "0206c3d0",
+    "literal_index": 17504,
+    "value": "没有音乐"
+  },
+  {
+    "file": "_GetMDataAndShow_d__112.MoveNext.206bfa4.asm",
+    "va": "0206c3fc",
+    "literal_index": 0,
+    "value": ""
+  },
+  {
+    "file": "_GetMDataAndShow_d__112.MoveNext.206bfa4.asm",
+    "va": "0206c44c",
+    "literal_index": 17439,
+    "value": "有默认音乐"
+  },
+  {
+    "file": "_GetMDataAndShow_d__112.MoveNext.206bfa4.asm",
+    "va": "0206c4a4",
+    "literal_index": 0,
+    "value": ""
+  },
+  {
+    "file": "Unity2BTCommandControl.DisConnect.2041fd8.asm",
+    "va": "02041ff8",
+    "literal_index": 2747,
+    "value": "Can't DisConnect"
+  },
+  {
+    "file": "Unity2BTCommandControl.DisConnect.2041fd8.asm",
+    "va": "02042074",
+    "literal_index": 2747,
+    "value": "Can't DisConnect"
+  },
+  {
+    "file": "_GetWifiInfo_Android_d__5.MoveNext.2121458.asm",
+    "va": "02121554",
+    "literal_index": 16396,
+    "value": "wifi"
+  },
+  {
+    "file": "_GetWifiInfo_Android_d__5.MoveNext.2121458.asm",
+    "va": "02121560",
+    "literal_index": 13950,
+    "value": "getBSSID"
+  },
+  {
+    "file": "_GetWifiInfo_Android_d__5.MoveNext.2121458.asm",
+    "va": "0212156c",
+    "literal_index": 14959,
+    "value": "networkId"
+  },
+  {
+    "file": "_GetWifiInfo_Android_d__5.MoveNext.2121458.asm",
+    "va": "02121578",
+    "literal_index": 15584,
+    "value": "size"
+  },
+  {
+    "file": "_GetWifiInfo_Android_d__5.MoveNext.2121458.asm",
+    "va": "02121584",
+    "literal_index": 13168,
+    "value": "com.unity3d.player.UnityPlayer"
+  },
+  {
+    "file": "_GetWifiInfo_Android_d__5.MoveNext.2121458.asm",
+    "va": "02121590",
+    "literal_index": 13969,
+    "value": "getSystemService"
+  },
+  {
+    "file": "_GetWifiInfo_Android_d__5.MoveNext.2121458.asm",
+    "va": "0212159c",
+    "literal_index": 13954,
+    "value": "getConnectionInfo"
+  },
+  {
+    "file": "_GetWifiInfo_Android_d__5.MoveNext.2121458.asm",
+    "va": "021215a8",
+    "literal_index": 13967,
+    "value": "getSSID"
+  },
+  {
+    "file": "_GetWifiInfo_Android_d__5.MoveNext.2121458.asm",
+    "va": "021215b4",
+    "literal_index": 13946,
+    "value": "get"
+  },
+  {
+    "file": "_GetWifiInfo_Android_d__5.MoveNext.2121458.asm",
+    "va": "021215c0",
+    "literal_index": 8197,
+    "value": "SSID"
+  },
+  {
+    "file": "_GetWifiInfo_Android_d__5.MoveNext.2121458.asm",
+    "va": "021215cc",
+    "literal_index": 883,
+    "value": "-->_wifiInfo 不为空"
+  },
+  {
+    "file": "_GetWifiInfo_Android_d__5.MoveNext.2121458.asm",
+    "va": "021215d8",
+    "literal_index": 13953,
+    "value": "getConfiguredNetworks"
+  },
+  {
+    "file": "_GetWifiInfo_Android_d__5.MoveNext.2121458.asm",
+    "va": "021215e4",
+    "literal_index": 13966,
+    "value": "getNetworkId"
+  },
+  {
+    "file": "_GetWifiInfo_Android_d__5.MoveNext.2121458.asm",
+    "va": "021215f0",
+    "literal_index": 13965,
+    "value": "getNetworkCapabilities"
+  },
+  {
+    "file": "_GetWifiInfo_Android_d__5.MoveNext.2121458.asm",
+    "va": "021215fc",
+    "literal_index": 0,
+    "value": ""
+  },
+  {
+    "file": "_GetWifiInfo_Android_d__5.MoveNext.2121458.asm",
+    "va": "02121608",
+    "literal_index": 4906,
+    "value": "GetWifiInfo_Android---->_wifiInfo 为空"
+  },
+  {
+    "file": "_GetWifiInfo_Android_d__5.MoveNext.2121458.asm",
+    "va": "02121614",
+    "literal_index": 12686,
+    "value": "android.net.ConnectivityManager"
+  },
+  {
+    "file": "_GetWifiInfo_Android_d__5.MoveNext.2121458.asm",
+    "va": "02121620",
+    "literal_index": 13948,
+    "value": "getActiveNetwork"
+  },
+  {
+    "file": "_GetWifiInfo_Android_d__5.MoveNext.2121458.asm",
+    "va": "0212162c",
+    "literal_index": 13339,
+    "value": "currentActivity"
+  },
+  {
+    "file": "_GetWifiInfo_Android_d__5.MoveNext.2121458.asm",
+    "va": "02121638",
+    "literal_index": 13970,
+    "value": "getTransportInfo"
+  },
+  {
+    "file": "_GetWifiInfo_Android_d__5.MoveNext.2121458.asm",
+    "va": "02121768",
+    "literal_index": 0,
+    "value": ""
+  },
+  {
+    "file": "_GetWifiInfo_Android_d__5.MoveNext.2121458.asm",
+    "va": "02121788",
+    "literal_index": 13168,
+    "value": "com.unity3d.player.UnityPlayer"
+  },
+  {
+    "file": "_GetWifiInfo_Android_d__5.MoveNext.2121458.asm",
+    "va": "021217a4",
+    "literal_index": 13339,
+    "value": "currentActivity"
+  },
+  {
+    "file": "_GetWifiInfo_Android_d__5.MoveNext.2121458.asm",
+    "va": "021217f4",
+    "literal_index": 16396,
+    "value": "wifi"
+  },
+  {
+    "file": "_GetWifiInfo_Android_d__5.MoveNext.2121458.asm",
+    "va": "02121834",
+    "literal_index": 13969,
+    "value": "getSystemService"
+  },
+  {
+    "file": "_GetWifiInfo_Android_d__5.MoveNext.2121458.asm",
+    "va": "021218c8",
+    "literal_index": 13954,
+    "value": "getConnectionInfo"
+  },
+  {
+    "file": "_GetWifiInfo_Android_d__5.MoveNext.2121458.asm",
+    "va": "02121960",
+    "literal_index": 13967,
+    "value": "getSSID"
+  },
+  {
+    "file": "_GetWifiInfo_Android_d__5.MoveNext.2121458.asm",
+    "va": "02121a54",
+    "literal_index": 13950,
+    "value": "getBSSID"
+  },
+  {
+    "file": "_GetWifiInfo_Android_d__5.MoveNext.2121458.asm",
+    "va": "02121b28",
+    "literal_index": 13966,
+    "value": "getNetworkId"
+  },
+  {
+    "file": "_GetWifiInfo_Android_d__5.MoveNext.2121458.asm",
+    "va": "02121ba8",
+    "literal_index": 13953,
+    "value": "getConfiguredNetworks"
+  },
+  {
+    "file": "_GetWifiInfo_Android_d__5.MoveNext.2121458.asm",
+    "va": "02121c28",
+    "literal_index": 15584,
+    "value": "size"
+  },
+  {
+    "file": "_GetWifiInfo_Android_d__5.MoveNext.2121458.asm",
+    "va": "02121c68",
+    "literal_index": 13946,
+    "value": "get"
+  },
+  {
+    "file": "_GetWifiInfo_Android_d__5.MoveNext.2121458.asm",
+    "va": "02121c6c",
+    "literal_index": 14959,
+    "value": "networkId"
+  },
+  {
+    "file": "_GetWifiInfo_Android_d__5.MoveNext.2121458.asm",
+    "va": "02121d1c",
+    "literal_index": 8197,
+    "value": "SSID"
+  },
+  {
+    "file": "_GetWifiInfo_Android_d__5.MoveNext.2121458.asm",
+    "va": "02121dbc",
+    "literal_index": 12686,
+    "value": "android.net.ConnectivityManager"
+  },
+  {
+    "file": "_GetWifiInfo_Android_d__5.MoveNext.2121458.asm",
+    "va": "02121e50",
+    "literal_index": 13969,
+    "value": "getSystemService"
+  },
+  {
+    "file": "_GetWifiInfo_Android_d__5.MoveNext.2121458.asm",
+    "va": "02121ee0",
+    "literal_index": 13948,
+    "value": "getActiveNetwork"
+  },
+  {
+    "file": "_GetWifiInfo_Android_d__5.MoveNext.2121458.asm",
+    "va": "02121f74",
+    "literal_index": 13965,
+    "value": "getNetworkCapabilities"
+  },
+  {
+    "file": "_GetWifiInfo_Android_d__5.MoveNext.2121458.asm",
+    "va": "02122004",
+    "literal_index": 13970,
+    "value": "getTransportInfo"
+  },
+  {
+    "file": "_GetWifiInfo_Android_d__5.MoveNext.2121458.asm",
+    "va": "02122074",
+    "literal_index": 883,
+    "value": "-->_wifiInfo 不为空"
+  },
+  {
+    "file": "_GetWifiInfo_Android_d__5.MoveNext.2121458.asm",
+    "va": "02122110",
+    "literal_index": 13967,
+    "value": "getSSID"
+  },
+  {
+    "file": "_GetWifiInfo_Android_d__5.MoveNext.2121458.asm",
+    "va": "02122240",
+    "literal_index": 13950,
+    "value": "getBSSID"
+  },
+  {
+    "file": "_GetWifiInfo_Android_d__5.MoveNext.2121458.asm",
+    "va": "02122278",
+    "literal_index": 4906,
+    "value": "GetWifiInfo_Android---->_wifiInfo 为空"
+  },
+  {
+    "file": "_GetWifiInfo_Android_d__5.MoveNext.2121458.asm",
+    "va": "021222e4",
+    "literal_index": 0,
+    "value": ""
+  },
+  {
+    "file": "_GetWifiInfo_Android_d__5.MoveNext.2121458.asm",
+    "va": "02122d64",
+    "literal_index": 0,
+    "value": ""
+  },
+  {
+    "file": "_GetWifiInfo_Android_d__5.MoveNext.2121458.asm",
+    "va": "02122d74",
+    "literal_index": 0,
+    "value": ""
+  },
+  {
+    "file": "_StartWithWait_d__15.MoveNext.20c9b60.asm",
+    "va": "020c9c30",
+    "literal_index": 1957,
+    "value": "ActionName"
+  },
+  {
+    "file": "_StartWithWait_d__15.MoveNext.20c9b60.asm",
+    "va": "020c9c3c",
+    "literal_index": 0,
+    "value": ""
+  },
+  {
+    "file": "_StartWithWait_d__15.MoveNext.20c9b60.asm",
+    "va": "020c9c48",
+    "literal_index": 762,
+    "value": "*"
+  },
+  {
+    "file": "_StartWithWait_d__15.MoveNext.20c9b60.asm",
+    "va": "020c9e58",
+    "literal_index": 762,
+    "value": "*"
+  },
+  {
+    "file": "_StartWithWait_d__15.MoveNext.20c9b60.asm",
+    "va": "020ca1e8",
+    "literal_index": 1957,
+    "value": "ActionName"
+  },
+  {
+    "file": "_StartWithWait_d__15.MoveNext.20c9b60.asm",
+    "va": "020ca220",
+    "literal_index": 0,
+    "value": ""
+  },
+  {
+    "file": "_StartWithWait_d__15.MoveNext.20c9b60.asm",
+    "va": "020ca47c",
+    "literal_index": 1957,
+    "value": "ActionName"
+  },
+  {
+    "file": "_StartWithWait_d__15.MoveNext.20c9b60.asm",
+    "va": "020ca4b4",
+    "literal_index": 0,
+    "value": ""
+  },
+  {
+    "file": "BTDeviceType.GetDevSubscribeInfo.203c1e0.asm",
+    "va": "0203c240",
+    "literal_index": 0,
+    "value": ""
+  },
+  {
+    "file": "BTDeviceType.GetDevSubscribeInfo.203c1e0.asm",
+    "va": "0203c3bc",
+    "literal_index": 0,
+    "value": ""
+  },
+  {
+    "file": "_DownActionFile2Robot_d__65.MoveNext.20dc95c.asm",
+    "va": "020dca4c",
+    "literal_index": 4788,
+    "value": "GB18030"
+  },
+  {
+    "file": "_DownActionFile2Robot_d__65.MoveNext.20dc95c.asm",
+    "va": "020dca58",
+    "literal_index": 17264,
+    "value": "开始写入文件数据,总字节数:{0}"
+  },
+  {
+    "file": "_DownActionFile2Robot_d__65.MoveNext.20dc95c.asm",
+    "va": "020dca64",
+    "literal_index": 17408,
+    "value": "文件写入到机器:{0}"
+  },
+  {
+    "file": "_DownActionFile2Robot_d__65.MoveNext.20dc95c.asm",
+    "va": "020dca70",
+    "literal_index": 17101,
+    "value": "创建文件完成:"
+  },
+  {
+    "file": "_DownActionFile2Robot_d__65.MoveNext.20dc95c.asm",
+    "va": "020dca7c",
+    "literal_index": 17265,
+    "value": "开始创建文件:"
+  },
+  {
+    "file": "_DownActionFile2Robot_d__65.MoveNext.20dc95c.asm",
+    "va": "020dca88",
+    "literal_index": 17472,
+    "value": "机器动作文件开始写入到机器:"
+  },
+  {
+    "file": "_DownActionFile2Robot_d__65.MoveNext.20dc95c.asm",
+    "va": "020dca94",
+    "literal_index": 17470,
+    "value": "机器动作文件写入到机器完成:"
+  },
+  {
+    "file": "_DownActionFile2Robot_d__65.MoveNext.20dc95c.asm",
+    "va": "020dcabc",
+    "literal_index": 17408,
+    "value": "文件写入到机器:{0}"
+  },
+  {
+    "file": "_DownActionFile2Robot_d__65.MoveNext.20dc95c.asm",
+    "va": "020dcb38",
+    "literal_index": 17472,
+    "value": "机器动作文件开始写入到机器:"
+  },
+  {
+    "file": "_DownActionFile2Robot_d__65.MoveNext.20dc95c.asm",
+    "va": "020dcb74",
+    "literal_index": 4788,
+    "value": "GB18030"
+  },
+  {
+    "file": "_DownActionFile2Robot_d__65.MoveNext.20dc95c.asm",
+    "va": "020dcc34",
+    "literal_index": 17265,
+    "value": "开始创建文件:"
+  },
+  {
+    "file": "_DownActionFile2Robot_d__65.MoveNext.20dc95c.asm",
+    "va": "020dcc98",
+    "literal_index": 17101,
+    "value": "创建文件完成:"
+  },
+  {
+    "file": "_DownActionFile2Robot_d__65.MoveNext.20dc95c.asm",
+    "va": "020dcd28",
+    "literal_index": 17264,
+    "value": "开始写入文件数据,总字节数:{0}"
+  },
+  {
+    "file": "_DownActionFile2Robot_d__65.MoveNext.20dc95c.asm",
+    "va": "020dcffc",
+    "literal_index": 17470,
+    "value": "机器动作文件写入到机器完成:"
+  },
+  {
+    "file": "_Start_d__10.MoveNext.204956c.asm",
+    "va": "020495c0",
+    "literal_index": 4707,
+    "value": "Fonts & Materials/LiberationSans SDF - BEVEL"
+  },
+  {
+    "file": "_Start_d__10.MoveNext.204956c.asm",
+    "va": "020495cc",
+    "literal_index": 9423,
+    "value": "The <color=#0050FF>count is: </color>"
+  },
+  {
+    "file": "_Start_d__10.MoveNext.204956c.asm",
+    "va": "020495d8",
+    "literal_index": 9420,
+    "value": "The <#0050FF>count is: </color>"
+  },
+  {
+    "file": "_Start_d__10.MoveNext.204956c.asm",
+    "va": "02049708",
+    "literal_index": 4707,
+    "value": "Fonts & Materials/LiberationSans SDF - BEVEL"
+  },
+  {
+    "file": "_Start_d__10.MoveNext.204956c.asm",
+    "va": "0204987c",
+    "literal_index": 9420,
+    "value": "The <#0050FF>count is: </color>"
+  },
+  {
+    "file": "_Start_d__10.MoveNext.204956c.asm",
+    "va": "0204997c",
+    "literal_index": 9423,
+    "value": "The <color=#0050FF>count is: </color>"
+  },
+  {
+    "file": "__f__AnonymousType3_2.ToString.264c5f4.asm",
+    "va": "0264c618",
+    "literal_index": 16745,
+    "value": "{{ Key = {0}, Values = {1} }}"
+  },
+  {
+    "file": "__f__AnonymousType3_2.ToString.264c5f4.asm",
+    "va": "0264c638",
+    "literal_index": 16745,
+    "value": "{{ Key = {0}, Values = {1} }}"
+  },
+  {
+    "file": "BTDeviceType.get_DevStart_GS.2040c64.asm",
+    "va": "02040c78",
+    "literal_index": 4818,
+    "value": "GSEG-"
+  },
+  {
+    "file": "BTDeviceType.get_DevStart_GS.2040c64.asm",
+    "va": "02040c84",
+    "literal_index": 4818,
+    "value": "GSEG-"
+  },
+  {
+    "file": "__c._ConnectDev_b__21_3.2042314.asm",
+    "va": "02042354",
+    "literal_index": 17627,
+    "value": "蓝牙连接断开"
+  },
+  {
+    "file": "__c._ConnectDev_b__21_3.2042314.asm",
+    "va": "02042388",
+    "literal_index": 17627,
+    "value": "蓝牙连接断开"
+  },
+  {
+    "file": "_RunEditorBlocks_d__178.MoveNext.209ddbc.asm",
+    "va": "0209e064",
+    "literal_index": 17471,
+    "value": "机器动作文件写入到机器完成:{0},{1}"
+  },
+  {
+    "file": "_RunEditorBlocks_d__178.MoveNext.209ddbc.asm",
+    "va": "0209e070",
+    "literal_index": 1401,
+    "value": "21"
+  },
+  {
+    "file": "_RunEditorBlocks_d__178.MoveNext.209ddbc.asm",
+    "va": "0209e07c",
+    "literal_index": 17344,
+    "value": "执行个数"
+  },
+  {
+    "file": "_RunEditorBlocks_d__178.MoveNext.209ddbc.asm",
+    "va": "0209e088",
+    "literal_index": 17264,
+    "value": "开始写入文件数据,总字节数:{0}"
+  },
+  {
+    "file": "_RunEditorBlocks_d__178.MoveNext.209ddbc.asm",
+    "va": "0209e094",
+    "literal_index": 17387,
+    "value": "播放动作"
+  },
+  {
+    "file": "_RunEditorBlocks_d__178.MoveNext.209ddbc.asm",
+    "va": "0209e0a0",
+    "literal_index": 17627,
+    "value": "蓝牙连接断开"
+  },
+  {
+    "file": "_RunEditorBlocks_d__178.MoveNext.209ddbc.asm",
+    "va": "0209e0ac",
+    "literal_index": 17408,
+    "value": "文件写入到机器:{0}"
+  },
+  {
+    "file": "_RunEditorBlocks_d__178.MoveNext.209ddbc.asm",
+    "va": "0209e0b8",
+    "literal_index": 17101,
+    "value": "创建文件完成:"
+  },
+  {
+    "file": "_RunEditorBlocks_d__178.MoveNext.209ddbc.asm",
+    "va": "0209e0c4",
+    "literal_index": 17265,
+    "value": "开始创建文件:"
+  },
+  {
+    "file": "_RunEditorBlocks_d__178.MoveNext.209ddbc.asm",
+    "va": "0209e0d0",
+    "literal_index": 17472,
+    "value": "机器动作文件开始写入到机器:"
+  },
+  {
+    "file": "_RunEditorBlocks_d__178.MoveNext.209ddbc.asm",
+    "va": "0209e0ec",
+    "literal_index": 17408,
+    "value": "文件写入到机器:{0}"
+  },
+  {
+    "file": "_RunEditorBlocks_d__178.MoveNext.209ddbc.asm",
+    "va": "0209e1f0",
+    "literal_index": 1401,
+    "value": "21"
+  },
+  {
+    "file": "_RunEditorBlocks_d__178.MoveNext.209ddbc.asm",
+    "va": "0209e928",
+    "literal_index": 2683,
+    "value": "CacheAction/VisualEditorGameTemp.sh"
+  },
+  {
+    "file": "_RunEditorBlocks_d__178.MoveNext.209ddbc.asm",
+    "va": "0209e934",
+    "literal_index": 2683,
+    "value": "CacheAction/VisualEditorGameTemp.sh"
+  },
+  {
+    "file": "_RunEditorBlocks_d__178.MoveNext.209ddbc.asm",
+    "va": "0209e970",
+    "literal_index": 17387,
+    "value": "播放动作"
+  },
+  {
+    "file": "_RunEditorBlocks_d__178.MoveNext.209ddbc.asm",
+    "va": "0209e9b8",
+    "literal_index": 2683,
+    "value": "CacheAction/VisualEditorGameTemp.sh"
+  },
+  {
+    "file": "_RunEditorBlocks_d__178.MoveNext.209ddbc.asm",
+    "va": "0209ee10",
+    "literal_index": 17408,
+    "value": "文件写入到机器:{0}"
+  },
+  {
+    "file": "_RunEditorBlocks_d__178.MoveNext.209ddbc.asm",
+    "va": "0209ee94",
+    "literal_index": 17627,
+    "value": "蓝牙连接断开"
+  },
+  {
+    "file": "_RunEditorBlocks_d__178.MoveNext.209ddbc.asm",
+    "va": "0209eed4",
+    "literal_index": 17408,
+    "value": "文件写入到机器:{0}"
+  },
+  {
+    "file": "_RunEditorBlocks_d__178.MoveNext.209ddbc.asm",
+    "va": "0209ef04",
+    "literal_index": 17408,
+    "value": "文件写入到机器:{0}"
+  },
+  {
+    "file": "_RunEditorBlocks_d__178.MoveNext.209ddbc.asm",
+    "va": "0209ef34",
+    "literal_index": 17408,
+    "value": "文件写入到机器:{0}"
+  },
+  {
+    "file": "_RunEditorBlocks_d__178.MoveNext.209ddbc.asm",
+    "va": "0209ef64",
+    "literal_index": 17408,
+    "value": "文件写入到机器:{0}"
+  },
+  {
+    "file": "_RunEditorBlocks_d__178.MoveNext.209ddbc.asm",
+    "va": "0209ef98",
+    "literal_index": 17408,
+    "value": "文件写入到机器:{0}"
+  },
+  {
+    "file": "_RunEditorBlocks_d__178.MoveNext.209ddbc.asm",
+    "va": "0209f0e0",
+    "literal_index": 17408,
+    "value": "文件写入到机器:{0}"
+  },
+  {
+    "file": "_RunEditorBlocks_d__178.MoveNext.209ddbc.asm",
+    "va": "0209f14c",
+    "literal_index": 17344,
+    "value": "执行个数"
+  },
+  {
+    "file": "_RunEditorBlocks_d__178.MoveNext.209ddbc.asm",
+    "va": "0209f20c",
+    "literal_index": 2683,
+    "value": "CacheAction/VisualEditorGameTemp.sh"
+  },
+  {
+    "file": "_RunEditorBlocks_d__178.MoveNext.209ddbc.asm",
+    "va": "0209f228",
+    "literal_index": 2683,
+    "value": "CacheAction/VisualEditorGameTemp.sh"
+  },
+  {
+    "file": "_RunEditorBlocks_d__178.MoveNext.209ddbc.asm",
+    "va": "0209f25c",
+    "literal_index": 2683,
+    "value": "CacheAction/VisualEditorGameTemp.sh"
+  },
+  {
+    "file": "_RunEditorBlocks_d__178.MoveNext.209ddbc.asm",
+    "va": "0209f274",
+    "literal_index": 17472,
+    "value": "机器动作文件开始写入到机器:"
+  },
+  {
+    "file": "_RunEditorBlocks_d__178.MoveNext.209ddbc.asm",
+    "va": "0209f2b0",
+    "literal_index": 17265,
+    "value": "开始创建文件:"
+  },
+  {
+    "file": "_RunEditorBlocks_d__178.MoveNext.209ddbc.asm",
+    "va": "0209f364",
+    "literal_index": 17101,
+    "value": "创建文件完成:"
+  },
+  {
+    "file": "_RunEditorBlocks_d__178.MoveNext.209ddbc.asm",
+    "va": "0209f3ac",
+    "literal_index": 17264,
+    "value": "开始写入文件数据,总字节数:{0}"
+  },
+  {
+    "file": "_RunEditorBlocks_d__178.MoveNext.209ddbc.asm",
+    "va": "0209f6b4",
+    "literal_index": 2683,
+    "value": "CacheAction/VisualEditorGameTemp.sh"
+  },
+  {
+    "file": "_RunEditorBlocks_d__178.MoveNext.209ddbc.asm",
+    "va": "0209f6cc",
+    "literal_index": 2683,
+    "value": "CacheAction/VisualEditorGameTemp.sh"
+  },
+  {
+    "file": "_RunEditorBlocks_d__178.MoveNext.209ddbc.asm",
+    "va": "0209f6f0",
+    "literal_index": 17471,
+    "value": "机器动作文件写入到机器完成:{0},{1}"
+  },
+  {
+    "file": "BTDeviceType.get_DevStart_T9.20409e4.asm",
+    "va": "020409f8",
+    "literal_index": 8892,
+    "value": "T9-"
+  },
+  {
+    "file": "BTDeviceType.get_DevStart_T9.20409e4.asm",
+    "va": "02040a04",
+    "literal_index": 8892,
+    "value": "T9-"
+  },
+  {
+    "file": "_RunningManualAction_New_d__132.MoveNext.206cfa4.asm",
+    "va": "0206d13c",
+    "literal_index": 17387,
+    "value": "播放动作"
+  },
+  {
+    "file": "_RunningManualAction_New_d__132.MoveNext.206cfa4.asm",
+    "va": "0206d1a0",
+    "literal_index": 2682,
+    "value": "CacheAction/ManualEditorTemp.sh"
+  },
+  {
+    "file": "_RunningManualAction_New_d__132.MoveNext.206cfa4.asm",
+    "va": "0206d1ac",
+    "literal_index": 2682,
+    "value": "CacheAction/ManualEditorTemp.sh"
+  },
+  {
+    "file": "_RunningManualAction_New_d__132.MoveNext.206cfa4.asm",
+    "va": "0206d1e8",
+    "literal_index": 17387,
+    "value": "播放动作"
+  },
+  {
+    "file": "_RunningManualAction_New_d__132.MoveNext.206cfa4.asm",
+    "va": "0206d284",
+    "literal_index": 2682,
+    "value": "CacheAction/ManualEditorTemp.sh"
+  },
+  {
+    "file": "_RunningManualAction_New_d__132.MoveNext.206cfa4.asm",
+    "va": "0206db78",
+    "literal_index": 2682,
+    "value": "CacheAction/ManualEditorTemp.sh"
+  },
+  {
+    "file": "_RunningManualAction_New_d__132.MoveNext.206cfa4.asm",
+    "va": "0206db98",
+    "literal_index": 2682,
+    "value": "CacheAction/ManualEditorTemp.sh"
+  },
+  {
+    "file": "__c__DisplayClass48_0._CompletedFileWriting_b__1.20f9490.asm",
+    "va": "020f94b8",
+    "literal_index": 15405,
+    "value": "robosen"
+  },
+  {
+    "file": "__c__DisplayClass48_0._CompletedFileWriting_b__1.20f9490.asm",
+    "va": "020f9504",
+    "literal_index": 15405,
+    "value": "robosen"
+  },
+  {
+    "file": "_ReScanMethod_d__30.MoveNext.20a6ea0.asm",
+    "va": "020a6f04",
+    "literal_index": 17070,
+    "value": "停止扫描时间！！！"
+  },
+  {
+    "file": "_ReScanMethod_d__30.MoveNext.20a6ea0.asm",
+    "va": "020a7174",
+    "literal_index": 17070,
+    "value": "停止扫描时间！！！"
+  },
+  {
+    "file": "__f__AnonymousType1_2.ToString.264ab68.asm",
+    "va": "0264ab88",
+    "literal_index": 16747,
+    "value": "{{ standJoint = {0}, editorJoint = {1} }}"
+  },
+  {
+    "file": "__f__AnonymousType1_2.ToString.264ab68.asm",
+    "va": "0264aba4",
+    "literal_index": 16747,
+    "value": "{{ standJoint = {0}, editorJoint = {1} }}"
+  },
+  {
+    "file": "Unity2BTCommandControl.StopScanDevs.2041f44.asm",
+    "va": "02041f6c",
+    "literal_index": 155,
+    "value": " Can't StopScanDevs"
+  },
+  {
+    "file": "Unity2BTCommandControl.StopScanDevs.2041f44.asm",
+    "va": "02041fbc",
+    "literal_index": 155,
+    "value": " Can't StopScanDevs"
+  },
+  {
+    "file": "_RequestMicrophonePermission_d__35.MoveNext.20ad7dc.asm",
+    "va": "020ad864",
+    "literal_index": 12698,
+    "value": "android.permission.RECORD_AUDIO"
+  },
+  {
+    "file": "_RequestMicrophonePermission_d__35.MoveNext.20ad7dc.asm",
+    "va": "020adac8",
+    "literal_index": 12698,
+    "value": "android.permission.RECORD_AUDIO"
+  },
+  {
+    "file": "__c._TeachingTipCheck_b__99_6.20989ac.asm",
+    "va": "020989c8",
+    "literal_index": 8616,
+    "value": "SpeedBtn"
+  },
+  {
+    "file": "__c._TeachingTipCheck_b__99_6.20989ac.asm",
+    "va": "020989e8",
+    "literal_index": 8616,
+    "value": "SpeedBtn"
+  },
+  {
+    "file": "__f__AnonymousType2_2.ToString.264b898.asm",
+    "va": "0264b8bc",
+    "literal_index": 16744,
+    "value": "{{ Key = {0}, ValueList = {1} }}"
+  },
+  {
+    "file": "__f__AnonymousType2_2.ToString.264b898.asm",
+    "va": "0264b8dc",
+    "literal_index": 16744,
+    "value": "{{ Key = {0}, ValueList = {1} }}"
+  },
+  {
+    "file": "_GetTexture2DFromURL_d__14.MoveNext.203a128.asm",
+    "va": "0203a160",
+    "literal_index": 844,
+    "value": ",downloadHandler Text:"
+  },
+  {
+    "file": "_GetTexture2DFromURL_d__14.MoveNext.203a128.asm",
+    "va": "0203a16c",
+    "literal_index": 10498,
+    "value": "URL:"
+  },
+  {
+    "file": "_GetTexture2DFromURL_d__14.MoveNext.203a128.asm",
+    "va": "0203a178",
+    "literal_index": 840,
+    "value": ",Error:"
+  },
+  {
+    "file": "_GetTexture2DFromURL_d__14.MoveNext.203a128.asm",
+    "va": "0203a28c",
+    "literal_index": 10498,
+    "value": "URL:"
+  },
+  {
+    "file": "_GetTexture2DFromURL_d__14.MoveNext.203a128.asm",
+    "va": "0203a2e0",
+    "literal_index": 840,
+    "value": ",Error:"
+  },
+  {
+    "file": "_GetTexture2DFromURL_d__14.MoveNext.203a128.asm",
+    "va": "0203a334",
+    "literal_index": 844,
+    "value": ",downloadHandler Text:"
+  },
+  {
+    "file": "__c__DisplayClass29_0._CheckBleConnecting_g__FolderActionsNameRecive_1.20a40a4.asm",
+    "va": "020a4100",
+    "literal_index": 17356,
+    "value": "接收到动作-->"
+  },
+  {
+    "file": "__c__DisplayClass29_0._CheckBleConnecting_g__FolderActionsNameRecive_1.20a40a4.asm",
+    "va": "020a427c",
+    "literal_index": 17356,
+    "value": "接收到动作-->"
+  },
+  {
+    "file": "__c__DisplayClass35_0._RequestMicrophonePermission_g__PermissionGranted_1.20ac88c.asm",
+    "va": "020ac8a8",
+    "literal_index": 17476,
+    "value": "权限同意-->"
+  },
+  {
+    "file": "__c__DisplayClass35_0._RequestMicrophonePermission_g__PermissionGranted_1.20ac88c.asm",
+    "va": "020ac8cc",
+    "literal_index": 17476,
+    "value": "权限同意-->"
+  },
+  {
+    "file": "BTDeviceType.get_DevStart_K1AI.2040a64.asm",
+    "va": "02040a78",
+    "literal_index": 6191,
+    "value": "K1AI-"
+  },
+  {
+    "file": "BTDeviceType.get_DevStart_K1AI.2040a64.asm",
+    "va": "02040a84",
+    "literal_index": 6191,
+    "value": "K1AI-"
+  },
+  {
+    "file": "__c__DisplayClass16_0._RobotActionToRobot_g__WriteDataToFileSuccess_1.20e874c.asm",
+    "va": "020e877c",
+    "literal_index": 17357,
+    "value": "接收到数据接受成功的信号"
+  },
+  {
+    "file": "__c__DisplayClass16_0._RobotActionToRobot_g__WriteDataToFileSuccess_1.20e874c.asm",
+    "va": "020e8798",
+    "literal_index": 17357,
+    "value": "接收到数据接受成功的信号"
+  },
+  {
+    "file": "_RobotActionToRobot_d__16.MoveNext.20e8990.asm",
+    "va": "020e8abc",
+    "literal_index": 4788,
+    "value": "GB18030"
+  },
+  {
+    "file": "_RobotActionToRobot_d__16.MoveNext.20e8990.asm",
+    "va": "020e8ac8",
+    "literal_index": 4020,
+    "value": "DownloadAction/"
+  },
+  {
+    "file": "_RobotActionToRobot_d__16.MoveNext.20e8990.asm",
+    "va": "020e8ad4",
+    "literal_index": 17264,
+    "value": "开始写入文件数据,总字节数:{0}"
+  },
+  {
+    "file": "_RobotActionToRobot_d__16.MoveNext.20e8990.asm",
+    "va": "020e8ae0",
+    "literal_index": 17468,
+    "value": "机器人断开连接"
+  },
+  {
+    "file": "_RobotActionToRobot_d__16.MoveNext.20e8990.asm",
+    "va": "020e8aec",
+    "literal_index": 17035,
+    "value": "下载完成"
+  },
+  {
+    "file": "_RobotActionToRobot_d__16.MoveNext.20e8990.asm",
+    "va": "020e8af8",
+    "literal_index": 17408,
+    "value": "文件写入到机器:{0}"
+  },
+  {
+    "file": "_RobotActionToRobot_d__16.MoveNext.20e8990.asm",
+    "va": "020e8b04",
+    "literal_index": 17101,
+    "value": "创建文件完成:"
+  },
+  {
+    "file": "_RobotActionToRobot_d__16.MoveNext.20e8990.asm",
+    "va": "020e8b10",
+    "literal_index": 17265,
+    "value": "开始创建文件:"
+  },
+  {
+    "file": "_RobotActionToRobot_d__16.MoveNext.20e8990.asm",
+    "va": "020e8b1c",
+    "literal_index": 0,
+    "value": ""
+  },
+  {
+    "file": "_RobotActionToRobot_d__16.MoveNext.20e8990.asm",
+    "va": "020e8b28",
+    "literal_index": 17472,
+    "value": "机器动作文件开始写入到机器:"
+  },
+  {
+    "file": "_RobotActionToRobot_d__16.MoveNext.20e8990.asm",
+    "va": "020e8b34",
+    "literal_index": 17470,
+    "value": "机器动作文件写入到机器完成:"
+  },
+  {
+    "file": "_RobotActionToRobot_d__16.MoveNext.20e8990.asm",
+    "va": "020e8b40",
+    "literal_index": 1004,
+    "value": "."
+  },
+  {
+    "file": "_RobotActionToRobot_d__16.MoveNext.20e8990.asm",
+    "va": "020e8b68",
+    "literal_index": 17408,
+    "value": "文件写入到机器:{0}"
+  },
+  {
+    "file": "_RobotActionToRobot_d__16.MoveNext.20e8990.asm",
+    "va": "020e8c48",
+    "literal_index": 4020,
+    "value": "DownloadAction/"
+  },
+  {
+    "file": "_RobotActionToRobot_d__16.MoveNext.20e8990.asm",
+    "va": "020e8c4c",
+    "literal_index": 1004,
+    "value": "."
+  },
+  {
+    "file": "_RobotActionToRobot_d__16.MoveNext.20e8990.asm",
+    "va": "020e8c70",
+    "literal_index": 4788,
+    "value": "GB18030"
+  },
+  {
+    "file": "_RobotActionToRobot_d__16.MoveNext.20e8990.asm",
+    "va": "020e8cb8",
+    "literal_index": 17472,
+    "value": "机器动作文件开始写入到机器:"
+  },
+  {
+    "file": "_RobotActionToRobot_d__16.MoveNext.20e8990.asm",
+    "va": "020e8d50",
+    "literal_index": 17265,
+    "value": "开始创建文件:"
+  },
+  {
+    "file": "_RobotActionToRobot_d__16.MoveNext.20e8990.asm",
+    "va": "020e8ee8",
+    "literal_index": 17468,
+    "value": "机器人断开连接"
+  },
+  {
+    "file": "_RobotActionToRobot_d__16.MoveNext.20e8990.asm",
+    "va": "020e8f14",
+    "literal_index": 17101,
+    "value": "创建文件完成:"
+  },
+  {
+    "file": "_RobotActionToRobot_d__16.MoveNext.20e8990.asm",
+    "va": "020e8f7c",
+    "literal_index": 17264,
+    "value": "开始写入文件数据,总字节数:{0}"
+  },
+  {
+    "file": "_RobotActionToRobot_d__16.MoveNext.20e8990.asm",
+    "va": "020e8fb0",
+    "literal_index": 17468,
+    "value": "机器人断开连接"
+  },
+  {
+    "file": "_RobotActionToRobot_d__16.MoveNext.20e8990.asm",
+    "va": "020e90d8",
+    "literal_index": 17468,
+    "value": "机器人断开连接"
+  },
+  {
+    "file": "_RobotActionToRobot_d__16.MoveNext.20e8990.asm",
+    "va": "020e9164",
+    "literal_index": 17470,
+    "value": "机器动作文件写入到机器完成:"
+  },
+  {
+    "file": "_RobotActionToRobot_d__16.MoveNext.20e8990.asm",
+    "va": "020e91a0",
+    "literal_index": 17035,
+    "value": "下载完成"
+  },
+  {
+    "file": "_Start_d__31.MoveNext.20dd9c0.asm",
+    "va": "020ddad4",
+    "literal_index": 16682,
+    "value": "{0}.{1}-->模型场景加载时间：{2}（毫秒）"
+  },
+  {
+    "file": "_Start_d__31.MoveNext.20dd9c0.asm",
+    "va": "020ddf9c",
+    "literal_index": 16682,
+    "value": "{0}.{1}-->模型场景加载时间：{2}（毫秒）"
+  },
+  {
+    "file": "_UploadFile_d__40.MoveNext.20d3978.asm",
+    "va": "020d3a00",
+    "literal_index": 12758,
+    "value": "application.sh"
+  },
+  {
+    "file": "_UploadFile_d__40.MoveNext.20d3978.asm",
+    "va": "020d3a0c",
+    "literal_index": 874,
+    "value": "---->UploadFile---要上传的动作的目标服务器："
+  },
+  {
+    "file": "_UploadFile_d__40.MoveNext.20d3978.asm",
+    "va": "020d3a18",
+    "literal_index": 13749,
+    "value": "fileData:"
+  },
+  {
+    "file": "_UploadFile_d__40.MoveNext.20d3978.asm",
+    "va": "020d3a24",
+    "literal_index": 1109,
+    "value": ".sh"
+  },
+  {
+    "file": "_UploadFile_d__40.MoveNext.20d3978.asm",
+    "va": "020d3a30",
+    "literal_index": 6189,
+    "value": "K1"
+  },
+  {
+    "file": "_UploadFile_d__40.MoveNext.20d3978.asm",
+    "va": "020d3a3c",
+    "literal_index": 15617,
+    "value": "sn"
+  },
+  {
+    "file": "_UploadFile_d__40.MoveNext.20d3978.asm",
+    "va": "020d3a48",
+    "literal_index": 12762,
+    "value": "application/octet-stream"
+  },
+  {
+    "file": "_UploadFile_d__40.MoveNext.20d3978.asm",
+    "va": "020d3a54",
+    "literal_index": 13751,
+    "value": "file_name"
+  },
+  {
+    "file": "_UploadFile_d__40.MoveNext.20d3978.asm",
+    "va": "020d3a60",
+    "literal_index": 14878,
+    "value": "modular"
+  },
+  {
+    "file": "_UploadFile_d__40.MoveNext.20d3978.asm",
+    "va": "020d3a6c",
+    "literal_index": 17151,
+    "value": "发起网络请求失败： 确认过闸接口 -"
+  },
+  {
+    "file": "_UploadFile_d__40.MoveNext.20d3978.asm",
+    "va": "020d3a78",
+    "literal_index": 13743,
+    "value": "file"
+  },
+  {
+    "file": "_UploadFile_d__40.MoveNext.20d3978.asm",
+    "va": "020d3a84",
+    "literal_index": 805,
+    "value": ","
+  },
+  {
+    "file": "_UploadFile_d__40.MoveNext.20d3978.asm",
+    "va": "020d3a90",
+    "literal_index": 14876,
+    "value": "model"
+  },
+  {
+    "file": "_UploadFile_d__40.MoveNext.20d3978.asm",
+    "va": "020d3a9c",
+    "literal_index": 875,
+    "value": "---->UploadFile---要上传的动作的路径：---->动作名称"
+  },
+  {
+    "file": "_UploadFile_d__40.MoveNext.20d3978.asm",
+    "va": "020d3acc",
+    "literal_index": 874,
+    "value": "---->UploadFile---要上传的动作的目标服务器："
+  },
+  {
+    "file": "_UploadFile_d__40.MoveNext.20d3978.asm",
+    "va": "020d3b14",
+    "literal_index": 875,
+    "value": "---->UploadFile---要上传的动作的路径：---->动作名称"
+  },
+  {
+    "file": "_UploadFile_d__40.MoveNext.20d3978.asm",
+    "va": "020d3b40",
+    "literal_index": 805,
+    "value": ","
+  },
+  {
+    "file": "_UploadFile_d__40.MoveNext.20d3978.asm",
+    "va": "020d3b64",
+    "literal_index": 13749,
+    "value": "fileData:"
+  },
+  {
+    "file": "_UploadFile_d__40.MoveNext.20d3978.asm",
+    "va": "020d3c14",
+    "literal_index": 15617,
+    "value": "sn"
+  },
+  {
+    "file": "_UploadFile_d__40.MoveNext.20d3978.asm",
+    "va": "020d3cd0",
+    "literal_index": 17151,
+    "value": "发起网络请求失败： 确认过闸接口 -"
+  },
+  {
+    "file": "_UploadFile_d__40.MoveNext.20d3978.asm",
+    "va": "020d3d1c",
+    "literal_index": 9060,
+    "value": "TEXT_RAC_0056"
+  },
+  {
+    "file": "_UploadFile_d__40.MoveNext.20d3978.asm",
+    "va": "020d3d30",
+    "literal_index": 9060,
+    "value": "TEXT_RAC_0056"
+  },
+  {
+    "file": "_UploadFile_d__40.MoveNext.20d3978.asm",
+    "va": "020d3d74",
+    "literal_index": 14876,
+    "value": "model"
+  },
+  {
+    "file": "_UploadFile_d__40.MoveNext.20d3978.asm",
+    "va": "020d3d78",
+    "literal_index": 6189,
+    "value": "K1"
+  },
+  {
+    "file": "_UploadFile_d__40.MoveNext.20d3978.asm",
+    "va": "020d3e00",
+    "literal_index": 14878,
+    "value": "modular"
+  },
+  {
+    "file": "_UploadFile_d__40.MoveNext.20d3978.asm",
+    "va": "020d3e94",
+    "literal_index": 13743,
+    "value": "file"
+  },
+  {
+    "file": "_UploadFile_d__40.MoveNext.20d3978.asm",
+    "va": "020d3e98",
+    "literal_index": 12758,
+    "value": "application.sh"
+  },
+  {
+    "file": "_UploadFile_d__40.MoveNext.20d3978.asm",
+    "va": "020d3e9c",
+    "literal_index": 12762,
+    "value": "application/octet-stream"
+  },
+  {
+    "file": "_UploadFile_d__40.MoveNext.20d3978.asm",
+    "va": "020d3f20",
+    "literal_index": 1109,
+    "value": ".sh"
+  },
+  {
+    "file": "_UploadFile_d__40.MoveNext.20d3978.asm",
+    "va": "020d3f48",
+    "literal_index": 13751,
+    "value": "file_name"
+  },
+  {
+    "file": "_UploadFile_d__40.MoveNext.20d3978.asm",
+    "va": "020d402c",
+    "literal_index": 9059,
+    "value": "TEXT_RAC_0055"
+  },
+  {
+    "file": "_UploadFile_d__40.MoveNext.20d3978.asm",
+    "va": "020d4040",
+    "literal_index": 9059,
+    "value": "TEXT_RAC_0055"
+  },
+  {
+    "file": "_OnDanceActionPlayDone_d__73.MoveNext.206cb08.asm",
+    "va": "0206cb80",
+    "literal_index": 17345,
+    "value": "执行结束"
+  },
+  {
+    "file": "_OnDanceActionPlayDone_d__73.MoveNext.206cb08.asm",
+    "va": "0206cdb8",
+    "literal_index": 17345,
+    "value": "执行结束"
+  },
+  {
+    "file": "BTDeviceType.get_DevStart_C0C1.20417bc.asm",
+    "va": "02041830",
+    "literal_index": 3622,
+    "value": "DHF-M-"
+  },
+  {
+    "file": "BTDeviceType.get_DevStart_C0C1.20417bc.asm",
+    "va": "0204184c",
+    "literal_index": 3622,
+    "value": "DHF-M-"
+  },
+  {
+    "file": "_Robot_DisConnect_d__53.MoveNext.20dd3c8.asm",
+    "va": "020dd474",
+    "literal_index": 17468,
+    "value": "机器人断开连接"
+  },
+  {
+    "file": "_Robot_DisConnect_d__53.MoveNext.20dd3c8.asm",
+    "va": "020dd480",
+    "literal_index": 0,
+    "value": ""
+  },
+  {
+    "file": "_Robot_DisConnect_d__53.MoveNext.20dd3c8.asm",
+    "va": "020dd4c8",
+    "literal_index": 17468,
+    "value": "机器人断开连接"
+  },
+  {
+    "file": "_Robot_DisConnect_d__53.MoveNext.20dd3c8.asm",
+    "va": "020dd528",
+    "literal_index": 0,
+    "value": ""
+  },
+  {
+    "file": "_Robot_DisConnect_d__53.MoveNext.20dd3c8.asm",
+    "va": "020dd73c",
+    "literal_index": 7130,
+    "value": "Notice"
+  },
+  {
+    "file": "_Robot_DisConnect_d__53.MoveNext.20dd3c8.asm",
+    "va": "020dd75c",
+    "literal_index": 7130,
+    "value": "Notice"
+  },
+  {
+    "file": "_Robot_DisConnect_d__53.MoveNext.20dd3c8.asm",
+    "va": "020dd7b0",
+    "literal_index": 8927,
+    "value": "TEXT_CBCS_008"
+  },
+  {
+    "file": "_Robot_DisConnect_d__53.MoveNext.20dd3c8.asm",
+    "va": "020dd7c4",
+    "literal_index": 8927,
+    "value": "TEXT_CBCS_008"
+  },
+  {
+    "file": "_RunManualBlocks_d__18.MoveNext.2032078.asm",
+    "va": "02032164",
+    "literal_index": 17471,
+    "value": "机器动作文件写入到机器完成:{0},{1}"
+  },
+  {
+    "file": "_RunManualBlocks_d__18.MoveNext.2032078.asm",
+    "va": "02032170",
+    "literal_index": 17264,
+    "value": "开始写入文件数据,总字节数:{0}"
+  },
+  {
+    "file": "_RunManualBlocks_d__18.MoveNext.2032078.asm",
+    "va": "0203217c",
+    "literal_index": 17387,
+    "value": "播放动作"
+  },
+  {
+    "file": "_RunManualBlocks_d__18.MoveNext.2032078.asm",
+    "va": "02032188",
+    "literal_index": 17408,
+    "value": "文件写入到机器:{0}"
+  },
+  {
+    "file": "_RunManualBlocks_d__18.MoveNext.2032078.asm",
+    "va": "02032194",
+    "literal_index": 17101,
+    "value": "创建文件完成:"
+  },
+  {
+    "file": "_RunManualBlocks_d__18.MoveNext.2032078.asm",
+    "va": "020321a0",
+    "literal_index": 17265,
+    "value": "开始创建文件:"
+  },
+  {
+    "file": "_RunManualBlocks_d__18.MoveNext.2032078.asm",
+    "va": "020321ac",
+    "literal_index": 17472,
+    "value": "机器动作文件开始写入到机器:"
+  },
+  {
+    "file": "_RunManualBlocks_d__18.MoveNext.2032078.asm",
+    "va": "020321c8",
+    "literal_index": 17408,
+    "value": "文件写入到机器:{0}"
+  },
+  {
+    "file": "_RunManualBlocks_d__18.MoveNext.2032078.asm",
+    "va": "02032230",
+    "literal_index": 2682,
+    "value": "CacheAction/ManualEditorTemp.sh"
+  },
+  {
+    "file": "_RunManualBlocks_d__18.MoveNext.2032078.asm",
+    "va": "0203223c",
+    "literal_index": 2682,
+    "value": "CacheAction/ManualEditorTemp.sh"
+  },
+  {
+    "file": "_RunManualBlocks_d__18.MoveNext.2032078.asm",
+    "va": "02032278",
+    "literal_index": 17387,
+    "value": "播放动作"
+  },
+  {
+    "file": "_RunManualBlocks_d__18.MoveNext.2032078.asm",
+    "va": "020322c0",
+    "literal_index": 2682,
+    "value": "CacheAction/ManualEditorTemp.sh"
+  },
+  {
+    "file": "_RunManualBlocks_d__18.MoveNext.2032078.asm",
+    "va": "02032414",
+    "literal_index": 2682,
+    "value": "CacheAction/ManualEditorTemp.sh"
+  },
+  {
+    "file": "_RunManualBlocks_d__18.MoveNext.2032078.asm",
+    "va": "02032430",
+    "literal_index": 2682,
+    "value": "CacheAction/ManualEditorTemp.sh"
+  },
+  {
+    "file": "_RunManualBlocks_d__18.MoveNext.2032078.asm",
+    "va": "02032464",
+    "literal_index": 2682,
+    "value": "CacheAction/ManualEditorTemp.sh"
+  },
+  {
+    "file": "_RunManualBlocks_d__18.MoveNext.2032078.asm",
+    "va": "0203247c",
+    "literal_index": 17472,
+    "value": "机器动作文件开始写入到机器:"
+  },
+  {
+    "file": "_RunManualBlocks_d__18.MoveNext.2032078.asm",
+    "va": "0203249c",
+    "literal_index": 17265,
+    "value": "开始创建文件:"
+  },
+  {
+    "file": "_RunManualBlocks_d__18.MoveNext.2032078.asm",
+    "va": "0203254c",
+    "literal_index": 17101,
+    "value": "创建文件完成:"
+  },
+  {
+    "file": "_RunManualBlocks_d__18.MoveNext.2032078.asm",
+    "va": "02032590",
+    "literal_index": 17264,
+    "value": "开始写入文件数据,总字节数:{0}"
+  },
+  {
+    "file": "_RunManualBlocks_d__18.MoveNext.2032078.asm",
+    "va": "020328c0",
+    "literal_index": 2682,
+    "value": "CacheAction/ManualEditorTemp.sh"
+  },
+  {
+    "file": "_RunManualBlocks_d__18.MoveNext.2032078.asm",
+    "va": "020328d8",
+    "literal_index": 2682,
+    "value": "CacheAction/ManualEditorTemp.sh"
+  },
+  {
+    "file": "_RunManualBlocks_d__18.MoveNext.2032078.asm",
+    "va": "020328fc",
+    "literal_index": 17471,
+    "value": "机器动作文件写入到机器完成:{0},{1}"
+  },
+  {
+    "file": "_SendWebRequest_d__11.MoveNext.203a5e4.asm",
+    "va": "0203a664",
+    "literal_index": 7416,
+    "value": "POST"
+  },
+  {
+    "file": "_SendWebRequest_d__11.MoveNext.203a5e4.asm",
+    "va": "0203a670",
+    "literal_index": 4799,
+    "value": "GET"
+  },
+  {
+    "file": "_SendWebRequest_d__11.MoveNext.203a5e4.asm",
+    "va": "0203a67c",
+    "literal_index": 10497,
+    "value": "URL --> "
+  },
+  {
+    "file": "_SendWebRequest_d__11.MoveNext.203a5e4.asm",
+    "va": "0203a688",
+    "literal_index": 122,
+    "value": " , \nError --> "
+  },
+  {
+    "file": "_SendWebRequest_d__11.MoveNext.203a5e4.asm",
+    "va": "0203a694",
+    "literal_index": 123,
+    "value": " , \ndownloadHandler Text --> \n"
+  },
+  {
+    "file": "_SendWebRequest_d__11.MoveNext.203a5e4.asm",
+    "va": "0203a6a0",
+    "literal_index": 17458,
+    "value": "未知访问类型"
+  },
+  {
+    "file": "_SendWebRequest_d__11.MoveNext.203a5e4.asm",
+    "va": "0203a6ec",
+    "literal_index": 4799,
+    "value": "GET"
+  },
+  {
+    "file": "_SendWebRequest_d__11.MoveNext.203a5e4.asm",
+    "va": "0203a7cc",
+    "literal_index": 7416,
+    "value": "POST"
+  },
+  {
+    "file": "_SendWebRequest_d__11.MoveNext.203a5e4.asm",
+    "va": "0203a838",
+    "literal_index": 10497,
+    "value": "URL --> "
+  },
+  {
+    "file": "_SendWebRequest_d__11.MoveNext.203a5e4.asm",
+    "va": "0203a88c",
+    "literal_index": 122,
+    "value": " , \nError --> "
+  },
+  {
+    "file": "_SendWebRequest_d__11.MoveNext.203a5e4.asm",
+    "va": "0203a8e0",
+    "literal_index": 123,
+    "value": " , \ndownloadHandler Text --> \n"
+  },
+  {
+    "file": "_SendWebRequest_d__11.MoveNext.203a5e4.asm",
+    "va": "0203ab00",
+    "literal_index": 17458,
+    "value": "未知访问类型"
+  },
+  {
+    "file": "_ShowGuidsAndWait_d__20.MoveNext.20eff8c.asm",
+    "va": "020f0024",
+    "literal_index": 17159,
+    "value": "右"
+  },
+  {
+    "file": "_ShowGuidsAndWait_d__20.MoveNext.20eff8c.asm",
+    "va": "020f0030",
+    "literal_index": 17162,
+    "value": "右下"
+  },
+  {
+    "file": "_ShowGuidsAndWait_d__20.MoveNext.20eff8c.asm",
+    "va": "020f003c",
+    "literal_index": 17021,
+    "value": "下"
+  },
+  {
+    "file": "_ShowGuidsAndWait_d__20.MoveNext.20eff8c.asm",
+    "va": "020f0048",
+    "literal_index": 17230,
+    "value": "左下"
+  },
+  {
+    "file": "_ShowGuidsAndWait_d__20.MoveNext.20eff8c.asm",
+    "va": "020f0054",
+    "literal_index": 17003,
+    "value": "上"
+  },
+  {
+    "file": "_ShowGuidsAndWait_d__20.MoveNext.20eff8c.asm",
+    "va": "020f0060",
+    "literal_index": 9354,
+    "value": "Text_GuideTip_{0:000}"
+  },
+  {
+    "file": "_ShowGuidsAndWait_d__20.MoveNext.20eff8c.asm",
+    "va": "020f006c",
+    "literal_index": 17226,
+    "value": "左"
+  },
+  {
+    "file": "_ShowGuidsAndWait_d__20.MoveNext.20eff8c.asm",
+    "va": "020f02c0",
+    "literal_index": 9354,
+    "value": "Text_GuideTip_{0:000}"
+  },
+  {
+    "file": "_ShowGuidsAndWait_d__20.MoveNext.20eff8c.asm",
+    "va": "020f040c",
+    "literal_index": 17159,
+    "value": "右"
+  },
+  {
+    "file": "_ShowGuidsAndWait_d__20.MoveNext.20eff8c.asm",
+    "va": "020f05e0",
+    "literal_index": 17003,
+    "value": "上"
+  },
+  {
+    "file": "_ShowGuidsAndWait_d__20.MoveNext.20eff8c.asm",
+    "va": "020f0770",
+    "literal_index": 17230,
+    "value": "左下"
+  },
+  {
+    "file": "_ShowGuidsAndWait_d__20.MoveNext.20eff8c.asm",
+    "va": "020f08f4",
+    "literal_index": 17162,
+    "value": "右下"
+  },
+  {
+    "file": "_ShowGuidsAndWait_d__20.MoveNext.20eff8c.asm",
+    "va": "020f0a34",
+    "literal_index": 17226,
+    "value": "左"
+  },
+  {
+    "file": "_ShowGuidsAndWait_d__20.MoveNext.20eff8c.asm",
+    "va": "020f0bfc",
+    "literal_index": 17021,
+    "value": "下"
+  },
+  {
+    "file": "_RunEditorBlocks_d__16.MoveNext.2031060.asm",
+    "va": "02031150",
+    "literal_index": 17471,
+    "value": "机器动作文件写入到机器完成:{0},{1}"
+  },
+  {
+    "file": "_RunEditorBlocks_d__16.MoveNext.2031060.asm",
+    "va": "0203115c",
+    "literal_index": 17264,
+    "value": "开始写入文件数据,总字节数:{0}"
+  },
+  {
+    "file": "_RunEditorBlocks_d__16.MoveNext.2031060.asm",
+    "va": "02031168",
+    "literal_index": 17387,
+    "value": "播放动作"
+  },
+  {
+    "file": "_RunEditorBlocks_d__16.MoveNext.2031060.asm",
+    "va": "02031174",
+    "literal_index": 17408,
+    "value": "文件写入到机器:{0}"
+  },
+  {
+    "file": "_RunEditorBlocks_d__16.MoveNext.2031060.asm",
+    "va": "02031180",
+    "literal_index": 17265,
+    "value": "开始创建文件:"
+  },
+  {
+    "file": "_RunEditorBlocks_d__16.MoveNext.2031060.asm",
+    "va": "0203118c",
+    "literal_index": 17100,
+    "value": "创建文件完成"
+  },
+  {
+    "file": "_RunEditorBlocks_d__16.MoveNext.2031060.asm",
+    "va": "02031198",
+    "literal_index": 17472,
+    "value": "机器动作文件开始写入到机器:"
+  },
+  {
+    "file": "_RunEditorBlocks_d__16.MoveNext.2031060.asm",
+    "va": "020311b4",
+    "literal_index": 17408,
+    "value": "文件写入到机器:{0}"
+  },
+  {
+    "file": "_RunEditorBlocks_d__16.MoveNext.2031060.asm",
+    "va": "02031250",
+    "literal_index": 2684,
+    "value": "CacheAction/VisualEditorTemp.sh"
+  },
+  {
+    "file": "_RunEditorBlocks_d__16.MoveNext.2031060.asm",
+    "va": "0203125c",
+    "literal_index": 2684,
+    "value": "CacheAction/VisualEditorTemp.sh"
+  },
+  {
+    "file": "_RunEditorBlocks_d__16.MoveNext.2031060.asm",
+    "va": "02031298",
+    "literal_index": 17387,
+    "value": "播放动作"
+  },
+  {
+    "file": "_RunEditorBlocks_d__16.MoveNext.2031060.asm",
+    "va": "020312e0",
+    "literal_index": 2684,
+    "value": "CacheAction/VisualEditorTemp.sh"
+  },
+  {
+    "file": "_RunEditorBlocks_d__16.MoveNext.2031060.asm",
+    "va": "020314a8",
+    "literal_index": 2684,
+    "value": "CacheAction/VisualEditorTemp.sh"
+  },
+  {
+    "file": "_RunEditorBlocks_d__16.MoveNext.2031060.asm",
+    "va": "020314c4",
+    "literal_index": 2684,
+    "value": "CacheAction/VisualEditorTemp.sh"
+  },
+  {
+    "file": "_RunEditorBlocks_d__16.MoveNext.2031060.asm",
+    "va": "020314f8",
+    "literal_index": 2684,
+    "value": "CacheAction/VisualEditorTemp.sh"
+  },
+  {
+    "file": "_RunEditorBlocks_d__16.MoveNext.2031060.asm",
+    "va": "02031510",
+    "literal_index": 17472,
+    "value": "机器动作文件开始写入到机器:"
+  },
+  {
+    "file": "_RunEditorBlocks_d__16.MoveNext.2031060.asm",
+    "va": "02031530",
+    "literal_index": 17265,
+    "value": "开始创建文件:"
+  },
+  {
+    "file": "_RunEditorBlocks_d__16.MoveNext.2031060.asm",
+    "va": "020315d4",
+    "literal_index": 17100,
+    "value": "创建文件完成"
+  },
+  {
+    "file": "_RunEditorBlocks_d__16.MoveNext.2031060.asm",
+    "va": "02031618",
+    "literal_index": 17264,
+    "value": "开始写入文件数据,总字节数:{0}"
+  },
+  {
+    "file": "_RunEditorBlocks_d__16.MoveNext.2031060.asm",
+    "va": "02031874",
+    "literal_index": 2684,
+    "value": "CacheAction/VisualEditorTemp.sh"
+  },
+  {
+    "file": "_RunEditorBlocks_d__16.MoveNext.2031060.asm",
+    "va": "0203188c",
+    "literal_index": 2684,
+    "value": "CacheAction/VisualEditorTemp.sh"
+  },
+  {
+    "file": "_RunEditorBlocks_d__16.MoveNext.2031060.asm",
+    "va": "020318b0",
+    "literal_index": 17471,
+    "value": "机器动作文件写入到机器完成:{0},{1}"
+  },
+  {
+    "file": "__c._ConnectDev_b__21_1.2042260.asm",
+    "va": "02042280",
+    "literal_index": 10720,
+    "value": "Unity2BTCommandControl: Get Service:"
+  },
+  {
+    "file": "__c._ConnectDev_b__21_1.2042260.asm",
+    "va": "02042288",
+    "literal_index": 120,
+    "value": " ,"
+  },
+  {
+    "file": "__c._ConnectDev_b__21_1.2042260.asm",
+    "va": "020422ac",
+    "literal_index": 10720,
+    "value": "Unity2BTCommandControl: Get Service:"
+  },
+  {
+    "file": "__c._ConnectDev_b__21_1.2042260.asm",
+    "va": "020422b8",
+    "literal_index": 120,
+    "value": " ,"
+  },
+  {
+    "file": "__c__DisplayClass21_0._ConnectDev_b__2.2042524.asm",
+    "va": "02042598",
+    "literal_index": 10719,
+    "value": "Unity2BTCommandControl: Get Character : "
+  },
+  {
+    "file": "__c__DisplayClass21_0._ConnectDev_b__2.2042524.asm",
+    "va": "020425a4",
+    "literal_index": 121,
+    "value": " , "
+  },
+  {
+    "file": "__c__DisplayClass21_0._ConnectDev_b__2.2042524.asm",
+    "va": "02042630",
+    "literal_index": 10719,
+    "value": "Unity2BTCommandControl: Get Character : "
+  },
+  {
+    "file": "__c__DisplayClass21_0._ConnectDev_b__2.2042524.asm",
+    "va": "02042678",
+    "literal_index": 121,
+    "value": " , "
+  },
+  {
+    "file": "BTDevice.DataResult.203e124.asm",
+    "va": "0203e1b8",
+    "literal_index": 806,
+    "value": ",\n接收到数据-->"
+  },
+  {
+    "file": "BTDevice.DataResult.203e124.asm",
+    "va": "0203e1c4",
+    "literal_index": 17677,
+    "value": "设备-->"
+  },
+  {
+    "file": "BTDevice.DataResult.203e124.asm",
+    "va": "0203e1d0",
+    "literal_index": 121,
+    "value": " , "
+  },
+  {
+    "file": "BTDevice.DataResult.203e124.asm",
+    "va": "0203e1dc",
+    "literal_index": 17678,
+    "value": "设备-->{0} ,\n接收到数据转化的指令个数-->{1}"
+  },
+  {
+    "file": "BTDevice.DataResult.203e124.asm",
+    "va": "0203e234",
+    "literal_index": 17677,
+    "value": "设备-->"
+  },
+  {
+    "file": "BTDevice.DataResult.203e124.asm",
+    "va": "0203e27c",
+    "literal_index": 121,
+    "value": " , "
+  },
+  {
+    "file": "BTDevice.DataResult.203e124.asm",
+    "va": "0203e2c4",
+    "literal_index": 806,
+    "value": ",\n接收到数据-->"
+  },
+  {
+    "file": "BTDevice.DataResult.203e124.asm",
+    "va": "0203e3c4",
+    "literal_index": 17678,
+    "value": "设备-->{0} ,\n接收到数据转化的指令个数-->{1}"
+  },
+  {
+    "file": "BTDeviceType.get_Characteristic_F1.204190c.asm",
+    "va": "02041920",
+    "literal_index": 1181,
+    "value": "0000FFE1-0000-1000-8000-00805f9b34fb"
+  },
+  {
+    "file": "BTDeviceType.get_Characteristic_F1.204190c.asm",
+    "va": "0204192c",
+    "literal_index": 1181,
+    "value": "0000FFE1-0000-1000-8000-00805f9b34fb"
+  },
+  {
+    "file": "__c__DisplayClass46_0._Start_g__PermissionDeniedAndDontAskAgain_5.20f9228.asm",
+    "va": "020f9248",
+    "literal_index": 17477,
+    "value": "权限拒绝且不再询问！-->"
+  },
+  {
+    "file": "__c__DisplayClass46_0._Start_g__PermissionDeniedAndDontAskAgain_5.20f9228.asm",
+    "va": "020f929c",
+    "literal_index": 17477,
+    "value": "权限拒绝且不再询问！-->"
+  },
+  {
+    "file": "_WaitAndShowPlayBtn_d__86.MoveNext.2064508.asm",
+    "va": "020645f0",
+    "literal_index": 8983,
+    "value": "TEXT_EGC_MING_Tip_002"
+  },
+  {
+    "file": "_WaitAndShowPlayBtn_d__86.MoveNext.2064508.asm",
+    "va": "020645fc",
+    "literal_index": 8983,
+    "value": "TEXT_EGC_MING_Tip_002"
+  },
+  {
+    "file": "__c__DisplayClass46_0._Start_g__PermissionGranted_3.20f8f40.asm",
+    "va": "020f8f60",
+    "literal_index": 17476,
+    "value": "权限同意-->"
+  },
+  {
+    "file": "__c__DisplayClass46_0._Start_g__PermissionGranted_3.20f8f40.asm",
+    "va": "020f8f9c",
+    "literal_index": 17476,
+    "value": "权限同意-->"
+  },
+  {
+    "file": "_Close_d__167.MoveNext.209b760.asm",
+    "va": "0209b944",
+    "literal_index": 4135,
+    "value": "EditorNotInit"
+  },
+  {
+    "file": "_Close_d__167.MoveNext.209b760.asm",
+    "va": "0209b964",
+    "literal_index": 4135,
+    "value": "EditorNotInit"
+  },
+  {
+    "file": "_Close_d__167.MoveNext.209b760.asm",
+    "va": "0209b9a8",
+    "literal_index": 11150,
+    "value": "Wait"
+  },
+  {
+    "file": "_Close_d__167.MoveNext.209b760.asm",
+    "va": "0209b9bc",
+    "literal_index": 11150,
+    "value": "Wait"
+  },
+  {
+    "file": "BTDeviceType.get_DevStart_OP40.2040aa4.asm",
+    "va": "02040ab8",
+    "literal_index": 7179,
+    "value": "OP-M-"
+  },
+  {
+    "file": "BTDeviceType.get_DevStart_OP40.2040aa4.asm",
+    "va": "02040ac4",
+    "literal_index": 7179,
+    "value": "OP-M-"
+  },
+  {
+    "file": "_BleEnableCheck_d__24.MoveNext.20a4688.asm",
+    "va": "020a47a4",
+    "literal_index": 886,
+    "value": "-->检测蓝牙开启状态"
+  },
+  {
+    "file": "_BleEnableCheck_d__24.MoveNext.20a4688.asm",
+    "va": "020a47b0",
+    "literal_index": 12694,
+    "value": "android.permission.BLUETOOTH_CONNECT"
+  },
+  {
+    "file": "_BleEnableCheck_d__24.MoveNext.20a4688.asm",
+    "va": "020a47bc",
+    "literal_index": 12691,
+    "value": "android.permission.ACCESS_FINE_LOCATION"
+  },
+  {
+    "file": "_BleEnableCheck_d__24.MoveNext.20a4688.asm",
+    "va": "020a47c8",
+    "literal_index": 12695,
+    "value": "android.permission.BLUETOOTH_SCAN"
+  },
+  {
+    "file": "_BleEnableCheck_d__24.MoveNext.20a4688.asm",
+    "va": "020a47d4",
+    "literal_index": 12690,
+    "value": "android.permission.ACCESS_COARSE_LOCATION"
+  },
+  {
+    "file": "_BleEnableCheck_d__24.MoveNext.20a4688.asm",
+    "va": "020a47e0",
+    "literal_index": 6477,
+    "value": "LocationServiceTipKey"
+  },
+  {
+    "file": "_BleEnableCheck_d__24.MoveNext.20a4688.asm",
+    "va": "020a47ec",
+    "literal_index": 17285,
+    "value": "当前安卓SDK版本:{0}"
+  },
+  {
+    "file": "_BleEnableCheck_d__24.MoveNext.20a4688.asm",
+    "va": "020a47f8",
+    "literal_index": 1004,
+    "value": "."
+  },
+  {
+    "file": "_BleEnableCheck_d__24.MoveNext.20a4688.asm",
+    "va": "020a4904",
+    "literal_index": 1004,
+    "value": "."
+  },
+  {
+    "file": "_BleEnableCheck_d__24.MoveNext.20a4688.asm",
+    "va": "020a4908",
+    "literal_index": 886,
+    "value": "-->检测蓝牙开启状态"
+  },
+  {
+    "file": "_BleEnableCheck_d__24.MoveNext.20a4688.asm",
+    "va": "020a498c",
+    "literal_index": 17285,
+    "value": "当前安卓SDK版本:{0}"
+  },
+  {
+    "file": "_BleEnableCheck_d__24.MoveNext.20a4688.asm",
+    "va": "020a49e4",
+    "literal_index": 12691,
+    "value": "android.permission.ACCESS_FINE_LOCATION"
+  },
+  {
+    "file": "_BleEnableCheck_d__24.MoveNext.20a4688.asm",
+    "va": "020a4a08",
+    "literal_index": 12690,
+    "value": "android.permission.ACCESS_COARSE_LOCATION"
+  },
+  {
+    "file": "_BleEnableCheck_d__24.MoveNext.20a4688.asm",
+    "va": "020a4a3c",
+    "literal_index": 12695,
+    "value": "android.permission.BLUETOOTH_SCAN"
+  },
+  {
+    "file": "_BleEnableCheck_d__24.MoveNext.20a4688.asm",
+    "va": "020a4a60",
+    "literal_index": 12694,
+    "value": "android.permission.BLUETOOTH_CONNECT"
+  },
+  {
+    "file": "_BleEnableCheck_d__24.MoveNext.20a4688.asm",
+    "va": "020a4bac",
+    "literal_index": 6477,
+    "value": "LocationServiceTipKey"
+  },
+  {
+    "file": "_BleEnableCheck_d__24.MoveNext.20a4688.asm",
+    "va": "020a4d6c",
+    "literal_index": 17478,
+    "value": "权限说明"
+  },
+  {
+    "file": "_BleEnableCheck_d__24.MoveNext.20a4688.asm",
+    "va": "020a4d84",
+    "literal_index": 17478,
+    "value": "权限说明"
+  },
+  {
+    "file": "_BleEnableCheck_d__24.MoveNext.20a4688.asm",
+    "va": "020a4da4",
+    "literal_index": 17200,
+    "value": "在使用过程中，本应用需要访问定位权限，用于发现附近设备、设备连接等功能，如拒绝则无法跟我司研发的机器人设备进行交互，您可随时前往“设置>权限管理”关闭权限调用。"
+  },
+  {
+    "file": "_BleEnableCheck_d__24.MoveNext.20a4688.asm",
+    "va": "020a4dbc",
+    "literal_index": 17200,
+    "value": "在使用过程中，本应用需要访问定位权限，用于发现附近设备、设备连接等功能，如拒绝则无法跟我司研发的机器人设备进行交互，您可随时前往“设置>权限管理”关闭权限调用。"
+  },
+  {
+    "file": "_RunningManualAction_d__108.MoveNext.2062868.asm",
+    "va": "02062ac0",
+    "literal_index": 17471,
+    "value": "机器动作文件写入到机器完成:{0},{1}"
+  },
+  {
+    "file": "_RunningManualAction_d__108.MoveNext.2062868.asm",
+    "va": "02062acc",
+    "literal_index": 17264,
+    "value": "开始写入文件数据,总字节数:{0}"
+  },
+  {
+    "file": "_RunningManualAction_d__108.MoveNext.2062868.asm",
+    "va": "02062ad8",
+    "literal_index": 17387,
+    "value": "播放动作"
+  },
+  {
+    "file": "_RunningManualAction_d__108.MoveNext.2062868.asm",
+    "va": "02062ae4",
+    "literal_index": 17408,
+    "value": "文件写入到机器:{0}"
+  },
+  {
+    "file": "_RunningManualAction_d__108.MoveNext.2062868.asm",
+    "va": "02062af0",
+    "literal_index": 17101,
+    "value": "创建文件完成:"
+  },
+  {
+    "file": "_RunningManualAction_d__108.MoveNext.2062868.asm",
+    "va": "02062afc",
+    "literal_index": 17265,
+    "value": "开始创建文件:"
+  },
+  {
+    "file": "_RunningManualAction_d__108.MoveNext.2062868.asm",
+    "va": "02062b08",
+    "literal_index": 17472,
+    "value": "机器动作文件开始写入到机器:"
+  },
+  {
+    "file": "_RunningManualAction_d__108.MoveNext.2062868.asm",
+    "va": "02062b24",
+    "literal_index": 17408,
+    "value": "文件写入到机器:{0}"
+  },
+  {
+    "file": "_RunningManualAction_d__108.MoveNext.2062868.asm",
+    "va": "02062ba8",
+    "literal_index": 2681,
+    "value": "CacheAction/ManualEditorGameTemp.sh"
+  },
+  {
+    "file": "_RunningManualAction_d__108.MoveNext.2062868.asm",
+    "va": "02062bb4",
+    "literal_index": 2681,
+    "value": "CacheAction/ManualEditorGameTemp.sh"
+  },
+  {
+    "file": "_RunningManualAction_d__108.MoveNext.2062868.asm",
+    "va": "02062bf0",
+    "literal_index": 17387,
+    "value": "播放动作"
+  },
+  {
+    "file": "_RunningManualAction_d__108.MoveNext.2062868.asm",
+    "va": "02062c38",
+    "literal_index": 2681,
+    "value": "CacheAction/ManualEditorGameTemp.sh"
+  },
+  {
+    "file": "_RunningManualAction_d__108.MoveNext.2062868.asm",
+    "va": "02063554",
+    "literal_index": 2681,
+    "value": "CacheAction/ManualEditorGameTemp.sh"
+  },
+  {
+    "file": "_RunningManualAction_d__108.MoveNext.2062868.asm",
+    "va": "02063570",
+    "literal_index": 2681,
+    "value": "CacheAction/ManualEditorGameTemp.sh"
+  },
+  {
+    "file": "_RunningManualAction_d__108.MoveNext.2062868.asm",
+    "va": "020635a4",
+    "literal_index": 2681,
+    "value": "CacheAction/ManualEditorGameTemp.sh"
+  },
+  {
+    "file": "_RunningManualAction_d__108.MoveNext.2062868.asm",
+    "va": "020635bc",
+    "literal_index": 17472,
+    "value": "机器动作文件开始写入到机器:"
+  },
+  {
+    "file": "_RunningManualAction_d__108.MoveNext.2062868.asm",
+    "va": "020635f8",
+    "literal_index": 17265,
+    "value": "开始创建文件:"
+  },
+  {
+    "file": "_RunningManualAction_d__108.MoveNext.2062868.asm",
+    "va": "02063688",
+    "literal_index": 17408,
+    "value": "文件写入到机器:{0}"
+  },
+  {
+    "file": "_RunningManualAction_d__108.MoveNext.2062868.asm",
+    "va": "020636b4",
+    "literal_index": 17101,
+    "value": "创建文件完成:"
+  },
+  {
+    "file": "_RunningManualAction_d__108.MoveNext.2062868.asm",
+    "va": "020636f4",
+    "literal_index": 17264,
+    "value": "开始写入文件数据,总字节数:{0}"
+  },
+  {
+    "file": "_RunningManualAction_d__108.MoveNext.2062868.asm",
+    "va": "02063b98",
+    "literal_index": 2681,
+    "value": "CacheAction/ManualEditorGameTemp.sh"
+  },
+  {
+    "file": "_RunningManualAction_d__108.MoveNext.2062868.asm",
+    "va": "02063bb0",
+    "literal_index": 2681,
+    "value": "CacheAction/ManualEditorGameTemp.sh"
+  },
+  {
+    "file": "_RunningManualAction_d__108.MoveNext.2062868.asm",
+    "va": "02063bd4",
+    "literal_index": 17471,
+    "value": "机器动作文件写入到机器完成:{0},{1}"
+  },
+  {
+    "file": "BTDeviceType.get_Service_F0.20418c0.asm",
+    "va": "020418d4",
+    "literal_index": 1180,
+    "value": "0000FFE0-0000-1000-8000-00805f9b34fb"
+  },
+  {
+    "file": "BTDeviceType.get_Service_F0.20418c0.asm",
+    "va": "020418e0",
+    "literal_index": 1180,
+    "value": "0000FFE0-0000-1000-8000-00805f9b34fb"
+  },
+  {
+    "file": "__c__DisplayClass21_0._ConnectDev_b__7.20429d8.asm",
+    "va": "02042a50",
+    "literal_index": 124,
+    "value": " , Address:"
+  },
+  {
+    "file": "__c__DisplayClass21_0._ConnectDev_b__7.20429d8.asm",
+    "va": "02042a5c",
+    "literal_index": 885,
+    "value": "-->接收到数据-->"
+  },
+  {
+    "file": "__c__DisplayClass21_0._ConnectDev_b__7.20429d8.asm",
+    "va": "02042a68",
+    "literal_index": 125,
+    "value": " , character:"
+  },
+  {
+    "file": "__c__DisplayClass21_0._ConnectDev_b__7.20429d8.asm",
+    "va": "02042a74",
+    "literal_index": 1004,
+    "value": "."
+  },
+  {
+    "file": "__c__DisplayClass21_0._ConnectDev_b__7.20429d8.asm",
+    "va": "02042af4",
+    "literal_index": 1004,
+    "value": "."
+  },
+  {
+    "file": "__c__DisplayClass21_0._ConnectDev_b__7.20429d8.asm",
+    "va": "02042b64",
+    "literal_index": 885,
+    "value": "-->接收到数据-->"
+  },
+  {
+    "file": "__c__DisplayClass21_0._ConnectDev_b__7.20429d8.asm",
+    "va": "02042bb8",
+    "literal_index": 124,
+    "value": " , Address:"
+  },
+  {
+    "file": "__c__DisplayClass21_0._ConnectDev_b__7.20429d8.asm",
+    "va": "02042c00",
+    "literal_index": 125,
+    "value": " , character:"
+  },
+  {
+    "file": "BTDeviceType.get_DevStart_K1.2040a24.asm",
+    "va": "02040a38",
+    "literal_index": 6190,
+    "value": "K1-"
+  },
+  {
+    "file": "BTDeviceType.get_DevStart_K1.2040a24.asm",
+    "va": "02040a44",
+    "literal_index": 6190,
+    "value": "K1-"
+  },
+  {
+    "file": "__c__DisplayClass21_0._ConnectDev_b__6.2042954.asm",
+    "va": "02042980",
+    "literal_index": 10721,
+    "value": "Unity2BTCommandControl: Subscribe Done"
+  },
+  {
+    "file": "__c__DisplayClass21_0._ConnectDev_b__6.2042954.asm",
+    "va": "020429a8",
+    "literal_index": 10721,
+    "value": "Unity2BTCommandControl: Subscribe Done"
+  },
+  {
+    "file": "_GetRobotInfos_d__75.MoveNext.20b4df8.asm",
+    "va": "020b4e30",
+    "literal_index": 37,
+    "value": "\t"
+  },
+  {
+    "file": "_GetRobotInfos_d__75.MoveNext.20b4df8.asm",
+    "va": "020b4f58",
+    "literal_index": 8930,
+    "value": "TEXT_CBCS_009"
+  },
+  {
+    "file": "_GetRobotInfos_d__75.MoveNext.20b4df8.asm",
+    "va": "020b4f64",
+    "literal_index": 8930,
+    "value": "TEXT_CBCS_009"
+  },
+  {
+    "file": "_GetRobotInfos_d__75.MoveNext.20b4df8.asm",
+    "va": "020b4fa8",
+    "literal_index": 37,
+    "value": "\t"
+  },
+  {
+    "file": "_WaitTipNoDevice_d__74.MoveNext.2107fd0.asm",
+    "va": "02108278",
+    "literal_index": 9085,
+    "value": "TEXT_RSP_0031"
+  },
+  {
+    "file": "_WaitTipNoDevice_d__74.MoveNext.2107fd0.asm",
+    "va": "02108284",
+    "literal_index": 9085,
+    "value": "TEXT_RSP_0031"
+  },
+  {
+    "file": "_WaitTipNoDevice_d__74.MoveNext.2107fd0.asm",
+    "va": "021082f4",
+    "literal_index": 9087,
+    "value": "TEXT_RSP_0033"
+  },
+  {
+    "file": "_WaitTipNoDevice_d__74.MoveNext.2107fd0.asm",
+    "va": "02108300",
+    "literal_index": 9087,
+    "value": "TEXT_RSP_0033"
+  },
+  {
+    "file": "BTDevice.CommandInvoke.203ee28.asm",
+    "va": "0203ee74",
+    "literal_index": 17189,
+    "value": "固件版日期-->"
+  },
+  {
+    "file": "BTDevice.CommandInvoke.203ee28.asm",
+    "va": "0203ee80",
+    "literal_index": 17190,
+    "value": "固件版本号-->"
+  },
+  {
+    "file": "BTDevice.CommandInvoke.203ee28.asm",
+    "va": "0203ef2c",
+    "literal_index": 17190,
+    "value": "固件版本号-->"
+  },
+  {
+    "file": "BTDevice.CommandInvoke.203ee28.asm",
+    "va": "0203f2ac",
+    "literal_index": 17189,
+    "value": "固件版日期-->"
+  },
+  {
+    "file": "BTDevice.CommandInvoke.203ee28.asm",
+    "va": "0203f590",
+    "literal_index": 1004,
+    "value": "."
+  },
+  {
+    "file": "BTDevice.CommandInvoke.203ee28.asm",
+    "va": "0203f5dc",
+    "literal_index": 882,
+    "value": "-->"
+  },
+  {
+    "file": "__c._Start_b__14_1.211a9d8.asm",
+    "va": "0211a9f4",
+    "literal_index": 1408,
+    "value": "255"
+  },
+  {
+    "file": "__c._Start_b__14_1.211a9d8.asm",
+    "va": "0211aa00",
+    "literal_index": 1407,
+    "value": "253"
+  },
+  {
+    "file": "__c._Start_b__14_1.211a9d8.asm",
+    "va": "0211aa7c",
+    "literal_index": 1407,
+    "value": "253"
+  },
+  {
+    "file": "__c._Start_b__14_1.211a9d8.asm",
+    "va": "0211aabc",
+    "literal_index": 1408,
+    "value": "255"
+  },
+  {
+    "file": "__c._InitStep3Panel_b__37_2.20ab0fc.asm",
+    "va": "020ab13c",
+    "literal_index": 17781,
+    "value": "隐私协议点击{0}"
+  },
+  {
+    "file": "__c._InitStep3Panel_b__37_2.20ab0fc.asm",
+    "va": "020ab1a8",
+    "literal_index": 17781,
+    "value": "隐私协议点击{0}"
+  },
+  {
+    "file": "BTDeviceType.GetDevWritInfo.20402e0.asm",
+    "va": "02040340",
+    "literal_index": 0,
+    "value": ""
+  },
+  {
+    "file": "BTDeviceType.GetDevWritInfo.20402e0.asm",
+    "va": "020404bc",
+    "literal_index": 0,
+    "value": ""
+  },
+  {
+    "file": "_CheckBleConnecting_d__74.MoveNext.20b382c.asm",
+    "va": "020b3980",
+    "literal_index": 42,
+    "value": "\n"
+  },
+  {
+    "file": "_CheckBleConnecting_d__74.MoveNext.20b382c.asm",
+    "va": "020b398c",
+    "literal_index": 0,
+    "value": ""
+  },
+  {
+    "file": "_CheckBleConnecting_d__74.MoveNext.20b382c.asm",
+    "va": "020b3998",
+    "literal_index": 1004,
+    "value": "."
+  },
+  {
+    "file": "_CheckBleConnecting_d__74.MoveNext.20b382c.asm",
+    "va": "020b39a4",
+    "literal_index": 887,
+    "value": "-->获取文件夹动作名"
+  },
+  {
+    "file": "_CheckBleConnecting_d__74.MoveNext.20b382c.asm",
+    "va": "020b3df8",
+    "literal_index": 8921,
+    "value": "TEXT_CBCS_004"
+  },
+  {
+    "file": "_CheckBleConnecting_d__74.MoveNext.20b382c.asm",
+    "va": "020b3e18",
+    "literal_index": 8921,
+    "value": "TEXT_CBCS_004"
+  },
+  {
+    "file": "_CheckBleConnecting_d__74.MoveNext.20b382c.asm",
+    "va": "020b3e94",
+    "literal_index": 42,
+    "value": "\n"
+  },
+  {
+    "file": "_CheckBleConnecting_d__74.MoveNext.20b382c.asm",
+    "va": "020b3f50",
+    "literal_index": 0,
+    "value": ""
+  },
+  {
+    "file": "_CheckBleConnecting_d__74.MoveNext.20b382c.asm",
+    "va": "020b414c",
+    "literal_index": 1004,
+    "value": "."
+  },
+  {
+    "file": "_CheckBleConnecting_d__74.MoveNext.20b382c.asm",
+    "va": "020b41bc",
+    "literal_index": 887,
+    "value": "-->获取文件夹动作名"
+  },
+  {
+    "file": "_CheckBleConnecting_d__74.MoveNext.20b382c.asm",
+    "va": "020b4564",
+    "literal_index": 0,
+    "value": ""
+  },
+  {
+    "file": "__c__DisplayClass74_0._CheckBleConnecting_g__FolderActionsNameRecive_1.20b2b2c.asm",
+    "va": "020b2b88",
+    "literal_index": 17356,
+    "value": "接收到动作-->"
+  },
+  {
+    "file": "__c__DisplayClass74_0._CheckBleConnecting_g__FolderActionsNameRecive_1.20b2b2c.asm",
+    "va": "020b2d04",
+    "literal_index": 17356,
+    "value": "接收到动作-->"
+  },
+  {
+    "file": "__c._InitStep3Panel_b__30_2.20c6980.asm",
+    "va": "020c69c0",
+    "literal_index": 17781,
+    "value": "隐私协议点击{0}"
+  },
+  {
+    "file": "__c._InitStep3Panel_b__30_2.20c6980.asm",
+    "va": "020c6a2c",
+    "literal_index": 17781,
+    "value": "隐私协议点击{0}"
+  },
+  {
+    "file": "BTDeviceType.get_DevStart_OP40XGZ.2040b24.asm",
+    "va": "02040b38",
+    "literal_index": 11273,
+    "value": "XGZGFN-"
+  },
+  {
+    "file": "BTDeviceType.get_DevStart_OP40XGZ.2040b24.asm",
+    "va": "02040b44",
+    "literal_index": 11273,
+    "value": "XGZGFN-"
+  },
+  {
+    "file": "_RunEditorBlocks_New_d__164.MoveNext.208c234.asm",
+    "va": "0208c310",
+    "literal_index": 17344,
+    "value": "执行个数"
+  },
+  {
+    "file": "_RunEditorBlocks_New_d__164.MoveNext.208c234.asm",
+    "va": "0208c31c",
+    "literal_index": 17387,
+    "value": "播放动作"
+  },
+  {
+    "file": "_RunEditorBlocks_New_d__164.MoveNext.208c234.asm",
+    "va": "0208c328",
+    "literal_index": 17627,
+    "value": "蓝牙连接断开"
+  },
+  {
+    "file": "_RunEditorBlocks_New_d__164.MoveNext.208c234.asm",
+    "va": "0208c334",
+    "literal_index": 17194,
+    "value": "图形化编程-->编译完成"
+  },
+  {
+    "file": "_RunEditorBlocks_New_d__164.MoveNext.208c234.asm",
+    "va": "0208c41c",
+    "literal_index": 17344,
+    "value": "执行个数"
+  },
+  {
+    "file": "_RunEditorBlocks_New_d__164.MoveNext.208c234.asm",
+    "va": "0208c4f8",
+    "literal_index": 2684,
+    "value": "CacheAction/VisualEditorTemp.sh"
+  },
+  {
+    "file": "_RunEditorBlocks_New_d__164.MoveNext.208c234.asm",
+    "va": "0208c504",
+    "literal_index": 2684,
+    "value": "CacheAction/VisualEditorTemp.sh"
+  },
+  {
+    "file": "_RunEditorBlocks_New_d__164.MoveNext.208c234.asm",
+    "va": "0208c540",
+    "literal_index": 17387,
+    "value": "播放动作"
+  },
+  {
+    "file": "_RunEditorBlocks_New_d__164.MoveNext.208c234.asm",
+    "va": "0208c590",
+    "literal_index": 2684,
+    "value": "CacheAction/VisualEditorTemp.sh"
+  },
+  {
+    "file": "_RunEditorBlocks_New_d__164.MoveNext.208c234.asm",
+    "va": "0208c834",
+    "literal_index": 17194,
+    "value": "图形化编程-->编译完成"
+  },
+  {
+    "file": "_RunEditorBlocks_New_d__164.MoveNext.208c234.asm",
+    "va": "0208c8a4",
+    "literal_index": 2684,
+    "value": "CacheAction/VisualEditorTemp.sh"
+  },
+  {
+    "file": "_RunEditorBlocks_New_d__164.MoveNext.208c234.asm",
+    "va": "0208c8c4",
+    "literal_index": 2684,
+    "value": "CacheAction/VisualEditorTemp.sh"
+  },
+  {
+    "file": "_RunEditorBlocks_New_d__164.MoveNext.208c234.asm",
+    "va": "0208c940",
+    "literal_index": 17627,
+    "value": "蓝牙连接断开"
+  },
+  {
+    "file": "__c__DisplayClass46_0._Start_g__PermissionDenied_4.20f9064.asm",
+    "va": "020f9084",
+    "literal_index": 17475,
+    "value": "权限不同意！-->"
+  },
+  {
+    "file": "__c__DisplayClass46_0._Start_g__PermissionDenied_4.20f9064.asm",
+    "va": "020f90d8",
+    "literal_index": 17475,
+    "value": "权限不同意！-->"
+  },
+  {
+    "file": "__c._InitStep1Panel_b__59_2.20c4054.asm",
+    "va": "020c4094",
+    "literal_index": 17781,
+    "value": "隐私协议点击{0}"
+  },
+  {
+    "file": "__c._InitStep1Panel_b__59_2.20c4054.asm",
+    "va": "020c4100",
+    "literal_index": 17781,
+    "value": "隐私协议点击{0}"
+  },
+  {
+    "file": "__c._ConnectDev_b__21_0.20421d4.asm",
+    "va": "020421f0",
+    "literal_index": 10718,
+    "value": "Unity2BTCommandControl: Get Address: "
+  },
+  {
+    "file": "__c._ConnectDev_b__21_0.20421d4.asm",
+    "va": "02042210",
+    "literal_index": 10718,
+    "value": "Unity2BTCommandControl: Get Address: "
+  },
+  {
+    "file": "Unity2BTCommandControl.ConnectDev.2040614.asm",
+    "va": "020406bc",
+    "literal_index": 153,
+    "value": " Can't Connect"
+  },
+  {
+    "file": "Unity2BTCommandControl.ConnectDev.2040614.asm",
+    "va": "020406c8",
+    "literal_index": 17273,
+    "value": "开始蓝牙连接 ConnectToPeripheral-->"
+  },
+  {
+    "file": "Unity2BTCommandControl.ConnectDev.2040614.asm",
+    "va": "020406d4",
+    "literal_index": 17683,
+    "value": "试图连接未知设备"
+  },
+  {
+    "file": "Unity2BTCommandControl.ConnectDev.2040614.asm",
+    "va": "0204076c",
+    "literal_index": 17683,
+    "value": "试图连接未知设备"
+  },
+  {
+    "file": "Unity2BTCommandControl.ConnectDev.2040614.asm",
+    "va": "02040790",
+    "literal_index": 153,
+    "value": " Can't Connect"
+  },
+  {
+    "file": "Unity2BTCommandControl.ConnectDev.2040614.asm",
+    "va": "020407b8",
+    "literal_index": 17273,
+    "value": "开始蓝牙连接 ConnectToPeripheral-->"
+  },
+  {
+    "file": "__c._TeachingTipCheck_b__99_5.2098950.asm",
+    "va": "0209896c",
+    "literal_index": 10198,
+    "value": "TimesBtn"
+  },
+  {
+    "file": "__c._TeachingTipCheck_b__99_5.2098950.asm",
+    "va": "0209898c",
+    "literal_index": 10198,
+    "value": "TimesBtn"
+  },
+  {
+    "file": "BTDeviceType.get_Service_C0.2041958.asm",
+    "va": "0204196c",
+    "literal_index": 1180,
+    "value": "0000FFE0-0000-1000-8000-00805f9b34fb"
+  },
+  {
+    "file": "BTDeviceType.get_Service_C0.2041958.asm",
+    "va": "02041978",
+    "literal_index": 1180,
+    "value": "0000FFE0-0000-1000-8000-00805f9b34fb"
+  },
+  {
+    "file": "_Close_d__94.MoveNext.2061bb0.asm",
+    "va": "02061d10",
+    "literal_index": 4135,
+    "value": "EditorNotInit"
+  },
+  {
+    "file": "_Close_d__94.MoveNext.2061bb0.asm",
+    "va": "02061d30",
+    "literal_index": 4135,
+    "value": "EditorNotInit"
+  },
+  {
+    "file": "_Close_d__94.MoveNext.2061bb0.asm",
+    "va": "02061d74",
+    "literal_index": 11150,
+    "value": "Wait"
+  },
+  {
+    "file": "_Close_d__94.MoveNext.2061bb0.asm",
+    "va": "02061d88",
+    "literal_index": 11150,
+    "value": "Wait"
+  },
+  {
+    "file": "_StartWithWait_d__29.MoveNext.20bca4c.asm",
+    "va": "020bd014",
+    "literal_index": 17628,
+    "value": "蓝牙连接界面打开提示窗口！"
+  },
+  {
+    "file": "__c__DisplayClass72_0._SearchBleDev_b__2.2107ce8.asm",
+    "va": "02107d18",
+    "literal_index": 5459,
+    "value": "Icon"
+  },
+  {
+    "file": "__c__DisplayClass72_0._SearchBleDev_b__2.2107ce8.asm",
+    "va": "02107d84",
+    "literal_index": 5459,
+    "value": "Icon"
+  },
+  {
+    "file": "__c__DisplayClass72_0._SearchBleDev_b__2.2107ce8.asm",
+    "va": "02107dd4",
+    "literal_index": 4817,
+    "value": "GSEG"
+  },
+  {
+    "file": "__c__DisplayClass72_0._SearchBleDev_b__2.2107ce8.asm",
+    "va": "02107df4",
+    "literal_index": 4817,
+    "value": "GSEG"
+  },
+  {
+    "file": "__c__DisplayClass72_0._SearchBleDev_b__2.2107ce8.asm",
+    "va": "02107e28",
+    "literal_index": 7178,
+    "value": "OP-M"
+  },
+  {
+    "file": "__c__DisplayClass72_0._SearchBleDev_b__2.2107ce8.asm",
+    "va": "02107e48",
+    "literal_index": 7178,
+    "value": "OP-M"
+  },
+  {
+    "file": "__c__DisplayClass72_0._SearchBleDev_b__2.2107ce8.asm",
+    "va": "02107e6c",
+    "literal_index": 2672,
+    "value": "CTGEN"
+  },
+  {
+    "file": "__c__DisplayClass72_0._SearchBleDev_b__2.2107ce8.asm",
+    "va": "02107e8c",
+    "literal_index": 2672,
+    "value": "CTGEN"
+  },
+  {
+    "file": "BTDeviceType.get_DevStart_OP30.2040b64.asm",
+    "va": "02040b78",
+    "literal_index": 2673,
+    "value": "CTGEN-"
+  },
+  {
+    "file": "BTDeviceType.get_DevStart_OP30.2040b64.asm",
+    "va": "02040b84",
+    "literal_index": 2673,
+    "value": "CTGEN-"
+  },
+  {
+    "file": "_Start_d__11.MoveNext.20da2b0.asm",
+    "va": "020da324",
+    "literal_index": 17388,
+    "value": "播放完成"
+  },
+  {
+    "file": "_Start_d__11.MoveNext.20da2b0.asm",
+    "va": "020da330",
+    "literal_index": 6663,
+    "value": "MediaPlayer.Control == null,初始化尚未完成，尚未开始播放视频。"
+  },
+  {
+    "file": "_Start_d__11.MoveNext.20da2b0.asm",
+    "va": "020da494",
+    "literal_index": 6663,
+    "value": "MediaPlayer.Control == null,初始化尚未完成，尚未开始播放视频。"
+  },
+  {
+    "file": "_Start_d__11.MoveNext.20da2b0.asm",
+    "va": "020da584",
+    "literal_index": 17388,
+    "value": "播放完成"
+  },
+  {
+    "file": "BTDeviceType.get_DevStart_OP30CX.2040ba4.asm",
+    "va": "02040bb8",
+    "literal_index": 2677,
+    "value": "CXGEN-"
+  },
+  {
+    "file": "BTDeviceType.get_DevStart_OP30CX.2040ba4.asm",
+    "va": "02040bc4",
+    "literal_index": 2677,
+    "value": "CXGEN-"
+  },
+  {
+    "file": "_RotateCameraToNormal_d__43.MoveNext.20f2740.asm",
+    "va": "020f2788",
+    "literal_index": 17681,
+    "value": "设置旋转位姿到设置的上次位姿值"
+  },
+  {
+    "file": "_RotateCameraToNormal_d__43.MoveNext.20f2740.asm",
+    "va": "020f293c",
+    "literal_index": 17681,
+    "value": "设置旋转位姿到设置的上次位姿值"
+  },
+  {
+    "file": "__c__DisplayClass35_0._RequestMicrophonePermission_g__PermissionDenied_2.20ac924.asm",
+    "va": "020ac940",
+    "literal_index": 17474,
+    "value": "权限不同意,退出！-->"
+  },
+  {
+    "file": "__c__DisplayClass35_0._RequestMicrophonePermission_g__PermissionDenied_2.20ac924.asm",
+    "va": "020ac964",
+    "literal_index": 17474,
+    "value": "权限不同意,退出！-->"
+  },
+  {
+    "file": "_OpenAndWaitStartScanDev_d__51.MoveNext.20a6790.asm",
+    "va": "020a6838",
+    "literal_index": 12694,
+    "value": "android.permission.BLUETOOTH_CONNECT"
+  },
+  {
+    "file": "_OpenAndWaitStartScanDev_d__51.MoveNext.20a6790.asm",
+    "va": "020a6844",
+    "literal_index": 12691,
+    "value": "android.permission.ACCESS_FINE_LOCATION"
+  },
+  {
+    "file": "_OpenAndWaitStartScanDev_d__51.MoveNext.20a6790.asm",
+    "va": "020a6850",
+    "literal_index": 12695,
+    "value": "android.permission.BLUETOOTH_SCAN"
+  },
+  {
+    "file": "_OpenAndWaitStartScanDev_d__51.MoveNext.20a6790.asm",
+    "va": "020a685c",
+    "literal_index": 12690,
+    "value": "android.permission.ACCESS_COARSE_LOCATION"
+  },
+  {
+    "file": "_OpenAndWaitStartScanDev_d__51.MoveNext.20a6790.asm",
+    "va": "020a6868",
+    "literal_index": 7343,
+    "value": "OpenLocationServiceTip"
+  },
+  {
+    "file": "_OpenAndWaitStartScanDev_d__51.MoveNext.20a6790.asm",
+    "va": "020a6874",
+    "literal_index": 17285,
+    "value": "当前安卓SDK版本:{0}"
+  },
+  {
+    "file": "_OpenAndWaitStartScanDev_d__51.MoveNext.20a6790.asm",
+    "va": "020a6880",
+    "literal_index": 17092,
+    "value": "再次开始扫描"
+  },
+  {
+    "file": "_OpenAndWaitStartScanDev_d__51.MoveNext.20a6790.asm",
+    "va": "020a6950",
+    "literal_index": 17092,
+    "value": "再次开始扫描"
+  },
+  {
+    "file": "_OpenAndWaitStartScanDev_d__51.MoveNext.20a6790.asm",
+    "va": "020a6ac0",
+    "literal_index": 17285,
+    "value": "当前安卓SDK版本:{0}"
+  },
+  {
+    "file": "_OpenAndWaitStartScanDev_d__51.MoveNext.20a6790.asm",
+    "va": "020a6b40",
+    "literal_index": 12691,
+    "value": "android.permission.ACCESS_FINE_LOCATION"
+  },
+  {
+    "file": "_OpenAndWaitStartScanDev_d__51.MoveNext.20a6790.asm",
+    "va": "020a6b64",
+    "literal_index": 12690,
+    "value": "android.permission.ACCESS_COARSE_LOCATION"
+  },
+  {
+    "file": "_OpenAndWaitStartScanDev_d__51.MoveNext.20a6790.asm",
+    "va": "020a6bd8",
+    "literal_index": 7343,
+    "value": "OpenLocationServiceTip"
+  },
+  {
+    "file": "_OpenAndWaitStartScanDev_d__51.MoveNext.20a6790.asm",
+    "va": "020a6c5c",
+    "literal_index": 12695,
+    "value": "android.permission.BLUETOOTH_SCAN"
+  },
+  {
+    "file": "_OpenAndWaitStartScanDev_d__51.MoveNext.20a6790.asm",
+    "va": "020a6c80",
+    "literal_index": 12694,
+    "value": "android.permission.BLUETOOTH_CONNECT"
+  },
+  {
+    "file": "_CheckBleConnecting_d__29.MoveNext.20a5098.asm",
+    "va": "020a51ec",
+    "literal_index": 42,
+    "value": "\n"
+  },
+  {
+    "file": "_CheckBleConnecting_d__29.MoveNext.20a5098.asm",
+    "va": "020a51f8",
+    "literal_index": 0,
+    "value": ""
+  },
+  {
+    "file": "_CheckBleConnecting_d__29.MoveNext.20a5098.asm",
+    "va": "020a5204",
+    "literal_index": 1004,
+    "value": "."
+  },
+  {
+    "file": "_CheckBleConnecting_d__29.MoveNext.20a5098.asm",
+    "va": "020a5210",
+    "literal_index": 887,
+    "value": "-->获取文件夹动作名"
+  },
+  {
+    "file": "_CheckBleConnecting_d__29.MoveNext.20a5098.asm",
+    "va": "020a56d8",
+    "literal_index": 42,
+    "value": "\n"
+  },
+  {
+    "file": "_CheckBleConnecting_d__29.MoveNext.20a5098.asm",
+    "va": "020a5794",
+    "literal_index": 0,
+    "value": ""
+  },
+  {
+    "file": "_CheckBleConnecting_d__29.MoveNext.20a5098.asm",
+    "va": "020a5990",
+    "literal_index": 1004,
+    "value": "."
+  },
+  {
+    "file": "_CheckBleConnecting_d__29.MoveNext.20a5098.asm",
+    "va": "020a5a00",
+    "literal_index": 887,
+    "value": "-->获取文件夹动作名"
+  },
+  {
+    "file": "_Start_d__4.MoveNext.212024c.asm",
+    "va": "0212027c",
+    "literal_index": 11859,
+    "value": "_EnvMatrix"
+  },
+  {
+    "file": "_Start_d__4.MoveNext.212024c.asm",
+    "va": "02120408",
+    "literal_index": 11859,
+    "value": "_EnvMatrix"
+  },
+  {
+    "file": "__BleEnableCheck_g__GetBluetoothEnabledResult1_53_1_d.MoveNext.20b2348.asm",
+    "va": "020b2464",
+    "literal_index": 8917,
+    "value": "TEXT_CBCS_001"
+  },
+  {
+    "file": "__BleEnableCheck_g__GetBluetoothEnabledResult1_53_1_d.MoveNext.20b2348.asm",
+    "va": "020b2484",
+    "literal_index": 8917,
+    "value": "TEXT_CBCS_001"
+  },
+  {
+    "file": "__BleEnableCheck_g__GetBluetoothEnabledResult1_53_1_d.MoveNext.20b2348.asm",
+    "va": "020b24c8",
+    "literal_index": 8918,
+    "value": "TEXT_CBCS_0011"
+  },
+  {
+    "file": "__BleEnableCheck_g__GetBluetoothEnabledResult1_53_1_d.MoveNext.20b2348.asm",
+    "va": "020b24dc",
+    "literal_index": 8918,
+    "value": "TEXT_CBCS_0011"
+  },
+  {
+    "file": "__f__AnonymousType0_7.ToString.2648820.asm",
+    "va": "02648840",
+    "literal_index": 16746,
+    "value": "{{ StandMA = {0}, standML = {1}, standMS = {2}, editorMA = {3}, editorML = {4}, editorMS = {5}, editorM = {6} }}"
+  },
+  {
+    "file": "__f__AnonymousType0_7.ToString.2648820.asm",
+    "va": "0264885c",
+    "literal_index": 16746,
+    "value": "{{ StandMA = {0}, standML = {1}, standMS = {2}, editorMA = {3}, editorML = {4}, editorMS = {5}, editorM = {6} }}"
+  },
+  {
+    "file": "BTDeviceType.get_UseOldProtocol_List.2040ca4.asm",
+    "va": "02040d1c",
+    "literal_index": 8892,
+    "value": "T9-"
+  },
+  {
+    "file": "BTDeviceType.get_UseOldProtocol_List.2040ca4.asm",
+    "va": "02040d38",
+    "literal_index": 8892,
+    "value": "T9-"
+  },
+  {
+    "file": "BTDeviceType.get_UseOldProtocol_List.2040ca4.asm",
+    "va": "02040da4",
+    "literal_index": 6190,
+    "value": "K1-"
+  },
+  {
+    "file": "BTDeviceType.get_UseOldProtocol_List.2040ca4.asm",
+    "va": "02040db0",
+    "literal_index": 6190,
+    "value": "K1-"
+  },
+  {
+    "file": "BTDeviceType.get_UseOldProtocol_List.2040ca4.asm",
+    "va": "02040e24",
+    "literal_index": 6191,
+    "value": "K1AI-"
+  },
+  {
+    "file": "BTDeviceType.get_UseOldProtocol_List.2040ca4.asm",
+    "va": "02040e30",
+    "literal_index": 6191,
+    "value": "K1AI-"
+  },
+  {
+    "file": "BTDeviceType.get_UseOldProtocol_List.2040ca4.asm",
+    "va": "02040ea4",
+    "literal_index": 7179,
+    "value": "OP-M-"
+  },
+  {
+    "file": "BTDeviceType.get_UseOldProtocol_List.2040ca4.asm",
+    "va": "02040eb0",
+    "literal_index": 7179,
+    "value": "OP-M-"
+  },
+  {
+    "file": "BTDeviceType.get_UseOldProtocol_List.2040ca4.asm",
+    "va": "02040f24",
+    "literal_index": 2678,
+    "value": "CXGFN-"
+  },
+  {
+    "file": "BTDeviceType.get_UseOldProtocol_List.2040ca4.asm",
+    "va": "02040f30",
+    "literal_index": 2678,
+    "value": "CXGFN-"
+  },
+  {
+    "file": "BTDeviceType.get_UseOldProtocol_List.2040ca4.asm",
+    "va": "02040fa4",
+    "literal_index": 11273,
+    "value": "XGZGFN-"
+  },
+  {
+    "file": "BTDeviceType.get_UseOldProtocol_List.2040ca4.asm",
+    "va": "02040fb0",
+    "literal_index": 11273,
+    "value": "XGZGFN-"
+  },
+  {
+    "file": "BTDeviceType.get_UseOldProtocol_List.2040ca4.asm",
+    "va": "02041024",
+    "literal_index": 2673,
+    "value": "CTGEN-"
+  },
+  {
+    "file": "BTDeviceType.get_UseOldProtocol_List.2040ca4.asm",
+    "va": "02041030",
+    "literal_index": 2673,
+    "value": "CTGEN-"
+  },
+  {
+    "file": "BTDeviceType.get_UseOldProtocol_List.2040ca4.asm",
+    "va": "020410a4",
+    "literal_index": 2677,
+    "value": "CXGEN-"
+  },
+  {
+    "file": "BTDeviceType.get_UseOldProtocol_List.2040ca4.asm",
+    "va": "020410b0",
+    "literal_index": 2677,
+    "value": "CXGEN-"
+  },
+  {
+    "file": "BTDeviceType.get_UseOldProtocol_List.2040ca4.asm",
+    "va": "02041124",
+    "literal_index": 11272,
+    "value": "XGZGEN-"
+  },
+  {
+    "file": "BTDeviceType.get_UseOldProtocol_List.2040ca4.asm",
+    "va": "02041130",
+    "literal_index": 11272,
+    "value": "XGZGEN-"
+  },
+  {
+    "file": "BTDeviceType.get_UseOldProtocol_List.2040ca4.asm",
+    "va": "020411a4",
+    "literal_index": 4818,
+    "value": "GSEG-"
+  },
+  {
+    "file": "BTDeviceType.get_UseOldProtocol_List.2040ca4.asm",
+    "va": "020411b0",
+    "literal_index": 4818,
+    "value": "GSEG-"
+  },
+  {
+    "file": "BTDeviceType.get_DevStart_OP30XGZ.2040be4.asm",
+    "va": "02040bf8",
+    "literal_index": 11272,
+    "value": "XGZGEN-"
+  },
+  {
+    "file": "BTDeviceType.get_DevStart_OP30XGZ.2040be4.asm",
+    "va": "02040c04",
+    "literal_index": 11272,
+    "value": "XGZGEN-"
+  },
+  {
+    "file": "_OpenAndWaitStartScanDev_d__96.MoveNext.20b51bc.asm",
+    "va": "020b5264",
+    "literal_index": 12694,
+    "value": "android.permission.BLUETOOTH_CONNECT"
+  },
+  {
+    "file": "_OpenAndWaitStartScanDev_d__96.MoveNext.20b51bc.asm",
+    "va": "020b5270",
+    "literal_index": 12691,
+    "value": "android.permission.ACCESS_FINE_LOCATION"
+  },
+  {
+    "file": "_OpenAndWaitStartScanDev_d__96.MoveNext.20b51bc.asm",
+    "va": "020b527c",
+    "literal_index": 12695,
+    "value": "android.permission.BLUETOOTH_SCAN"
+  },
+  {
+    "file": "_OpenAndWaitStartScanDev_d__96.MoveNext.20b51bc.asm",
+    "va": "020b5288",
+    "literal_index": 12690,
+    "value": "android.permission.ACCESS_COARSE_LOCATION"
+  },
+  {
+    "file": "_OpenAndWaitStartScanDev_d__96.MoveNext.20b51bc.asm",
+    "va": "020b5294",
+    "literal_index": 17285,
+    "value": "当前安卓SDK版本:{0}"
+  },
+  {
+    "file": "_OpenAndWaitStartScanDev_d__96.MoveNext.20b51bc.asm",
+    "va": "020b54a4",
+    "literal_index": 17285,
+    "value": "当前安卓SDK版本:{0}"
+  },
+  {
+    "file": "_OpenAndWaitStartScanDev_d__96.MoveNext.20b51bc.asm",
+    "va": "020b5524",
+    "literal_index": 12691,
+    "value": "android.permission.ACCESS_FINE_LOCATION"
+  },
+  {
+    "file": "_OpenAndWaitStartScanDev_d__96.MoveNext.20b51bc.asm",
+    "va": "020b5548",
+    "literal_index": 12690,
+    "value": "android.permission.ACCESS_COARSE_LOCATION"
+  },
+  {
+    "file": "_OpenAndWaitStartScanDev_d__96.MoveNext.20b51bc.asm",
+    "va": "020b55bc",
+    "literal_index": 8919,
+    "value": "TEXT_CBCS_002"
+  },
+  {
+    "file": "_OpenAndWaitStartScanDev_d__96.MoveNext.20b51bc.asm",
+    "va": "020b55c8",
+    "literal_index": 8919,
+    "value": "TEXT_CBCS_002"
+  },
+  {
+    "file": "_OpenAndWaitStartScanDev_d__96.MoveNext.20b51bc.asm",
+    "va": "020b5660",
+    "literal_index": 12695,
+    "value": "android.permission.BLUETOOTH_SCAN"
+  },
+  {
+    "file": "_OpenAndWaitStartScanDev_d__96.MoveNext.20b51bc.asm",
+    "va": "020b5684",
+    "literal_index": 12694,
+    "value": "android.permission.BLUETOOTH_CONNECT"
+  }
+]

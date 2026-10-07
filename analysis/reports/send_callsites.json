@@ -1,0 +1,524 @@
+[
+  {
+    "file": "native/ActionPreinstallBtnScript.MainBtnClick.20b8970.asm",
+    "line": 53,
+    "call_address": "020b8a3c",
+    "context": "020b89ec: ldr      x8, [x8, #0xb8]\n020b89f0: ldrb     w8, [x8]\n020b89f4: cbz      w8, #0x20b8a88\n020b89f8: adrp     x19, #0x48d3000\n020b89fc: ldrb     w8, [x19, #0x4af]\n020b8a00: cbnz     w8, #0x20b8a18\n020b8a04: adrp     x0, #0x4610000\n020b8a08: ldr      x0, [x0, #0xc0]\n020b8a0c: bl       #0x1f16e38\n020b8a10: mov      w8, #1\n020b8a14: strb     w8, [x19, #0x4af]\n020b8a18: adrp     x8, #0x4610000\n020b8a1c: ldr      x8, [x8, #0xc0]\n020b8a20: ldr      x8, [x8]\n020b8a24: ldr      x8, [x8, #0xb8]\n020b8a28: ldr      x0, [x8, #0x18]\n020b8a2c: cbz      x0, #0x20b8a40\n020b8a30: mov      w1, #0xc\n020b8a34: mov      x2, xzr\n020b8a38: mov      x3, xzr\n020b8a3c: bl       #0x2031bec ; BTDevice.SendData"
+  },
+  {
+    "file": "native/ActionPreinstallBtnScript.MainBtnClick.20b8970.asm",
+    "line": 101,
+    "call_address": "020b8afc",
+    "context": "020b8aac: ldr      x2, [x8, #0x2e0]\n020b8ab0: blr      x9\n020b8ab4: adrp     x21, #0x48d3000\n020b8ab8: mov      x19, x0\n020b8abc: ldrb     w8, [x21, #0x4af]\n020b8ac0: cbnz     w8, #0x20b8ad8\n020b8ac4: adrp     x0, #0x4610000\n020b8ac8: ldr      x0, [x0, #0xc0]\n020b8acc: bl       #0x1f16e38\n020b8ad0: mov      w8, #1\n020b8ad4: strb     w8, [x21, #0x4af]\n020b8ad8: adrp     x8, #0x4610000\n020b8adc: ldr      x8, [x8, #0xc0]\n020b8ae0: ldr      x8, [x8]\n020b8ae4: ldr      x8, [x8, #0xb8]\n020b8ae8: ldr      x0, [x8, #0x18]\n020b8aec: cbz      x0, #0x20b8b00\n020b8af0: mov      w1, #0x17\n020b8af4: mov      x2, x19\n020b8af8: mov      x3, xzr\n020b8afc: bl       #0x2031bec ; BTDevice.SendData"
+  },
+  {
+    "file": "native/ActionRectScript.MianBtnClick.20df46c.asm",
+    "line": 804,
+    "call_address": "020e00f4",
+    "context": "020e00a4: cbnz     w8, #0x20e00bc\n020e00a8: adrp     x0, #0x4610000\n020e00ac: ldr      x0, [x0, #0xc0]\n020e00b0: bl       #0x1f16e38\n020e00b4: mov      w8, #1\n020e00b8: strb     w8, [x20, #0x4af]\n020e00bc: adrp     x8, #0x4610000\n020e00c0: ldr      x8, [x8, #0xc0]\n020e00c4: ldr      x8, [x8]\n020e00c8: ldr      x8, [x8, #0xb8]\n020e00cc: ldr      x0, [x8, #0x18]\n020e00d0: cbz      x0, #0x20e01b0\n020e00d4: mov      x2, x19\n020e00d8: ldp      x20, x19, [sp, #0x60]\n020e00dc: ldp      x22, x21, [sp, #0x50]\n020e00e0: mov      w1, #0x17\n020e00e4: ldp      x24, x23, [sp, #0x40]\n020e00e8: mov      x3, xzr\n020e00ec: ldp      x30, x25, [sp, #0x30]\n020e00f0: add      sp, sp, #0x70\n020e00f4: b        #0x2031bec ; BTDevice.SendData"
+  },
+  {
+    "file": "native/ActionRectScript.MianBtnClick.20df46c.asm",
+    "line": 832,
+    "call_address": "020e0164",
+    "context": "020e0114: ldp      x8, x2, [x9, #0x138]\n020e0118: blr      x8\n020e011c: tbz      w0, #0, #0x20e01b0\n020e0120: adrp     x20, #0x48d3000\n020e0124: ldrb     w8, [x20, #0x4af]\n020e0128: cbnz     w8, #0x20e0140\n020e012c: adrp     x0, #0x4610000\n020e0130: ldr      x0, [x0, #0xc0]\n020e0134: bl       #0x1f16e38\n020e0138: mov      w8, #1\n020e013c: strb     w8, [x20, #0x4af]\n020e0140: adrp     x8, #0x4610000\n020e0144: ldr      x8, [x8, #0xc0]\n020e0148: ldr      x8, [x8]\n020e014c: ldr      x8, [x8, #0xb8]\n020e0150: ldr      x0, [x8, #0x18]\n020e0154: cbz      x0, #0x20e0168\n020e0158: mov      w1, #0xc\n020e015c: mov      x2, xzr\n020e0160: mov      x3, xzr\n020e0164: bl       #0x2031bec ; BTDevice.SendData"
+  },
+  {
+    "file": "native/ControlInterfaceScript.FixedUpdate.20b76a4.asm",
+    "line": 207,
+    "call_address": "020b79d8",
+    "context": "020b7988: ldr      x8, [x8, #0xb8]\n020b798c: ldr      x0, [x8, #0x18]\n020b7990: cbz      x0, #0x20b79dc\n020b7994: mov      w1, #6\n020b7998: b        #0x20b79d0\n020b799c: cbnz     w8, #0x20b79b4\n020b79a0: adrp     x0, #0x4610000\n020b79a4: ldr      x0, [x0, #0xc0]\n020b79a8: bl       #0x1f16e38\n020b79ac: mov      w8, #1\n020b79b0: strb     w8, [x20, #0x4af]\n020b79b4: adrp     x8, #0x4610000\n020b79b8: ldr      x8, [x8, #0xc0]\n020b79bc: ldr      x8, [x8]\n020b79c0: ldr      x8, [x8, #0xb8]\n020b79c4: ldr      x0, [x8, #0x18]\n020b79c8: cbz      x0, #0x20b79dc\n020b79cc: mov      w1, #7\n020b79d0: mov      x2, xzr\n020b79d4: mov      x3, xzr\n020b79d8: bl       #0x2031bec ; BTDevice.SendData"
+  },
+  {
+    "file": "native/ControlInterfaceScript.Start.20b60b8.asm",
+    "line": 56,
+    "call_address": "020b6190",
+    "context": "020b6140: mov      x0, x20\n020b6144: mov      x1, xzr\n020b6148: bl       #0x203cf44 ; BTDevice.add_RobotStates\n020b614c: adrp     x20, #0x48d3000\n020b6150: ldrb     w8, [x20, #0x4af]\n020b6154: cbnz     w8, #0x20b616c\n020b6158: adrp     x0, #0x4610000\n020b615c: ldr      x0, [x0, #0xc0]\n020b6160: bl       #0x1f16e38\n020b6164: mov      w8, #1\n020b6168: strb     w8, [x20, #0x4af]\n020b616c: adrp     x8, #0x4610000\n020b6170: ldr      x8, [x8, #0xc0]\n020b6174: ldr      x8, [x8]\n020b6178: ldr      x8, [x8, #0xb8]\n020b617c: ldr      x0, [x8, #0x18]\n020b6180: cbz      x0, #0x20b6194\n020b6184: mov      w1, #0xf\n020b6188: mov      x2, xzr\n020b618c: mov      x3, xzr\n020b6190: bl       #0x2031bec ; BTDevice.SendData"
+  },
+  {
+    "file": "native/DevicePanel.ShutDownTipResult.21113fc.asm",
+    "line": 22,
+    "call_address": "0211144c",
+    "context": "021113fc: str      x30, [sp, #-0x20]!\n02111400: stp      x20, x19, [sp, #0x10]\n02111404: adrp     x20, #0x48d3000\n02111408: mov      x19, x0\n0211140c: ldrb     w8, [x20, #0x4af]\n02111410: cbnz     w8, #0x2111428\n02111414: adrp     x0, #0x4610000\n02111418: ldr      x0, [x0, #0xc0]\n0211141c: bl       #0x1f16e38\n02111420: mov      w8, #1\n02111424: strb     w8, [x20, #0x4af]\n02111428: adrp     x8, #0x4610000\n0211142c: ldr      x8, [x8, #0xc0]\n02111430: ldr      x8, [x8]\n02111434: ldr      x8, [x8, #0xb8]\n02111438: ldr      x0, [x8, #0x18]\n0211143c: cbz      x0, #0x2111450\n02111440: mov      w1, #0xfa\n02111444: mov      x2, xzr\n02111448: mov      x3, xzr\n0211144c: bl       #0x2031bec ; BTDevice.SendData"
+  },
+  {
+    "file": "native/DevicePanel.Start.210fdf8.asm",
+    "line": 221,
+    "call_address": "02110164",
+    "context": "02110114: bl       #0x21102e0 ; DevicePanel.SetNormalText\n02110118: mov      x0, x19\n0211011c: bl       #0x2110350 ; DevicePanel.OnBleDevChange\n02110120: adrp     x20, #0x48d3000\n02110124: ldrb     w8, [x20, #0x4af]\n02110128: cbnz     w8, #0x2110140\n0211012c: adrp     x0, #0x4610000\n02110130: ldr      x0, [x0, #0xc0]\n02110134: bl       #0x1f16e38\n02110138: mov      w8, #1\n0211013c: strb     w8, [x20, #0x4af]\n02110140: adrp     x8, #0x4610000\n02110144: ldr      x8, [x8, #0xc0]\n02110148: ldr      x8, [x8]\n0211014c: ldr      x8, [x8, #0xb8]\n02110150: ldr      x0, [x8, #0x18]\n02110154: cbz      x0, #0x2110168\n02110158: mov      w1, #0xf\n0211015c: mov      x2, xzr\n02110160: mov      x3, xzr\n02110164: bl       #0x2031bec ; BTDevice.SendData"
+  },
+  {
+    "file": "native/EditorGameManualInterfaceScript.ActionRectClick.205f804.asm",
+    "line": 281,
+    "call_address": "0205fc60",
+    "context": "0205fc10: ldrb     w8, [x21, #0x4af]\n0205fc14: ldr      x23, [x23, #0x648] ; literal \",\"\n0205fc18: ldr      x24, [x24, #0x628]\n0205fc1c: cbnz     w8, #0x205fc34\n0205fc20: adrp     x0, #0x4610000\n0205fc24: ldr      x0, [x0, #0xc0]\n0205fc28: bl       #0x1f16e38\n0205fc2c: mov      w8, #1\n0205fc30: strb     w8, [x21, #0x4af]\n0205fc34: adrp     x8, #0x4610000\n0205fc38: ldr      x8, [x8, #0xc0]\n0205fc3c: ldr      x8, [x8]\n0205fc40: ldr      x8, [x8, #0xb8]\n0205fc44: ldr      x21, [x8, #0x18]\n0205fc48: bl       #0x205d890 ; EditorGameManualInterfaceScript.get_Audio102\n0205fc4c: cbz      x21, #0x205fd40\n0205fc50: mov      x2, x0\n0205fc54: mov      x0, x21\n0205fc58: mov      w1, #0x19\n0205fc5c: mov      x3, xzr\n0205fc60: bl       #0x2031bec ; BTDevice.SendData"
+  },
+  {
+    "file": "native/EditorGameManualInterfaceScript.OnDanceActionPlayDone.205db58.asm",
+    "line": 76,
+    "call_address": "0205dc80",
+    "context": "0205dc30: ldrb     w8, [x19, #0x4af]\n0205dc34: cbnz     w8, #0x205dc4c\n0205dc38: adrp     x0, #0x4610000\n0205dc3c: ldr      x0, [x0, #0xc0]\n0205dc40: bl       #0x1f16e38\n0205dc44: mov      w8, #1\n0205dc48: strb     w8, [x19, #0x4af]\n0205dc4c: adrp     x8, #0x4610000\n0205dc50: ldr      x8, [x8, #0xc0]\n0205dc54: ldr      x8, [x8]\n0205dc58: ldr      x8, [x8, #0xb8]\n0205dc5c: ldr      x19, [x8, #0x18]\n0205dc60: bl       #0x205d930 ; EditorGameManualInterfaceScript.get_Audio104\n0205dc64: cbz      x19, #0x205dc84\n0205dc68: mov      x2, x0\n0205dc6c: mov      x0, x19\n0205dc70: mov      w1, #0x19\n0205dc74: ldp      x20, x19, [sp, #0x10]\n0205dc78: mov      x3, xzr\n0205dc7c: ldp      x30, x21, [sp], #0x20\n0205dc80: b        #0x2031bec ; BTDevice.SendData"
+  },
+  {
+    "file": "native/EditorGameManualInterfaceScript.SyncBtnClick.205e02c.asm",
+    "line": 54,
+    "call_address": "0205e0fc",
+    "context": "0205e0ac: mov      x1, xzr\n0205e0b0: bl       #0x40342d8\n0205e0b4: tbnz     w0, #0, #0x205e180\n0205e0b8: adrp     x20, #0x48d3000\n0205e0bc: ldrb     w8, [x20, #0x4af]\n0205e0c0: cbnz     w8, #0x205e0d8\n0205e0c4: adrp     x0, #0x4610000\n0205e0c8: ldr      x0, [x0, #0xc0]\n0205e0cc: bl       #0x1f16e38\n0205e0d0: mov      w8, #1\n0205e0d4: strb     w8, [x20, #0x4af]\n0205e0d8: adrp     x8, #0x4610000\n0205e0dc: ldr      x8, [x8, #0xc0]\n0205e0e0: ldr      x8, [x8]\n0205e0e4: ldr      x8, [x8, #0xb8]\n0205e0e8: ldr      x0, [x8, #0x18]\n0205e0ec: cbz      x0, #0x205e194\n0205e0f0: mov      w1, #0xe9\n0205e0f4: mov      x2, xzr\n0205e0f8: mov      x3, xzr\n0205e0fc: bl       #0x2031bec ; BTDevice.SendData"
+  },
+  {
+    "file": "native/EditorManualInterfaceScripts.EditorRunningBtnClick.2066110.asm",
+    "line": 202,
+    "call_address": "02066430",
+    "context": "020663e0: ldr      x8, [x8, #0xb8]\n020663e4: ldp      s0, s1, [x8]\n020663e8: bl       #0x4040800\n020663ec: adrp     x19, #0x48d3000\n020663f0: ldrb     w8, [x19, #0x4af]\n020663f4: cbnz     w8, #0x206640c\n020663f8: adrp     x0, #0x4610000\n020663fc: ldr      x0, [x0, #0xc0]\n02066400: bl       #0x1f16e38\n02066404: mov      w8, #1\n02066408: strb     w8, [x19, #0x4af]\n0206640c: adrp     x8, #0x4610000\n02066410: ldr      x8, [x8, #0xc0]\n02066414: ldr      x8, [x8]\n02066418: ldr      x8, [x8, #0xb8]\n0206641c: ldr      x0, [x8, #0x18]\n02066420: cbz      x0, #0x206646c\n02066424: mov      w1, #0xc\n02066428: mov      x2, xzr\n0206642c: mov      x3, xzr\n02066430: bl       #0x2031bec ; BTDevice.SendData"
+  },
+  {
+    "file": "native/EditorManualInterfaceScripts.JointStateChenge.2065820.asm",
+    "line": 132,
+    "call_address": "02065a28",
+    "context": "020659d8: cbnz     w8, #0x20659f0\n020659dc: adrp     x0, #0x4610000\n020659e0: ldr      x0, [x0, #0xc0]\n020659e4: bl       #0x1f16e38\n020659e8: mov      w8, #1\n020659ec: strb     w8, [x20, #0x4af]\n020659f0: adrp     x8, #0x4610000\n020659f4: ldr      x8, [x8, #0xc0]\n020659f8: ldr      x8, [x8]\n020659fc: ldr      x8, [x8, #0xb8]\n02065a00: ldr      x0, [x8, #0x18]\n02065a04: cbz      x0, #0x2065a2c\n02065a08: mov      x2, x19\n02065a0c: ldp      x20, x19, [sp, #0x40]\n02065a10: ldp      x22, x21, [sp, #0x30]\n02065a14: mov      w1, #0xed\n02065a18: ldp      x24, x23, [sp, #0x20]\n02065a1c: mov      x3, xzr\n02065a20: ldp      x26, x25, [sp, #0x10]\n02065a24: ldp      x30, x27, [sp], #0x50\n02065a28: b        #0x2031bec ; BTDevice.SendData"
+  },
+  {
+    "file": "native/EditorManualInterfaceScripts.LoadDatabtnClick.20665f8.asm",
+    "line": 117,
+    "call_address": "020667c4",
+    "context": "02066774: ldr      x8, [x8, #0xa00]\n02066778: ldr      x1, [x8]\n0206677c: bl       #0x234b7fc\n02066780: adrp     x20, #0x48d3000\n02066784: ldrb     w8, [x20, #0x4af]\n02066788: cbnz     w8, #0x20667a0\n0206678c: adrp     x0, #0x4610000\n02066790: ldr      x0, [x0, #0xc0]\n02066794: bl       #0x1f16e38\n02066798: mov      w8, #1\n0206679c: strb     w8, [x20, #0x4af]\n020667a0: adrp     x8, #0x4610000\n020667a4: ldr      x8, [x8, #0xc0]\n020667a8: ldr      x8, [x8]\n020667ac: ldr      x8, [x8, #0xb8]\n020667b0: ldr      x0, [x8, #0x18]\n020667b4: cbz      x0, #0x20668f4\n020667b8: mov      w1, #0xeb\n020667bc: mov      x2, xzr\n020667c0: mov      x3, xzr\n020667c4: bl       #0x2031bec ; BTDevice.SendData"
+  },
+  {
+    "file": "native/EditorManualInterfaceScripts.ManualEditorStartBtnClick.2065e1c.asm",
+    "line": 154,
+    "call_address": "0206607c",
+    "context": "0206602c: ldr      x1, [x8]\n02066030: bl       #0x2365770\n02066034: adrp     x21, #0x48d3000\n02066038: mov      x20, x0\n0206603c: ldrb     w8, [x21, #0x4af]\n02066040: cbnz     w8, #0x2066058\n02066044: adrp     x0, #0x4610000\n02066048: ldr      x0, [x0, #0xc0]\n0206604c: bl       #0x1f16e38\n02066050: mov      w8, #1\n02066054: strb     w8, [x21, #0x4af]\n02066058: adrp     x8, #0x4610000\n0206605c: ldr      x8, [x8, #0xc0]\n02066060: ldr      x8, [x8]\n02066064: ldr      x8, [x8, #0xb8]\n02066068: ldr      x0, [x8, #0x18]\n0206606c: cbz      x0, #0x2066080\n02066070: mov      w1, #0xed\n02066074: mov      x2, x20\n02066078: mov      x3, xzr\n0206607c: bl       #0x2031bec ; BTDevice.SendData"
+  },
+  {
+    "file": "native/EditorManualInterfaceScripts.SyncRobotJointsBtnClick.2066bf0.asm",
+    "line": 34,
+    "call_address": "02066c70",
+    "context": "02066c20: ldp      x20, x19, [sp, #0x10]\n02066c24: ldr      x30, [sp], #0x20\n02066c28: ret      \n02066c2c: adrp     x20, #0x48d3000\n02066c30: ldrb     w8, [x20, #0x4af]\n02066c34: cbnz     w8, #0x2066c4c\n02066c38: adrp     x0, #0x4610000\n02066c3c: ldr      x0, [x0, #0xc0]\n02066c40: bl       #0x1f16e38\n02066c44: mov      w8, #1\n02066c48: strb     w8, [x20, #0x4af]\n02066c4c: adrp     x8, #0x4610000\n02066c50: ldr      x8, [x8, #0xc0]\n02066c54: ldr      x8, [x8]\n02066c58: ldr      x8, [x8, #0xb8]\n02066c5c: ldr      x0, [x8, #0x18]\n02066c60: cbz      x0, #0x2066c74\n02066c64: mov      w1, #0xe9\n02066c68: mov      x2, xzr\n02066c6c: mov      x3, xzr\n02066c70: bl       #0x2031bec ; BTDevice.SendData"
+  },
+  {
+    "file": "native/EditorVisualInterfaceScript.EditorBeginRun.2086a7c.asm",
+    "line": 42,
+    "call_address": "02086b1c",
+    "context": "02086acc: mov      x0, x19\n02086ad0: mov      x1, xzr\n02086ad4: bl       #0x4036318\n02086ad8: adrp     x20, #0x48d3000\n02086adc: ldrb     w8, [x20, #0x4af]\n02086ae0: cbnz     w8, #0x2086af8\n02086ae4: adrp     x0, #0x4610000\n02086ae8: ldr      x0, [x0, #0xc0]\n02086aec: bl       #0x1f16e38\n02086af0: mov      w8, #1\n02086af4: strb     w8, [x20, #0x4af]\n02086af8: adrp     x8, #0x4610000\n02086afc: ldr      x8, [x8, #0xc0]\n02086b00: ldr      x8, [x8]\n02086b04: ldr      x8, [x8, #0xb8]\n02086b08: ldr      x0, [x8, #0x18]\n02086b0c: cbz      x0, #0x2086ba8\n02086b10: mov      w1, #0xc\n02086b14: mov      x2, xzr\n02086b18: mov      x3, xzr\n02086b1c: bl       #0x2031bec ; BTDevice.SendData"
+  },
+  {
+    "file": "native/OpenUSBModeScript.OpenUSBResult.210f4e0.asm",
+    "line": 22,
+    "call_address": "0210f530",
+    "context": "0210f4e0: str      x30, [sp, #-0x20]!\n0210f4e4: stp      x20, x19, [sp, #0x10]\n0210f4e8: adrp     x20, #0x48d3000\n0210f4ec: mov      x19, x0\n0210f4f0: ldrb     w8, [x20, #0x4af]\n0210f4f4: cbnz     w8, #0x210f50c\n0210f4f8: adrp     x0, #0x4610000\n0210f4fc: ldr      x0, [x0, #0xc0]\n0210f500: bl       #0x1f16e38\n0210f504: mov      w8, #1\n0210f508: strb     w8, [x20, #0x4af]\n0210f50c: adrp     x8, #0x4610000\n0210f510: ldr      x8, [x8, #0xc0]\n0210f514: ldr      x8, [x8]\n0210f518: ldr      x8, [x8, #0xb8]\n0210f51c: ldr      x0, [x8, #0x18]\n0210f520: cbz      x0, #0x210f550\n0210f524: mov      w1, #0xf5\n0210f528: mov      x2, xzr\n0210f52c: mov      x3, xzr\n0210f530: bl       #0x2031bec ; BTDevice.SendData"
+  },
+  {
+    "file": "native/RobotActionInterfaceScript.Close.20cd59c.asm",
+    "line": 78,
+    "call_address": "020cd6cc",
+    "context": "020cd67c: mov      x2, xzr\n020cd680: bl       #0x4033d78\n020cd684: tbz      w0, #0, #0x20cd710\n020cd688: adrp     x20, #0x48d3000\n020cd68c: ldrb     w8, [x20, #0x4af]\n020cd690: cbnz     w8, #0x20cd6a8\n020cd694: adrp     x0, #0x4610000\n020cd698: ldr      x0, [x0, #0xc0]\n020cd69c: bl       #0x1f16e38\n020cd6a0: mov      w8, #1\n020cd6a4: strb     w8, [x20, #0x4af]\n020cd6a8: adrp     x8, #0x4610000\n020cd6ac: ldr      x8, [x8, #0xc0]\n020cd6b0: ldr      x8, [x8]\n020cd6b4: ldr      x8, [x8, #0xb8]\n020cd6b8: ldr      x0, [x8, #0x18]\n020cd6bc: cbz      x0, #0x20cd6d0\n020cd6c0: mov      w1, #0xc\n020cd6c4: mov      x2, xzr\n020cd6c8: mov      x3, xzr\n020cd6cc: bl       #0x2031bec ; BTDevice.SendData"
+  },
+  {
+    "file": "native/RobotActionInterfaceScript.DeleteActionResult.20ce0e0.asm",
+    "line": 116,
+    "call_address": "020ce2a8",
+    "context": "020ce258: adrp     x19, #0x48d3000\n020ce25c: mov      x22, x0\n020ce260: ldrb     w8, [x19, #0x4af]\n020ce264: cbnz     w8, #0x20ce27c\n020ce268: adrp     x0, #0x4610000\n020ce26c: ldr      x0, [x0, #0xc0]\n020ce270: bl       #0x1f16e38\n020ce274: mov      w8, #1\n020ce278: strb     w8, [x19, #0x4af]\n020ce27c: adrp     x8, #0x4610000\n020ce280: adrp     x28, #0x4610000\n020ce284: ldr      x8, [x8, #0xc0]\n020ce288: ldr      x8, [x8]\n020ce28c: ldr      x8, [x8, #0xb8]\n020ce290: ldr      x0, [x8, #0x18]\n020ce294: ldr      x28, [x28, #0x290]\n020ce298: cbz      x0, #0x20ce2ac\n020ce29c: mov      w1, #0xdd\n020ce2a0: mov      x2, x22\n020ce2a4: mov      x3, xzr\n020ce2a8: bl       #0x2031bec ; BTDevice.SendData"
+  },
+  {
+    "file": "native/RobotActionInterfaceScript.ShowManualActionBtnClick.20cceb4.asm",
+    "line": 82,
+    "call_address": "020ccff4",
+    "context": "020ccfa4: mov      x2, xzr\n020ccfa8: bl       #0x4033d78\n020ccfac: tbz      w0, #0, #0x20cd038\n020ccfb0: adrp     x20, #0x48d3000\n020ccfb4: ldrb     w8, [x20, #0x4af]\n020ccfb8: cbnz     w8, #0x20ccfd0\n020ccfbc: adrp     x0, #0x4610000\n020ccfc0: ldr      x0, [x0, #0xc0]\n020ccfc4: bl       #0x1f16e38\n020ccfc8: mov      w8, #1\n020ccfcc: strb     w8, [x20, #0x4af]\n020ccfd0: adrp     x8, #0x4610000\n020ccfd4: ldr      x8, [x8, #0xc0]\n020ccfd8: ldr      x8, [x8]\n020ccfdc: ldr      x8, [x8, #0xb8]\n020ccfe0: ldr      x0, [x8, #0x18]\n020ccfe4: cbz      x0, #0x20ccff8\n020ccfe8: mov      w1, #0xc\n020ccfec: mov      x2, xzr\n020ccff0: mov      x3, xzr\n020ccff4: bl       #0x2031bec ; BTDevice.SendData"
+  },
+  {
+    "file": "native/RobotActionInterfaceScript.ShowRobotActionBtnClick.20cc70c.asm",
+    "line": 109,
+    "call_address": "020cc8b8",
+    "context": "020cc868: mov      x2, xzr\n020cc86c: bl       #0x4033d78\n020cc870: tbz      w0, #0, #0x20cc8fc\n020cc874: adrp     x20, #0x48d3000\n020cc878: ldrb     w8, [x20, #0x4af]\n020cc87c: cbnz     w8, #0x20cc894\n020cc880: adrp     x0, #0x4610000\n020cc884: ldr      x0, [x0, #0xc0]\n020cc888: bl       #0x1f16e38\n020cc88c: mov      w8, #1\n020cc890: strb     w8, [x20, #0x4af]\n020cc894: adrp     x8, #0x4610000\n020cc898: ldr      x8, [x8, #0xc0]\n020cc89c: ldr      x8, [x8]\n020cc8a0: ldr      x8, [x8, #0xb8]\n020cc8a4: ldr      x0, [x8, #0x18]\n020cc8a8: cbz      x0, #0x20ccd70\n020cc8ac: mov      w1, #0xc\n020cc8b0: mov      x2, xzr\n020cc8b4: mov      x3, xzr\n020cc8b8: bl       #0x2031bec ; BTDevice.SendData"
+  },
+  {
+    "file": "native/RobotActionInterfaceScript.ShowVisualActionBtnClick.20cd228.asm",
+    "line": 82,
+    "call_address": "020cd368",
+    "context": "020cd318: mov      x2, xzr\n020cd31c: bl       #0x4033d78\n020cd320: tbz      w0, #0, #0x20cd3ac\n020cd324: adrp     x20, #0x48d3000\n020cd328: ldrb     w8, [x20, #0x4af]\n020cd32c: cbnz     w8, #0x20cd344\n020cd330: adrp     x0, #0x4610000\n020cd334: ldr      x0, [x0, #0xc0]\n020cd338: bl       #0x1f16e38\n020cd33c: mov      w8, #1\n020cd340: strb     w8, [x20, #0x4af]\n020cd344: adrp     x8, #0x4610000\n020cd348: ldr      x8, [x8, #0xc0]\n020cd34c: ldr      x8, [x8]\n020cd350: ldr      x8, [x8, #0xb8]\n020cd354: ldr      x0, [x8, #0x18]\n020cd358: cbz      x0, #0x20cd36c\n020cd35c: mov      w1, #0xc\n020cd360: mov      x2, xzr\n020cd364: mov      x3, xzr\n020cd368: bl       #0x2031bec ; BTDevice.SendData"
+  },
+  {
+    "file": "native/RobotActionInterfaceScript.Start.20cc1b4.asm",
+    "line": 101,
+    "call_address": "020cc340",
+    "context": "020cc2f0: mov      x0, x20\n020cc2f4: mov      x1, xzr\n020cc2f8: bl       #0x202df38 ; BTDevice.add_ActionProgress\n020cc2fc: adrp     x20, #0x48d3000\n020cc300: ldrb     w8, [x20, #0x4af]\n020cc304: cbnz     w8, #0x20cc31c\n020cc308: adrp     x0, #0x4610000\n020cc30c: ldr      x0, [x0, #0xc0]\n020cc310: bl       #0x1f16e38\n020cc314: mov      w8, #1\n020cc318: strb     w8, [x20, #0x4af]\n020cc31c: adrp     x8, #0x4610000\n020cc320: ldr      x8, [x8, #0xc0]\n020cc324: ldr      x8, [x8]\n020cc328: ldr      x8, [x8, #0xb8]\n020cc32c: ldr      x0, [x8, #0x18]\n020cc330: cbz      x0, #0x20cc344\n020cc334: mov      w1, #0xf\n020cc338: mov      x2, xzr\n020cc33c: mov      x3, xzr\n020cc340: bl       #0x2031bec ; BTDevice.SendData"
+  },
+  {
+    "file": "native/RobotActionViewScript.MianBtnClick.20e3448.asm",
+    "line": 72,
+    "call_address": "020e3560",
+    "context": "020e3510: ldr      x2, [x8, #0x2e0]\n020e3514: blr      x9\n020e3518: adrp     x21, #0x48d3000\n020e351c: mov      x20, x0\n020e3520: ldrb     w8, [x21, #0x4af]\n020e3524: cbnz     w8, #0x20e353c\n020e3528: adrp     x0, #0x4610000\n020e352c: ldr      x0, [x0, #0xc0]\n020e3530: bl       #0x1f16e38\n020e3534: mov      w8, #1\n020e3538: strb     w8, [x21, #0x4af]\n020e353c: adrp     x8, #0x4610000\n020e3540: ldr      x8, [x8, #0xc0]\n020e3544: ldr      x8, [x8]\n020e3548: ldr      x8, [x8, #0xb8]\n020e354c: ldr      x0, [x8, #0x18]\n020e3550: cbz      x0, #0x20e3564\n020e3554: mov      w1, #0x17\n020e3558: mov      x2, x20\n020e355c: mov      x3, xzr\n020e3560: bl       #0x2031bec ; BTDevice.SendData"
+  },
+  {
+    "file": "native/VisualGameCanvasScript.OnDanceActionPlayDone.209203c.asm",
+    "line": 25,
+    "call_address": "02092098",
+    "context": "02092048: strb     wzr, [x0, #0xb9]\n0209204c: mov      x0, xzr\n02092050: bl       #0x2111a0c ; TopCanvasScript.CloseWaiting\n02092054: adrp     x20, #0x48d3000\n02092058: ldrb     w8, [x20, #0x4af]\n0209205c: cbnz     w8, #0x2092074\n02092060: adrp     x0, #0x4610000\n02092064: ldr      x0, [x0, #0xc0]\n02092068: bl       #0x1f16e38\n0209206c: mov      w8, #1\n02092070: strb     w8, [x20, #0x4af]\n02092074: adrp     x8, #0x4610000\n02092078: ldr      x8, [x8, #0xc0]\n0209207c: ldr      x8, [x8]\n02092080: ldr      x8, [x8, #0xb8]\n02092084: ldr      x0, [x8, #0x18]\n02092088: cbz      x0, #0x2092108\n0209208c: mov      w1, #0xc\n02092090: mov      x2, xzr\n02092094: mov      x3, xzr\n02092098: bl       #0x2031bec ; BTDevice.SendData"
+  },
+  {
+    "file": "native/VisualGameCanvasScript.SettleCurrentGameAndSetTipView.208ea94.asm",
+    "line": 1090,
+    "call_address": "0208fb94",
+    "context": "0208fb44: ldr      x8, [x8, #0xb8]\n0208fb48: ldr      x22, [x8, #0x18]\n0208fb4c: bl       #0x208d410 ; VisualGameCanvasScript.get_Audio101\n0208fb50: cbnz     x22, #0x208fb84\n0208fb54: b        #0x2091a24\n0208fb58: cbnz     w8, #0x208fb70\n0208fb5c: adrp     x0, #0x4610000\n0208fb60: ldr      x0, [x0, #0xc0]\n0208fb64: bl       #0x1f16e38\n0208fb68: mov      w8, #1\n0208fb6c: strb     w8, [x21, #0x4af]\n0208fb70: ldr      x8, [x20]\n0208fb74: ldr      x8, [x8, #0xb8]\n0208fb78: ldr      x22, [x8, #0x18]\n0208fb7c: bl       #0x208d500 ; VisualGameCanvasScript.get_Audio104\n0208fb80: cbz      x22, #0x2091a24\n0208fb84: mov      x2, x0\n0208fb88: mov      x0, x22\n0208fb8c: mov      w1, #0x19\n0208fb90: mov      x3, xzr\n0208fb94: bl       #0x2031bec ; BTDevice.SendData"
+  },
+  {
+    "file": "native/_CheckBleConnecting_d__29.MoveNext.20a5098.asm",
+    "line": 279,
+    "call_address": "020a54ec",
+    "context": "020a549c: mov      x1, xzr\n020a54a0: mov      x19, x0\n020a54a4: bl       #0x36c1fd0\n020a54a8: adrp     x20, #0x48d3000\n020a54ac: ldrb     w8, [x20, #0x4af]\n020a54b0: cbnz     w8, #0x20a54c8\n020a54b4: adrp     x0, #0x4610000\n020a54b8: ldr      x0, [x0, #0xc0]\n020a54bc: bl       #0x1f16e38\n020a54c0: mov      w8, #1\n020a54c4: strb     w8, [x20, #0x4af]\n020a54c8: adrp     x8, #0x4610000\n020a54cc: ldr      x8, [x8, #0xc0]\n020a54d0: ldr      x8, [x8]\n020a54d4: ldr      x8, [x8, #0xb8]\n020a54d8: ldr      x0, [x8, #0x18]\n020a54dc: cbz      x0, #0x20a5e1c\n020a54e0: mov      w1, #0xb\n020a54e4: mov      x2, xzr\n020a54e8: mov      x3, xzr\n020a54ec: bl       #0x2031bec ; BTDevice.SendData"
+  },
+  {
+    "file": "native/_CheckBleConnecting_d__29.MoveNext.20a5098.asm",
+    "line": 682,
+    "call_address": "020a5b38",
+    "context": "020a5ae8: ldr      x8, [x8, #0x28]\n020a5aec: cbz      x8, #0x20a5dd4\n020a5af0: mov      x21, x0\n020a5af4: ldr      x0, [x8, #0x10]\n020a5af8: cbz      x0, #0x20a5dd8\n020a5afc: mov      w1, #0x2f\n020a5b00: mov      x2, xzr\n020a5b04: bl       #0x3512c30\n020a5b08: mov      x1, x0\n020a5b0c: cbz      x21, #0x20a5ddc\n020a5b10: ldr      x8, [x21]\n020a5b14: ldr      x9, [x8, #0x2d8]\n020a5b18: ldr      x2, [x8, #0x2e0]\n020a5b1c: mov      x0, x21\n020a5b20: blr      x9\n020a5b24: cbz      x20, #0x20a5de0\n020a5b28: mov      x2, x0\n020a5b2c: mov      x0, x20\n020a5b30: mov      w1, #0x16\n020a5b34: mov      x3, xzr\n020a5b38: bl       #0x2031bec ; BTDevice.SendData"
+  },
+  {
+    "file": "native/_CheckBleConnecting_d__74.MoveNext.20b382c.asm",
+    "line": 279,
+    "call_address": "020b3c80",
+    "context": "020b3c30: mov      x1, xzr\n020b3c34: mov      x19, x0\n020b3c38: bl       #0x36c1fd0\n020b3c3c: adrp     x20, #0x48d3000\n020b3c40: ldrb     w8, [x20, #0x4af]\n020b3c44: cbnz     w8, #0x20b3c5c\n020b3c48: adrp     x0, #0x4610000\n020b3c4c: ldr      x0, [x0, #0xc0]\n020b3c50: bl       #0x1f16e38\n020b3c54: mov      w8, #1\n020b3c58: strb     w8, [x20, #0x4af]\n020b3c5c: adrp     x8, #0x4610000\n020b3c60: ldr      x8, [x8, #0xc0]\n020b3c64: ldr      x8, [x8]\n020b3c68: ldr      x8, [x8, #0xb8]\n020b3c6c: ldr      x0, [x8, #0x18]\n020b3c70: cbz      x0, #0x20b4600\n020b3c74: mov      w1, #0xb\n020b3c78: mov      x2, xzr\n020b3c7c: mov      x3, xzr\n020b3c80: bl       #0x2031bec ; BTDevice.SendData"
+  },
+  {
+    "file": "native/_CheckBleConnecting_d__74.MoveNext.20b382c.asm",
+    "line": 692,
+    "call_address": "020b42f4",
+    "context": "020b42a4: ldr      x8, [x8, #0x28]\n020b42a8: cbz      x8, #0x20b45b4\n020b42ac: mov      x21, x0\n020b42b0: ldr      x0, [x8, #0x10]\n020b42b4: cbz      x0, #0x20b45b8\n020b42b8: mov      w1, #0x2f\n020b42bc: mov      x2, xzr\n020b42c0: bl       #0x3512c30\n020b42c4: mov      x1, x0\n020b42c8: cbz      x21, #0x20b45bc\n020b42cc: ldr      x8, [x21]\n020b42d0: ldr      x9, [x8, #0x2d8]\n020b42d4: ldr      x2, [x8, #0x2e0]\n020b42d8: mov      x0, x21\n020b42dc: blr      x9\n020b42e0: cbz      x20, #0x20b45c0\n020b42e4: mov      x2, x0\n020b42e8: mov      x0, x20\n020b42ec: mov      w1, #0x16\n020b42f0: mov      x3, xzr\n020b42f4: bl       #0x2031bec ; BTDevice.SendData"
+  },
+  {
+    "file": "native/_CheckGetInEditorData_d__110.MoveNext.208a318.asm",
+    "line": 62,
+    "call_address": "0208a408",
+    "context": "0208a3b8: mov      w1, wzr\n0208a3bc: mov      x3, xzr\n0208a3c0: bl       #0x36a2b48\n0208a3c4: adrp     x21, #0x48d3000\n0208a3c8: ldrb     w8, [x21, #0x4af]\n0208a3cc: cbnz     w8, #0x208a3e4\n0208a3d0: adrp     x0, #0x4610000\n0208a3d4: ldr      x0, [x0, #0xc0]\n0208a3d8: bl       #0x1f16e38\n0208a3dc: mov      w8, #1\n0208a3e0: strb     w8, [x21, #0x4af]\n0208a3e4: adrp     x8, #0x4610000\n0208a3e8: ldr      x8, [x8, #0xc0]\n0208a3ec: ldr      x8, [x8]\n0208a3f0: ldr      x8, [x8, #0xb8]\n0208a3f4: ldr      x0, [x8, #0x18]\n0208a3f8: cbz      x0, #0x208a40c\n0208a3fc: mov      w1, #0xe6\n0208a400: mov      x2, xzr\n0208a404: mov      x3, xzr\n0208a408: bl       #0x2031bec ; BTDevice.SendData"
+  },
+  {
+    "file": "native/_CheckGetInEditorData_d__120.MoveNext.206b8b4.asm",
+    "line": 54,
+    "call_address": "0206b984",
+    "context": "0206b934: mov      w1, wzr\n0206b938: mov      x3, xzr\n0206b93c: bl       #0x36a2b48\n0206b940: adrp     x20, #0x48d3000\n0206b944: ldrb     w8, [x20, #0x4af]\n0206b948: cbnz     w8, #0x206b960\n0206b94c: adrp     x0, #0x4610000\n0206b950: ldr      x0, [x0, #0xc0]\n0206b954: bl       #0x1f16e38\n0206b958: mov      w8, #1\n0206b95c: strb     w8, [x20, #0x4af]\n0206b960: adrp     x8, #0x4610000\n0206b964: ldr      x8, [x8, #0xc0]\n0206b968: ldr      x8, [x8]\n0206b96c: ldr      x8, [x8, #0xb8]\n0206b970: ldr      x0, [x8, #0x18]\n0206b974: cbz      x0, #0x206b988\n0206b978: mov      w1, #0xe6\n0206b97c: mov      x2, xzr\n0206b980: mov      x3, xzr\n0206b984: bl       #0x2031bec ; BTDevice.SendData"
+  },
+  {
+    "file": "native/_CheckGetInEditorData_d__161.MoveNext.209b5ac.asm",
+    "line": 60,
+    "call_address": "0209b694",
+    "context": "0209b644: mov      w1, wzr\n0209b648: mov      x3, xzr\n0209b64c: bl       #0x36a2b48\n0209b650: adrp     x20, #0x48d3000\n0209b654: ldrb     w8, [x20, #0x4af]\n0209b658: cbnz     w8, #0x209b670\n0209b65c: adrp     x0, #0x4610000\n0209b660: ldr      x0, [x0, #0xc0]\n0209b664: bl       #0x1f16e38\n0209b668: mov      w8, #1\n0209b66c: strb     w8, [x20, #0x4af]\n0209b670: adrp     x8, #0x4610000\n0209b674: ldr      x8, [x8, #0xc0]\n0209b678: ldr      x8, [x8]\n0209b67c: ldr      x8, [x8, #0xb8]\n0209b680: ldr      x0, [x8, #0x18]\n0209b684: cbz      x0, #0x209b714\n0209b688: mov      w1, #0xe6\n0209b68c: mov      x2, xzr\n0209b690: mov      x3, xzr\n0209b694: bl       #0x2031bec ; BTDevice.SendData"
+  },
+  {
+    "file": "native/_CheckGetInEditorData_d__93.MoveNext.20619f4.asm",
+    "line": 62,
+    "call_address": "02061ae4",
+    "context": "02061a94: mov      w1, wzr\n02061a98: mov      x3, xzr\n02061a9c: bl       #0x36a2b48\n02061aa0: adrp     x20, #0x48d3000\n02061aa4: ldrb     w8, [x20, #0x4af]\n02061aa8: cbnz     w8, #0x2061ac0\n02061aac: adrp     x0, #0x4610000\n02061ab0: ldr      x0, [x0, #0xc0]\n02061ab4: bl       #0x1f16e38\n02061ab8: mov      w8, #1\n02061abc: strb     w8, [x20, #0x4af]\n02061ac0: adrp     x8, #0x4610000\n02061ac4: ldr      x8, [x8, #0xc0]\n02061ac8: ldr      x8, [x8]\n02061acc: ldr      x8, [x8, #0xb8]\n02061ad0: ldr      x0, [x8, #0x18]\n02061ad4: cbz      x0, #0x2061ae8\n02061ad8: mov      w1, #0xe6\n02061adc: mov      x2, xzr\n02061ae0: mov      x3, xzr\n02061ae4: bl       #0x2031bec ; BTDevice.SendData"
+  },
+  {
+    "file": "native/_CloseAndWait_d__124.MoveNext.206ba5c.asm",
+    "line": 57,
+    "call_address": "0206bb38",
+    "context": "0206bae8: b.ne     #0x206bcd4\n0206baec: adrp     x20, #0x48d3000\n0206baf0: mov      w9, #-1\n0206baf4: ldrb     w8, [x20, #0x4af]\n0206baf8: str      w9, [x19, #0x10]\n0206bafc: cbnz     w8, #0x206bb14\n0206bb00: adrp     x0, #0x4610000\n0206bb04: ldr      x0, [x0, #0xc0]\n0206bb08: bl       #0x1f16e38\n0206bb0c: mov      w8, #1\n0206bb10: strb     w8, [x20, #0x4af]\n0206bb14: adrp     x8, #0x4610000\n0206bb18: ldr      x8, [x8, #0xc0]\n0206bb1c: ldr      x8, [x8]\n0206bb20: ldr      x8, [x8, #0xb8]\n0206bb24: ldr      x0, [x8, #0x18]\n0206bb28: cbz      x0, #0x206bce0\n0206bb2c: mov      w1, #0xeb\n0206bb30: mov      x2, xzr\n0206bb34: mov      x3, xzr\n0206bb38: bl       #0x2031bec ; BTDevice.SendData"
+  },
+  {
+    "file": "native/_CloseAndWait_d__124.MoveNext.206ba5c.asm",
+    "line": 91,
+    "call_address": "0206bbc0",
+    "context": "0206bb70: b        #0x206bc80\n0206bb74: adrp     x20, #0x48d3000\n0206bb78: mov      w9, #-1\n0206bb7c: ldrb     w8, [x20, #0x4af]\n0206bb80: str      w9, [x19, #0x10]\n0206bb84: cbnz     w8, #0x206bb9c\n0206bb88: adrp     x0, #0x4610000\n0206bb8c: ldr      x0, [x0, #0xc0]\n0206bb90: bl       #0x1f16e38\n0206bb94: mov      w8, #1\n0206bb98: strb     w8, [x20, #0x4af]\n0206bb9c: adrp     x8, #0x4610000\n0206bba0: ldr      x8, [x8, #0xc0]\n0206bba4: ldr      x8, [x8]\n0206bba8: ldr      x8, [x8, #0xb8]\n0206bbac: ldr      x0, [x8, #0x18]\n0206bbb0: cbz      x0, #0x206bce0\n0206bbb4: mov      w1, #0xc\n0206bbb8: mov      x2, xzr\n0206bbbc: mov      x3, xzr\n0206bbc0: bl       #0x2031bec ; BTDevice.SendData"
+  },
+  {
+    "file": "native/_CloseAndWait_d__124.MoveNext.206ba5c.asm",
+    "line": 125,
+    "call_address": "0206bc48",
+    "context": "0206bbf8: b        #0x206bc80\n0206bbfc: adrp     x20, #0x48d3000\n0206bc00: mov      w9, #-1\n0206bc04: ldrb     w8, [x20, #0x4af]\n0206bc08: str      w9, [x19, #0x10]\n0206bc0c: cbnz     w8, #0x206bc24\n0206bc10: adrp     x0, #0x4610000\n0206bc14: ldr      x0, [x0, #0xc0]\n0206bc18: bl       #0x1f16e38\n0206bc1c: mov      w8, #1\n0206bc20: strb     w8, [x20, #0x4af]\n0206bc24: adrp     x8, #0x4610000\n0206bc28: ldr      x8, [x8, #0xc0]\n0206bc2c: ldr      x8, [x8]\n0206bc30: ldr      x8, [x8, #0xb8]\n0206bc34: ldr      x0, [x8, #0x18]\n0206bc38: cbz      x0, #0x206bce0\n0206bc3c: mov      w1, #0xe7\n0206bc40: mov      x2, xzr\n0206bc44: mov      x3, xzr\n0206bc48: bl       #0x2031bec ; BTDevice.SendData"
+  },
+  {
+    "file": "native/_CloseAndWait_d__153.MoveNext.208a508.asm",
+    "line": 39,
+    "call_address": "0208a59c",
+    "context": "0208a54c: b.ne     #0x208a6f0\n0208a550: adrp     x20, #0x48d3000\n0208a554: mov      w9, #-1\n0208a558: ldrb     w8, [x20, #0x4af]\n0208a55c: str      w9, [x19, #0x10]\n0208a560: cbnz     w8, #0x208a578\n0208a564: adrp     x0, #0x4610000\n0208a568: ldr      x0, [x0, #0xc0]\n0208a56c: bl       #0x1f16e38\n0208a570: mov      w8, #1\n0208a574: strb     w8, [x20, #0x4af]\n0208a578: adrp     x8, #0x4610000\n0208a57c: ldr      x8, [x8, #0xc0]\n0208a580: ldr      x8, [x8]\n0208a584: ldr      x8, [x8, #0xb8]\n0208a588: ldr      x0, [x8, #0x18]\n0208a58c: cbz      x0, #0x208a6fc\n0208a590: mov      w1, #0xc\n0208a594: mov      x2, xzr\n0208a598: mov      x3, xzr\n0208a59c: bl       #0x2031bec ; BTDevice.SendData"
+  },
+  {
+    "file": "native/_CloseAndWait_d__153.MoveNext.208a508.asm",
+    "line": 108,
+    "call_address": "0208a6b0",
+    "context": "0208a660: b        #0x208a6f0\n0208a664: adrp     x20, #0x48d3000\n0208a668: mov      w9, #-1\n0208a66c: ldrb     w8, [x20, #0x4af]\n0208a670: str      w9, [x19, #0x10]\n0208a674: cbnz     w8, #0x208a68c\n0208a678: adrp     x0, #0x4610000\n0208a67c: ldr      x0, [x0, #0xc0]\n0208a680: bl       #0x1f16e38\n0208a684: mov      w8, #1\n0208a688: strb     w8, [x20, #0x4af]\n0208a68c: adrp     x8, #0x4610000\n0208a690: ldr      x8, [x8, #0xc0]\n0208a694: ldr      x8, [x8]\n0208a698: ldr      x8, [x8, #0xb8]\n0208a69c: ldr      x0, [x8, #0x18]\n0208a6a0: cbz      x0, #0x208a6fc\n0208a6a4: mov      w1, #0xe7\n0208a6a8: mov      x2, xzr\n0208a6ac: mov      x3, xzr\n0208a6b0: bl       #0x2031bec ; BTDevice.SendData"
+  },
+  {
+    "file": "native/_CloseAndWait_d__168.MoveNext.209bfc4.asm",
+    "line": 39,
+    "call_address": "0209c058",
+    "context": "0209c008: b.ne     #0x209c1b0\n0209c00c: adrp     x20, #0x48d3000\n0209c010: mov      w9, #-1\n0209c014: ldrb     w8, [x20, #0x4af]\n0209c018: str      w9, [x19, #0x10]\n0209c01c: cbnz     w8, #0x209c034\n0209c020: adrp     x0, #0x4610000\n0209c024: ldr      x0, [x0, #0xc0]\n0209c028: bl       #0x1f16e38\n0209c02c: mov      w8, #1\n0209c030: strb     w8, [x20, #0x4af]\n0209c034: adrp     x8, #0x4610000\n0209c038: ldr      x8, [x8, #0xc0]\n0209c03c: ldr      x8, [x8]\n0209c040: ldr      x8, [x8, #0xb8]\n0209c044: ldr      x0, [x8, #0x18]\n0209c048: cbz      x0, #0x209c1bc\n0209c04c: mov      w1, #0xc\n0209c050: mov      x2, xzr\n0209c054: mov      x3, xzr\n0209c058: bl       #0x2031bec ; BTDevice.SendData"
+  },
+  {
+    "file": "native/_CloseAndWait_d__168.MoveNext.209bfc4.asm",
+    "line": 109,
+    "call_address": "0209c170",
+    "context": "0209c120: b        #0x209c1b0\n0209c124: adrp     x20, #0x48d3000\n0209c128: mov      w9, #-1\n0209c12c: ldrb     w8, [x20, #0x4af]\n0209c130: str      w9, [x19, #0x10]\n0209c134: cbnz     w8, #0x209c14c\n0209c138: adrp     x0, #0x4610000\n0209c13c: ldr      x0, [x0, #0xc0]\n0209c140: bl       #0x1f16e38\n0209c144: mov      w8, #1\n0209c148: strb     w8, [x20, #0x4af]\n0209c14c: adrp     x8, #0x4610000\n0209c150: ldr      x8, [x8, #0xc0]\n0209c154: ldr      x8, [x8]\n0209c158: ldr      x8, [x8, #0xb8]\n0209c15c: ldr      x0, [x8, #0x18]\n0209c160: cbz      x0, #0x209c1bc\n0209c164: mov      w1, #0xe7\n0209c168: mov      x2, xzr\n0209c16c: mov      x3, xzr\n0209c170: bl       #0x2031bec ; BTDevice.SendData"
+  },
+  {
+    "file": "native/_CloseAndWait_d__95.MoveNext.2062208.asm",
+    "line": 39,
+    "call_address": "0206229c",
+    "context": "0206224c: b.ne     #0x20623f4\n02062250: adrp     x20, #0x48d3000\n02062254: mov      w9, #-1\n02062258: ldrb     w8, [x20, #0x4af]\n0206225c: str      w9, [x19, #0x10]\n02062260: cbnz     w8, #0x2062278\n02062264: adrp     x0, #0x4610000\n02062268: ldr      x0, [x0, #0xc0]\n0206226c: bl       #0x1f16e38\n02062270: mov      w8, #1\n02062274: strb     w8, [x20, #0x4af]\n02062278: adrp     x8, #0x4610000\n0206227c: ldr      x8, [x8, #0xc0]\n02062280: ldr      x8, [x8]\n02062284: ldr      x8, [x8, #0xb8]\n02062288: ldr      x0, [x8, #0x18]\n0206228c: cbz      x0, #0x2062400\n02062290: mov      w1, #0xeb\n02062294: mov      x2, xzr\n02062298: mov      x3, xzr\n0206229c: bl       #0x2031bec ; BTDevice.SendData"
+  },
+  {
+    "file": "native/_CloseAndWait_d__95.MoveNext.2062208.asm",
+    "line": 109,
+    "call_address": "020623b4",
+    "context": "02062364: b        #0x20623f4\n02062368: adrp     x20, #0x48d3000\n0206236c: mov      w9, #-1\n02062370: ldrb     w8, [x20, #0x4af]\n02062374: str      w9, [x19, #0x10]\n02062378: cbnz     w8, #0x2062390\n0206237c: adrp     x0, #0x4610000\n02062380: ldr      x0, [x0, #0xc0]\n02062384: bl       #0x1f16e38\n02062388: mov      w8, #1\n0206238c: strb     w8, [x20, #0x4af]\n02062390: adrp     x8, #0x4610000\n02062394: ldr      x8, [x8, #0xc0]\n02062398: ldr      x8, [x8]\n0206239c: ldr      x8, [x8, #0xb8]\n020623a0: ldr      x0, [x8, #0x18]\n020623a4: cbz      x0, #0x2062400\n020623a8: mov      w1, #0xe7\n020623ac: mov      x2, xzr\n020623b0: mov      x3, xzr\n020623b4: bl       #0x2031bec ; BTDevice.SendData"
+  },
+  {
+    "file": "native/_CutPicAndShow_d__85.MoveNext.2062450.asm",
+    "line": 102,
+    "call_address": "020625e0",
+    "context": "02062590: bl       #0x1f170e4\n02062594: adrp     x19, #0x48d3000\n02062598: ldrb     w8, [x19, #0x4af]\n0206259c: cbnz     w8, #0x20625b4\n020625a0: adrp     x0, #0x4610000\n020625a4: ldr      x0, [x0, #0xc0]\n020625a8: bl       #0x1f16e38\n020625ac: mov      w8, #1\n020625b0: strb     w8, [x19, #0x4af]\n020625b4: adrp     x8, #0x4610000\n020625b8: ldr      x8, [x8, #0xc0]\n020625bc: ldr      x8, [x8]\n020625c0: ldr      x8, [x8, #0xb8]\n020625c4: ldr      x19, [x8, #0x18]\n020625c8: bl       #0x205d840 ; EditorGameManualInterfaceScript.get_Audio101\n020625cc: cbz      x19, #0x2062590\n020625d0: mov      x2, x0\n020625d4: mov      x0, x19\n020625d8: mov      w1, #0x19\n020625dc: mov      x3, xzr\n020625e0: bl       #0x2031bec ; BTDevice.SendData"
+  },
+  {
+    "file": "native/_DownActionFile2Robot_d__65.MoveNext.20dc95c.asm",
+    "line": 294,
+    "call_address": "020dcdec",
+    "context": "020dcd9c: bl       #0x36c1fd0\n020dcda0: cbz      x20, #0x20dd164\n020dcda4: ldr      x1, [x19, #0x28]\n020dcda8: mov      x0, x20\n020dcdac: str      x1, [x0, #0x18]!\n020dcdb0: bl       #0x1f16ddc\n020dcdb4: ldrb     w8, [x24, #0x4af]\n020dcdb8: cbnz     w8, #0x20dcdd0\n020dcdbc: adrp     x0, #0x4610000\n020dcdc0: ldr      x0, [x0, #0xc0]\n020dcdc4: bl       #0x1f16e38\n020dcdc8: mov      w8, #1\n020dcdcc: strb     w8, [x24, #0x4af]\n020dcdd0: ldr      x8, [x23]\n020dcdd4: ldr      x8, [x8, #0xb8]\n020dcdd8: ldr      x0, [x8, #0x18]\n020dcddc: cbz      x0, #0x20dcdf0\n020dcde0: ldr      x2, [x19, #0x38]\n020dcde4: mov      w1, #0xdc\n020dcde8: mov      x3, xzr\n020dcdec: bl       #0x2031bec ; BTDevice.SendData"
+  },
+  {
+    "file": "native/_DownActionFile2Robot_d__65.MoveNext.20dc95c.asm",
+    "line": 471,
+    "call_address": "020dd0b0",
+    "context": "020dd060: bl       #0x36c1fd0\n020dd064: cbz      x20, #0x20dd164\n020dd068: ldr      x1, [x19, #0x28]\n020dd06c: mov      x0, x20\n020dd070: str      x1, [x0, #0x18]!\n020dd074: bl       #0x1f16ddc\n020dd078: ldrb     w8, [x24, #0x4af]\n020dd07c: cbnz     w8, #0x20dd094\n020dd080: adrp     x0, #0x4610000\n020dd084: ldr      x0, [x0, #0xc0]\n020dd088: bl       #0x1f16e38\n020dd08c: mov      w8, #1\n020dd090: strb     w8, [x24, #0x4af]\n020dd094: ldr      x8, [x23]\n020dd098: ldr      x8, [x8, #0xb8]\n020dd09c: ldr      x0, [x8, #0x18]\n020dd0a0: cbz      x0, #0x20dd0b4\n020dd0a4: ldr      x2, [x19, #0x58]\n020dd0a8: mov      w1, #0xe3\n020dd0ac: mov      x3, xzr\n020dd0b0: bl       #0x2031bec ; BTDevice.SendData"
+  },
+  {
+    "file": "native/_GetRobotInfos_d__31.MoveNext.20a64b4.asm",
+    "line": 45,
+    "call_address": "020a6560",
+    "context": "020a6510: b.ne     #0x20a670c\n020a6514: adrp     x20, #0x48d3000\n020a6518: mov      w9, #-1\n020a651c: ldrb     w8, [x20, #0x4af]\n020a6520: str      w9, [x19, #0x10]\n020a6524: cbnz     w8, #0x20a653c\n020a6528: adrp     x0, #0x4610000\n020a652c: ldr      x0, [x0, #0xc0]\n020a6530: bl       #0x1f16e38\n020a6534: mov      w8, #1\n020a6538: strb     w8, [x20, #0x4af]\n020a653c: adrp     x8, #0x4610000\n020a6540: ldr      x8, [x8, #0xc0]\n020a6544: ldr      x8, [x8]\n020a6548: ldr      x8, [x8, #0xb8]\n020a654c: ldr      x0, [x8, #0x18]\n020a6550: cbz      x0, #0x20a6564\n020a6554: mov      w1, #0xf8\n020a6558: mov      x2, xzr\n020a655c: mov      x3, xzr\n020a6560: bl       #0x2031bec ; BTDevice.SendData"
+  },
+  {
+    "file": "native/_GetRobotInfos_d__31.MoveNext.20a64b4.asm",
+    "line": 136,
+    "call_address": "020a66cc",
+    "context": "020a667c: b        #0x20a670c\n020a6680: adrp     x20, #0x48d3000\n020a6684: mov      w9, #-1\n020a6688: ldrb     w8, [x20, #0x4af]\n020a668c: str      w9, [x19, #0x10]\n020a6690: cbnz     w8, #0x20a66a8\n020a6694: adrp     x0, #0x4610000\n020a6698: ldr      x0, [x0, #0xc0]\n020a669c: bl       #0x1f16e38\n020a66a0: mov      w8, #1\n020a66a4: strb     w8, [x20, #0x4af]\n020a66a8: adrp     x8, #0x4610000\n020a66ac: ldr      x8, [x8, #0xc0]\n020a66b0: ldr      x8, [x8]\n020a66b4: ldr      x8, [x8, #0xb8]\n020a66b8: ldr      x0, [x8, #0x18]\n020a66bc: cbz      x0, #0x20a66d0\n020a66c0: mov      w1, #0xf\n020a66c4: mov      x2, xzr\n020a66c8: mov      x3, xzr\n020a66cc: bl       #0x2031bec ; BTDevice.SendData"
+  },
+  {
+    "file": "native/_GetRobotInfos_d__75.MoveNext.20b4df8.asm",
+    "line": 48,
+    "call_address": "020b4eb0",
+    "context": "020b4e60: b.ne     #0x20b515c\n020b4e64: adrp     x20, #0x48d3000\n020b4e68: mov      w9, #-1\n020b4e6c: ldrb     w8, [x20, #0x4af]\n020b4e70: str      w9, [x19, #0x10]\n020b4e74: cbnz     w8, #0x20b4e8c\n020b4e78: adrp     x0, #0x4610000\n020b4e7c: ldr      x0, [x0, #0xc0]\n020b4e80: bl       #0x1f16e38\n020b4e84: mov      w8, #1\n020b4e88: strb     w8, [x20, #0x4af]\n020b4e8c: adrp     x8, #0x4610000\n020b4e90: ldr      x8, [x8, #0xc0]\n020b4e94: ldr      x8, [x8]\n020b4e98: ldr      x8, [x8, #0xb8]\n020b4e9c: ldr      x0, [x8, #0x18]\n020b4ea0: cbz      x0, #0x20b4eb4\n020b4ea4: mov      w1, #0xf1\n020b4ea8: mov      x2, xzr\n020b4eac: mov      x3, xzr\n020b4eb0: bl       #0x2031bec ; BTDevice.SendData"
+  },
+  {
+    "file": "native/_GetRobotInfos_d__75.MoveNext.20b4df8.asm",
+    "line": 150,
+    "call_address": "020b5048",
+    "context": "020b4ff8: b        #0x20b515c\n020b4ffc: adrp     x20, #0x48d3000\n020b5000: mov      w9, #-1\n020b5004: ldrb     w8, [x20, #0x4af]\n020b5008: str      w9, [x19, #0x10]\n020b500c: cbnz     w8, #0x20b5024\n020b5010: adrp     x0, #0x4610000\n020b5014: ldr      x0, [x0, #0xc0]\n020b5018: bl       #0x1f16e38\n020b501c: mov      w8, #1\n020b5020: strb     w8, [x20, #0x4af]\n020b5024: adrp     x8, #0x4610000\n020b5028: ldr      x8, [x8, #0xc0]\n020b502c: ldr      x8, [x8]\n020b5030: ldr      x8, [x8, #0xb8]\n020b5034: ldr      x0, [x8, #0x18]\n020b5038: cbz      x0, #0x20b504c\n020b503c: mov      w1, #0xf\n020b5040: mov      x2, xzr\n020b5044: mov      x3, xzr\n020b5048: bl       #0x2031bec ; BTDevice.SendData"
+  },
+  {
+    "file": "native/_GetRobotInfos_d__75.MoveNext.20b4df8.asm",
+    "line": 184,
+    "call_address": "020b50d0",
+    "context": "020b5080: b        #0x20b5154\n020b5084: adrp     x20, #0x48d3000\n020b5088: mov      w9, #-1\n020b508c: ldrb     w8, [x20, #0x4af]\n020b5090: str      w9, [x19, #0x10]\n020b5094: cbnz     w8, #0x20b50ac\n020b5098: adrp     x0, #0x4610000\n020b509c: ldr      x0, [x0, #0xc0]\n020b50a0: bl       #0x1f16e38\n020b50a4: mov      w8, #1\n020b50a8: strb     w8, [x20, #0x4af]\n020b50ac: adrp     x8, #0x4610000\n020b50b0: ldr      x8, [x8, #0xc0]\n020b50b4: ldr      x8, [x8]\n020b50b8: ldr      x8, [x8, #0xb8]\n020b50bc: ldr      x0, [x8, #0x18]\n020b50c0: cbz      x0, #0x20b50d4\n020b50c4: mov      w1, #0xf8\n020b50c8: mov      x2, xzr\n020b50cc: mov      x3, xzr\n020b50d0: bl       #0x2031bec ; BTDevice.SendData"
+  },
+  {
+    "file": "native/_JoySendStop_d__82.MoveNext.20b8178.asm",
+    "line": 48,
+    "call_address": "020b8230",
+    "context": "020b81e0: b.ge     #0x20b826c\n020b81e4: adrp     x20, #0x48d3000\n020b81e8: ldrb     w8, [x20, #0x4af]\n020b81ec: cbnz     w8, #0x20b8204\n020b81f0: adrp     x0, #0x4610000\n020b81f4: ldr      x0, [x0, #0xc0]\n020b81f8: bl       #0x1f16e38\n020b81fc: mov      w8, #1\n020b8200: strb     w8, [x20, #0x4af]\n020b8204: adrp     x8, #0x4610000\n020b8208: adrp     x20, #0x4610000\n020b820c: ldr      x8, [x8, #0xc0]\n020b8210: ldr      x8, [x8]\n020b8214: ldr      x8, [x8, #0xb8]\n020b8218: ldr      x0, [x8, #0x18]\n020b821c: ldr      x20, [x20, #0x140]\n020b8220: cbz      x0, #0x20b8234\n020b8224: mov      w1, #0xc\n020b8228: mov      x2, xzr\n020b822c: mov      x3, xzr\n020b8230: bl       #0x2031bec ; BTDevice.SendData"
+  },
+  {
+    "file": "native/_OnDanceActionPlayDone_d__112.MoveNext.208bfb0.asm",
+    "line": 63,
+    "call_address": "0208c0a4",
+    "context": "0208c054: b        #0x208c180\n0208c058: b        #0x208c180\n0208c05c: b        #0x208c180\n0208c060: adrp     x21, #0x48d3000\n0208c064: ldrb     w8, [x21, #0x4af]\n0208c068: cbnz     w8, #0x208c080\n0208c06c: adrp     x0, #0x4610000\n0208c070: ldr      x0, [x0, #0xc0]\n0208c074: bl       #0x1f16e38\n0208c078: mov      w8, #1\n0208c07c: strb     w8, [x21, #0x4af]\n0208c080: adrp     x8, #0x4610000\n0208c084: ldr      x8, [x8, #0xc0]\n0208c088: ldr      x8, [x8]\n0208c08c: ldr      x8, [x8, #0xb8]\n0208c090: ldr      x0, [x8, #0x18]\n0208c094: cbz      x0, #0x208c164\n0208c098: mov      w1, #0xc\n0208c09c: mov      x2, xzr\n0208c0a0: mov      x3, xzr\n0208c0a4: bl       #0x2031bec ; BTDevice.SendData"
+  },
+  {
+    "file": "native/_OnDanceActionPlayDone_d__73.MoveNext.206cb08.asm",
+    "line": 81,
+    "call_address": "0206cc44",
+    "context": "0206cbf4: b        #0x206cc84\n0206cbf8: bl       #0x1f170e4\n0206cbfc: b        #0x206cef0\n0206cc00: adrp     x22, #0x48d3000\n0206cc04: ldrb     w8, [x22, #0x4af]\n0206cc08: cbnz     w8, #0x206cc20\n0206cc0c: adrp     x0, #0x4610000\n0206cc10: ldr      x0, [x0, #0xc0]\n0206cc14: bl       #0x1f16e38\n0206cc18: mov      w8, #1\n0206cc1c: strb     w8, [x22, #0x4af]\n0206cc20: adrp     x8, #0x4610000\n0206cc24: ldr      x8, [x8, #0xc0]\n0206cc28: ldr      x8, [x8]\n0206cc2c: ldr      x8, [x8, #0xb8]\n0206cc30: ldr      x0, [x8, #0x18]\n0206cc34: cbz      x0, #0x206ce44\n0206cc38: mov      w1, #0xc\n0206cc3c: mov      x2, xzr\n0206cc40: mov      x3, xzr\n0206cc44: bl       #0x2031bec ; BTDevice.SendData"
+  },
+  {
+    "file": "native/_ReturnTipResult_d__81.MoveNext.20d01ec.asm",
+    "line": 39,
+    "call_address": "020d0280",
+    "context": "020d0230: mov      x0, xzr\n020d0234: str      w8, [x19, #0x10]\n020d0238: bl       #0x2111a0c ; TopCanvasScript.CloseWaiting\n020d023c: adrp     x19, #0x48d3000\n020d0240: ldrb     w8, [x19, #0x4af]\n020d0244: cbnz     w8, #0x20d025c\n020d0248: adrp     x0, #0x4610000\n020d024c: ldr      x0, [x0, #0xc0]\n020d0250: bl       #0x1f16e38\n020d0254: mov      w8, #1\n020d0258: strb     w8, [x19, #0x4af]\n020d025c: adrp     x8, #0x4610000\n020d0260: ldr      x8, [x8, #0xc0]\n020d0264: ldr      x8, [x8]\n020d0268: ldr      x8, [x8, #0xb8]\n020d026c: ldr      x0, [x8, #0x18]\n020d0270: cbz      x0, #0x20d0284\n020d0274: mov      w1, #0xf\n020d0278: mov      x2, xzr\n020d027c: mov      x3, xzr\n020d0280: bl       #0x2031bec ; BTDevice.SendData"
+  },
+  {
+    "file": "native/_ReturnTipResult_d__81.MoveNext.20d01ec.asm",
+    "line": 66,
+    "call_address": "020d02ec",
+    "context": "020d029c: b        #0x20d0330\n020d02a0: adrp     x20, #0x48d3000\n020d02a4: mov      w9, #-1\n020d02a8: ldrb     w8, [x20, #0x4af]\n020d02ac: str      w9, [x19, #0x10]\n020d02b0: cbnz     w8, #0x20d02c8\n020d02b4: adrp     x0, #0x4610000\n020d02b8: ldr      x0, [x0, #0xc0]\n020d02bc: bl       #0x1f16e38\n020d02c0: mov      w8, #1\n020d02c4: strb     w8, [x20, #0x4af]\n020d02c8: adrp     x8, #0x4610000\n020d02cc: ldr      x8, [x8, #0xc0]\n020d02d0: ldr      x8, [x8]\n020d02d4: ldr      x8, [x8, #0xb8]\n020d02d8: ldr      x0, [x8, #0x18]\n020d02dc: cbz      x0, #0x20d02f0\n020d02e0: mov      w1, #0xc\n020d02e4: mov      x2, xzr\n020d02e8: mov      x3, xzr\n020d02ec: bl       #0x2031bec ; BTDevice.SendData"
+  },
+  {
+    "file": "native/_RobotActionToRobot_d__16.MoveNext.20e8990.asm",
+    "line": 289,
+    "call_address": "020e8e0c",
+    "context": "020e8dbc: mov      x0, x20\n020e8dc0: str      x1, [x0, #0x18]!\n020e8dc4: bl       #0x1f16ddc\n020e8dc8: adrp     x21, #0x48d3000\n020e8dcc: ldrb     w8, [x21, #0x4af]\n020e8dd0: cbnz     w8, #0x20e8de8\n020e8dd4: adrp     x0, #0x4610000\n020e8dd8: ldr      x0, [x0, #0xc0]\n020e8ddc: bl       #0x1f16e38\n020e8de0: mov      w8, #1\n020e8de4: strb     w8, [x21, #0x4af]\n020e8de8: adrp     x8, #0x4610000\n020e8dec: ldr      x8, [x8, #0xc0]\n020e8df0: ldr      x8, [x8]\n020e8df4: ldr      x8, [x8, #0xb8]\n020e8df8: ldr      x0, [x8, #0x18]\n020e8dfc: cbz      x0, #0x20e8e10\n020e8e00: ldr      x2, [x19, #0x48]\n020e8e04: mov      w1, #0xdc\n020e8e08: mov      x3, xzr\n020e8e0c: bl       #0x2031bec ; BTDevice.SendData"
+  },
+  {
+    "file": "native/_RobotActionToRobot_d__16.MoveNext.20e8990.asm",
+    "line": 619,
+    "call_address": "020e9334",
+    "context": "020e92e4: mov      x0, x20\n020e92e8: str      x1, [x0, #0x18]!\n020e92ec: bl       #0x1f16ddc\n020e92f0: adrp     x21, #0x48d3000\n020e92f4: ldrb     w8, [x21, #0x4af]\n020e92f8: cbnz     w8, #0x20e9310\n020e92fc: adrp     x0, #0x4610000\n020e9300: ldr      x0, [x0, #0xc0]\n020e9304: bl       #0x1f16e38\n020e9308: mov      w8, #1\n020e930c: strb     w8, [x21, #0x4af]\n020e9310: adrp     x8, #0x4610000\n020e9314: ldr      x8, [x8, #0xc0]\n020e9318: ldr      x8, [x8]\n020e931c: ldr      x8, [x8, #0xb8]\n020e9320: ldr      x0, [x8, #0x18]\n020e9324: cbz      x0, #0x20e9338\n020e9328: ldr      x2, [x19, #0x68]\n020e932c: mov      w1, #0xe3\n020e9330: mov      x3, xzr\n020e9334: bl       #0x2031bec ; BTDevice.SendData"
+  },
+  {
+    "file": "native/_RunEditorBlocks_New_d__164.MoveNext.208c234.asm",
+    "line": 255,
+    "call_address": "0208c628",
+    "context": "0208c5d8: ldr      x2, [x8, #0x2e0]\n0208c5dc: blr      x9\n0208c5e0: adrp     x21, #0x48d3000\n0208c5e4: mov      x19, x0\n0208c5e8: ldrb     w8, [x21, #0x4af]\n0208c5ec: cbnz     w8, #0x208c604\n0208c5f0: adrp     x0, #0x4610000\n0208c5f4: ldr      x0, [x0, #0xc0]\n0208c5f8: bl       #0x1f16e38\n0208c5fc: mov      w8, #1\n0208c600: strb     w8, [x21, #0x4af]\n0208c604: adrp     x8, #0x4610000\n0208c608: ldr      x8, [x8, #0xc0]\n0208c60c: ldr      x8, [x8]\n0208c610: ldr      x8, [x8, #0xb8]\n0208c614: ldr      x0, [x8, #0x18]\n0208c618: cbz      x0, #0x208c970\n0208c61c: mov      w1, #0x17\n0208c620: mov      x2, x19\n0208c624: mov      x3, xzr\n0208c628: bl       #0x2031bec ; BTDevice.SendData"
+  },
+  {
+    "file": "native/_RunEditorBlocks_d__16.MoveNext.2031060.asm",
+    "line": 199,
+    "call_address": "02031374",
+    "context": "02031324: ldr      x9, [x8, #0x2d8]\n02031328: ldr      x2, [x8, #0x2e0]\n0203132c: blr      x9\n02031330: adrp     x22, #0x48d3000\n02031334: mov      x21, x0\n02031338: ldrb     w8, [x22, #0x4af]\n0203133c: cbnz     w8, #0x2031354\n02031340: adrp     x0, #0x4610000\n02031344: ldr      x0, [x0, #0xc0]\n02031348: bl       #0x1f16e38\n0203134c: mov      w8, #1\n02031350: strb     w8, [x22, #0x4af]\n02031354: adrp     x8, #0x4610000\n02031358: ldr      x8, [x8, #0xc0]\n0203135c: ldr      x8, [x8]\n02031360: ldr      x8, [x8, #0xb8]\n02031364: ldr      x0, [x8, #0x18]\n02031368: cbz      x0, #0x2031378\n0203136c: mov      w1, #0x17\n02031370: mov      x2, x21\n02031374: bl       #0x2031bec ; BTDevice.SendData"
+  },
+  {
+    "file": "native/_RunEditorBlocks_d__16.MoveNext.2031060.asm",
+    "line": 401,
+    "call_address": "0203169c",
+    "context": "0203164c: ldr      x1, [x19, #0x30]\n02031650: mov      x0, x20\n02031654: str      x1, [x0, #0x18]!\n02031658: bl       #0x1f16ddc\n0203165c: adrp     x21, #0x48d3000\n02031660: ldrb     w8, [x21, #0x4af]\n02031664: cbnz     w8, #0x203167c\n02031668: adrp     x0, #0x4610000\n0203166c: ldr      x0, [x0, #0xc0]\n02031670: bl       #0x1f16e38\n02031674: mov      w8, #1\n02031678: strb     w8, [x21, #0x4af]\n0203167c: adrp     x8, #0x4610000\n02031680: ldr      x8, [x8, #0xc0]\n02031684: ldr      x8, [x8]\n02031688: ldr      x8, [x8, #0xb8]\n0203168c: ldr      x0, [x8, #0x18]\n02031690: cbz      x0, #0x20316a0\n02031694: ldr      x2, [x19, #0x40]\n02031698: mov      w1, #0xdc\n0203169c: bl       #0x2031bec ; BTDevice.SendData"
+  },
+  {
+    "file": "native/_RunEditorBlocks_d__16.MoveNext.2031060.asm",
+    "line": 591,
+    "call_address": "02031994",
+    "context": "02031944: ldr      x1, [x19, #0x30]\n02031948: mov      x0, x20\n0203194c: str      x1, [x0, #0x18]!\n02031950: bl       #0x1f16ddc\n02031954: adrp     x21, #0x48d3000\n02031958: ldrb     w8, [x21, #0x4af]\n0203195c: cbnz     w8, #0x2031974\n02031960: adrp     x0, #0x4610000\n02031964: ldr      x0, [x0, #0xc0]\n02031968: bl       #0x1f16e38\n0203196c: mov      w8, #1\n02031970: strb     w8, [x21, #0x4af]\n02031974: adrp     x8, #0x4610000\n02031978: ldr      x8, [x8, #0xc0]\n0203197c: ldr      x8, [x8]\n02031980: ldr      x8, [x8, #0xb8]\n02031984: ldr      x0, [x8, #0x18]\n02031988: cbz      x0, #0x2031998\n0203198c: ldr      x2, [x19, #0x50]\n02031990: mov      w1, #0xe3\n02031994: bl       #0x2031bec ; BTDevice.SendData"
+  },
+  {
+    "file": "native/_RunEditorBlocks_d__178.MoveNext.209ddbc.asm",
+    "line": 807,
+    "call_address": "0209ea50",
+    "context": "0209ea00: ldr      x2, [x8, #0x2e0]\n0209ea04: blr      x9\n0209ea08: adrp     x20, #0x48d3000\n0209ea0c: mov      x19, x0\n0209ea10: ldrb     w8, [x20, #0x4af]\n0209ea14: cbnz     w8, #0x209ea2c\n0209ea18: adrp     x0, #0x4610000\n0209ea1c: ldr      x0, [x0, #0xc0]\n0209ea20: bl       #0x1f16e38\n0209ea24: mov      w8, #1\n0209ea28: strb     w8, [x20, #0x4af]\n0209ea2c: adrp     x8, #0x4610000\n0209ea30: ldr      x8, [x8, #0xc0]\n0209ea34: ldr      x8, [x8]\n0209ea38: ldr      x8, [x8, #0xb8]\n0209ea3c: ldr      x0, [x8, #0x18]\n0209ea40: cbz      x0, #0x209f898\n0209ea44: mov      w1, #0x17\n0209ea48: mov      x2, x19\n0209ea4c: mov      x3, xzr\n0209ea50: bl       #0x2031bec ; BTDevice.SendData"
+  },
+  {
+    "file": "native/_RunEditorBlocks_d__178.MoveNext.209ddbc.asm",
+    "line": 1019,
+    "call_address": "0209eda0",
+    "context": "0209ed50: blr      x9\n0209ed54: adrp     x19, #0x48d3000\n0209ed58: ldrb     w8, [x19, #0x4af]\n0209ed5c: cbnz     w8, #0x209ed74\n0209ed60: adrp     x0, #0x4610000\n0209ed64: ldr      x0, [x0, #0xc0]\n0209ed68: bl       #0x1f16e38\n0209ed6c: mov      w8, #1\n0209ed70: strb     w8, [x19, #0x4af]\n0209ed74: adrp     x8, #0x4610000\n0209ed78: ldr      x8, [x8, #0xc0]\n0209ed7c: ldr      x8, [x8]\n0209ed80: ldr      x8, [x8, #0xb8]\n0209ed84: ldr      x19, [x8, #0x18]\n0209ed88: bl       #0x208d460 ; VisualGameCanvasScript.get_Audio102\n0209ed8c: cbz      x19, #0x209f898\n0209ed90: mov      x2, x0\n0209ed94: mov      x0, x19\n0209ed98: mov      w1, #0x19\n0209ed9c: mov      x3, xzr\n0209eda0: bl       #0x2031bec ; BTDevice.SendData"
+  },
+  {
+    "file": "native/_RunEditorBlocks_d__178.MoveNext.209ddbc.asm",
+    "line": 1442,
+    "call_address": "0209f43c",
+    "context": "0209f3ec: mov      x0, x20\n0209f3f0: str      x1, [x0, #0x18]!\n0209f3f4: bl       #0x1f16ddc\n0209f3f8: adrp     x19, #0x48d3000\n0209f3fc: ldrb     w8, [x19, #0x4af]\n0209f400: cbnz     w8, #0x209f418\n0209f404: adrp     x0, #0x4610000\n0209f408: ldr      x0, [x0, #0xc0]\n0209f40c: bl       #0x1f16e38\n0209f410: mov      w8, #1\n0209f414: strb     w8, [x19, #0x4af]\n0209f418: adrp     x8, #0x4610000\n0209f41c: ldr      x8, [x8, #0xc0]\n0209f420: ldr      x8, [x8]\n0209f424: ldr      x8, [x8, #0xb8]\n0209f428: ldr      x0, [x8, #0x18]\n0209f42c: cbz      x0, #0x209f898\n0209f430: ldr      x2, [x28, #0x30]\n0209f434: mov      w1, #0xdc\n0209f438: mov      x3, xzr\n0209f43c: bl       #0x2031bec ; BTDevice.SendData"
+  },
+  {
+    "file": "native/_RunEditorBlocks_d__178.MoveNext.209ddbc.asm",
+    "line": 1673,
+    "call_address": "0209f7d8",
+    "context": "0209f788: mov      x0, x20\n0209f78c: str      x1, [x0, #0x18]!\n0209f790: bl       #0x1f16ddc\n0209f794: adrp     x19, #0x48d3000\n0209f798: ldrb     w8, [x19, #0x4af]\n0209f79c: cbnz     w8, #0x209f7b4\n0209f7a0: adrp     x0, #0x4610000\n0209f7a4: ldr      x0, [x0, #0xc0]\n0209f7a8: bl       #0x1f16e38\n0209f7ac: mov      w8, #1\n0209f7b0: strb     w8, [x19, #0x4af]\n0209f7b4: adrp     x8, #0x4610000\n0209f7b8: ldr      x8, [x8, #0xc0]\n0209f7bc: ldr      x8, [x8]\n0209f7c0: ldr      x8, [x8, #0xb8]\n0209f7c4: ldr      x0, [x8, #0x18]\n0209f7c8: cbz      x0, #0x209f898\n0209f7cc: ldr      x2, [x28, #0x40]\n0209f7d0: mov      w1, #0xe3\n0209f7d4: mov      x3, xzr\n0209f7d8: bl       #0x2031bec ; BTDevice.SendData"
+  },
+  {
+    "file": "native/_RunManualBlocks_d__18.MoveNext.2032078.asm",
+    "line": 185,
+    "call_address": "02032354",
+    "context": "02032304: ldr      x9, [x8, #0x2d8]\n02032308: ldr      x2, [x8, #0x2e0]\n0203230c: blr      x9\n02032310: adrp     x22, #0x48d3000\n02032314: mov      x21, x0\n02032318: ldrb     w8, [x22, #0x4af]\n0203231c: cbnz     w8, #0x2032334\n02032320: adrp     x0, #0x4610000\n02032324: ldr      x0, [x0, #0xc0]\n02032328: bl       #0x1f16e38\n0203232c: mov      w8, #1\n02032330: strb     w8, [x22, #0x4af]\n02032334: adrp     x8, #0x4610000\n02032338: ldr      x8, [x8, #0xc0]\n0203233c: ldr      x8, [x8]\n02032340: ldr      x8, [x8, #0xb8]\n02032344: ldr      x0, [x8, #0x18]\n02032348: cbz      x0, #0x2032358\n0203234c: mov      w1, #0x17\n02032350: mov      x2, x21\n02032354: bl       #0x2031bec ; BTDevice.SendData"
+  },
+  {
+    "file": "native/_RunManualBlocks_d__18.MoveNext.2032078.asm",
+    "line": 371,
+    "call_address": "0203263c",
+    "context": "020325ec: cbz      x20, #0x2032a90\n020325f0: mov      w21, #1\n020325f4: mov      x0, xzr\n020325f8: strb     w21, [x20, #0x28]\n020325fc: bl       #0x2111924 ; TopCanvasScript.ShowWaiting\n02032600: adrp     x20, #0x48d3000\n02032604: ldrb     w8, [x20, #0x4af]\n02032608: cbnz     w8, #0x203261c\n0203260c: adrp     x0, #0x4610000\n02032610: ldr      x0, [x0, #0xc0]\n02032614: bl       #0x1f16e38\n02032618: strb     w21, [x20, #0x4af]\n0203261c: adrp     x8, #0x4610000\n02032620: ldr      x8, [x8, #0xc0]\n02032624: ldr      x8, [x8]\n02032628: ldr      x8, [x8, #0xb8]\n0203262c: ldr      x0, [x8, #0x18]\n02032630: cbz      x0, #0x2032640\n02032634: mov      w1, #0xeb\n02032638: mov      x2, xzr\n0203263c: bl       #0x2031bec ; BTDevice.SendData"
+  },
+  {
+    "file": "native/_RunManualBlocks_d__18.MoveNext.2032078.asm",
+    "line": 415,
+    "call_address": "020326ec",
+    "context": "0203269c: ldr      x1, [x19, #0x30]\n020326a0: mov      x0, x20\n020326a4: str      x1, [x0, #0x18]!\n020326a8: bl       #0x1f16ddc\n020326ac: adrp     x21, #0x48d3000\n020326b0: ldrb     w8, [x21, #0x4af]\n020326b4: cbnz     w8, #0x20326cc\n020326b8: adrp     x0, #0x4610000\n020326bc: ldr      x0, [x0, #0xc0]\n020326c0: bl       #0x1f16e38\n020326c4: mov      w8, #1\n020326c8: strb     w8, [x21, #0x4af]\n020326cc: adrp     x8, #0x4610000\n020326d0: ldr      x8, [x8, #0xc0]\n020326d4: ldr      x8, [x8]\n020326d8: ldr      x8, [x8, #0xb8]\n020326dc: ldr      x0, [x8, #0x18]\n020326e0: cbz      x0, #0x20326f0\n020326e4: ldr      x2, [x19, #0x40]\n020326e8: mov      w1, #0xdc\n020326ec: bl       #0x2031bec ; BTDevice.SendData"
+  },
+  {
+    "file": "native/_RunManualBlocks_d__18.MoveNext.2032078.asm",
+    "line": 604,
+    "call_address": "020329e0",
+    "context": "02032990: ldr      x1, [x19, #0x30]\n02032994: mov      x0, x20\n02032998: str      x1, [x0, #0x18]!\n0203299c: bl       #0x1f16ddc\n020329a0: adrp     x21, #0x48d3000\n020329a4: ldrb     w8, [x21, #0x4af]\n020329a8: cbnz     w8, #0x20329c0\n020329ac: adrp     x0, #0x4610000\n020329b0: ldr      x0, [x0, #0xc0]\n020329b4: bl       #0x1f16e38\n020329b8: mov      w8, #1\n020329bc: strb     w8, [x21, #0x4af]\n020329c0: adrp     x8, #0x4610000\n020329c4: ldr      x8, [x8, #0xc0]\n020329c8: ldr      x8, [x8]\n020329cc: ldr      x8, [x8, #0xb8]\n020329d0: ldr      x0, [x8, #0x18]\n020329d4: cbz      x0, #0x20329e4\n020329d8: ldr      x2, [x19, #0x50]\n020329dc: mov      w1, #0xe3\n020329e0: bl       #0x2031bec ; BTDevice.SendData"
+  },
+  {
+    "file": "native/_RunningManualAction_New_d__132.MoveNext.206cfa4.asm",
+    "line": 224,
+    "call_address": "0206d31c",
+    "context": "0206d2cc: ldr      x2, [x8, #0x2e0]\n0206d2d0: blr      x9\n0206d2d4: adrp     x20, #0x48d3000\n0206d2d8: mov      x19, x0\n0206d2dc: ldrb     w8, [x20, #0x4af]\n0206d2e0: cbnz     w8, #0x206d2f8\n0206d2e4: adrp     x0, #0x4610000\n0206d2e8: ldr      x0, [x0, #0xc0]\n0206d2ec: bl       #0x1f16e38\n0206d2f0: mov      w8, #1\n0206d2f4: strb     w8, [x20, #0x4af]\n0206d2f8: adrp     x8, #0x4610000\n0206d2fc: ldr      x8, [x8, #0xc0]\n0206d300: ldr      x8, [x8]\n0206d304: ldr      x8, [x8, #0xb8]\n0206d308: ldr      x0, [x8, #0x18]\n0206d30c: cbz      x0, #0x206dc50\n0206d310: mov      w1, #0x17\n0206d314: mov      x2, x19\n0206d318: mov      x3, xzr\n0206d31c: bl       #0x2031bec ; BTDevice.SendData"
+  },
+  {
+    "file": "native/_RunningManualAction_New_d__132.MoveNext.206cfa4.asm",
+    "line": 685,
+    "call_address": "0206da50",
+    "context": "0206da00: mov      x0, xzr\n0206da04: str      w8, [x22, #0x10]\n0206da08: bl       #0x211de68 ; TopCanvasScript.ShowWaiting\n0206da0c: adrp     x19, #0x48d3000\n0206da10: ldrb     w8, [x19, #0x4af]\n0206da14: cbnz     w8, #0x206da2c\n0206da18: adrp     x0, #0x4610000\n0206da1c: ldr      x0, [x0, #0xc0]\n0206da20: bl       #0x1f16e38\n0206da24: mov      w8, #1\n0206da28: strb     w8, [x19, #0x4af]\n0206da2c: adrp     x8, #0x4610000\n0206da30: ldr      x8, [x8, #0xc0]\n0206da34: ldr      x8, [x8]\n0206da38: ldr      x8, [x8, #0xb8]\n0206da3c: ldr      x0, [x8, #0x18]\n0206da40: cbz      x0, #0x206dc50\n0206da44: mov      w1, #0xeb\n0206da48: mov      x2, xzr\n0206da4c: mov      x3, xzr\n0206da50: bl       #0x2031bec ; BTDevice.SendData"
+  },
+  {
+    "file": "native/_RunningManualAction_d__108.MoveNext.2062868.asm",
+    "line": 285,
+    "call_address": "02062cd4",
+    "context": "02062c84: blr      x9\n02062c88: adrp     x20, #0x48d3000\n02062c8c: mov      x19, x0\n02062c90: strb     wzr, [x23, #0xf0]\n02062c94: ldrb     w8, [x20, #0x4af]\n02062c98: cbnz     w8, #0x2062cb0\n02062c9c: adrp     x0, #0x4610000\n02062ca0: ldr      x0, [x0, #0xc0]\n02062ca4: bl       #0x1f16e38\n02062ca8: mov      w8, #1\n02062cac: strb     w8, [x20, #0x4af]\n02062cb0: adrp     x8, #0x4610000\n02062cb4: ldr      x8, [x8, #0xc0]\n02062cb8: ldr      x8, [x8]\n02062cbc: ldr      x8, [x8, #0xb8]\n02062cc0: ldr      x0, [x8, #0x18]\n02062cc4: cbz      x0, #0x2063a30\n02062cc8: mov      w1, #0x17\n02062ccc: mov      x2, x19\n02062cd0: mov      x3, xzr\n02062cd4: bl       #0x2031bec ; BTDevice.SendData"
+  },
+  {
+    "file": "native/_RunningManualAction_d__108.MoveNext.2062868.asm",
+    "line": 969,
+    "call_address": "02063784",
+    "context": "02063734: mov      x0, x20\n02063738: str      x1, [x0, #0x18]!\n0206373c: bl       #0x1f16ddc\n02063740: adrp     x19, #0x48d3000\n02063744: ldrb     w8, [x19, #0x4af]\n02063748: cbnz     w8, #0x2063760\n0206374c: adrp     x0, #0x4610000\n02063750: ldr      x0, [x0, #0xc0]\n02063754: bl       #0x1f16e38\n02063758: mov      w8, #1\n0206375c: strb     w8, [x19, #0x4af]\n02063760: adrp     x8, #0x4610000\n02063764: ldr      x8, [x8, #0xc0]\n02063768: ldr      x8, [x8]\n0206376c: ldr      x8, [x8, #0xb8]\n02063770: ldr      x0, [x8, #0x18]\n02063774: cbz      x0, #0x2063a30\n02063778: ldr      x2, [x22, #0x38]\n0206377c: mov      w1, #0xdc\n02063780: mov      x3, xzr\n02063784: bl       #0x2031bec ; BTDevice.SendData"
+  },
+  {
+    "file": "native/_RunningManualAction_d__108.MoveNext.2062868.asm",
+    "line": 1303,
+    "call_address": "02063cbc",
+    "context": "02063c6c: mov      x0, x20\n02063c70: str      x1, [x0, #0x18]!\n02063c74: bl       #0x1f16ddc\n02063c78: adrp     x19, #0x48d3000\n02063c7c: ldrb     w8, [x19, #0x4af]\n02063c80: cbnz     w8, #0x2063c98\n02063c84: adrp     x0, #0x4610000\n02063c88: ldr      x0, [x0, #0xc0]\n02063c8c: bl       #0x1f16e38\n02063c90: mov      w8, #1\n02063c94: strb     w8, [x19, #0x4af]\n02063c98: adrp     x8, #0x4610000\n02063c9c: ldr      x8, [x8, #0xc0]\n02063ca0: ldr      x8, [x8]\n02063ca4: ldr      x8, [x8, #0xb8]\n02063ca8: ldr      x0, [x8, #0x18]\n02063cac: cbz      x0, #0x2063a30\n02063cb0: ldr      x2, [x22, #0x48]\n02063cb4: mov      w1, #0xe3\n02063cb8: mov      x3, xzr\n02063cbc: bl       #0x2031bec ; BTDevice.SendData"
+  },
+  {
+    "file": "native/_SendStopWaitClose_d__73.MoveNext.20b82d8.asm",
+    "line": 53,
+    "call_address": "020b83a4",
+    "context": "020b8354: str      w9, [x19]\n020b8358: str      x8, [sp, #0x18]\n020b835c: b        #0x20b83e4\n020b8360: adrp     x21, #0x48d3000\n020b8364: ldrb     w8, [x21, #0x4af]\n020b8368: cbnz     w8, #0x20b8380\n020b836c: adrp     x0, #0x4610000\n020b8370: ldr      x0, [x0, #0xc0]\n020b8374: bl       #0x1f16e38\n020b8378: mov      w8, #1\n020b837c: strb     w8, [x21, #0x4af]\n020b8380: adrp     x8, #0x4610000\n020b8384: ldr      x8, [x8, #0xc0]\n020b8388: ldr      x8, [x8]\n020b838c: ldr      x8, [x8, #0xb8]\n020b8390: ldr      x0, [x8, #0x18]\n020b8394: cbz      x0, #0x20b83a8\n020b8398: mov      w1, #0xc\n020b839c: mov      x2, xzr\n020b83a0: mov      x3, xzr\n020b83a4: bl       #0x2031bec ; BTDevice.SendData"
+  },
+  {
+    "file": "native/_SetJointsLock_d__82.MoveNext.2063dbc.asm",
+    "line": 90,
+    "call_address": "02063f1c",
+    "context": "02063ecc: mov      w8, #1\n02063ed0: str      w8, [x19, #0x10]\n02063ed4: b        #0x2063f4c\n02063ed8: adrp     x22, #0x48d3000\n02063edc: ldrb     w8, [x22, #0x4af]\n02063ee0: cbnz     w8, #0x2063ef8\n02063ee4: adrp     x0, #0x4610000\n02063ee8: ldr      x0, [x0, #0xc0]\n02063eec: bl       #0x1f16e38\n02063ef0: mov      w8, #1\n02063ef4: strb     w8, [x22, #0x4af]\n02063ef8: adrp     x8, #0x4610000\n02063efc: ldr      x8, [x8, #0xc0]\n02063f00: ldr      x8, [x8]\n02063f04: ldr      x8, [x8, #0xb8]\n02063f08: ldr      x0, [x8, #0x18]\n02063f0c: cbz      x0, #0x2063e88\n02063f10: mov      w1, #0xed\n02063f14: mov      x2, x20\n02063f18: mov      x3, xzr\n02063f1c: bl       #0x2031bec ; BTDevice.SendData"
+  },
+  {
+    "file": "native/_SetRobotToNormalState_d__70.MoveNext.2063fb4.asm",
+    "line": 132,
+    "call_address": "020641bc",
+    "context": "0206416c: ldr      x1, [x8]\n02064170: bl       #0x2365770\n02064174: adrp     x21, #0x48d3000\n02064178: mov      x20, x0\n0206417c: ldrb     w8, [x21, #0x4af]\n02064180: cbnz     w8, #0x2064198\n02064184: adrp     x0, #0x4610000\n02064188: ldr      x0, [x0, #0xc0]\n0206418c: bl       #0x1f16e38\n02064190: mov      w8, #1\n02064194: strb     w8, [x21, #0x4af]\n02064198: adrp     x8, #0x4610000\n0206419c: ldr      x8, [x8, #0xc0]\n020641a0: ldr      x8, [x8]\n020641a4: ldr      x8, [x8, #0xb8]\n020641a8: ldr      x0, [x8, #0x18]\n020641ac: cbz      x0, #0x20644b8\n020641b0: mov      w1, #0xe8\n020641b4: mov      x2, x20\n020641b8: mov      x3, xzr\n020641bc: bl       #0x2031bec ; BTDevice.SendData"
+  },
+  {
+    "file": "native/_SetRobotToNormalState_d__70.MoveNext.2063fb4.asm",
+    "line": 265,
+    "call_address": "020643d0",
+    "context": "02064380: str      w8, [x19, #0x10]\n02064384: cbz      x20, #0x20644b8\n02064388: adrp     x21, #0x48d3000\n0206438c: strb     wzr, [x20, #0x161]\n02064390: ldrb     w8, [x21, #0x4af]\n02064394: cbnz     w8, #0x20643ac\n02064398: adrp     x0, #0x4610000\n0206439c: ldr      x0, [x0, #0xc0]\n020643a0: bl       #0x1f16e38\n020643a4: mov      w8, #1\n020643a8: strb     w8, [x21, #0x4af]\n020643ac: adrp     x8, #0x4610000\n020643b0: ldr      x8, [x8, #0xc0]\n020643b4: ldr      x8, [x8]\n020643b8: ldr      x8, [x8, #0xb8]\n020643bc: ldr      x0, [x8, #0x18]\n020643c0: cbz      x0, #0x20644b8\n020643c4: ldr      x2, [x19, #0x40]\n020643c8: mov      w1, #0xed\n020643cc: mov      x3, xzr\n020643d0: bl       #0x2031bec ; BTDevice.SendData"
+  },
+  {
+    "file": "native/_SetRobotToNormalState_d__70.MoveNext.2063fb4.asm",
+    "line": 302,
+    "call_address": "02064464",
+    "context": "02064414: mov      x0, x20\n02064418: mov      x2, xzr\n0206441c: bl       #0x4035df0\n02064420: adrp     x20, #0x48d3000\n02064424: ldrb     w8, [x20, #0x4af]\n02064428: cbnz     w8, #0x2064440\n0206442c: adrp     x0, #0x4610000\n02064430: ldr      x0, [x0, #0xc0]\n02064434: bl       #0x1f16e38\n02064438: mov      w8, #1\n0206443c: strb     w8, [x20, #0x4af]\n02064440: adrp     x8, #0x4610000\n02064444: ldr      x8, [x8, #0xc0]\n02064448: ldr      x8, [x8]\n0206444c: ldr      x8, [x8, #0xb8]\n02064450: ldr      x0, [x8, #0x18]\n02064454: cbz      x0, #0x20644b8\n02064458: mov      w1, #0xeb\n0206445c: mov      x2, xzr\n02064460: mov      x3, xzr\n02064464: bl       #0x2031bec ; BTDevice.SendData"
+  },
+  {
+    "file": "native/_WaitAndAyncVolume_d__61.MoveNext.20b85f4.asm",
+    "line": 52,
+    "call_address": "020b86bc",
+    "context": "020b866c: adrp     x8, #0x4610000\n020b8670: ldr      x8, [x8, #0xc0]\n020b8674: ldr      x8, [x8]\n020b8678: ldr      x8, [x8, #0xb8]\n020b867c: ldr      x21, [x8, #0x18]\n020b8680: cbz      x21, #0x20b86c0\n020b8684: adrp     x8, #0x460c000\n020b8688: mov      w1, #1\n020b868c: ldr      x8, [x8, #0x478]\n020b8690: ldr      x0, [x8]\n020b8694: bl       #0x1f16f28\n020b8698: cbz      x0, #0x20b8730\n020b869c: ldr      w8, [x0, #0x18]\n020b86a0: mov      x2, x0\n020b86a4: cbz      w8, #0x20b8734\n020b86a8: ldr      w8, [x19, #0x20]\n020b86ac: mov      x0, x21\n020b86b0: mov      w1, #0xd\n020b86b4: mov      x3, xzr\n020b86b8: strb     w8, [x2, #0x20]\n020b86bc: bl       #0x2031bec ; BTDevice.SendData"
+  },
+  {
+    "file": "native/_WaitAndShowPlayBtn_d__86.MoveNext.2064508.asm",
+    "line": 154,
+    "call_address": "02064768",
+    "context": "02064718: b        #0x2064950\n0206471c: adrp     x20, #0x48d3000\n02064720: mov      w9, #-1\n02064724: ldrb     w8, [x20, #0x4af]\n02064728: str      w9, [x19, #0x10]\n0206472c: cbnz     w8, #0x2064744\n02064730: adrp     x0, #0x4610000\n02064734: ldr      x0, [x0, #0xc0]\n02064738: bl       #0x1f16e38\n0206473c: mov      w8, #1\n02064740: strb     w8, [x20, #0x4af]\n02064744: adrp     x8, #0x4610000\n02064748: ldr      x8, [x8, #0xc0]\n0206474c: ldr      x8, [x8]\n02064750: ldr      x8, [x8, #0xb8]\n02064754: ldr      x0, [x8, #0x18]\n02064758: cbz      x0, #0x2064960\n0206475c: mov      w1, #0xeb\n02064760: mov      x2, xzr\n02064764: mov      x3, xzr\n02064768: bl       #0x2031bec ; BTDevice.SendData"
+  },
+  {
+    "file": "native/_WaitAndShowPlayBtn_d__86.MoveNext.2064508.asm",
+    "line": 272,
+    "call_address": "02064940",
+    "context": "020648f0: ldr      x1, [x8]\n020648f4: bl       #0x2365770\n020648f8: adrp     x20, #0x48d3000\n020648fc: mov      x19, x0\n02064900: ldrb     w8, [x20, #0x4af]\n02064904: cbnz     w8, #0x206491c\n02064908: adrp     x0, #0x4610000\n0206490c: ldr      x0, [x0, #0xc0]\n02064910: bl       #0x1f16e38\n02064914: mov      w8, #1\n02064918: strb     w8, [x20, #0x4af]\n0206491c: adrp     x8, #0x4610000\n02064920: ldr      x8, [x8, #0xc0]\n02064924: ldr      x8, [x8]\n02064928: ldr      x8, [x8, #0xb8]\n0206492c: ldr      x0, [x8, #0x18]\n02064930: cbz      x0, #0x2064960\n02064934: mov      w1, #0xe8\n02064938: mov      x2, x19\n0206493c: mov      x3, xzr\n02064940: bl       #0x2031bec ; BTDevice.SendData"
+  },
+  {
+    "file": "native/_WaitSendData_QTZ_d__67.MoveNext.2111af8.asm",
+    "line": 40,
+    "call_address": "02111b90",
+    "context": "02111b40: mov      w8, #-1\n02111b44: str      w8, [x19, #0x10]\n02111b48: bl       #0x2111924 ; TopCanvasScript.ShowWaiting\n02111b4c: adrp     x20, #0x48d3000\n02111b50: ldrb     w8, [x20, #0x4af]\n02111b54: cbnz     w8, #0x2111b6c\n02111b58: adrp     x0, #0x4610000\n02111b5c: ldr      x0, [x0, #0xc0]\n02111b60: bl       #0x1f16e38\n02111b64: mov      w8, #1\n02111b68: strb     w8, [x20, #0x4af]\n02111b6c: adrp     x8, #0x4610000\n02111b70: ldr      x8, [x8, #0xc0]\n02111b74: ldr      x8, [x8]\n02111b78: ldr      x8, [x8, #0xb8]\n02111b7c: ldr      x0, [x8, #0x18]\n02111b80: cbz      x0, #0x2111b94\n02111b84: ldr      w1, [x19, #0x20]\n02111b88: ldr      x2, [x19, #0x28]\n02111b8c: mov      x3, xzr\n02111b90: bl       #0x2031bec ; BTDevice.SendData"
+  },
+  {
+    "file": "native/__c__DisplayClass179_0._SettleCurrentGameAndSetTipView_g__SetErrorBlock_1.2096d34.asm",
+    "line": 144,
+    "call_address": "02096f6c",
+    "context": "02096f1c: adrp     x0, #0x4610000\n02096f20: ldr      x0, [x0, #0xc0]\n02096f24: bl       #0x1f16e38\n02096f28: mov      w8, #1\n02096f2c: strb     w8, [x19, #0x4af]\n02096f30: adrp     x8, #0x4610000\n02096f34: ldr      x8, [x8, #0xc0]\n02096f38: ldr      x8, [x8]\n02096f3c: ldr      x8, [x8, #0xb8]\n02096f40: ldr      x19, [x8, #0x18]\n02096f44: bl       #0x208d460 ; VisualGameCanvasScript.get_Audio102\n02096f48: cbz      x19, #0x2096f84\n02096f4c: mov      x2, x0\n02096f50: mov      x0, x19\n02096f54: mov      w1, #0x19\n02096f58: ldp      x20, x19, [sp, #0x30]\n02096f5c: mov      x3, xzr\n02096f60: ldp      x22, x21, [sp, #0x20]\n02096f64: ldp      x24, x23, [sp, #0x10]\n02096f68: ldp      x30, x25, [sp], #0x40\n02096f6c: b        #0x2031bec ; BTDevice.SendData"
+  },
+  {
+    "file": "native/__c__DisplayClass179_0._SettleCurrentGameAndSetTipView_g__SetErrorJoint_2.2096f90.asm",
+    "line": 174,
+    "call_address": "02097240",
+    "context": "020971f0: adrp     x0, #0x4610000\n020971f4: ldr      x0, [x0, #0xc0]\n020971f8: bl       #0x1f16e38\n020971fc: mov      w8, #1\n02097200: strb     w8, [x19, #0x4af]\n02097204: adrp     x8, #0x4610000\n02097208: ldr      x8, [x8, #0xc0]\n0209720c: ldr      x8, [x8]\n02097210: ldr      x8, [x8, #0xb8]\n02097214: ldr      x19, [x8, #0x18]\n02097218: bl       #0x208d460 ; VisualGameCanvasScript.get_Audio102\n0209721c: cbz      x19, #0x2097258\n02097220: mov      x2, x0\n02097224: mov      x0, x19\n02097228: mov      w1, #0x19\n0209722c: ldp      x20, x19, [sp, #0x30]\n02097230: mov      x3, xzr\n02097234: ldp      x22, x21, [sp, #0x20]\n02097238: ldp      x24, x23, [sp, #0x10]\n0209723c: ldp      x30, x25, [sp], #0x40\n02097240: b        #0x2031bec ; BTDevice.SendData"
+  }
+]

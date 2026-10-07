@@ -1,0 +1,29 @@
+Type: BLEProtocol2
+Method: System.Boolean CheckSum(System.Byte[] data, System.Byte sum)
+
+ISIL (辅助阅读，不等同完整源码):
+	001 Move [X31-16], X30
+	002 Compare X0, 0
+	003 JumpIfEqual {25}
+	004 Move X10, [X0+24]
+	005 NotImplemented "Instruction CMP not yet implemented."
+	006 NotImplemented "Instruction BIC not yet implemented."
+	007 Move W8, W31
+	008 And X10, X10, 0
+	009 Add X11, X0, 32
+	010 Compare X10, 0
+	011 JumpIfEqual {24}
+	012 Move W12, [X11+1]
+	013 Subtract X9, X9, 1
+	014 Subtract X10, X10, 1
+	015 Add W8, W12, W8
+	016 Compare X9, 0
+	017 JumpIfNotEqual {10}
+	018 Move W8, W31
+	019 And W8, W8, 255
+	020 NotImplemented "Instruction CMP not yet implemented."
+	021 NotImplemented "Instruction CSET not yet implemented."
+	022 Move X30, [X31+16]
+	023 Return X0
+	024 Call 0x1F170EC
+	025 Call 0x1F170E4

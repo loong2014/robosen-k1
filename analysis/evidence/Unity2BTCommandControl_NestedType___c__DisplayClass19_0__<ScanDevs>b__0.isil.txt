@@ -1,0 +1,47 @@
+Type: Unity2BTCommandControl_NestedType___c__DisplayClass19_0
+Method: System.Void <ScanDevs>b__0(System.String address, System.String name)
+
+ISIL (辅助阅读，不等同完整源码):
+	001 Subtract X31, X31, 64
+	002 Move [X31+16], X30
+	003 Move [X31+32], X22
+	004 Move [X31+40], X21
+	005 Move [X31+48], X20
+	006 Move [X31+56], X19
+	007 Move X19, X2
+	008 Move X20, X1
+	009 Move W8, [0x2891464]
+	010 Move X21, X0
+	011 Move TEMP, X8
+	012 And TEMP, TEMP, 1
+	013 Compare TEMP, 1
+	014 JumpIfEqual {19}
+	015 Move X0, [0x25CE780]
+	016 Call 0x1F16E38
+	017 Move W8, 1
+	018 Move [X22+1124], W8
+	019 Move X21, [X21+16]
+	020 Compare X21, 0
+	021 JumpIfEqual {36}
+	022 Add X0, X31, 0
+	023 Move X1, X20
+	024 Move X8, [0x25CE780]
+	025 Move X2, X19
+	026 Move [X31], X31
+	027 Move [X31+8], X31
+	028 Move X3, [X8]
+	029 Call ValueTuple`2<Object, Object>..ctor, X0, X1, X2
+	030 Move X1, [X31]
+	031 Move X2, [X31+8]
+	032 Move X8, [X21+24]
+	033 Move X0, [X21+64]
+	034 Move X3, [X21+40]
+	035 NotImplemented "Instruction BLR not yet implemented."
+	036 Move X20, [X31+48]
+	037 Move X19, [X31+56]
+	038 Move X30, [X31+16]
+	039 Move X22, [X31+32]
+	040 Move X21, [X31+40]
+	041 Add X31, X31, 64
+	042 Return 
+

@@ -1,0 +1,6 @@
+Type: RobotStateMSG
+Method: System.Int32 get_PlayProgress()
+
+ISIL (辅助阅读，不等同完整源码):
+	001 Move W0, [X0+28]
+	002 Return X0

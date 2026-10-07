@@ -1,0 +1,83 @@
+Type: Unity2BTCommandControl_NestedType___c__DisplayClass21_0
+Method: System.Void <ConnectDev>g__SetBleNotifition|4(System.String serveruuid, System.String character)
+
+ISIL (辅助阅读，不等同完整源码):
+	001 Move [X31-64], X30
+	002 Move [X31-56], X25
+	003 Move [X31+16], X24
+	004 Move [X31+24], X23
+	005 Move [X31+32], X22
+	006 Move [X31+40], X21
+	007 Move [X31+48], X20
+	008 Move [X31+56], X19
+	009 Move X19, X2
+	010 Move W8, [0x2891466]
+	011 Move X22, [0x25CDE70]
+	012 Move X20, X1
+	013 Move X21, X0
+	014 Move TEMP, X8
+	015 And TEMP, TEMP, 1
+	016 Compare TEMP, 1
+	017 JumpIfEqual {32}
+	018 Move X0, [0x25CE888]
+	019 Call 0x1F16E38
+	020 Move X0, [0x25CE9C8]
+	021 Call 0x1F16E38
+	022 Move X0, [0x25CDE70]
+	023 Call 0x1F16E38
+	024 Move X0, [0x25CE9D0]
+	025 Call 0x1F16E38
+	026 Move X0, [0x25CE9D8]
+	027 Call 0x1F16E38
+	028 Move X0, [0x25CE9E0]
+	029 Call 0x1F16E38
+	030 Move W8, 1
+	031 Move [X23+1126], W8
+	032 Move X0, [X22]
+	033 Move W8, [X0+228]
+	034 Move X22, [0x25CE9E0]
+	035 Compare W8, 0
+	036 JumpIfNotEqual {38}
+	037 Call 0x1F16FB8
+	038 Move X0, [X22]
+	039 Move X1, X31
+	040 Call Debug.Log, X0
+	041 Move X8, [X21+24]
+	042 Compare X8, 0
+	043 JumpIfEqual {79}
+	044 Move X9, [0x25CE888]
+	045 Move X23, [0x25CE9D0]
+	046 Move X24, [0x25CE9C8]
+	047 Move X25, [0x25CE9D8]
+	048 Move X22, [X8+16]
+	049 Move X0, [X9]
+	050 Call 0x1F170D4
+	051 Move X2, [X23]
+	052 Move X1, X21
+	053 Move X3, X31
+	054 Move X23, X0
+	055 Call Action`2<Object, Object>..ctor, X0, X1, X2
+	056 Move X0, [X24]
+	057 Call 0x1F170D4
+	058 Move X2, [X25]
+	059 Move X1, X21
+	060 Move X3, X31
+	061 Move X24, X0
+	062 Call Action`3<Object, Object, Object>..ctor, X0, X1, X2
+	063 Move X0, X22
+	064 Move X1, X20
+	065 Move X2, X19
+	066 Move X3, X23
+	067 Move X4, X24
+	068 Move X5, X31
+	069 Move X20, [X31+48]
+	070 Move X19, [X31+56]
+	071 Move X22, [X31+32]
+	072 Move X21, [X31+40]
+	073 Move X24, [X31+16]
+	074 Move X23, [X31+24]
+	075 Move X30, [X31+64]
+	076 Move X25, [X31+72]
+	077 Call BluetoothLEHardwareInterface.SubscribeCharacteristicWithDeviceAddress, X0, X1, X2, X3, X4
+	078 Return 
+	079 Call 0x1F170E4

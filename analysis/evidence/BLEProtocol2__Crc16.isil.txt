@@ -1,0 +1,59 @@
+Type: BLEProtocol2
+Method: System.Void Crc16(ref System.Int32 _crc_value, System.UInt16 _crc, System.Byte[] _data, System.Int32 _len)
+
+ISIL (辅助阅读，不等同完整源码):
+	001 Move [X31-64], X30
+	002 Move [X31-56], X25
+	003 Move [X31+16], X24
+	004 Move [X31+24], X23
+	005 Move [X31+32], X22
+	006 Move [X31+40], X21
+	007 Move [X31+48], X20
+	008 Move [X31+56], X19
+	009 Move X20, X2
+	010 Move W21, W1
+	011 Move W8, [0x288F479]
+	012 Move X19, X0
+	013 Move TEMP, X8
+	014 And TEMP, TEMP, 1
+	015 Compare TEMP, 1
+	016 JumpIfEqual {21}
+	017 Move X0, [0x25CC190]
+	018 Call 0x1F16E38
+	019 Move W8, 1
+	020 Move [X22+1145], W8
+	021 Compare X20, 0
+	022 JumpIfEqual {55}
+	023 Move X8, [X20+24]
+	024 NotImplemented "Instruction CMP not yet implemented."
+	025 Move X23, X31
+	026 And X8, X8, 0
+	027 Move X24, [0x25CC190]
+	028 Add X25, X20, 32
+	029 NotImplemented "Instruction CMP not yet implemented."
+	030 Move X0, [X24]
+	031 Move W22, [X25]
+	032 Move W8, [X0+228]
+	033 Compare W8, 0
+	034 JumpIfNotEqual {36}
+	035 Call 0x1F16FB8
+	036 Move W0, W21
+	037 Move W1, W22
+	038 Call BLEProtocol2.Crc16_byte, X0, X1
+	039 Move W8, [X20+24]
+	040 Add X23, X23, 1
+	041 Move W21, W0
+	042 NotImplemented "Instruction CMP not yet implemented."
+	043 And W8, W21, 0xFFFF
+	044 Move X22, [X31+32]
+	045 Move X21, [X31+40]
+	046 Move [X19], W8
+	047 Move X20, [X31+48]
+	048 Move X19, [X31+56]
+	049 Move X24, [X31+16]
+	050 Move X23, [X31+24]
+	051 Move X30, [X31+64]
+	052 Move X25, [X31+72]
+	053 Return 
+	054 Call 0x1F170EC
+	055 Call 0x1F170E4

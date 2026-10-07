@@ -1,0 +1,107 @@
+===Cpp2IL by Samboy063===
+A Tool to Reverse Unity's "il2cpp" Build Process.
+Version 2022.1.0-pre-release.21+58fc404ac503f4e512055cafc48c03088fc6e224
+
+[Warn] [Program] NO_COLOR set, disabling ANSI color codes as you requested.
+[Info] [Program] Running on Unix
+[Info] [Plugins] Loading plugins from /Users/xinzhang/Documents/ChatGPT/K-One/Plugins...
+[Info] [Plugins] Using Plugin: Cpp2IL Built-In
+[Warn] [Program] Using force options, I sure hope you know what you're doing!
+[Info] [Library] Initializing Metadata...
+[Info] [Library] 	Using actual IL2CPP Metadata version 39
+[Info] [Library] Initialized Metadata in 179ms
+[Info] [Library] Using binary type ELF (from LibCpp2IL)
+[Info] [Library] Searching Binary for Required Data...
+[Info] [Library] Got Binary codereg: 0x4383B60, metareg: 0x452E0C0 in 869ms.
+[Info] [Library] Initializing Binary...
+[Info] [Library] Initialized Binary in 80ms
+[Info] [Library] Mapping pointers to Il2CppMethodDefinitions...Processed 96827 OK (127ms)
+[Info] [Program] Creating application model...
+[Info] [Program] Application model created in 3049.91ms
+[Info] [Program] Pre-processing processing layers...
+[Info] [Program] Invoking processing layers...
+[Info] [Program] Outputting as ISIL Dump to analysis/isil...
+[Info] [IsilOutputFormat] Processing assembly 1 of 82: mscorlib
+[Info] [IsilOutputFormat] Processing assembly 2 of 82: UnityEngine.UIElementsModule
+[Info] [IsilOutputFormat] Processing assembly 3 of 82: Unity.RenderPipelines.Core.Runtime
+[Info] [IsilOutputFormat] Processing assembly 4 of 82: System.Xml
+[Info] [IsilOutputFormat] Processing assembly 5 of 82: UnityEngine.CoreModule
+[Info] [IsilOutputFormat] Processing assembly 6 of 82: System
+[Info] [IsilOutputFormat] Processing assembly 7 of 82: Assembly-CSharp
+[Info] [IsilOutputFormat] Processing assembly 8 of 82: Unity.RenderPipelines.Universal.Runtime
+[Info] [IsilOutputFormat] Processing assembly 9 of 82: Unity.Mathematics
+[Info] [IsilOutputFormat] Processing assembly 10 of 82: Newtonsoft.Json
+[Info] [IsilOutputFormat] Processing assembly 11 of 82: I18N.CJK
+[Info] [IsilOutputFormat] Processing assembly 12 of 82: System.Data
+[Info] [IsilOutputFormat] Processing assembly 13 of 82: Unity.Collections
+[Info] [IsilOutputFormat] Processing assembly 14 of 82: Unity.TextMeshPro
+[Info] [IsilOutputFormat] Processing assembly 15 of 82: System.Core
+[Info] [IsilOutputFormat] Processing assembly 16 of 82: Unity.Burst
+[Info] [IsilOutputFormat] Processing assembly 17 of 82: UnityEngine.TextCoreTextEngineModule
+[Info] [IsilOutputFormat] Processing assembly 18 of 82: UnityEngine.UI
+[Info] [IsilOutputFormat] Processing assembly 19 of 82: Unity.RenderPipelines.GPUDriven.Runtime
+[Info] [IsilOutputFormat] Processing assembly 20 of 82: I18N.Rare
+[Info] [IsilOutputFormat] Processing assembly 21 of 82: AVProVideo.Runtime
+[Info] [IsilOutputFormat] Processing assembly 22 of 82: RenderHeads.AVProMovieCapture.Runtime
+[Info] [IsilOutputFormat] Processing assembly 23 of 82: UnityEngine.IMGUIModule
+[Info] [IsilOutputFormat] Processing assembly 24 of 82: Mono.Security
+[Info] [IsilOutputFormat] Processing assembly 25 of 82: Unity.UnifiedRayTracing.Runtime
+[Info] [IsilOutputFormat] Processing assembly 26 of 82: UnityEngine.AndroidJNIModule
+[Info] [IsilOutputFormat] Processing assembly 27 of 82: UnityEngine.PropertiesModule
+[Info] [IsilOutputFormat] Processing assembly 28 of 82: UnityEngine
+[Info] [IsilOutputFormat] Processing assembly 29 of 82: I18N.West
+[Info] [IsilOutputFormat] Processing assembly 30 of 82: System.Drawing
+[Info] [IsilOutputFormat] Processing assembly 31 of 82: UnityEngine.UnityWebRequestModule
+[Info] [IsilOutputFormat] Processing assembly 32 of 82: UnityEngine.InputForUIModule
+[Info] [IsilOutputFormat] Processing assembly 33 of 82: SimpleInput.Runtime
+[Info] [IsilOutputFormat] Processing assembly 34 of 82: System.Numerics
+[Info] [IsilOutputFormat] Processing assembly 35 of 82: UnityEngine.HierarchyCoreModule
+[Info] [IsilOutputFormat] Processing assembly 36 of 82: I18N
+[Info] [IsilOutputFormat] Processing assembly 37 of 82: UnityEngine.AudioModule
+[Info] [IsilOutputFormat] Processing assembly 38 of 82: System.Xml.Linq
+[Info] [IsilOutputFormat] Processing assembly 39 of 82: I18N.Other
+[Info] [IsilOutputFormat] Processing assembly 40 of 82: UnityEngine.TextCoreFontEngineModule
+[Info] [IsilOutputFormat] Processing assembly 41 of 82: UnityEngine.XRModule
+[Info] [IsilOutputFormat] Processing assembly 42 of 82: UnityEngine.PhysicsModule
+[Info] [IsilOutputFormat] Processing assembly 43 of 82: I18N.MidEast
+[Info] [IsilOutputFormat] Processing assembly 44 of 82: UnityEngine.UIModule
+[Info] [IsilOutputFormat] Processing assembly 45 of 82: UnityEngine.AnimationModule
+[Info] [IsilOutputFormat] Processing assembly 46 of 82: _AVProVideo.Extensions.VideoPlayer
+[Info] [IsilOutputFormat] Processing assembly 47 of 82: UnityEngine.TerrainModule
+[Info] [IsilOutputFormat] Processing assembly 48 of 82: Assembly-CSharp-firstpass
+[Info] [IsilOutputFormat] Processing assembly 49 of 82: NativeGallery.Runtime
+[Info] [IsilOutputFormat] Processing assembly 50 of 82: UnityEngine.InputLegacyModule
+[Info] [IsilOutputFormat] Processing assembly 51 of 82: UnityEngine.UnityAnalyticsCommonModule
+[Info] [IsilOutputFormat] Processing assembly 52 of 82: UnityEngine.VFXModule
+[Info] [IsilOutputFormat] Processing assembly 53 of 82: UnityEngine.SharedInternalsModule
+[Info] [IsilOutputFormat] Processing assembly 54 of 82: UnityEngine.SubsystemsModule
+[Info] [IsilOutputFormat] Processing assembly 55 of 82: NativeCamera.Runtime
+[Info] [IsilOutputFormat] Processing assembly 56 of 82: UnityEngine.DirectorModule
+[Info] [IsilOutputFormat] Processing assembly 57 of 82: AVProVideo.Extensions.UnityUI
+[Info] [IsilOutputFormat] Processing assembly 58 of 82: UnityEngine.AssetBundleModule
+[Info] [IsilOutputFormat] Processing assembly 59 of 82: UnityEngine.TextRenderingModule
+[Info] [IsilOutputFormat] Processing assembly 60 of 82: UnityEngine.JSONSerializeModule
+[Info] [IsilOutputFormat] Processing assembly 61 of 82: UnityEngine.UnityWebRequestTextureModule
+[Info] [IsilOutputFormat] Processing assembly 62 of 82: UnityEngine.AdaptivePerformanceModule
+[Info] [IsilOutputFormat] Processing assembly 63 of 82: UnityEngine.ImageConversionModule
+[Info] [IsilOutputFormat] Processing assembly 64 of 82: UnityEngine.InputModule
+[Info] [IsilOutputFormat] Processing assembly 65 of 82: UnityEngine.Physics2DModule
+[Info] [IsilOutputFormat] Processing assembly 66 of 82: UnityEngine.VRModule
+[Info] [IsilOutputFormat] Processing assembly 67 of 82: UnityEngine.AIModule
+[Info] [IsilOutputFormat] Processing assembly 68 of 82: UnityEngine.TilemapModule
+[Info] [IsilOutputFormat] Processing assembly 69 of 82: UnityEngine.GridModule
+[Info] [IsilOutputFormat] Processing assembly 70 of 82: UnityEngine.SpriteShapeModule
+[Info] [IsilOutputFormat] Processing assembly 71 of 82: UnityEngine.VideoModule
+[Info] [IsilOutputFormat] Processing assembly 72 of 82: Unity.RenderPipeline.Universal.ShaderLibrary
+[Info] [IsilOutputFormat] Processing assembly 73 of 82: System.Runtime.Serialization
+[Info] [IsilOutputFormat] Processing assembly 74 of 82: Unity.Burst.Unsafe
+[Info] [IsilOutputFormat] Processing assembly 75 of 82: Unity.RenderPipelines.Core.Runtime.Shared
+[Info] [IsilOutputFormat] Processing assembly 76 of 82: System.Configuration
+[Info] [IsilOutputFormat] Processing assembly 77 of 82: Unity.Collections.LowLevel.ILSupport
+[Info] [IsilOutputFormat] Processing assembly 78 of 82: Unity.InternalAPIEngineBridge.004
+[Info] [IsilOutputFormat] Processing assembly 79 of 82: UnityEngine.MultiplayerModule
+[Info] [IsilOutputFormat] Processing assembly 80 of 82: AVProVideo.Extensions.Timeline
+[Info] [IsilOutputFormat] Processing assembly 81 of 82: AVProVideo.Extensions.VisualEffectGraph
+[Info] [IsilOutputFormat] Processing assembly 82 of 82: __Generated
+[Info] [Program] Finished outputting in 6720.161ms
+[Info] [Program] Done. Total execution time: 11048.668ms

@@ -1,0 +1,79 @@
+Type: RobotStateMSG
+Method: System.Void .ctor(System.Byte[] _data)
+
+ISIL (辅助阅读，不等同完整源码):
+	001 Move [X31-48], X30
+	002 Move [X31+16], X22
+	003 Move [X31+24], X21
+	004 Move [X31+32], X20
+	005 Move [X31+40], X19
+	006 Move X20, X1
+	007 Move W8, [0x2894450]
+	008 Move X21, [0x25D0EC0]
+	009 Move X19, X0
+	010 Move TEMP, X8
+	011 And TEMP, TEMP, 1
+	012 Compare TEMP, 1
+	013 JumpIfEqual {18}
+	014 Move X0, [0x25D0EC0]
+	015 Call 0x1F16E38
+	016 Move W8, 1
+	017 Move [X22+1104], W8
+	018 Move X0, X19
+	019 Move X1, X31
+	020 Call Object..ctor, X0
+	021 Move X0, [X21]
+	022 Move W1, 8
+	023 Call 0x1F16F28
+	024 Compare X20, 0
+	025 JumpIfEqual {74}
+	026 Move X8, [X20+24]
+	027 NotImplemented "Instruction CMP not yet implemented."
+	028 NotImplemented "Instruction BIC not yet implemented."
+	029 Move X9, X31
+	030 And X11, X8, 0
+	031 Add X12, X0, 32
+	032 Add X13, X20, 32
+	033 Compare X0, 0
+	034 JumpIfEqual {74}
+	035 Move W8, [X0+24]
+	036 NotImplemented "Instruction CMP not yet implemented."
+	037 NotImplemented "Instruction CMP not yet implemented."
+	038 NotImplemented "Instruction CMP not yet implemented."
+	039 Move W8, [X13]
+	040 Move [X12], W8
+	041 Add X9, X9, 1
+	042 NotImplemented "Instruction CMP not yet implemented."
+	043 Compare X0, 0
+	044 JumpIfEqual {74}
+	045 Move X8, [X0+24]
+	046 NotImplemented "Instruction CMP not yet implemented."
+	047 Move W9, [X0+36]
+	048 NotImplemented "Instruction CMP not yet implemented."
+	049 Move [X19+20], W9
+	050 Move W9, [X0+40]
+	051 NotImplemented "Instruction CMP not yet implemented."
+	052 Move [X19+24], W9
+	053 Move W9, [X0+44]
+	054 NotImplemented "Instruction CMP not yet implemented."
+	055 Move [X19+28], W9
+	056 Move W9, [X0+48]
+	057 NotImplemented "Instruction CMP not yet implemented."
+	058 Move [X19+32], W9
+	059 Move W9, [X0+52]
+	060 NotImplemented "Instruction CMP not yet implemented."
+	061 Move [X19+36], W9
+	062 Move W9, [X0+56]
+	063 NotImplemented "Instruction CMP not yet implemented."
+	064 Move [X19+40], W9
+	065 Move W8, [X0+60]
+	066 Move X22, [X31+16]
+	067 Move X21, [X31+24]
+	068 Move [X19+44], W8
+	069 Move X20, [X31+32]
+	070 Move X19, [X31+40]
+	071 Move X30, [X31+48]
+	072 Return 
+	073 Call 0x1F170EC
+	074 Call 0x1F170E4
+

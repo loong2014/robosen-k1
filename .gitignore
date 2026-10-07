@@ -1,0 +1,37 @@
+# Local OS and editor files
+.DS_Store
+.idea/
+.vscode/
+*.iml
+*.swp
+
+# Local configuration and credentials
+.env
+.env.*
+!.env.example
+*.pem
+*.p12
+*.keystore
+*.jks
+**/key.properties
+**/local.properties
+
+# Python caches and local analysis tools
+__pycache__/
+*.py[cod]
+.pytest_cache/
+analysis/tools/
+
+# Original app packages and reproducible decompiler output
+apk/
+analysis/unpacked/
+analysis/jadx/
+analysis/cpp2il/
+analysis/dummydll/
+analysis/isil/
+
+# Flutter and platform build output (also covered by app-specific ignores)
+**/.dart_tool/
+**/.gradle/
+**/build/
+**/DerivedData/

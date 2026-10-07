@@ -1,0 +1,22 @@
+Type: Unity2BTCommandControl
+Method: System.Void Dispose()
+
+ISIL (辅助阅读，不等同完整源码):
+	001 Move [X31-16], X30
+	002 Move [X31-8], X19
+	003 Move W8, [0x28924B2]
+	004 Compare W8, 0
+	005 Invalid "Jump target not found in method."
+	006 Move X0, [0x25CF0C0]
+	007 Call 0x1F16E38
+	008 Move W8, 1
+	009 Move [X19+1202], W8
+	010 Move X1, X31
+	011 Move X8, [0x25CF0C0]
+	012 Move X8, [X8]
+	013 Move X0, [X8+184]
+	014 Move [X0+16], X31
+	015 Move X30, [X31+16]
+	016 Move X19, [X31+24]
+	017 Call 0x1F16DDC
+	018 Return 

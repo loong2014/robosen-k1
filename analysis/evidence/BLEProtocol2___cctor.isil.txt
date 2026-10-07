@@ -1,0 +1,46 @@
+Type: BLEProtocol2
+Method: System.Void .cctor()
+
+ISIL (辅助阅读，不等同完整源码):
+	001 Move [X31-48], X30
+	002 Move [X31+16], X22
+	003 Move [X31+24], X21
+	004 Move [X31+32], X20
+	005 Move [X31+40], X19
+	006 Move X22, [0x25CCA40]
+	007 Move W8, [0x288F47B]
+	008 Move X19, [0x25CCA48]
+	009 Move X20, [0x25CC190]
+	010 Move TEMP, X8
+	011 And TEMP, TEMP, 1
+	012 Compare TEMP, 1
+	013 JumpIfEqual {22}
+	014 Move X0, [0x25CC190]
+	015 Call 0x1F16E38
+	016 Move X0, [0x25CCA48]
+	017 Call 0x1F16E38
+	018 Move X0, [0x25CCA40]
+	019 Call 0x1F16E38
+	020 Move W8, 1
+	021 Move [X21+1147], W8
+	022 Move X0, [X22]
+	023 Move W1, 256
+	024 Call 0x1F16F28
+	025 Move X1, [X19]
+	026 Move X2, X31
+	027 Move X19, X0
+	028 Call RuntimeHelpers.InitializeArray, X0, X1
+	029 Move X8, [X20]
+	030 Move X1, X19
+	031 Move X22, [X31+16]
+	032 Move X21, [X31+24]
+	033 Move X8, [X8+184]
+	034 Move [X8], X19
+	035 Move X8, [X20]
+	036 Move X20, [X31+32]
+	037 Move X19, [X31+40]
+	038 Move X0, [X8+184]
+	039 Move X30, [X31+48]
+	040 Call 0x1F16DDC
+	041 Return 
+

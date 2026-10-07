@@ -1,0 +1,138 @@
+Type: Unity2BTCommandControl
+Method: System.Void Init()
+
+ISIL (辅助阅读，不等同完整源码):
+	001 Move [X31-48], X30
+	002 Move [X31+16], X22
+	003 Move [X31+24], X21
+	004 Move [X31+32], X20
+	005 Move [X31+40], X19
+	006 Move W8, [0x2892459]
+	007 Move TEMP, X8
+	008 And TEMP, TEMP, 1
+	009 Compare TEMP, 1
+	010 Invalid "Jump target not found in method."
+	011 Move X0, [0x25CF750]
+	012 Call 0x1F16E38
+	013 Move X0, [0x25CB228]
+	014 Call 0x1F16E38
+	015 Move X0, [0x25CF940]
+	016 Call 0x1F16E38
+	017 Move X0, [0x25CF948]
+	018 Call 0x1F16E38
+	019 Move X0, [0x25CF8B8]
+	020 Call 0x1F16E38
+	021 Move X0, [0x25CF0C0]
+	022 Call 0x1F16E38
+	023 Move W8, 1
+	024 Move [X19+1113], W8
+	025 Move W8, [0x28924B1]
+	026 Move X20, [0x25CF0C0]
+	027 Compare W8, 0
+	028 JumpIfNotEqual {33}
+	029 Move X0, [0x25CF0C0]
+	030 Call 0x1F16E38
+	031 Move W8, 1
+	032 Move [X19+1201], W8
+	033 Move X0, [X20]
+	034 Move X8, [X0+184]
+	035 Move X8, [X8+16]
+	036 Move X22, [0x25CF8B8]
+	037 Compare X8, 0
+	038 JumpIfNotEqual {55}
+	039 Call 0x1F170D4
+	040 Move X1, X31
+	041 Move X19, X0
+	042 Call Object..ctor, X0
+	043 Move W8, [0x28924B2]
+	044 Compare W8, 0
+	045 JumpIfNotEqual {50}
+	046 Move X0, [0x25CF0C0]
+	047 Call 0x1F16E38
+	048 Move W8, 1
+	049 Move [X21+1202], W8
+	050 Move X8, [X20]
+	051 Move X1, X19
+	052 Move X0, [X8+184]
+	053 Move [X0+16], X19
+	054 Call 0x1F16DDC
+	055 Move X0, [X22]
+	056 Move W8, [X0+228]
+	057 Compare W8, 0
+	058 JumpIfNotEqual {61}
+	059 Call 0x1F16FB8
+	060 Move X0, [X22]
+	061 Move X8, [X0+184]
+	062 Move X19, [X8+8]
+	063 Compare X19, 0
+	064 JumpIfNotEqual {87}
+	065 Move W9, [X0+228]
+	066 Compare W9, 0
+	067 Invalid "Jump target not found in method."
+	068 Call 0x1F16FB8
+	069 Move X8, [X22]
+	070 Move X8, [X8+184]
+	071 Move X9, [0x25CB228]
+	072 Move X20, [X8]
+	073 Move X0, [X9]
+	074 Call 0x1F170D4
+	075 Move X1, X20
+	076 Move X3, X31
+	077 Move X8, [0x25CF940]
+	078 Move X19, X0
+	079 Move X2, [X8]
+	080 Call Action..ctor, X0, X1, X2
+	081 Move X8, [X22]
+	082 Move X1, X19
+	083 Move X0, [X8+184]
+	084 Move [X0+8], X19
+	085 Call 0x1F16DDC
+	086 Move X0, [X22]
+	087 Move W8, [X0+228]
+	088 Compare W8, 0
+	089 JumpIfNotEqual {92}
+	090 Call 0x1F16FB8
+	091 Move X0, [X22]
+	092 Move X8, [X0+184]
+	093 Move X20, [X8+16]
+	094 Compare X20, 0
+	095 JumpIfNotEqual {117}
+	096 Move W9, [X0+228]
+	097 Compare W9, 0
+	098 Invalid "Jump target not found in method."
+	099 Call 0x1F16FB8
+	100 Move X8, [X22]
+	101 Move X8, [X8+184]
+	102 Move X9, [0x25CF750]
+	103 Move X21, [X8]
+	104 Move X0, [X9]
+	105 Call 0x1F170D4
+	106 Move X1, X21
+	107 Move X3, X31
+	108 Move X8, [0x25CF948]
+	109 Move X20, X0
+	110 Move X2, [X8]
+	111 Call Action`1<Object>..ctor, X0, X1, X2
+	112 Move X8, [X22]
+	113 Move X1, X20
+	114 Move X0, [X8+184]
+	115 Move [X0+16], X20
+	116 Call 0x1F16DDC
+	117 Move W0, 1
+	118 Move W1, W31
+	119 Move X2, X19
+	120 Move X3, X20
+	121 Move X4, X31
+	122 Call BluetoothLEHardwareInterface.Initialize, X0, X1, X2, X3
+	123 Move W0, 2
+	124 Move X1, X31
+	125 Call BluetoothLEHardwareInterface.BluetoothScanMode, X0
+	126 Move X20, [X31+32]
+	127 Move X19, [X31+40]
+	128 Move W0, 2
+	129 Move X22, [X31+16]
+	130 Move X21, [X31+24]
+	131 Move X1, X31
+	132 Move X30, [X31+48]
+	133 Call BluetoothLEHardwareInterface.BluetoothConnectionPriority, X0
+	134 Return 

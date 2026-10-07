@@ -1,0 +1,47 @@
+Type: BTDevice
+Method: System.Void OnConnect(System.String _address)
+
+ISIL (辅助阅读，不等同完整源码):
+	001 Move [X31-32], X30
+	002 Move [X31-24], X21
+	003 Move [X31+16], X20
+	004 Move [X31+24], X19
+	005 Move X20, X1
+	006 Move X19, X0
+	007 Move W8, [0x2894438]
+	008 Move TEMP, X8
+	009 And TEMP, TEMP, 1
+	010 Compare TEMP, 1
+	011 JumpIfEqual {16}
+	012 Move X0, [0x25D0E40]
+	013 Call 0x1F16E38
+	014 Move W8, 1
+	015 Move [X21+1080], W8
+	016 Move X0, [X19+16]
+	017 Move X1, X20
+	018 Move X2, X31
+	019 Call String.op_Inequality, X0, X1
+	020 Move TEMP, X0
+	021 And TEMP, TEMP, 1
+	022 Compare TEMP, 1
+	023 JumpIfEqual {39}
+	024 Move X8, [0x25D0E40]
+	025 Move X8, [X8]
+	026 Move X8, [X8+184]
+	027 Move X8, [X8]
+	028 Compare X8, 0
+	029 JumpIfEqual {39}
+	030 Move X1, X19
+	031 Move X20, [X31+16]
+	032 Move X19, [X31+24]
+	033 Move X0, [X8+64]
+	034 Move X2, [X8+40]
+	035 Move X3, [X8+24]
+	036 Move X30, [X31+32]
+	037 Move X21, [X31+40]
+	038 CallNoReturn X3
+	039 Move X20, [X31+16]
+	040 Move X19, [X31+24]
+	041 Move X30, [X31+32]
+	042 Move X21, [X31+40]
+	043 Return 

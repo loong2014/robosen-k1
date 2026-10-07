@@ -1,0 +1,85 @@
+Type: Unity2BTCommandControl
+Method: System.Void ScanDevs(System.Action`1<System.ValueTuple`2<System.String, System.String>> ScanResult = null)
+
+ISIL (辅助阅读，不等同完整源码):
+	001 Move [X31-48], X30
+	002 Move [X31+16], X22
+	003 Move [X31+24], X21
+	004 Move [X31+32], X20
+	005 Move [X31+40], X19
+	006 Move X20, X1
+	007 Move W8, [0x289245A]
+	008 Move X22, [0x25CF950]
+	009 Move X19, X0
+	010 Move TEMP, X8
+	011 And TEMP, TEMP, 1
+	012 Compare TEMP, 1
+	013 JumpIfEqual {26}
+	014 Move X0, [0x25CF888]
+	015 Call 0x1F16E38
+	016 Move X0, [0x25CEE70]
+	017 Call 0x1F16E38
+	018 Move X0, [0x25CF958]
+	019 Call 0x1F16E38
+	020 Move X0, [0x25CF950]
+	021 Call 0x1F16E38
+	022 Move X0, [0x25CF960]
+	023 Call 0x1F16E38
+	024 Move W8, 1
+	025 Move [X21+1114], W8
+	026 Move X0, [X22]
+	027 Call 0x1F170D4
+	028 Move X1, X31
+	029 Move X21, X0
+	030 Call Object..ctor, X0
+	031 Compare X21, 0
+	032 JumpIfEqual {81}
+	033 Move X0, X21
+	034 Move X1, X20
+	035 Move [X0+16], X20
+	036 Call 0x1F16DDC
+	037 Move W8, [X19+16]
+	038 Compare W8, 0
+	039 Invalid "Jump target not found in method."
+	040 Move X8, [0x25CEE70]
+	041 Move X0, [X8]
+	042 Move W8, [X0+228]
+	043 Move X19, [0x25CF960]
+	044 Compare W8, 0
+	045 JumpIfNotEqual {47}
+	046 Call 0x1F16FB8
+	047 Move X0, [X19]
+	048 Move X20, [X31+32]
+	049 Move X19, [X31+40]
+	050 Move X22, [X31+16]
+	051 Move X21, [X31+24]
+	052 Move X1, X31
+	053 Move X30, [X31+48]
+	054 Call Debug.Log, X0
+	055 Return 
+	056 Move X8, [0x25CF888]
+	057 Move X0, [X8]
+	058 Call 0x1F170D4
+	059 Move X1, X21
+	060 Move X3, X31
+	061 Move X8, [0x25CF958]
+	062 Move X20, X0
+	063 Move X2, [X8]
+	064 Call Action`2<Object, Object>..ctor, X0, X1, X2
+	065 Move X0, X31
+	066 Move X1, X20
+	067 Move X2, X31
+	068 Move W3, W31
+	069 Move W4, 1
+	070 Move W5, 255
+	071 Move X6, X31
+	072 Move W20, 1
+	073 Call BluetoothLEHardwareInterface.ScanForPeripheralsWithServices, X0, X1, X2, X3, X4, X5
+	074 Move [X19+16], W20
+	075 Move X20, [X31+32]
+	076 Move X19, [X31+40]
+	077 Move X22, [X31+16]
+	078 Move X21, [X31+24]
+	079 Move X30, [X31+48]
+	080 Return 
+	081 Call 0x1F170E4

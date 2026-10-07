@@ -1,0 +1,93 @@
+Type: BTDevice_NestedType_BTDeviceType
+Method: System.Boolean IsOldProtocolDev(System.String _devname)
+
+ISIL (辅助阅读，不等同完整源码):
+	001 Subtract X31, X31, 96
+	002 Move [X31+48], X30
+	003 Move [X31+64], X22
+	004 Move [X31+72], X21
+	005 Move [X31+80], X20
+	006 Move [X31+88], X19
+	007 Move X19, X0
+	008 Move W8, [0x2895447]
+	009 Move TEMP, X8
+	010 And TEMP, TEMP, 1
+	011 Compare TEMP, 1
+	012 JumpIfEqual {23}
+	013 Move X0, [0x25D2760]
+	014 Call 0x1F16E38
+	015 Move X0, [0x25D2768]
+	016 Call 0x1F16E38
+	017 Move X0, [0x25D2770]
+	018 Call 0x1F16E38
+	019 Move X0, [0x25D2778]
+	020 Call 0x1F16E38
+	021 Move W8, 1
+	022 Move [X20+1095], W8
+	023 Move [X31+24], X31
+	024 Move [X31+32], X31
+	025 Move [X31+40], X31
+	026 Call BTDeviceType.get_UseOldProtocol_List
+	027 Compare X0, 0
+	028 JumpIfEqual {68}
+	029 Move X8, [0x25D2778]
+	030 Move X22, [0x25D2768]
+	031 Move X21, [0x25D2760]
+	032 Add X20, X31, 24
+	033 Move X1, [X8]
+	034 Add X8, X31, 24
+	035 Call List`1<Object>.GetEnumerator, X0
+	036 Move [X31+8], X31
+	037 Move [X31+16], X20
+	038 Move X1, [X22]
+	039 Add X0, X31, 24
+	040 Call Enumerator<Object>.MoveNext, X0
+	041 Move W20, W0
+	042 Move TEMP, X0
+	043 And TEMP, TEMP, 1
+	044 Compare TEMP, 1
+	045 JumpIfNotEqual {56}
+	046 Compare X19, 0
+	047 JumpIfEqual {67}
+	048 Move X1, [X31+40]
+	049 Move X0, X19
+	050 Move X2, X31
+	051 Call String.StartsWith, X0, X1
+	052 Move TEMP, X0
+	053 And TEMP, TEMP, 1
+	054 Compare TEMP, 1
+	055 JumpIfNotEqual {38}
+	056 Move X1, [X21]
+	057 Add X0, X31, 24
+	058 Call Enumerator<Object>.Dispose, X0
+	059 And W0, W20, 1
+	060 Move X20, [X31+80]
+	061 Move X19, [X31+88]
+	062 Move X22, [X31+64]
+	063 Move X21, [X31+72]
+	064 Move X30, [X31+48]
+	065 Add X31, X31, 96
+	066 Return X0
+	067 Call 0x1F170E4
+	068 Call 0x1F170E4
+	069 Move X19, X0
+	070 NotImplemented "Instruction CMP not yet implemented."
+	071 Move X0, X19
+	072 Call 0x437D3D0
+	073 Move X19, [X0]
+	074 Move [X31+8], X19
+	075 Call 0x437D3E0
+	076 Move X0, [X31+16]
+	077 Move X1, [X21]
+	078 Call Enumerator<Object>.Dispose, X0
+	079 Compare X19, 0
+	080 JumpIfNotEqual {82}
+	081 Move W20, W31
+	082 Move X0, X19
+	083 Call 0x1F170DC
+	084 Move X19, X0
+	085 Add X0, X31, 8
+	086 Call 0x1C11168
+	087 Move X0, X19
+	088 Call 0x20067BC
+	089 Call 0x1C10ED8

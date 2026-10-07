@@ -1,0 +1,350 @@
+Type: BTDevice_NestedType_BTDeviceType
+Method: System.Collections.Generic.List`1<System.String> get_DevStart_F0F1()
+
+ISIL (辅助阅读，不等同完整源码):
+	001 Move [X31-48], X30
+	002 Move [X31+16], X22
+	003 Move [X31+24], X21
+	004 Move [X31+32], X20
+	005 Move [X31+40], X19
+	006 Move W8, [0x2892448]
+	007 Move X21, [0x25CAFF0]
+	008 Move X19, [0x25CAFF8]
+	009 Move TEMP, X8
+	010 And TEMP, TEMP, 1
+	011 Compare TEMP, 1
+	012 JumpIfEqual {21}
+	013 Move X0, [0x25CB090]
+	014 Call 0x1F16E38
+	015 Move X0, [0x25CAFF8]
+	016 Call 0x1F16E38
+	017 Move X0, [0x25CAFF0]
+	018 Call 0x1F16E38
+	019 Move W8, 1
+	020 Move [X20+1096], W8
+	021 Move X0, [X21]
+	022 Call 0x1F170D4
+	023 Move X1, [X19]
+	024 Move X19, X0
+	025 Call List`1<Object>..ctor, X0
+	026 Move W8, [0x289243B]
+	027 Move TEMP, X8
+	028 And TEMP, TEMP, 1
+	029 Compare TEMP, 1
+	030 JumpIfEqual {35}
+	031 Move X0, [0x25CF8D8]
+	032 Call 0x1F16E38
+	033 Move W8, 1
+	034 Move [X20+1083], W8
+	035 Compare X19, 0
+	036 JumpIfEqual {346}
+	037 Move X9, [0x25CF8D8]
+	038 Move X20, [0x25CB090]
+	039 Move W10, [X19+28]
+	040 Move X8, [X19+16]
+	041 Move X1, [X9]
+	042 Move X9, [X20]
+	043 Add W10, W10, 1
+	044 Move [X19+28], W10
+	045 Compare X8, 0
+	046 JumpIfEqual {346}
+	047 NotImplemented "Instruction LDRSW not yet implemented."
+	048 Move W11, [X8+24]
+	049 NotImplemented "Instruction CMP not yet implemented."
+	050 Add X0, X8, X10
+	051 Add W9, W10, 1
+	052 Move [X19+24], W9
+	053 Move [X0+32], X1
+	054 Call 0x1F16DDC
+	055 Move X8, [X9+32]
+	056 Move X0, X19
+	057 Move X8, [X8+192]
+	058 Move X2, [X8+112]
+	059 Call List`1<Object>.AddWithResize, X0, X1
+	060 Move W8, [0x289243C]
+	061 Move X21, [0x25CF8E0]
+	062 Move TEMP, X8
+	063 And TEMP, TEMP, 1
+	064 Compare TEMP, 1
+	065 JumpIfEqual {70}
+	066 Move X0, [0x25CF8E0]
+	067 Call 0x1F16E38
+	068 Move W8, 1
+	069 Move [X22+1084], W8
+	070 Move W10, [X19+28]
+	071 Move X8, [X19+16]
+	072 Move X1, [X21]
+	073 Move X9, [X20]
+	074 Add W10, W10, 1
+	075 Move [X19+28], W10
+	076 Compare X8, 0
+	077 JumpIfEqual {346}
+	078 NotImplemented "Instruction LDRSW not yet implemented."
+	079 Move W11, [X8+24]
+	080 NotImplemented "Instruction CMP not yet implemented."
+	081 Add X0, X8, X10
+	082 Add W9, W10, 1
+	083 Move [X19+24], W9
+	084 Move [X0+32], X1
+	085 Call 0x1F16DDC
+	086 Move X8, [X9+32]
+	087 Move X0, X19
+	088 Move X8, [X8+192]
+	089 Move X2, [X8+112]
+	090 Call List`1<Object>.AddWithResize, X0, X1
+	091 Move W8, [0x289243D]
+	092 Move X21, [0x25CF8E8]
+	093 Move TEMP, X8
+	094 And TEMP, TEMP, 1
+	095 Compare TEMP, 1
+	096 JumpIfEqual {101}
+	097 Move X0, [0x25CF8E8]
+	098 Call 0x1F16E38
+	099 Move W8, 1
+	100 Move [X22+1085], W8
+	101 Move W10, [X19+28]
+	102 Move X8, [X19+16]
+	103 Move X1, [X21]
+	104 Move X9, [X20]
+	105 Add W10, W10, 1
+	106 Move [X19+28], W10
+	107 Compare X8, 0
+	108 JumpIfEqual {346}
+	109 NotImplemented "Instruction LDRSW not yet implemented."
+	110 Move W11, [X8+24]
+	111 NotImplemented "Instruction CMP not yet implemented."
+	112 Add X0, X8, X10
+	113 Add W9, W10, 1
+	114 Move [X19+24], W9
+	115 Move [X0+32], X1
+	116 Call 0x1F16DDC
+	117 Move X8, [X9+32]
+	118 Move X0, X19
+	119 Move X8, [X8+192]
+	120 Move X2, [X8+112]
+	121 Call List`1<Object>.AddWithResize, X0, X1
+	122 Move W8, [0x289243E]
+	123 Move X21, [0x25CF8F0]
+	124 Move TEMP, X8
+	125 And TEMP, TEMP, 1
+	126 Compare TEMP, 1
+	127 JumpIfEqual {132}
+	128 Move X0, [0x25CF8F0]
+	129 Call 0x1F16E38
+	130 Move W8, 1
+	131 Move [X22+1086], W8
+	132 Move W10, [X19+28]
+	133 Move X8, [X19+16]
+	134 Move X1, [X21]
+	135 Move X9, [X20]
+	136 Add W10, W10, 1
+	137 Move [X19+28], W10
+	138 Compare X8, 0
+	139 JumpIfEqual {346}
+	140 NotImplemented "Instruction LDRSW not yet implemented."
+	141 Move W11, [X8+24]
+	142 NotImplemented "Instruction CMP not yet implemented."
+	143 Add X0, X8, X10
+	144 Add W9, W10, 1
+	145 Move [X19+24], W9
+	146 Move [X0+32], X1
+	147 Call 0x1F16DDC
+	148 Move X8, [X9+32]
+	149 Move X0, X19
+	150 Move X8, [X8+192]
+	151 Move X2, [X8+112]
+	152 Call List`1<Object>.AddWithResize, X0, X1
+	153 Move W8, [0x289243F]
+	154 Move X21, [0x25CF8F8]
+	155 Move TEMP, X8
+	156 And TEMP, TEMP, 1
+	157 Compare TEMP, 1
+	158 JumpIfEqual {163}
+	159 Move X0, [0x25CF8F8]
+	160 Call 0x1F16E38
+	161 Move W8, 1
+	162 Move [X22+1087], W8
+	163 Move W10, [X19+28]
+	164 Move X8, [X19+16]
+	165 Move X1, [X21]
+	166 Move X9, [X20]
+	167 Add W10, W10, 1
+	168 Move [X19+28], W10
+	169 Compare X8, 0
+	170 JumpIfEqual {346}
+	171 NotImplemented "Instruction LDRSW not yet implemented."
+	172 Move W11, [X8+24]
+	173 NotImplemented "Instruction CMP not yet implemented."
+	174 Add X0, X8, X10
+	175 Add W9, W10, 1
+	176 Move [X19+24], W9
+	177 Move [X0+32], X1
+	178 Call 0x1F16DDC
+	179 Move X8, [X9+32]
+	180 Move X0, X19
+	181 Move X8, [X8+192]
+	182 Move X2, [X8+112]
+	183 Call List`1<Object>.AddWithResize, X0, X1
+	184 Move W8, [0x2892440]
+	185 Move X21, [0x25CF900]
+	186 Move TEMP, X8
+	187 And TEMP, TEMP, 1
+	188 Compare TEMP, 1
+	189 JumpIfEqual {194}
+	190 Move X0, [0x25CF900]
+	191 Call 0x1F16E38
+	192 Move W8, 1
+	193 Move [X22+1088], W8
+	194 Move W10, [X19+28]
+	195 Move X8, [X19+16]
+	196 Move X1, [X21]
+	197 Move X9, [X20]
+	198 Add W10, W10, 1
+	199 Move [X19+28], W10
+	200 Compare X8, 0
+	201 JumpIfEqual {346}
+	202 NotImplemented "Instruction LDRSW not yet implemented."
+	203 Move W11, [X8+24]
+	204 NotImplemented "Instruction CMP not yet implemented."
+	205 Add X0, X8, X10
+	206 Add W9, W10, 1
+	207 Move [X19+24], W9
+	208 Move [X0+32], X1
+	209 Call 0x1F16DDC
+	210 Move X8, [X9+32]
+	211 Move X0, X19
+	212 Move X8, [X8+192]
+	213 Move X2, [X8+112]
+	214 Call List`1<Object>.AddWithResize, X0, X1
+	215 Move W8, [0x2892441]
+	216 Move X21, [0x25CF908]
+	217 Move TEMP, X8
+	218 And TEMP, TEMP, 1
+	219 Compare TEMP, 1
+	220 JumpIfEqual {225}
+	221 Move X0, [0x25CF908]
+	222 Call 0x1F16E38
+	223 Move W8, 1
+	224 Move [X22+1089], W8
+	225 Move W10, [X19+28]
+	226 Move X8, [X19+16]
+	227 Move X1, [X21]
+	228 Move X9, [X20]
+	229 Add W10, W10, 1
+	230 Move [X19+28], W10
+	231 Compare X8, 0
+	232 JumpIfEqual {346}
+	233 NotImplemented "Instruction LDRSW not yet implemented."
+	234 Move W11, [X8+24]
+	235 NotImplemented "Instruction CMP not yet implemented."
+	236 Add X0, X8, X10
+	237 Add W9, W10, 1
+	238 Move [X19+24], W9
+	239 Move [X0+32], X1
+	240 Call 0x1F16DDC
+	241 Move X8, [X9+32]
+	242 Move X0, X19
+	243 Move X8, [X8+192]
+	244 Move X2, [X8+112]
+	245 Call List`1<Object>.AddWithResize, X0, X1
+	246 Move W8, [0x2892442]
+	247 Move X21, [0x25CF910]
+	248 Move TEMP, X8
+	249 And TEMP, TEMP, 1
+	250 Compare TEMP, 1
+	251 JumpIfEqual {256}
+	252 Move X0, [0x25CF910]
+	253 Call 0x1F16E38
+	254 Move W8, 1
+	255 Move [X22+1090], W8
+	256 Move W10, [X19+28]
+	257 Move X8, [X19+16]
+	258 Move X1, [X21]
+	259 Move X9, [X20]
+	260 Add W10, W10, 1
+	261 Move [X19+28], W10
+	262 Compare X8, 0
+	263 JumpIfEqual {346}
+	264 NotImplemented "Instruction LDRSW not yet implemented."
+	265 Move W11, [X8+24]
+	266 NotImplemented "Instruction CMP not yet implemented."
+	267 Add X0, X8, X10
+	268 Add W9, W10, 1
+	269 Move [X19+24], W9
+	270 Move [X0+32], X1
+	271 Call 0x1F16DDC
+	272 Move X8, [X9+32]
+	273 Move X0, X19
+	274 Move X8, [X8+192]
+	275 Move X2, [X8+112]
+	276 Call List`1<Object>.AddWithResize, X0, X1
+	277 Move W8, [0x2892443]
+	278 Move X21, [0x25CF918]
+	279 Move TEMP, X8
+	280 And TEMP, TEMP, 1
+	281 Compare TEMP, 1
+	282 JumpIfEqual {287}
+	283 Move X0, [0x25CF918]
+	284 Call 0x1F16E38
+	285 Move W8, 1
+	286 Move [X22+1091], W8
+	287 Move W10, [X19+28]
+	288 Move X8, [X19+16]
+	289 Move X1, [X21]
+	290 Move X9, [X20]
+	291 Add W10, W10, 1
+	292 Move [X19+28], W10
+	293 Compare X8, 0
+	294 JumpIfEqual {346}
+	295 NotImplemented "Instruction LDRSW not yet implemented."
+	296 Move W11, [X8+24]
+	297 NotImplemented "Instruction CMP not yet implemented."
+	298 Add X0, X8, X10
+	299 Add W9, W10, 1
+	300 Move [X19+24], W9
+	301 Move [X0+32], X1
+	302 Call 0x1F16DDC
+	303 Move X8, [X9+32]
+	304 Move X0, X19
+	305 Move X8, [X8+192]
+	306 Move X2, [X8+112]
+	307 Call List`1<Object>.AddWithResize, X0, X1
+	308 Move W8, [0x2892445]
+	309 Move X21, [0x25CF928]
+	310 Move TEMP, X8
+	311 And TEMP, TEMP, 1
+	312 Compare TEMP, 1
+	313 JumpIfEqual {318}
+	314 Move X0, [0x25CF928]
+	315 Call 0x1F16E38
+	316 Move W8, 1
+	317 Move [X22+1093], W8
+	318 Move W10, [X19+28]
+	319 Move X8, [X19+16]
+	320 Move X1, [X21]
+	321 Move X9, [X20]
+	322 Add W10, W10, 1
+	323 Move [X19+28], W10
+	324 Compare X8, 0
+	325 JumpIfEqual {346}
+	326 NotImplemented "Instruction LDRSW not yet implemented."
+	327 Move W11, [X8+24]
+	328 NotImplemented "Instruction CMP not yet implemented."
+	329 Add X0, X8, X10
+	330 Add W9, W10, 1
+	331 Move [X19+24], W9
+	332 Move [X0+32], X1
+	333 Call 0x1F16DDC
+	334 Move X8, [X9+32]
+	335 Move X0, X19
+	336 Move X8, [X8+192]
+	337 Move X2, [X8+112]
+	338 Call List`1<Object>.AddWithResize, X0, X1
+	339 Move X0, X19
+	340 Move X20, [X31+32]
+	341 Move X19, [X31+40]
+	342 Move X22, [X31+16]
+	343 Move X21, [X31+24]
+	344 Move X30, [X31+48]
+	345 Return X0
+	346 Call 0x1F170E4

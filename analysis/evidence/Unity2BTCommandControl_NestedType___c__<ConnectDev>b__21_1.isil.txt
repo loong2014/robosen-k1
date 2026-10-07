@@ -1,0 +1,53 @@
+Type: Unity2BTCommandControl_NestedType___c
+Method: System.Void <ConnectDev>b__21_1(System.String address, System.String serveruuid)
+
+ISIL (辅助阅读，不等同完整源码):
+	001 Move [X31-64], X30
+	002 Move [X31+16], X24
+	003 Move [X31+24], X23
+	004 Move [X31+32], X22
+	005 Move [X31+40], X21
+	006 Move [X31+48], X20
+	007 Move [X31+56], X19
+	008 Move X23, [0x25CE990]
+	009 Move W8, [0x2891462]
+	010 Move X24, [0x25CE998]
+	011 Move X21, [0x25CDE70]
+	012 Move X19, X2
+	013 Move X20, X1
+	014 Move TEMP, X8
+	015 And TEMP, TEMP, 1
+	016 Compare TEMP, 1
+	017 JumpIfEqual {26}
+	018 Move X0, [0x25CDE70]
+	019 Call 0x1F16E38
+	020 Move X0, [0x25CE990]
+	021 Call 0x1F16E38
+	022 Move X0, [0x25CE998]
+	023 Call 0x1F16E38
+	024 Move W8, 1
+	025 Move [X22+1122], W8
+	026 Move X0, [X23]
+	027 Move X2, [X24]
+	028 Move X1, X20
+	029 Move X3, X19
+	030 Move X4, X31
+	031 Call String.Concat, X0, X1, X2, X3
+	032 Move X8, [X21]
+	033 Move X19, X0
+	034 Move W9, [X8+228]
+	035 Compare W9, 0
+	036 JumpIfNotEqual {39}
+	037 Move X0, X8
+	038 Call 0x1F16FB8
+	039 Move X0, X19
+	040 Move X20, [X31+48]
+	041 Move X19, [X31+56]
+	042 Move X22, [X31+32]
+	043 Move X21, [X31+40]
+	044 Move X1, X31
+	045 Move X24, [X31+16]
+	046 Move X23, [X31+24]
+	047 Move X30, [X31+64]
+	048 Call Debug.Log, X0
+	049 Return 

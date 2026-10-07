@@ -1,0 +1,47 @@
+Type: BLEProtocol2
+Method: System.UInt16 Crc16_byte(System.UInt16 _crc, System.UInt16 _byte)
+
+ISIL (辅助阅读，不等同完整源码):
+	001 Move [X31-48], X30
+	002 Move [X31+16], X22
+	003 Move [X31+24], X21
+	004 Move [X31+32], X20
+	005 Move [X31+40], X19
+	006 Move W20, W1
+	007 Move W8, [0x288F47A]
+	008 Move X21, [0x25CC190]
+	009 Move W19, W0
+	010 Move TEMP, X8
+	011 And TEMP, TEMP, 1
+	012 Compare TEMP, 1
+	013 JumpIfEqual {18}
+	014 Move X0, [0x25CC190]
+	015 Call 0x1F16E38
+	016 Move W8, 1
+	017 Move [X22+1146], W8
+	018 Move X0, [X21]
+	019 Move W8, [X0+228]
+	020 Compare W8, 0
+	021 JumpIfNotEqual {24}
+	022 Call 0x1F16FB8
+	023 Move X0, [X21]
+	024 Move X8, [X0+184]
+	025 Move X8, [X8]
+	026 Compare X8, 0
+	027 JumpIfEqual {42}
+	028 Xor W9, W20, W19
+	029 Move W10, [X8+24]
+	030 And W9, W9, 255
+	031 NotImplemented "Instruction CMP not yet implemented."
+	032 Add X8, X8, W9
+	033 And W9, W19, 0xFF00
+	034 Move X20, [X31+32]
+	035 Move X19, [X31+40]
+	036 NotImplemented "Instruction LDRH not yet implemented."
+	037 Move X22, [X31+16]
+	038 Move X21, [X31+24]
+	039 Xor W0, W8, W9
+	040 Move X30, [X31+48]
+	041 Return X0
+	042 Call 0x1F170E4
+	043 Call 0x1F170EC
