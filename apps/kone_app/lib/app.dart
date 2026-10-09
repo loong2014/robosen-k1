@@ -147,7 +147,12 @@ class _HomeState extends State<_Home> with WidgetsBindingObserver {
             volume: volume,
             onConnect: () => setState(() => tab = 0),
           ),
-          ProjectsPage(repository: widget.repository, session: widget.session),
+          ProjectsPage(
+            repository: widget.repository,
+            session: widget.session,
+            actionCatalog: catalog,
+            player: player,
+          ),
         ],
       ),
     ),

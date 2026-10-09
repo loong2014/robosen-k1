@@ -8,7 +8,7 @@
 
 | 文档 | 当前版本 | 审批状态 | 交付状态 | 批准记录 |
 |---|---|---|---|---|
-| [PRD-001：Flutter 机器人应用](PRD-001-Flutter机器人应用.md) | 1.2 | approved（首版范围） | in_progress | [CR-001](changes/CR-001-设备范围与执行方式确认.md)、[CR-002](changes/CR-002-平台与首版编程兼容边界.md)、[CR-003](changes/CR-003-首版实施启动方案.md)、[CR-004](changes/CR-004-Unity式积木画布交互.md)、[CR-005](changes/CR-005-原版蓝牙控制界面复刻.md) |
+| [PRD-001：Flutter 机器人应用](PRD-001-Flutter机器人应用.md) | 1.3 | approved（首版范围） | in_progress | [CR-001](changes/CR-001-设备范围与执行方式确认.md)、[CR-002](changes/CR-002-平台与首版编程兼容边界.md)、[CR-003](changes/CR-003-首版实施启动方案.md)、[CR-004](changes/CR-004-Unity式积木画布交互.md)、[CR-005](changes/CR-005-原版蓝牙控制界面复刻.md) |
 
 八方向/停止、全量动作中心与快捷 / 音量 / 设置、Unity 式画布交互与原 APK 有证据的积木类型、四页中文流程、Android API 24 / iOS 15 下限已经批准。详细进度和实际验证结果见 [实施记录](../docs/development/implementation-status.md)。技术未知和实机待验不撤销已批准需求，也不等同验收通过。
 
@@ -38,3 +38,5 @@
 2026-10-07，用户要求建立 `prd/`，开发依据目录内需求执行；新需求应先检查与现有需求的冲突，通过规则处理后才能更改项目。本次据此建立需求管理规则，并迁移原需求澄清草案。产品批准记录随 CR 保留。
 
 同日，用户要求完善通用规则，并确认四点产品约束，已分别落实到 [Coding 规则](../docs/development/coding-rules.md) 和 CR-001。
+
+2026-10-09 用户批准已有动作组合编程并要求Android构建，见 [CR-006](changes/CR-006-已有动作组合编程.md)。

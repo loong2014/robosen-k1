@@ -1,0 +1,63 @@
+{
+  "apk": "/Users/mingyuan/Desktop/RobosenK1.apk",
+  "sha256": "3077be24a8252c21b936875d820b39ad2910d6e96a53a3c1d92abc83583afd3c",
+  "package": "com.robosen.K1app",
+  "version": "4.77.20260617",
+  "unity": "6000.3.17f1",
+  "analysis": "Static ARM64 + IL2CPP metadata + Unity TextAsset; no robot execution",
+  "resources": [
+    {
+      "file": "SpeechProgrammingK1ProCH.txt",
+      "source": "assets/bin/Data/307d5e30a3c3a1a45923963bfc4ac18a",
+      "path_id": 1
+    },
+    {
+      "file": "1-1.txt",
+      "source": "assets/bin/Data/3b380148d3ddd09498dc6ca1aa5507b6",
+      "path_id": 1
+    },
+    {
+      "file": "SpeechProgrammingK1CH.txt",
+      "source": "assets/bin/Data/583d9b04016ce6e459734e8c9c275335",
+      "path_id": 1
+    },
+    {
+      "file": "SpeechProgrammingK1AICH.txt",
+      "source": "assets/bin/Data/773664e5be9f851429a0a893c1731462",
+      "path_id": 1
+    }
+  ],
+  "methods": [
+    "ActionPreinstallBtnScript.MainBtnClick.20be770.asm",
+    "EditorVisualInterfaceScript..ctor.208ddcc.asm",
+    "_RunEditorBlocks_New_d__164.MoveNext.2092034.asm",
+    "EditorVisualInterfaceScript.SetEditorStartTypeView.208a00c.asm",
+    "ActionRectScript.MianBtnClick.20e526c.asm",
+    "RobotActionInterfaceScript..cctor.20d50f8.asm",
+    "RobotActionInterfaceScript.ShowRobotActionBtnClick.20d250c.asm",
+    "EditorVisualInterfaceScript._RunEditorBlocks_New_g__CreatActionDataPice_164_0.208e988.asm",
+    "_CheckBleConnecting_d__29.MoveNext.20aae98.asm",
+    "ActionBlockChildUI.SaveDataToModel.207c5dc.asm",
+    "EditorVisualInterfaceScript._RunEditorBlocks_New_g__CreatActionDataPice_ActionView_164_1.208f724.asm",
+    "EditorVisualInterfaceScript.OnCreatView_Joint.208a658.asm"
+  ],
+  "palette_joint_order": [
+    16,
+    6,
+    12,
+    13,
+    7,
+    14,
+    15,
+    10,
+    3,
+    4,
+    5,
+    11,
+    8,
+    0,
+    1,
+    2,
+    9
+  ]
+}

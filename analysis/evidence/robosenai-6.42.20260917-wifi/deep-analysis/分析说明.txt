@@ -1,0 +1,71 @@
+RobosenAI 6.42.20260917 Wi-Fi 配网深入静态分析
+分析日期：2026-10-09
+范围：桌面 RobosenAI.apk；未修改产品代码，未操作机器人、账号、云端。
+
+1. 证据性质
+APK 为 Unity IL2CPP。JADX 提供 Android Java 插件源码；Cpp2IL 提供类型/方法/字段布局；ARM64 libil2cpp.so 的真实指令用于恢复核心业务。生成的空 C# 方法不是原始实现。
+APK SHA256：acfef2d384771cf888f6f6a79d5739b7712af6a627a83c4b13037e2dcb298f9e
+上级目录保留相关 ARM64 方法；本目录增加常量初始化函数、提取脚本和离线重建结果。
+
+2. 输入与发送
+BleConnectScript.SetWifiInfoConnectBtnClick VA 0x14195a4：
+CurrentWifiInfo 字段偏移0x140=SSID、0x148=BSSID、0x150=密码。
+SSID 或密码为空时拒绝发送；客户端未在此处要求 BSSID 非空。
+JObject 依次增加 userid、ssid、bssid、psk。userid来自当前登录信息；psk=NetClientUtility.WIFI_PWD_Encrypt(ssid,password)。
+JSON ToString -> UTF8 -> BTDevice.SendData(0x0100, payload)。显示等待参数20秒；不能据此判定设备连接超时为20秒。
+
+重要新证据：手动修改SSID回调 VA0x141c500，在SSID变化时主动把BSSID清为空字符串，然后更新SSID。说明该客户端允许以空BSSID发送；具体固件接受行为仍需实机验证。
+
+3. 密码算法正常路径
+NetClientUtility.GenEncKey VA0x13a5b7c：
+输入SSID的UTF8字节s。_key1和_key2分别为300字节静态数组，已从.cctor VA0x13a6504提取；初始化快慢分支中的600个常量逐一比对一致。
+对每个字节s[i]：
+  start=min(abs(s[i]+i-88),280)
+  count=max(1,(i%3)+(s[i]%3))
+  source=偶数i使用_key2，奇数i使用_key1
+  把source[start:start+count]追加到派生字节列表。
+如果派生列表长度L小于8：
+  missing=8-L
+  first=s[0]（若s[0]>=188，改为(s[0]+68)&255）
+  追加_key1[first+missing:first+2*missing]。
+Encrypt_DES_ECB VA0x13a5eec取派生列表前8字节作为DES密钥；密码用UTF8；ECB模式、PKCS7填充；WIFI_PWD_Encrypt VA0x13a5ad0对加密结果Base64编码。
+userid和bssid未参与这个密码算法。
+离线例子（非真实用户密码，非原App采集）：SSID=FF-Web，password=Example123!，key=636bdaa15cb58c63，psk=lTZEz92sGDIAaU9GJGO+lQ==。
+这些向量由恢复的算法和本机LibreSSL计算，不能称为原App运行时等价验证。
+Encrypt_DES_ECB还存在异常处理分支，可能返回密码UTF8字节供外层Base64；当前提取脚本仅重建正常路径，不复制该降级行为。
+
+4. BLE协议与写入
+RobosenAI的K1AI-分支选择FFC0/FFC1和BLEProtocol2；现有K1控制工程仍使用FFE0/FFE1和旧协议。不能全局替换现有控制协议。
+完整帧：55 AA LEN_H LEN_L CMD_H CMD_L DATA CRC_H CRC_L SUM8。
+N=len(DATA)，LEN=N+5，整帧=N+9。
+CRC覆盖LEN_H LEN_L CMD_H CMD_L DATA；初值FFFF；逐字节crc=(crc>>8)^table[(crc^byte)&255]；无最终异或。
+提取的256项CRC表与反射多项式A001全部一致；表在metadata偏移0x60d570处唯一出现；对应dummy DLL FieldRVA静态数组也一致。ASCII 123456789离线结果4B37。
+CRC数值高字节先放入帧；不要套用默认低字节先发的Modbus串口封装。
+SUM8为包括55 AA、长度、命令、载荷和CRC在内的前面全部字节累加低8位。
+离线构造0x0102空载荷：55 AA 00 05 01 02 74 90 0B；此帧未发送到设备。
+BTDevice.SendData VA0x13b8c6c调用Unity2BTCommandControl.SendBytes VA0x13bd30c；后者在0x13bd370置withResponse=true，并调用BluetoothLEHardwareInterface.WriteCharacteristic。
+Java插件将true映射为setWriteType(2)，即有响应写入。插件按协商MTU-3分片，使用写完成回调继续下一片。
+现有K1工程固定无响应写入，移植配网时必须区分写入模式；GATT响应仍不等于配网业务成功。
+
+5. 结果与错误
+Select_Device_SetWifiInfoResult VA0x141a730：
+载荷长度0或2：仅进入“配网信息设备成功接收”日志路径，不进入完整设备信息流程。
+其他载荷：UTF8 JSON，读取sn、ip、bt_mac、wifi_mac；字段缺失回退为空字符串；sn为空则结束。
+不能把收到0x0100一概视为完成入网；应区分接收确认、设备信息和实际网络状态。
+0x0103错误回调读取首字节：1密码错误、2AP不存在、3连接超时、4获取IP失败，其他为未知错误。
+
+6. 原App的后续业务与异步顺序
+sn非空后，useTcp = IsNullOrWhiteSpace(bt_mac) OR IsNullOrWhiteSpace(wifi_mac)。
+启动CheckDeviceInfo(sn,bt_mac)，请求cloud/binding/sn_exist/find/，携带登录请求头。
+关键：CheckDeviceInfo是async void（AsyncVoidMethodBuilder可见），调用方随后立即读取isCheckSuccess字段0x108，未await；构造函数VA0x141bd70把该字段初始化为true。
+因此不能描述为“云端SN检查成功后才发送0x0102”。准确描述是启动异步检查后，以当时的标志决定继续；实际时序受异步完成时间和已有字段状态影响。
+检查回调code2000设true，code4004设false并显示SN异常提示。
+继续分支：发送BLE 0x0102无载荷 -> await Delay(500ms) -> 主动断开配网BLE -> 查找/创建RobosenDevice -> DevConnect -> 设置时区（tzone，命令0x1005）及后续业务。
+后续SetNewDev(sn)请求cloud/binding/bracket/new/并使用登录请求头。该云绑定与BLE发送userid不是同一个步骤。
+不能由此证明设备固件忽略userid，也不能证明完全离线配网已经可用。
+
+7. 对现有K1AI工程的直接结论
+保留现有控制和action通道；新增配网的服务配置、带响应写入、新帧编解码、凭据编码、独立配网状态机和页面。
+SSID可手动输入，原App已提供空BSSID路径，自动读取SSID/BSSID可作为辅助；需要K1AI实机确认该路径。
+账户登录/云绑定/网络控制不应默认全部搬入基础配网模块。待验证固件是否接受省略/空userid，以及完成配网是否需要0x0102。
+剩余实机项目：配网模式GATT服务、空userid/空BSSID行为、密码和帧与原App运行结果对照、配网成功判据、设备重启后网络保持、配网后现有BLE控制和action回归。

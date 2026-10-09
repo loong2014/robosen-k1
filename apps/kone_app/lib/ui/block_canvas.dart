@@ -256,6 +256,8 @@ class _BlockCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final color = switch (node.kind) {
+      BlockKind.robotAction => const Color(0xff267d90),
+      BlockKind.wait => const Color(0xff8c6839),
       BlockKind.start => const Color(0xff16806f),
       BlockKind.action => const Color(0xff376ba8),
       BlockKind.loop => const Color(0xffab7428),
@@ -263,6 +265,9 @@ class _BlockCard extends StatelessWidget {
       BlockKind.robotPose || BlockKind.longPose => const Color(0xff86569b),
     };
     final title = switch (node.kind) {
+      BlockKind.robotAction =>
+        node.actionPath.isEmpty ? '选择已有动作' : node.actionPath.split('/').last,
+      BlockKind.wait => '等待 ${node.waitMs / 1000} 秒',
       BlockKind.start => '开始',
       BlockKind.action => '动作',
       BlockKind.loop => '循环 ${node.repeat} 次',
@@ -294,6 +299,8 @@ class _BlockCard extends StatelessWidget {
           children: [
             Text(
               title,
+              maxLines: 1,
+              overflow: TextOverflow.ellipsis,
               style: const TextStyle(
                 color: Colors.white,
                 fontWeight: FontWeight.bold,

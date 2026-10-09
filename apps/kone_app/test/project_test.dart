@@ -34,7 +34,7 @@ void main() {
   test('invalid reference, schema and excessive expansion rejected', () {
     final p = RobotProject.create('test');
     expect(
-      () => RobotProject.fromJson({...p.toJson(), 'schemaVersion': 3}),
+      () => RobotProject.fromJson({...p.toJson(), 'schemaVersion': 99}),
       throwsA(isA<UnsupportedProjectFormat>()),
     );
     expect(
@@ -73,9 +73,11 @@ void main() {
       params.remove('joint');
       params.remove('value');
       params.remove('enabled');
+      params.remove('actionPath');
+      params.remove('waitMs');
     }
     final migrated = RobotProject.fromJson(v1);
-    expect(migrated.toJson()['schemaVersion'], 2);
+    expect(migrated.toJson()['schemaVersion'], 3);
     expect(migrated.nodes[migrated.rootId]!.x, 24);
     final editor = ProjectEditor(migrated);
     final action = editor.add(BlockKind.action, migrated.rootId, 0);

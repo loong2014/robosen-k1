@@ -1,4 +1,5 @@
 import 'dart:math';
+import '../features/actions/robot_action.dart';
 
 class UnsupportedProjectFormat implements Exception {
   const UnsupportedProjectFormat(this.message);
@@ -7,7 +8,16 @@ class UnsupportedProjectFormat implements Exception {
   String toString() => message;
 }
 
-enum BlockKind { start, action, loop, actionChild, robotPose, longPose }
+enum BlockKind {
+  start,
+  action,
+  loop,
+  actionChild,
+  robotPose,
+  longPose,
+  robotAction,
+  wait,
+}
 
 String newId() => List.generate(
   16,
@@ -26,6 +36,8 @@ class BlockNode {
     this.joint = 0,
     this.value = 90,
     this.enabled = true,
+    this.actionPath = '',
+    this.waitMs = 1000,
     this.x = 0,
     this.y = 0,
   }) : children = List.unmodifiable(children),
@@ -37,6 +49,8 @@ class BlockNode {
   final int speed, delay, repeat;
   final int joint, value;
   final bool enabled;
+  final String actionPath;
+  final int waitMs;
   final double x, y;
   BlockNode copyWith({
     List<String>? children,
@@ -47,6 +61,8 @@ class BlockNode {
     int? joint,
     int? value,
     bool? enabled,
+    String? actionPath,
+    int? waitMs,
     double? x,
     double? y,
   }) => BlockNode(
@@ -60,6 +76,8 @@ class BlockNode {
     joint: joint ?? this.joint,
     value: value ?? this.value,
     enabled: enabled ?? this.enabled,
+    actionPath: actionPath ?? this.actionPath,
+    waitMs: waitMs ?? this.waitMs,
     x: x ?? this.x,
     y: y ?? this.y,
   );
@@ -75,10 +93,16 @@ class BlockNode {
       'joint': joint,
       'value': value,
       'enabled': enabled,
+      'actionPath': actionPath,
+      'waitMs': waitMs,
     },
     'position': {'x': x, 'y': y},
   };
-  factory BlockNode.fromJson(Map<String, dynamic> m, {bool legacy = false}) {
+  factory BlockNode.fromJson(
+    Map<String, dynamic> m, {
+    bool legacy = false,
+    bool sequence = false,
+  }) {
     _keys(m, {'id', 'type', 'orderedChildIds', 'params', 'position'});
     final params = m['params'] as Map<String, dynamic>;
     final position = m['position'] as Map<String, dynamic>;
@@ -86,7 +110,17 @@ class BlockNode {
       params,
       legacy
           ? {'joints', 'speed', 'delay', 'repeat'}
-          : {'joints', 'speed', 'delay', 'repeat', 'joint', 'value', 'enabled'},
+          : {
+              'joints',
+              'speed',
+              'delay',
+              'repeat',
+              'joint',
+              'value',
+              'enabled',
+              if (sequence) 'actionPath',
+              if (sequence) 'waitMs',
+            },
     );
     _keys(position, {'x', 'y'});
     final kind = BlockKind.values.where((v) => v.name == m['type']).firstOrNull;
@@ -104,6 +138,8 @@ class BlockNode {
       joint: legacy ? 0 : params['joint'] as int,
       value: legacy ? 90 : params['value'] as int,
       enabled: legacy ? true : params['enabled'] as bool,
+      actionPath: sequence ? params['actionPath'] as String : '',
+      waitMs: sequence ? params['waitMs'] as int : 1000,
       x: (position['x'] as num).toDouble(),
       y: (position['y'] as num).toDouble(),
     );
@@ -158,7 +194,7 @@ class RobotProject {
     viewportScale: viewportScale ?? this.viewportScale,
   );
   Map<String, dynamic> toJson() => {
-    'schemaVersion': 2,
+    'schemaVersion': 3,
     'id': id,
     'name': name,
     'targetModel': targetModel,
@@ -168,7 +204,7 @@ class RobotProject {
   };
   factory RobotProject.fromJson(Map<String, dynamic> json) {
     final legacy = json['schemaVersion'] == 1;
-    if (!legacy && json['schemaVersion'] != 2) {
+    if (!legacy && json['schemaVersion'] != 2 && json['schemaVersion'] != 3) {
       throw const UnsupportedProjectFormat('不支持此工程版本，原文件不会被覆盖');
     }
     _keys(json, {
@@ -187,6 +223,7 @@ class RobotProject {
       final node = BlockNode.fromJson(
         value as Map<String, dynamic>,
         legacy: legacy,
+        sequence: json['schemaVersion'] == 3,
       );
       if (nodes.containsKey(node.id)) throw const FormatException('重复积木编号');
       nodes[node.id] = node;
@@ -253,6 +290,8 @@ class RobotProject {
             BlockKind.actionChild,
             BlockKind.robotPose,
             BlockKind.longPose,
+            BlockKind.robotAction,
+            BlockKind.wait,
           }.contains(node.kind) &&
           node.children.isNotEmpty) {
         throw const FormatException('此积木不能包含子积木');
@@ -268,6 +307,10 @@ class RobotProject {
             (child) => nodes[child]?.kind == BlockKind.actionChild,
           )) {
         throw const FormatException('关节子积木只能连接到动作');
+      }
+      if (node.actionPath.isNotEmpty) RobotAction.validatePath(node.actionPath);
+      if (node.waitMs < 0 || node.waitMs > 3600000) {
+        throw const FormatException('等待时间应为0至3600秒');
       }
       if (node.repeat < 1 ||
           node.repeat > 100 ||
@@ -289,6 +332,8 @@ class RobotProject {
             BlockKind.actionChild,
             BlockKind.robotPose,
             BlockKind.longPose,
+            BlockKind.robotAction,
+            BlockKind.wait,
           }.contains(node.kind)) {
         throw FormatException('积木 ${node.kind.name} 的机器人执行语义尚未验证');
       }

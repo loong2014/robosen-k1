@@ -1,0 +1,50 @@
+00:00 +0: loading /Users/mingyuan/Desktop/robosen-k1/apps/kone_app/test/diagnostic_log_test.dart
+00:00 +0: /Users/mingyuan/Desktop/robosen-k1/apps/kone_app/test/codec_test.dart: 96 original ARM64 encoder vectors match
+00:00 +1: /Users/mingyuan/Desktop/robosen-k1/apps/kone_app/test/codec_test.dart: every notification split preserves all frames
+00:00 +2: /Users/mingyuan/Desktop/robosen-k1/apps/kone_app/test/codec_test.dart: checksum noise, partial disconnect and boundaries
+00:00 +3: /Users/mingyuan/Desktop/robosen-k1/apps/kone_app/test/codec_test.dart: checksum noise, partial disconnect and boundaries
+00:00 +4: /Users/mingyuan/Desktop/robosen-k1/apps/kone_app/test/codec_test.dart: checksum noise, partial disconnect and boundaries
+00:00 +5: /Users/mingyuan/Desktop/robosen-k1/apps/kone_app/test/codec_test.dart: checksum noise, partial disconnect and boundaries
+00:00 +6: /Users/mingyuan/Desktop/robosen-k1/apps/kone_app/test/codec_test.dart: checksum noise, partial disconnect and boundaries
+00:00 +7: /Users/mingyuan/Desktop/robosen-k1/apps/kone_app/test/codec_test.dart: checksum noise, partial disconnect and boundaries
+00:00 +8: /Users/mingyuan/Desktop/robosen-k1/apps/kone_app/test/codec_test.dart: checksum noise, partial disconnect and boundaries
+00:00 +9: /Users/mingyuan/Desktop/robosen-k1/apps/kone_app/test/codec_test.dart: checksum noise, partial disconnect and boundaries
+00:00 +10: /Users/mingyuan/Desktop/robosen-k1/apps/kone_app/test/codec_test.dart: checksum noise, partial disconnect and boundaries
+00:00 +11: /Users/mingyuan/Desktop/robosen-k1/apps/kone_app/test/codec_test.dart: checksum noise, partial disconnect and boundaries
+00:00 +12: /Users/mingyuan/Desktop/robosen-k1/apps/kone_app/test/codec_test.dart: checksum noise, partial disconnect and boundaries
+00:00 +13: /Users/mingyuan/Desktop/robosen-k1/apps/kone_app/test/widget_test.dart: offline project can be created, edited, saved and reopened
+00:00 +14: /Users/mingyuan/Desktop/robosen-k1/apps/kone_app/test/widget_test.dart: offline project can be created, edited, saved and reopened
+00:00 +15: /Users/mingyuan/Desktop/robosen-k1/apps/kone_app/test/widget_test.dart: offline project can be created, edited, saved and reopened
+00:00 +16: /Users/mingyuan/Desktop/robosen-k1/apps/kone_app/test/widget_test.dart: offline project can be created, edited, saved and reopened
+00:00 +17: /Users/mingyuan/Desktop/robosen-k1/apps/kone_app/test/widget_test.dart: offline project can be created, edited, saved and reopened
+00:00 +18: /Users/mingyuan/Desktop/robosen-k1/apps/kone_app/test/widget_test.dart: offline project can be created, edited, saved and reopened
+00:00 +19: /Users/mingyuan/Desktop/robosen-k1/apps/kone_app/test/widget_test.dart: offline project can be created, edited, saved and reopened
+00:00 +20: /Users/mingyuan/Desktop/robosen-k1/apps/kone_app/test/widget_test.dart: offline project can be created, edited, saved and reopened
+00:00 +21: /Users/mingyuan/Desktop/robosen-k1/apps/kone_app/test/widget_test.dart: offline project can be created, edited, saved and reopened
+00:00 +22: /Users/mingyuan/Desktop/robosen-k1/apps/kone_app/test/widget_test.dart: offline project can be created, edited, saved and reopened
+00:00 +23: /Users/mingyuan/Desktop/robosen-k1/apps/kone_app/test/widget_test.dart: offline project can be created, edited, saved and reopened
+00:00 +24: /Users/mingyuan/Desktop/robosen-k1/apps/kone_app/test/widget_test.dart: offline project can be created, edited, saved and reopened
+00:01 +25: /Users/mingyuan/Desktop/robosen-k1/apps/kone_app/test/widget_test.dart: offline project can be created, edited, saved and reopened
+00:01 +26: /Users/mingyuan/Desktop/robosen-k1/apps/kone_app/test/widget_test.dart: offline project can be created, edited, saved and reopened
+00:01 +27: /Users/mingyuan/Desktop/robosen-k1/apps/kone_app/test/control_widgets_test.dart: app tab exit drops queued joystick movement and never resumes it
+00:01 +28: /Users/mingyuan/Desktop/robosen-k1/apps/kone_app/test/control_features_test.dart: eight directions map to 1–8, empty payloads, center and program exclusion
+00:01 +29: /Users/mingyuan/Desktop/robosen-k1/apps/kone_app/test/session_test.dart: release stops periodic movement; disconnect never resumes old direction
+00:01 +30: /Users/mingyuan/Desktop/robosen-k1/apps/kone_app/test/session_test.dart: release stops periodic movement; disconnect never resumes old direction
+00:01 +31: /Users/mingyuan/Desktop/robosen-k1/apps/kone_app/test/session_test.dart: release stops periodic movement; disconnect never resumes old direction
+00:01 +32: /Users/mingyuan/Desktop/robosen-k1/apps/kone_app/test/session_test.dart: release stops periodic movement; disconnect never resumes old direction
+00:01 +33: /Users/mingyuan/Desktop/robosen-k1/apps/kone_app/test/session_test.dart: release stops periodic movement; disconnect never resumes old direction
+00:01 +34: /Users/mingyuan/Desktop/robosen-k1/apps/kone_app/test/session_test.dart: release stops periodic movement; disconnect never resumes old direction
+00:02 +35: /Users/mingyuan/Desktop/robosen-k1/apps/kone_app/test/session_test.dart: release stops periodic movement; disconnect never resumes old direction
+00:02 +36: /Users/mingyuan/Desktop/robosen-k1/apps/kone_app/test/session_test.dart: release stops periodic movement; disconnect never resumes old direction
+00:02 +37: /Users/mingyuan/Desktop/robosen-k1/apps/kone_app/test/session_test.dart: release stops periodic movement; disconnect never resumes old direction
+00:02 +38: /Users/mingyuan/Desktop/robosen-k1/apps/kone_app/test/session_test.dart: release stops periodic movement; disconnect never resumes old direction
+00:02 +39: /Users/mingyuan/Desktop/robosen-k1/apps/kone_app/test/session_test.dart: release stops periodic movement; disconnect never resumes old direction
+00:02 +40: /Users/mingyuan/Desktop/robosen-k1/apps/kone_app/test/sequence_widgets_test.dart: choose existing actions, save wait, timed advance and background cancellation
+00:02 +41: /Users/mingyuan/Desktop/robosen-k1/apps/kone_app/test/sequence_widgets_test.dart: choose existing actions, save wait, timed advance and background cancellation
+00:02 +42: /Users/mingyuan/Desktop/robosen-k1/apps/kone_app/test/sequence_widgets_test.dart: choose existing actions, save wait, timed advance and background cancellation
+00:02 +43: /Users/mingyuan/Desktop/robosen-k1/apps/kone_app/test/sequence_widgets_test.dart: choose existing actions, save wait, timed advance and background cancellation
+00:02 +44: /Users/mingyuan/Desktop/robosen-k1/apps/kone_app/test/sequence_widgets_test.dart: choose existing actions, save wait, timed advance and background cancellation
+00:02 +45: /Users/mingyuan/Desktop/robosen-k1/apps/kone_app/test/sequence_widgets_test.dart: choose existing actions, save wait, timed advance and background cancellation
+00:03 +46: /Users/mingyuan/Desktop/robosen-k1/apps/kone_app/test/sequence_widgets_test.dart: choose existing actions, save wait, timed advance and background cancellation
+00:03 +47: /Users/mingyuan/Desktop/robosen-k1/apps/kone_app/test/control_widgets_test.dart: binding mode returns the original path without playing; portrait and landscape control remain usable
+00:03 +48: All tests passed!

@@ -13,11 +13,13 @@ class ActionCenterPage extends StatefulWidget {
     required this.catalog,
     required this.player,
     this.selecting = false,
+    this.selectionTitle = '选择快捷动作',
   });
   final RobotSession session;
   final ActionCatalog catalog;
   final ActionPlayer player;
   final bool selecting;
+  final String selectionTitle;
   @override
   State<ActionCenterPage> createState() => _ActionCenterPageState();
 }
@@ -66,7 +68,7 @@ class _ActionCenterPageState extends State<ActionCenterPage> {
           .toList();
       return Scaffold(
         appBar: AppBar(
-          title: Text(widget.selecting ? '选择快捷动作' : '动作中心'),
+          title: Text(widget.selecting ? widget.selectionTitle : '动作中心'),
           actions: [
             if (!widget.selecting && player.busy)
               IconButton(

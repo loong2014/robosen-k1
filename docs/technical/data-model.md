@@ -1,15 +1,15 @@
-# 自有工程格式 v2
+# 自有工程格式 v3
 
-状态：implemented offline / awaiting device acceptance；2026-10-08；REQ-VIS-001、REQ-COMP-001、REQ-UX-001；CR-004。
+状态：implemented offline / awaiting device acceptance；2026-10-09；REQ-VIS-001/003、REQ-COMP-001、REQ-UX-001；CR-004、CR-006。
 
-应用存储为 UTF-8 JSON，当前 `schemaVersion: 2`。完整序列化/校验入口见 `apps/kone_app/lib/programming/project.dart`；v1 读取时迁移到 v2 内存模型，下一次保存才写 v2。不兼容原 APK 编辑工程，不是机器人 `.sh` 文件。
+应用存储为 UTF-8 JSON，当前 `schemaVersion: 3`。完整序列化/校验入口见 `apps/kone_app/lib/programming/project.dart`；v1/v2 读取时迁移到 v3 内存模型，下一次保存才写 v3。不兼容原 APK 编辑工程，不是机器人 `.sh` 文件。
 
 | 层级 | 字段 | 约束 |
 |---|---|---|
 | 工程 | id、name、targetModel | id 为本地生成的稳定随机标识；名称非空；型号 K1/K1AI |
 | 工程 | rootId、nodes、viewport | 唯一起始根节点；nodes 为节点数组；viewport 保存平移 x/y 与 0.5–3 的缩放 |
-| 节点 | id、type、orderedChildIds | type=start/action/loop/actionChild/robotPose/longPose；有序子节点决定执行顺序，允许未连接节点但不能执行 |
-| 节点 | params | joints、speed、delay、repeat、joint、value、enabled；显式保存，不依赖 UI 默认值恢复 |
+| 节点 | id、type、orderedChildIds | type=start/action/loop/actionChild/robotPose/longPose/robotAction/wait；有序子节点决定执行顺序，允许未连接节点但不能执行 |
+| 节点 | params | joints、speed、delay、repeat、joint、value、enabled、actionPath、waitMs；显式保存，不依赖 UI 默认值恢复 |
 | 节点 | position | 有限数值 x/y；自由画布位置不决定执行顺序 |
 | joints | 字符串关节编号 → 整数 | 当前仅本地原始表示 0–23 → 0–255；不是机器人角度合法域，动作编码尚未启用 |
 
@@ -28,3 +28,9 @@
 读取损坏/缺失正式文件时可用 `.bak` 恢复并向用户标记。恢复后再次保存将损坏正式文件保留为 `.corrupt`，不拿损坏内容覆盖有效备份。未知 schema/字段/节点类型直接拒绝，不能回退旧备份后偷偷丢弃新字段。无法加载的工程在列表显示错误。
 
 没有承诺任意电源故障下的磁盘 fsync 级原子性；测试覆盖正常持久化、坏 JSON、备份恢复与未知格式保护。v1 读取保留原节点和参数；若旧工程所有节点坐标均为零，则仅为画布显示分配非重叠坐标。未知更高版本继续拒绝，不覆盖原文件。
+
+## CR-006 已有动作组合
+
+robotAction 是叶节点，actionPath 保存机器人完整路径；允许空路径供编辑，执行前拒绝空路径并核对当前设备完整目录。wait 是叶节点，waitMs 为应用侧等待毫秒数，范围0–3600000，界面以秒编辑。start/loop 可包含两类新节点。旧版本缺失两字段时填默认值，保存统一写schema3。
+
+compileSequence 与旧姿态 compilePlan 分开；现阶段机器人执行仅开放纯已有动作/等待/循环组合，混合姿态程序在发送前拒绝。执行方案见 [action-sequence.md](action-sequence.md)。

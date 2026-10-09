@@ -39,6 +39,30 @@ class ActionPlayer extends ChangeNotifier {
   bool _disposed = false, _playedInSession = false, _sawStart = false;
   bool _terminalNeedsStart = false;
   bool _wireStarted = false;
+  bool _sequenceReserved = false;
+
+  void beginSequence() {
+    if (!canPlay || !session.acquireOperation(this)) {
+      throw StateError('请等待当前操作结束');
+    }
+    _sequenceReserved = true;
+    phase = ActionPhase.idle;
+    _wireStarted = false;
+    progress = null;
+    _timer?.cancel();
+  }
+
+  void endSequence() {
+    _sequenceReserved = false;
+    if ({
+      ActionPhase.idle,
+      ActionPhase.completed,
+      ActionPhase.failed,
+    }.contains(phase)) {
+      session.releaseOperation(this);
+    }
+  }
+
   bool get busy => session.ownsOperation(this);
   bool get canPlay => session.ready && !session.executionBusy;
   String get status => switch (phase) {
@@ -76,11 +100,14 @@ class ActionPlayer extends ChangeNotifier {
     _changed();
   }
 
-  Future<void> play(String nextPath) async {
+  Future<void> play(String nextPath, {bool inSequence = false}) async {
     RobotAction.validatePath(nextPath);
-    if (!canPlay || !session.acquireOperation(this)) {
+    if (inSequence
+        ? !_sequenceReserved || !busy || !session.ready
+        : _sequenceReserved || !canPlay) {
       throw StateError('请等待当前动作或控制结束');
     }
+    if (!session.acquireOperation(this)) throw StateError('会话已占用');
     final generation = ++_generation;
     bool valid() =>
         !_disposed && generation == _generation && session.ready && busy;
@@ -89,7 +116,7 @@ class ActionPlayer extends ChangeNotifier {
     error = null;
     _sawStart = false;
     _wireStarted = false;
-    _terminalNeedsStart = _playedInSession;
+    _terminalNeedsStart = _playedInSession || inSequence;
     phase = ActionPhase.preparing;
     _changed();
     try {
@@ -137,7 +164,12 @@ class ActionPlayer extends ChangeNotifier {
         command.payload.isEmpty ||
         !busy ||
         phase == ActionPhase.preparing ||
-        !_wireStarted) {
+        !_wireStarted ||
+        {
+          ActionPhase.idle,
+          ActionPhase.completed,
+          ActionPhase.failed,
+        }.contains(phase)) {
       return;
     }
     final value = command.payload.first;
@@ -159,13 +191,21 @@ class ActionPlayer extends ChangeNotifier {
       progress = 100;
       phase = ActionPhase.completed;
       _timer?.cancel();
-      session.releaseOperation(this);
+      if (!_sequenceReserved) session.releaseOperation(this);
     }
     _changed();
   }
 
   Future<void> stop() async {
     if (!busy) return;
+    if (_sequenceReserved &&
+        {
+          ActionPhase.idle,
+          ActionPhase.completed,
+          ActionPhase.failed,
+        }.contains(phase)) {
+      return;
+    }
     final wasPreparing =
         phase == ActionPhase.preparing ||
         phase == ActionPhase.sending && !_wireStarted;

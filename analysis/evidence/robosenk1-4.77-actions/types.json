@@ -1,0 +1,308 @@
+[
+  {
+    "type": "ActionBlockModel",
+    "fields": [
+      {
+        "name": "Speed",
+        "value": null
+      },
+      {
+        "name": "Delay",
+        "value": null
+      }
+    ]
+  },
+  {
+    "type": "ActionBlockChildModel",
+    "fields": [
+      {
+        "name": "jointNum",
+        "value": null
+      },
+      {
+        "name": "moveNum",
+        "value": null
+      },
+      {
+        "name": "Enable",
+        "value": null
+      },
+      {
+        "name": "LitValues",
+        "value": null
+      },
+      {
+        "name": "LitSliderVaule",
+        "value": null
+      }
+    ]
+  },
+  {
+    "type": "SingleCommandType",
+    "fields": [
+      {
+        "name": "value__",
+        "value": null
+      },
+      {
+        "name": "RobotPose",
+        "value": 0
+      },
+      {
+        "name": "LongPose",
+        "value": 1
+      }
+    ]
+  },
+  {
+    "type": "BlockType",
+    "fields": [
+      {
+        "name": "value__",
+        "value": null
+      },
+      {
+        "name": "None",
+        "value": 0
+      },
+      {
+        "name": "StartBlock",
+        "value": 1
+      },
+      {
+        "name": "ActionBlock",
+        "value": 2
+      },
+      {
+        "name": "IfBlock",
+        "value": 3
+      },
+      {
+        "name": "LoopBlock",
+        "value": 4
+      },
+      {
+        "name": "DanceBlock",
+        "value": 5
+      },
+      {
+        "name": "ActionBlockChild",
+        "value": 6
+      },
+      {
+        "name": "SingleCommand",
+        "value": 7
+      }
+    ]
+  },
+  {
+    "type": "RobotJointType",
+    "fields": [
+      {
+        "name": "value__",
+        "value": null
+      },
+      {
+        "name": "Joint00",
+        "value": 0
+      },
+      {
+        "name": "Joint01",
+        "value": 1
+      },
+      {
+        "name": "Joint02",
+        "value": 2
+      },
+      {
+        "name": "Joint03",
+        "value": 3
+      },
+      {
+        "name": "Joint04",
+        "value": 4
+      },
+      {
+        "name": "Joint05",
+        "value": 5
+      },
+      {
+        "name": "Joint06",
+        "value": 6
+      },
+      {
+        "name": "Joint07",
+        "value": 7
+      },
+      {
+        "name": "Joint08",
+        "value": 8
+      },
+      {
+        "name": "Joint09",
+        "value": 9
+      },
+      {
+        "name": "Joint10",
+        "value": 10
+      },
+      {
+        "name": "Joint11",
+        "value": 11
+      },
+      {
+        "name": "Joint12",
+        "value": 12
+      },
+      {
+        "name": "Joint13",
+        "value": 13
+      },
+      {
+        "name": "Joint14",
+        "value": 14
+      },
+      {
+        "name": "Joint15",
+        "value": 15
+      },
+      {
+        "name": "Joint16",
+        "value": 16
+      },
+      {
+        "name": "Joint17",
+        "value": 17
+      },
+      {
+        "name": "Joint18",
+        "value": 18
+      },
+      {
+        "name": "Joint19",
+        "value": 19
+      },
+      {
+        "name": "Joint20",
+        "value": 20
+      },
+      {
+        "name": "Joint21",
+        "value": 21
+      },
+      {
+        "name": "Joint22",
+        "value": 22
+      },
+      {
+        "name": "Joint23",
+        "value": 23
+      }
+    ]
+  },
+  {
+    "type": "RobotJointType",
+    "fields": [
+      {
+        "name": "value__",
+        "value": null
+      },
+      {
+        "name": "左大腿",
+        "value": 0
+      },
+      {
+        "name": "左小腿",
+        "value": 1
+      },
+      {
+        "name": "左脚踝",
+        "value": 2
+      },
+      {
+        "name": "右大腿",
+        "value": 3
+      },
+      {
+        "name": "右小腿",
+        "value": 4
+      },
+      {
+        "name": "右脚踝",
+        "value": 5
+      },
+      {
+        "name": "左肩",
+        "value": 6
+      },
+      {
+        "name": "右肩",
+        "value": 7
+      },
+      {
+        "name": "左胯",
+        "value": 8
+      },
+      {
+        "name": "左脚",
+        "value": 9
+      },
+      {
+        "name": "右胯",
+        "value": 10
+      },
+      {
+        "name": "右脚",
+        "value": 11
+      },
+      {
+        "name": "左臂",
+        "value": 12
+      },
+      {
+        "name": "左手",
+        "value": 13
+      },
+      {
+        "name": "右臂",
+        "value": 14
+      },
+      {
+        "name": "右手",
+        "value": 15
+      },
+      {
+        "name": "头部",
+        "value": 16
+      },
+      {
+        "name": "Empty17",
+        "value": 17
+      },
+      {
+        "name": "Empty18",
+        "value": 18
+      },
+      {
+        "name": "Empty19",
+        "value": 19
+      },
+      {
+        "name": "Empty20",
+        "value": 20
+      },
+      {
+        "name": "Empty21",
+        "value": 21
+      },
+      {
+        "name": "Empty22",
+        "value": 22
+      },
+      {
+        "name": "Empty23",
+        "value": 23
+      }
+    ]
+  }
+]

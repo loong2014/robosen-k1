@@ -4,15 +4,21 @@ import '../programming/project.dart';
 import '../robot/session/robot_session.dart';
 import '../storage/project_repository.dart';
 import 'editor_page.dart';
+import '../features/actions/action_catalog.dart';
+import '../features/actions/action_player.dart';
 
 class ProjectsPage extends StatefulWidget {
   const ProjectsPage({
     super.key,
     required this.repository,
     required this.session,
+    this.actionCatalog,
+    this.player,
   });
   final ProjectRepository repository;
   final RobotSession session;
+  final ActionCatalog? actionCatalog;
+  final ActionPlayer? player;
   @override
   State<ProjectsPage> createState() => _ProjectsPageState();
 }
@@ -32,6 +38,8 @@ class _ProjectsPageState extends State<ProjectsPage> {
           loaded: loaded,
           repository: widget.repository,
           session: widget.session,
+          catalog: widget.actionCatalog,
+          player: widget.player,
         ),
       ),
     );

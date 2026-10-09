@@ -1,4 +1,9 @@
+import 'dart:async';
 import 'package:flutter/material.dart';
+import '../features/actions/action_catalog.dart';
+import '../features/actions/action_player.dart';
+import '../programming/action_sequence.dart';
+import 'action_center_page.dart';
 import '../app.dart';
 import '../programming/project.dart';
 import '../programming/project_editor.dart';
@@ -12,20 +17,43 @@ class EditorPage extends StatefulWidget {
     required this.loaded,
     required this.repository,
     required this.session,
+    this.catalog,
+    this.player,
   });
   final LoadedProject loaded;
   final ProjectRepository repository;
   final RobotSession session;
+  final ActionCatalog? catalog;
+  final ActionPlayer? player;
   @override
   State<EditorPage> createState() => _EditorPageState();
 }
 
-class _EditorPageState extends State<EditorPage> {
+class _EditorPageState extends State<EditorPage> with WidgetsBindingObserver {
+  ActionSequenceRunner? runner;
+  bool get running => runner?.running ?? false;
+  @override
+  void initState() {
+    super.initState();
+    WidgetsBinding.instance.addObserver(this);
+    if (widget.player != null && widget.catalog != null) {
+      runner = ActionSequenceRunner(widget.player!, widget.catalog!);
+    }
+  }
+
+  @override
+  void didChangeAppLifecycleState(AppLifecycleState state) {
+    if (state != AppLifecycleState.resumed) unawaited(runner?.cancel());
+  }
+
   late final editor = ProjectEditor(widget.loaded.project);
   String? selected;
   bool saving = false, canPop = false;
   @override
   void dispose() {
+    WidgetsBinding.instance.removeObserver(this);
+    widget.catalog?.cancel();
+    runner?.dispose();
     editor.dispose();
     super.dispose();
   }
@@ -50,6 +78,8 @@ class _EditorPageState extends State<EditorPage> {
 
   Future<void> leave() async {
     if (saving) return;
+    await runner?.cancel();
+    if (!mounted) return;
     if (editor.dirty) {
       final choice = await showDialog<String>(
         context: context,
@@ -83,6 +113,7 @@ class _EditorPageState extends State<EditorPage> {
   }
 
   void add(BlockKind kind) {
+    if (running) return;
     final node = editor.project.nodes[selected];
     final parent = kind == BlockKind.actionChild
         ? node
@@ -93,12 +124,85 @@ class _EditorPageState extends State<EditorPage> {
       if (parent == null) throw const FormatException('请先选中动作积木');
       final id = editor.add(kind, parent.id, parent.children.length);
       setState(() => selected = id);
+      if (kind == BlockKind.robotAction) {
+        unawaited(edit(editor.project.nodes[id]!));
+      }
     } catch (e) {
       showError(context, e);
     }
   }
 
   Future<void> edit(BlockNode node) async {
+    if (running) return;
+    if (node.kind == BlockKind.robotAction) {
+      if (widget.catalog == null ||
+          widget.player == null ||
+          !widget.session.ready) {
+        showError(context, '请先连接机器人，再双击积木选择已有动作');
+        return;
+      }
+      final path = await Navigator.of(context).push<String>(
+        MaterialPageRoute(
+          builder: (_) => ActionCenterPage(
+            session: widget.session,
+            catalog: widget.catalog!,
+            player: widget.player!,
+            selecting: true,
+            selectionTitle: '选择编程动作',
+          ),
+        ),
+      );
+      if (path != null && mounted) {
+        editor.change(node.copyWith(actionPath: path));
+      }
+      return;
+    }
+    if (node.kind == BlockKind.wait) {
+      var seconds = '${node.waitMs / 1000}';
+      String? error;
+      final ms = await showDialog<int>(
+        context: context,
+        builder: (context) => StatefulBuilder(
+          builder: (context, update) => AlertDialog(
+            title: const Text('等待时间'),
+            content: Column(
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                TextFormField(
+                  initialValue: seconds,
+                  keyboardType: const TextInputType.numberWithOptions(
+                    decimal: true,
+                  ),
+                  decoration: const InputDecoration(labelText: '秒（0–3600）'),
+                  onChanged: (v) => seconds = v,
+                ),
+                if (error != null)
+                  Text(error!, style: const TextStyle(color: Colors.red)),
+              ],
+            ),
+            actions: [
+              TextButton(
+                onPressed: () => Navigator.pop(context),
+                child: const Text('取消'),
+              ),
+              FilledButton(
+                onPressed: () {
+                  final n = double.tryParse(seconds);
+                  if (n == null || !n.isFinite || n < 0 || n > 3600) {
+                    update(() => error = '请输入0至3600秒');
+                    return;
+                  }
+                  Navigator.pop(context, (n * 1000).round());
+                },
+                child: const Text('应用'),
+              ),
+            ],
+          ),
+        ),
+      );
+      if (ms != null && mounted) editor.change(node.copyWith(waitMs: ms));
+      return;
+    }
     if (node.kind == BlockKind.start) return;
     if (node.kind == BlockKind.robotPose || node.kind == BlockKind.longPose) {
       ScaffoldMessenger.of(
@@ -245,15 +349,39 @@ class _EditorPageState extends State<EditorPage> {
     if (changed != null && mounted) editor.change(changed);
   }
 
+  Future<void> playSequence() async {
+    if (runner == null) return;
+    try {
+      compileSequence(editor.project);
+      if (!widget.session.ready) throw StateError('请先连接机器人');
+      if (!widget.catalog!.complete) await widget.catalog!.refresh();
+      if (!mounted) return;
+      if (WidgetsBinding.instance.lifecycleState != null &&
+          WidgetsBinding.instance.lifecycleState != AppLifecycleState.resumed) {
+        return;
+      }
+      await runner!.run(editor.project);
+    } catch (e) {
+      if (mounted) showError(context, e);
+    }
+  }
+
   void preview() {
     try {
-      final plan = compilePlan(editor.project);
+      final sequence = editor.project.nodes.values.any(
+        (n) => n.kind == BlockKind.robotAction || n.kind == BlockKind.wait,
+      );
+      final count = sequence
+          ? compileSequence(editor.project).length
+          : compilePlan(editor.project).length;
       showDialog<void>(
         context: context,
         builder: (context) => AlertDialog(
           title: const Text('程序检查通过'),
           content: Text(
-            '循环展开后共 ${plan.length} 个动作。\n\n上传执行尚未开放：动作文件格式和播放应答仍需原 APK 样本核对及机器人验证。当前工程可以保存、重开和编辑。',
+            sequence
+                ? '展开后共 $count 个步骤。连接机器人后点击播放，运行期间请保持应用在前台。'
+                : '展开后共 $count 个姿态步骤。姿态文件上传仍未开放；已有动作组合可直接播放。',
           ),
           actions: [
             TextButton(
@@ -270,7 +398,12 @@ class _EditorPageState extends State<EditorPage> {
 
   @override
   Widget build(BuildContext context) => ListenableBuilder(
-    listenable: editor,
+    listenable: Listenable.merge([
+      editor,
+      ?runner,
+      if (widget.player != null) widget.player!,
+      widget.session,
+    ]),
     builder: (context, _) => PopScope(
       canPop: canPop,
       onPopInvokedWithResult: (didPop, result) {
@@ -285,12 +418,12 @@ class _EditorPageState extends State<EditorPage> {
               child: Text(saving ? '保存中' : '保存'),
             ),
             IconButton(
-              onPressed: editor.canUndo ? editor.undo : null,
+              onPressed: !running && editor.canUndo ? editor.undo : null,
               icon: const Icon(Icons.undo),
               tooltip: '撤销',
             ),
             IconButton(
-              onPressed: editor.canRedo ? editor.redo : null,
+              onPressed: !running && editor.canRedo ? editor.redo : null,
               icon: const Icon(Icons.redo),
               tooltip: '重做',
             ),
@@ -311,6 +444,8 @@ class _EditorPageState extends State<EditorPage> {
                   padding: const EdgeInsets.all(8),
                   children: [
                     for (final item in <(BlockKind, String)>[
+                      (BlockKind.robotAction, '已有动作'),
+                      (BlockKind.wait, '等待'),
                       (BlockKind.action, '动作'),
                       (BlockKind.actionChild, '关节'),
                       (BlockKind.loop, '循环'),
@@ -321,15 +456,16 @@ class _EditorPageState extends State<EditorPage> {
                         padding: const EdgeInsets.only(right: 8),
                         child: LongPressDraggable<BlockKind>(
                           data: item.$1,
+                          maxSimultaneousDrags: running ? 0 : 1,
                           feedback: Material(child: Chip(label: Text(item.$2))),
                           child: ActionChip(
                             label: Text(item.$2),
-                            onPressed: () => add(item.$1),
+                            onPressed: running ? null : () => add(item.$1),
                           ),
                         ),
                       ),
                     OutlinedButton.icon(
-                      onPressed: preview,
+                      onPressed: running ? null : preview,
                       icon: const Icon(Icons.check),
                       label: const Text('检查程序'),
                     ),
@@ -341,19 +477,22 @@ class _EditorPageState extends State<EditorPage> {
                 child: Text('长按上方积木拖入画布；拖动积木靠近开始、循环或动作连接。双指移动和缩放画布。'),
               ),
               Expanded(
-                child: BlockCanvas(
-                  editor: editor,
-                  selected: selected,
-                  onSelect: (id) => setState(() => selected = id),
-                  onEdit: edit,
-                  onError: (e) => showError(context, e),
+                child: AbsorbPointer(
+                  absorbing: running,
+                  child: BlockCanvas(
+                    editor: editor,
+                    selected: selected,
+                    onSelect: (id) => setState(() => selected = id),
+                    onEdit: edit,
+                    onError: (e) => showError(context, e),
+                  ),
                 ),
               ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
                   TextButton(
-                    onPressed: selected == null
+                    onPressed: running || selected == null
                         ? null
                         : () {
                             editor.detach(selected!);
@@ -362,7 +501,9 @@ class _EditorPageState extends State<EditorPage> {
                   ),
                   TextButton(
                     onPressed:
-                        selected == null || selected == editor.project.rootId
+                        running ||
+                            selected == null ||
+                            selected == editor.project.rootId
                         ? null
                         : () {
                             editor.remove(selected!);
@@ -371,7 +512,7 @@ class _EditorPageState extends State<EditorPage> {
                     child: const Text('删除'),
                   ),
                   TextButton(
-                    onPressed: selected == null
+                    onPressed: running || selected == null
                         ? null
                         : () {
                             final node = editor.project.nodes[selected];
@@ -381,9 +522,50 @@ class _EditorPageState extends State<EditorPage> {
                   ),
                 ],
               ),
-              const Padding(
-                padding: EdgeInsets.all(16),
-                child: Text('上传执行待协议验证，当前支持离线编辑。'),
+              Padding(
+                padding: const EdgeInsets.all(12),
+                child: Column(
+                  children: [
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        FilledButton.icon(
+                          onPressed:
+                              runner != null &&
+                                  !running &&
+                                  !widget.session.executionBusy
+                              ? playSequence
+                              : null,
+                          icon: const Icon(Icons.play_arrow),
+                          label: const Text('播放组合'),
+                        ),
+                        const SizedBox(width: 12),
+                        OutlinedButton.icon(
+                          onPressed: running
+                              ? runner!.cancel
+                              : widget.player?.busy == true
+                              ? widget.player!.stop
+                              : null,
+                          icon: const Icon(Icons.stop),
+                          label: const Text('停止'),
+                        ),
+                      ],
+                    ),
+                    if (runner != null && runner!.phase != SequencePhase.idle)
+                      Text(
+                        runner!.error ??
+                            (running
+                                ? '步骤 ${runner!.step}/${runner!.total} · ${widget.player!.status}'
+                                : runner!.phase == SequencePhase.completed
+                                ? '组合执行完成'
+                                : '组合已结束'),
+                      ),
+                    const Text(
+                      '已有动作、等待、循环可播放；运行时保持前台连接。姿态编程仍可编辑保存。',
+                      textAlign: TextAlign.center,
+                    ),
+                  ],
+                ),
               ),
             ],
           ),
