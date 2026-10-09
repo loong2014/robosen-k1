@@ -5,6 +5,8 @@
 | 目录/文件 | 用途 |
 |---|---|
 | reports/蓝牙协议分析.md | 已确认协议、连接顺序、业务逻辑、限制与证据入口 |
+| reports/蓝牙控制界面分析.md | 连接过滤、八方向输入、快捷动作、音量、视频、退出逻辑及当前实现差异 |
+| reports/动作中心分析.md | 三目录全量动作来源、目录查询 / 结束回传、列表创建、播放 / 进度与本地工程 / 在线下载边界 |
 | reports/指令枚举.md | 全部 59 项原始枚举 |
 | reports/commands.csv / commands.json | 可加工的指令数据 |
 | reports/send_callsites.json | 87 处发送调用点与 ARM64 上下文 |
@@ -45,3 +47,5 @@ analysis/tools/venv/bin/python analysis/scripts/verify_native_codec.py
 ```
 
 方法提取脚本针对本样本使用 Cpp2IL `Offset` 属性，随后以 ELF `PT_LOAD` 转换为 VA。不要将工具输出的 RVA 字段直接当成其他 ELF 文件的有效 VA。模拟器在 macOS 受限沙盒内可能因内存映射限制失败，需要允许该特定离线脚本运行。
+
+2026-10-09 用户提供 APK 4.77 的独立证据见 [control-source](evidence/control-source/README.md)：目录查询 String.TrimEnd SDK、20 个选定 ARM64 方法、中文编码向量及两张精选 PNG。旧版 4.75 地址保持，分析工具不进入 Flutter 应用。

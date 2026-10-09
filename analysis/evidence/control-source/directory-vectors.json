@@ -1,0 +1,23 @@
+{
+  "source": "APK 4.77 TrimEnd(char) static evidence + legacy reference codec; not a robot capture",
+  "vectors": [
+    {
+      "directory": "Action/",
+      "request": "Action",
+      "payload": "41 63 74 69 6f 6e",
+      "tx16_frame": "ff ff 08 16 41 63 74 69 6f 6e 7c"
+    },
+    {
+      "directory": "Action/skill/",
+      "request": "Action/skill",
+      "payload": "41 63 74 69 6f 6e 2f 73 6b 69 6c 6c",
+      "tx16_frame": "ff ff 0e 16 41 63 74 69 6f 6e 2f 73 6b 69 6c 6c d0"
+    },
+    {
+      "directory": "DownloadAction/",
+      "request": "DownloadAction",
+      "payload": "44 6f 77 6e 6c 6f 61 64 41 63 74 69 6f 6e",
+      "tx16_frame": "ff ff 10 16 44 6f 77 6e 6c 6f 61 64 41 63 74 69 6f 6e bc"
+    }
+  ]
+}

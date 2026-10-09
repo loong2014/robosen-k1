@@ -30,6 +30,15 @@ analysis/cpp2il/
 analysis/dummydll/
 analysis/isil/
 
+# Raw device inventories stay local; scoped K-One summaries are committed
+docs/testing/results/*-devices.log
+docs/testing/results/*-iphone-device.json
+docs/testing/results/*-iphone-device.log
+docs/testing/results/*-iphone-processes.json
+docs/testing/results/*-iphone-processes.log
+docs/testing/results/*-iphone-running-after-trust.json
+docs/testing/results/*-iphone-running-after-trust.log
+
 # Flutter and platform build output (also covered by app-specific ignores)
 **/.dart_tool/
 **/.gradle/

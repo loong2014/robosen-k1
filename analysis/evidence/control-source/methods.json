@@ -1,0 +1,182 @@
+[
+  {
+    "assembly": "Assembly-CSharp.dll",
+    "type": "BTDevice",
+    "name": "CommandInvoke",
+    "offset": 33819688,
+    "va": 33836072,
+    "length": 2148,
+    "signature": "2001011268"
+  },
+  {
+    "assembly": "Assembly-CSharp.dll",
+    "type": "PreActionBtnInfo",
+    "name": "Init",
+    "offset": 34311508,
+    "va": 34327892,
+    "length": 312,
+    "signature": "200001"
+  },
+  {
+    "assembly": "Assembly-CSharp.dll",
+    "type": "RobotActionInterfaceScript",
+    "name": "get_ActionDirectory",
+    "offset": 34396836,
+    "va": 34413220,
+    "length": 64,
+    "signature": "00000e"
+  },
+  {
+    "assembly": "Assembly-CSharp.dll",
+    "type": "RobotActionInterfaceScript",
+    "name": "get_ActionSkillDirectory",
+    "offset": 34396900,
+    "va": 34413284,
+    "length": 64,
+    "signature": "00000e"
+  },
+  {
+    "assembly": "Assembly-CSharp.dll",
+    "type": "RobotActionInterfaceScript",
+    "name": "get_DownloadActionDirectory",
+    "offset": 34396964,
+    "va": 34413348,
+    "length": 64,
+    "signature": "00000e"
+  },
+  {
+    "assembly": "Assembly-CSharp.dll",
+    "type": "RobotActionInterfaceScript",
+    "name": "SetCurrentActionPlayProgress",
+    "offset": 34399276,
+    "va": 34415660,
+    "length": 220,
+    "signature": "200201125c1d05"
+  },
+  {
+    "assembly": "Assembly-CSharp.dll",
+    "type": "RobotActionInterfaceScript",
+    "name": ".cctor",
+    "offset": 34410744,
+    "va": 34427128,
+    "length": 620,
+    "signature": "000001"
+  },
+  {
+    "assembly": "Assembly-CSharp.dll",
+    "type": "ActionRectScript",
+    "name": "MianBtnClick",
+    "offset": 34476652,
+    "va": 34493036,
+    "length": 3516,
+    "signature": "200001"
+  },
+  {
+    "assembly": "Assembly-CSharp.dll",
+    "type": "ActionRectScript",
+    "name": "SetProgress",
+    "offset": 34398940,
+    "va": 34415324,
+    "length": 336,
+    "signature": "20010108"
+  },
+  {
+    "assembly": "Assembly-CSharp.dll",
+    "type": "<CheckBleConnecting>d__29",
+    "name": "MoveNext",
+    "offset": 34238104,
+    "va": 34254488,
+    "length": 3844,
+    "signature": "200002"
+  },
+  {
+    "assembly": "mscorlib.dll",
+    "type": "String",
+    "name": "Trim",
+    "offset": 55683756,
+    "va": 55700140,
+    "length": 8,
+    "signature": "20000e"
+  },
+  {
+    "assembly": "mscorlib.dll",
+    "type": "String",
+    "name": "Trim",
+    "offset": 55684044,
+    "va": 55700428,
+    "length": 32,
+    "signature": "20010e03"
+  },
+  {
+    "assembly": "mscorlib.dll",
+    "type": "String",
+    "name": "Trim",
+    "offset": 55684432,
+    "va": 55700816,
+    "length": 44,
+    "signature": "20010e1d03"
+  },
+  {
+    "assembly": "mscorlib.dll",
+    "type": "String",
+    "name": "TrimStart",
+    "offset": 55684476,
+    "va": 55700860,
+    "length": 32,
+    "signature": "20010e03"
+  },
+  {
+    "assembly": "mscorlib.dll",
+    "type": "String",
+    "name": "TrimStart",
+    "offset": 55684508,
+    "va": 55700892,
+    "length": 44,
+    "signature": "20010e1d03"
+  },
+  {
+    "assembly": "mscorlib.dll",
+    "type": "String",
+    "name": "TrimEnd",
+    "offset": 55684552,
+    "va": 55700936,
+    "length": 8,
+    "signature": "20000e"
+  },
+  {
+    "assembly": "mscorlib.dll",
+    "type": "String",
+    "name": "TrimEnd",
+    "offset": 55684560,
+    "va": 55700944,
+    "length": 32,
+    "signature": "20010e03"
+  },
+  {
+    "assembly": "mscorlib.dll",
+    "type": "String",
+    "name": "TrimEnd",
+    "offset": 55684592,
+    "va": 55700976,
+    "length": 44,
+    "signature": "20010e1d03"
+  },
+  {
+    "assembly": "mscorlib.dll",
+    "type": "String",
+    "name": "TrimWhiteSpaceHelper",
+    "offset": 55683764,
+    "va": 55700148,
+    "length": 280,
+    "signature": "20010e119564"
+  },
+  {
+    "assembly": "mscorlib.dll",
+    "type": "String",
+    "name": "TrimHelper",
+    "offset": 55684076,
+    "va": 55700460,
+    "length": 356,
+    "signature": "20030e0f0308119564"
+  }
+]

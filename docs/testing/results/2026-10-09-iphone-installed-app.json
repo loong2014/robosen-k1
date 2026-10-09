@@ -1,0 +1,50 @@
+{
+  "info" : {
+    "arguments" : [
+      "devicectl",
+      "device",
+      "info",
+      "apps",
+      "--device",
+      "2969CA3B-D050-5D5D-87AB-FA78661FD1E8",
+      "--bundle-id",
+      "com.kone.personal.koneApp",
+      "--json-output",
+      "/Users/panfeng/code/robosen-k1/docs/testing/results/2026-10-09-iphone-installed-app.json",
+      "--log-output",
+      "/Users/panfeng/code/robosen-k1/docs/testing/results/2026-10-09-iphone-installed-app.log",
+      "--timeout",
+      "30"
+    ],
+    "commandType" : "devicectl.device.info.apps",
+    "environment" : {
+      "TERM" : "dumb"
+    },
+    "jsonVersion" : 3,
+    "outcome" : "success",
+    "version" : "506.7"
+  },
+  "result" : {
+    "apps" : [
+      {
+        "appClip" : false,
+        "builtByDeveloper" : true,
+        "bundleIdentifier" : "com.kone.personal.koneApp",
+        "bundleVersion" : "2",
+        "defaultApp" : false,
+        "hidden" : false,
+        "internalApp" : false,
+        "name" : "K-One",
+        "removable" : true,
+        "url" : "file:///private/var/containers/Bundle/Application/85778ACD-0175-403F-88B5-8FD92F0F213A/Runner.app/",
+        "version" : "0.1.1"
+      }
+    ],
+    "defaultAppsIncluded" : false,
+    "deviceIdentifier" : "2969CA3B-D050-5D5D-87AB-FA78661FD1E8",
+    "hiddenAppsIncluded" : false,
+    "internalAppsIncluded" : false,
+    "matchingBundleIdentifier" : "com.kone.personal.koneApp",
+    "removableAppsIncluded" : true
+  }
+}

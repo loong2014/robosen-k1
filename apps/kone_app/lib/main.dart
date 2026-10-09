@@ -6,6 +6,7 @@ import 'robot/session/robot_session.dart';
 import 'robot/transport/ble_transport.dart';
 import 'storage/project_repository.dart';
 import 'storage/diagnostic_log.dart';
+import 'storage/control_shortcuts.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -16,6 +17,7 @@ Future<void> main() async {
       KoneApp(
         session: RobotSession(BleTransport(), onLog: diagnostics.record),
         repository: ProjectRepository(Directory('${root.path}/projects')),
+        shortcutRepository: ControlShortcuts(Directory('${root.path}/control')),
       ),
     );
   } catch (e) {

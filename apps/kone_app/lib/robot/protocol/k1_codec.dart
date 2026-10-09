@@ -80,9 +80,9 @@ class K1StreamDecoder {
 
 class RobotState {
   RobotState.fromPayload(List<int> payload)
-    : raw = List<int>.generate(8, (i) => i < payload.length ? payload[i] : 0);
+    : raw = List<int>.unmodifiable(payload);
   final List<int> raw;
-  int get batteryRaw => raw[1];
-  int get volumeRaw => raw[2];
-  int get progressRaw => raw[3];
+  int? get batteryRaw => raw.length > 1 ? raw[1] : null;
+  int? get volumeRaw => raw.length > 2 ? raw[2] : null;
+  int? get progressRaw => raw.length > 3 ? raw[3] : null;
 }

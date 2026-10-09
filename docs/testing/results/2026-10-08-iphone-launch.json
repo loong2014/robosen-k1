@@ -1,0 +1,72 @@
+{
+  "error" : {
+    "code" : 10002,
+    "domain" : "com.apple.dt.CoreDeviceError",
+    "userInfo" : {
+      "BundleIdentifier" : {
+        "string" : "com.kone.personal.koneApp"
+      },
+      "NSLocalizedDescription" : {
+        "string" : "The application failed to launch."
+      },
+      "NSUnderlyingError" : {
+        "error" : {
+          "code" : 1,
+          "domain" : "FBSOpenApplicationServiceErrorDomain",
+          "userInfo" : {
+            "BSErrorCodeDescription" : {
+              "string" : "RequestDenied"
+            },
+            "FBSOpenApplicationRequestID" : {
+              "string" : "0x7113"
+            },
+            "NSLocalizedDescription" : {
+              "string" : "The request to open \"com.kone.personal.koneApp\" failed."
+            },
+            "NSLocalizedFailureReason" : {
+              "string" : "The request was denied by service delegate (SBMainWorkspace) for reason: Security (\"Unable to launch com.kone.personal.koneApp because it has an invalid code signature, inadequate entitlements or its profile has not been explicitly trusted by the user\")."
+            },
+            "NSUnderlyingError" : {
+              "error" : {
+                "code" : 3,
+                "domain" : "FBSOpenApplicationErrorDomain",
+                "userInfo" : {
+                  "BSErrorCodeDescription" : {
+                    "string" : "Security"
+                  },
+                  "NSLocalizedFailureReason" : {
+                    "string" : "Unable to launch com.kone.personal.koneApp because it has an invalid code signature, inadequate entitlements or its profile has not been explicitly trusted by the user."
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "info" : {
+    "arguments" : [
+      "devicectl",
+      "device",
+      "process",
+      "launch",
+      "--device",
+      "2969CA3B-D050-5D5D-87AB-FA78661FD1E8",
+      "com.kone.personal.koneApp",
+      "--timeout",
+      "30",
+      "--json-output",
+      "/Users/panfeng/code/robosen-k1/docs/testing/results/2026-10-08-iphone-launch.json",
+      "--log-output",
+      "/Users/panfeng/code/robosen-k1/docs/testing/results/2026-10-08-iphone-launch.log"
+    ],
+    "commandType" : "devicectl.device.process.launch",
+    "environment" : {
+      "TERM" : "dumb"
+    },
+    "jsonVersion" : 3,
+    "outcome" : "failed",
+    "version" : "506.7"
+  }
+}

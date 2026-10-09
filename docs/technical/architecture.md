@@ -1,8 +1,8 @@
 # 首版技术方案
 
-版本：0.2 ｜ 状态：accepted ｜ 日期：2026-10-08
+版本：0.3 ｜ 状态：accepted ｜ 日期：2026-10-09；v0.2 的控制部分按已批准 CR-005 替代。
 
-输入：PRD-001 v1.1、[CR-003](../../prd/changes/CR-003-首版实施启动方案.md) 和 [CR-004](../../prd/changes/CR-004-Unity式积木画布交互.md)。关键选型见 [ADR-001](decisions/ADR-001-首版技术基线.md)。下文为新应用设计，不声称等同于原 APK 的源码结构。
+输入：PRD-001 v1.2、CR-003、CR-004、[CR-005](../../prd/changes/CR-005-原版蓝牙控制界面复刻.md)。关键选型见 [ADR-001](decisions/ADR-001-首版技术基线.md)。下文为新应用设计，不声称等同于原 APK 的源码结构。
 
 ## 1. 工程与技术组成
 
@@ -41,7 +41,7 @@ apps/kone_app/lib/
 
 ## 3. BLE 与控制
 
-设备候选按 `K1-`、`K1AI-` 匹配；不假设广播一定包含服务 UUID。连接后核查 FFE0/FFE1 及实际特征属性。仅连接用户选定的一台设备。
+设备候选按 CR-005 的 `K1`、`k1` 前缀匹配；不假设广播一定包含服务 UUID，不凭名称确认型号。连接后核查 FFE0/FFE1 及实际特征属性。仅连接用户选定的一台设备。
 
 ```text
 idle → scanning → connecting → discovering → subscribing → handshaking → ready
@@ -96,3 +96,13 @@ Project {
 测试使用原生向量、模拟传输、编辑器 widget、文件恢复、真机 BLE 与机器人动作五类证据。详细用例见 [测试草案](../testing/acceptance-cases.md)。
 
 批准记录：2026-10-07，用户明确回复“开始编码”，接受 CR-003 与本技术方案 v0.1。未验证的协议行为仍按证据门槛处理。
+
+## 7. CR-005 的控制与动作中心增补
+
+2026-10-09 用户“批准 CR-005 v0.2”，同步 PRD v1.2。控制页已从四方向按钮变为八方向摇杆，新增快捷动作、音量、绑定设置和动作中心。详见 [control-replica.md](control-replica.md)；原 T06/T07 的工程编译上传门槛保持。
+
+`features/actions` 的 ActionCatalog / ActionPlayer 接受目录 / 路径及编码服务；RobotSession 统一串行请求、目录多响应收集和动作操作所有权。TX 0x16 查询去尾斜线目录、RX 0x16 收名称、RX 0xFA 结束；禁止 TX 0xFA。刷新、摇杆、目录 / 快捷播放互斥；停止可取消尚未写入的意图，已经开始的帧先完整写完，随后发停止。
+
+GB18030 通过小型系统 MethodChannel 实现，页面不直接编码协议字节。快捷配置单独保存 schemaVersion=1 的 control-shortcuts.json；工程继续 v2。实际入口为 lib/app.dart、lib/ui/* 与 lib/features/*，上方目录图为职责划分而非逐路径清单。仅两张原版 PNG 位于 assets/control，不添加 Unity。
+
+会话无线上目录 / 动作 ID：取消、目录超时要求重新连接；后续播放的独立迟到 100 不作为新动作完成。无法完全确定其他迟到通知归属，机器人实机仍按对应 TC-ACT / TC-CTL 验证。

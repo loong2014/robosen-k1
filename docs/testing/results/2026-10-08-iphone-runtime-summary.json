@@ -1,0 +1,46 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-10-08",
+  "timezone": "Asia/Shanghai",
+  "scope": "K-One installation and running process only; unrelated apps and unique hardware identifiers omitted.",
+  "app": {
+    "name": "K-One",
+    "bundleIdentifier": "com.kone.personal.koneApp",
+    "version": "0.1.0",
+    "bundleVersion": "1"
+  },
+  "checks": {
+    "install": "success",
+    "installedApp": "success",
+    "launch": "success",
+    "processes": "success"
+  },
+  "process": {
+    "processIdentifier": 1628,
+    "executableName": "Runner.app/Runner",
+    "matchesLaunchedExecutable": true,
+    "presentInSubsequentProcessList": true
+  },
+  "rawEvidence": [
+    {
+      "file": "2026-10-08-iphone-install.json",
+      "sha256": "14624a955feb71c8edb99d55d2867e888892bf60f5ec7414bc0e79ba1de615a1",
+      "retention": "repository"
+    },
+    {
+      "file": "2026-10-08-iphone-installed-app-after-trust.json",
+      "sha256": "234d930783ba582df6e55ddbf0b4d4754303b251f96ce38e10f55024e16dbcf4",
+      "retention": "repository"
+    },
+    {
+      "file": "2026-10-08-iphone-launch-after-trust.json",
+      "sha256": "81fa6eb01709856814a8be5d89f21ba80a5c1396f8c8f160ff3f6aa020f06ae6",
+      "retention": "repository"
+    },
+    {
+      "file": "2026-10-08-iphone-running-after-trust.json",
+      "sha256": "e987a1bd355376c4148bb5a7c762b3af4c20f93fbd8fd945bada65a9c78e1046",
+      "retention": "local-only"
+    }
+  ]
+}

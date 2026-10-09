@@ -9,6 +9,8 @@ class FakeTransport implements RobotTransport {
   final decoder = K1StreamDecoder();
   bool autoReply = true, connected = false;
   Completer<void>? writeGate;
+  void Function(K1Command)? onCommand;
+  void Function(List<int>)? onChunk;
   @override
   int get writeLimit => 20;
   @override
@@ -33,8 +35,10 @@ class FakeTransport implements RobotTransport {
   Future<void> write(List<int> bytes) async {
     await writeGate?.future;
     if (!connected) throw StateError('disconnected');
+    onChunk?.call(bytes);
     for (final command in decoder.feed(bytes)) {
       sent.add(command);
+      onCommand?.call(command);
       if (autoReply && (command.code == 11 || command.code == 15)) {
         incoming.add(K1Codec.encode(command.code));
       }

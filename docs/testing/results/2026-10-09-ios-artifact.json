@@ -1,0 +1,8 @@
+{
+  "version": "0.1.1",
+  "build": "2",
+  "bundle": "com.kone.personal.koneApp",
+  "profile_expires_utc": "2026-10-15 03:02:24",
+  "target_phone_in_profile": true,
+  "app": "apps/kone_app/build/ios/Release-iphoneos/Runner.app"
+}

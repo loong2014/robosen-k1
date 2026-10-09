@@ -3,7 +3,7 @@ class RobotDevice {
   final String id;
   final String name;
   final int rssi;
-  bool get supported => name.startsWith('K1-') || name.startsWith('K1AI-');
+  bool get supported => name.startsWith('K1') || name.startsWith('k1');
 }
 
 abstract interface class RobotTransport {

@@ -1,0 +1,24 @@
+Running Gradle task 'assembleRelease'...                        
+Font asset "MaterialIcons-Regular.otf" was tree-shaken, reducing it from 1645184 to 3672 bytes (99.8% reduction). Tree-shaking can be disabled by providing the --no-tree-shake-icons flag when building your app.
+/Users/panfeng/code/robosen-k1/apps/kone_app/android/app/src/main/java/io/flutter/plugins/GeneratedPluginRegistrant.java:19: 错误: 程序包dev.flutter.plugins.integration_test不存在
+      flutterEngine.getPlugins().add(new dev.flutter.plugins.integration_test.IntegrationTestPlugin());
+                                                                             ^
+1 个错误
+
+FAILURE: Build failed with an exception.
+
+* What went wrong:
+Execution failed for task ':app:compileReleaseJavaWithJavac'.
+> Compilation failed; see the compiler output below.
+  /Users/panfeng/code/robosen-k1/apps/kone_app/android/app/src/main/java/io/flutter/plugins/GeneratedPluginRegistrant.java:19: 错误: 程序包dev.flutter.plugins.integration_test不存在
+        flutterEngine.getPlugins().add(new dev.flutter.plugins.integration_test.IntegrationTestPlugin());
+                                                                               ^
+  1 个错误
+
+* Try:
+> Check your code and dependencies to fix the compilation error(s)
+> Run with --scan to get full insights from a Build Scan (powered by Develocity).
+
+BUILD FAILED in 56s
+Running Gradle task 'assembleRelease'...                           57.5s
+Gradle task assembleRelease failed with exit code 1

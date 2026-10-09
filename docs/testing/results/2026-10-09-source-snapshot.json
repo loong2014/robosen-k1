@@ -1,0 +1,130 @@
+{
+  "baseCommit": "4e95dd6ab461ae8cd46f2ba596957c14b48147e8",
+  "appVersion": "0.1.1+2",
+  "files": [
+    {
+      "path": "apps/kone_app/android/app/src/main/kotlin/com/kone/personal/kone_app/MainActivity.kt",
+      "sha256": "fec60d6ff2ace86aa1828e97ba2eeb2c81d981bb7b907574694f2ff9ec6f9f6d"
+    },
+    {
+      "path": "apps/kone_app/assets/control/joystick_robot.png",
+      "sha256": "f8ad3eb7276f4b1c6d1211ca13995f5e883c67436d2e010aca202c6b7cc3caa9"
+    },
+    {
+      "path": "apps/kone_app/assets/control/play.png",
+      "sha256": "df9048c9573575535ecb90bec29c01dba143f5a662e6c58a720ce33fe0f2d8bf"
+    },
+    {
+      "path": "apps/kone_app/ios/Runner/AppDelegate.swift",
+      "sha256": "1bbe0f6c9574ad4e0dbaebf55d4638abb1cd913c28f73669d6984194c227990c"
+    },
+    {
+      "path": "apps/kone_app/lib/app.dart",
+      "sha256": "db6b98fa7fa094c89909546769fae067614191f0e102722df494439ba3350c7f"
+    },
+    {
+      "path": "apps/kone_app/lib/features/actions/action_catalog.dart",
+      "sha256": "015da027eeeca465dff440fa5ea2892a2dd385fe834f16e9c9a22ffe1194f07b"
+    },
+    {
+      "path": "apps/kone_app/lib/features/actions/action_player.dart",
+      "sha256": "d1748db20dca7c7a9990185289e14fcb4cbd23c5a75504fe4db3b772ecefe237"
+    },
+    {
+      "path": "apps/kone_app/lib/features/actions/robot_action.dart",
+      "sha256": "337e159d8bd8d632051ff6e64a29765a4b983aa912732ce68f1d0e592b1693bf"
+    },
+    {
+      "path": "apps/kone_app/lib/features/control/control_controller.dart",
+      "sha256": "b0fc51db41f6acb36ae16fe3824a52f192e673ce07f278b5f7ba0cad5afdb3c3"
+    },
+    {
+      "path": "apps/kone_app/lib/features/control/shortcut_controller.dart",
+      "sha256": "d7202c7ad85811b2f5860ce3cf4f879fde7bd08e4707e958b1d9dda70dc165f9"
+    },
+    {
+      "path": "apps/kone_app/lib/features/control/volume_controller.dart",
+      "sha256": "8e41ceb6c06dc504fa534705fee5590c11d77c0150e0575d3e58e78758e4223f"
+    },
+    {
+      "path": "apps/kone_app/lib/main.dart",
+      "sha256": "c39f97ada28141c09acb25a738675347a328c6f72a3a3c75213fce06d52abb97"
+    },
+    {
+      "path": "apps/kone_app/lib/programming/project.dart",
+      "sha256": "e42a270cf334d131d09747b7e179f087eb74d1d427d820be4e7c0e889be7a49e"
+    },
+    {
+      "path": "apps/kone_app/lib/programming/project_editor.dart",
+      "sha256": "83568b3f750d5e96374776c802a9044ef979fbb0b095ae89ddfbbf660df14449"
+    },
+    {
+      "path": "apps/kone_app/lib/robot/protocol/action_encoding.dart",
+      "sha256": "21d8f2c543406726a82dddb346c822e58f11ab126ed91545d6a0c49f6722f3c5"
+    },
+    {
+      "path": "apps/kone_app/lib/robot/protocol/k1_codec.dart",
+      "sha256": "ab7855db13be8a56b1c9a8e4d428edbb71d4e73c7556f492cfe3daeae7712282"
+    },
+    {
+      "path": "apps/kone_app/lib/robot/session/robot_session.dart",
+      "sha256": "a4fb3cba647253c15611f8cf16028c73f664ef0bbd20419c47e2c1a777d7e0ac"
+    },
+    {
+      "path": "apps/kone_app/lib/robot/transport/ble_transport.dart",
+      "sha256": "4754593cd643de8b97b784b38ee9e8a877da7c17e713c2101f600ff6f89747ad"
+    },
+    {
+      "path": "apps/kone_app/lib/robot/transport/robot_transport.dart",
+      "sha256": "aec036db974143ce624fb39a2da27ad5cff16cb1d05fe6db082356289d2cf15f"
+    },
+    {
+      "path": "apps/kone_app/lib/storage/control_shortcuts.dart",
+      "sha256": "14aa8b61f533a9b54656141b9e0235e1ca3fde827d6aeae7dcfd9dc0240c1592"
+    },
+    {
+      "path": "apps/kone_app/lib/storage/diagnostic_log.dart",
+      "sha256": "f8f6430b044e9fa2bd4d657ce4b364c88ade9b04bd0c35188f9e9c311defd73a"
+    },
+    {
+      "path": "apps/kone_app/lib/storage/project_repository.dart",
+      "sha256": "c3856225938b7a3e9ca9e06184cba1e6913df89ede1d23af0c1f050f9de99baa"
+    },
+    {
+      "path": "apps/kone_app/lib/ui/action_center_page.dart",
+      "sha256": "00583238b19c9d605293df6163ee33a1b645593c90d067d7dd113a9d68510d5e"
+    },
+    {
+      "path": "apps/kone_app/lib/ui/block_canvas.dart",
+      "sha256": "69e94ae7154fdc7c0d1804bbf60ee2198821fa228a3c102ac3b56531f2f1fcc8"
+    },
+    {
+      "path": "apps/kone_app/lib/ui/control_joystick.dart",
+      "sha256": "01e8a4223aa15fd5e544962c2e4862b5d3dffc74bd928d56caccaf51126d9bf8"
+    },
+    {
+      "path": "apps/kone_app/lib/ui/control_page.dart",
+      "sha256": "bba6dcdd00ef5c5a52b3bb8fde85f10d9fe2e7b70b4bcb5c967844654c6fb9fd"
+    },
+    {
+      "path": "apps/kone_app/lib/ui/device_page.dart",
+      "sha256": "c0c52c06a97104fede061c64c4c0ea78fc0a31580a58f6c7665127ecc1af02ac"
+    },
+    {
+      "path": "apps/kone_app/lib/ui/editor_page.dart",
+      "sha256": "8f3030b3662b6dde16ce4196778923801a49436026319292c81f5e55657f1f14"
+    },
+    {
+      "path": "apps/kone_app/lib/ui/projects_page.dart",
+      "sha256": "12b51e9f006f9e6a131cb580a99ca38452d7e2594c58d6dabdca938246817890"
+    },
+    {
+      "path": "apps/kone_app/pubspec.lock",
+      "sha256": "3fa4931277c902e32665c19a30335a9a540a54402cb0fba96224ac65f24584d7"
+    },
+    {
+      "path": "apps/kone_app/pubspec.yaml",
+      "sha256": "f8dba36b55e56700ffa1fac4f4912216e37a88feedc643cfab5b2e455f8f8de1"
+    }
+  ]
+}

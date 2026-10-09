@@ -1,0 +1,133 @@
+Command line invocation:
+    /Applications/Xcode.app/Contents/Developer/usr/bin/xcodebuild -workspace Runner.xcworkspace -scheme Runner -configuration Release -sdk iphoneos -destination generic/platform=iOS -clonedSourcePackagesDirPath ../build/ios/SourcePackages -onlyUsePackageVersionsFromResolvedFile -allowProvisioningUpdates -allowProvisioningDeviceRegistration DEVELOPMENT_TEAM=255PK8D3PQ CODE_SIGN_STYLE=Automatic "CODE_SIGN_IDENTITY=Apple Development" BUILD_DIR=/Users/panfeng/code/robosen-k1/apps/kone_app/build/ios COMPILER_INDEX_STORE_ENABLE=NO build
+
+Build settings from command line:
+    BUILD_DIR = /Users/panfeng/code/robosen-k1/apps/kone_app/build/ios
+    CODE_SIGN_IDENTITY = Apple Development
+    CODE_SIGN_STYLE = Automatic
+    COMPILER_INDEX_STORE_ENABLE = NO
+    DEVELOPMENT_TEAM = 255PK8D3PQ
+    SDKROOT = iphoneos26.2
+
+Resolve Package Graph
+
+
+Resolved source packages:
+  FlutterFramework: /Users/panfeng/code/robosen-k1/apps/kone_app/ios/Flutter/ephemeral/Packages/.packages/FlutterFramework @ local
+  SwiftProtobuf: https://github.com/apple/swift-protobuf.git @ 1.38.1
+  permission_handler_apple: /Users/panfeng/code/robosen-k1/apps/kone_app/ios/Flutter/ephemeral/Packages/.packages/permission_handler_apple-9.6.2 @ local
+  FlutterGeneratedPluginSwiftPackage: /Users/panfeng/code/robosen-k1/apps/kone_app/ios/Flutter/ephemeral/Packages/FlutterGeneratedPluginSwiftPackage
+  reactive_ble_mobile: /Users/panfeng/code/robosen-k1/apps/kone_app/ios/Flutter/ephemeral/Packages/.packages/reactive_ble_mobile-5.6.0 @ local
+  integration_test: /Users/panfeng/code/robosen-k1/apps/kone_app/ios/Flutter/ephemeral/Packages/.packages/integration_test @ local
+
+Run pre-actions
+
+SchemeAction Run\ Prepare\ Flutter\ Framework\ Script /var/folders/hj/c1xy8cyj7w56tb85hvshmr8h0000gn/T/SchemeScriptAction-ZtspDm.sh
+    cd /var/folders/hj/c1xy8cyj7w56tb85hvshmr8h0000gn/T/
+    /bin/sh -c /var/folders/hj/c1xy8cyj7w56tb85hvshmr8h0000gn/T/SchemeScriptAction-ZtspDm.sh
+Warning: unknown environment variable SWIFT_DEBUG_INFORMATION_FORMAT
+Warning: unknown environment variable SWIFT_DEBUG_INFORMATION_VERSION
+Warning: unknown environment variable SWIFT_DEBUG_INFORMATION_FORMAT
+Warning: unknown environment variable SWIFT_DEBUG_INFORMATION_VERSION
+Warning: unknown environment variable SWIFT_DEBUG_INFORMATION_FORMAT
+Warning: unknown environment variable SWIFT_DEBUG_INFORMATION_VERSION
+Warning: unknown environment variable SWIFT_DEBUG_INFORMATION_FORMAT
+Warning: unknown environment variable SWIFT_DEBUG_INFORMATION_VERSION
+Warning: unknown environment variable SWIFT_DEBUG_INFORMATION_FORMAT
+Warning: unknown environment variable SWIFT_DEBUG_INFORMATION_VERSION
+Warning: unknown environment variable SWIFT_DEBUG_INFORMATION_FORMAT
+Warning: unknown environment variable SWIFT_DEBUG_INFORMATION_VERSION
+Warning: unknown environment variable SWIFT_DEBUG_INFORMATION_FORMAT
+Warning: unknown environment variable SWIFT_DEBUG_INFORMATION_VERSION
+Warning: unknown environment variable SWIFT_DEBUG_INFORMATION_FORMAT
+Warning: unknown environment variable SWIFT_DEBUG_INFORMATION_VERSION
+
+note: Using codesigning identity override: Apple Development
+ComputePackagePrebuildTargetDependencyGraph
+
+Prepare packages
+
+CreateBuildRequest
+
+SendProjectDescription
+
+CreateBuildOperation
+
+ComputeTargetDependencyGraph
+note: Building targets in dependency order
+note: Target dependency graph (15 targets)
+    Target 'Runner' in project 'Runner'
+        ➜ Explicit dependency on target 'FlutterGeneratedPluginSwiftPackage' in project 'FlutterGeneratedPluginSwiftPackage'
+    Target 'FlutterGeneratedPluginSwiftPackage' in project 'FlutterGeneratedPluginSwiftPackage'
+        ➜ Explicit dependency on target 'FlutterGeneratedPluginSwiftPackage' in project 'FlutterGeneratedPluginSwiftPackage'
+        ➜ Explicit dependency on target 'integration-test' in project 'integration_test'
+        ➜ Explicit dependency on target 'permission-handler-apple' in project 'permission_handler_apple'
+        ➜ Explicit dependency on target 'reactive-ble-mobile' in project 'reactive_ble_mobile'
+        ➜ Explicit dependency on target 'FlutterFramework' in project 'FlutterFramework'
+    Target 'FlutterGeneratedPluginSwiftPackage' in project 'FlutterGeneratedPluginSwiftPackage'
+        ➜ Explicit dependency on target 'integration-test' in project 'integration_test'
+        ➜ Explicit dependency on target 'permission-handler-apple' in project 'permission_handler_apple'
+        ➜ Explicit dependency on target 'reactive-ble-mobile' in project 'reactive_ble_mobile'
+        ➜ Explicit dependency on target 'FlutterFramework' in project 'FlutterFramework'
+    Target 'reactive-ble-mobile' in project 'reactive_ble_mobile'
+        ➜ Explicit dependency on target 'reactive_ble_mobile' in project 'reactive_ble_mobile'
+        ➜ Explicit dependency on target 'FlutterFramework' in project 'FlutterFramework'
+        ➜ Explicit dependency on target 'SwiftProtobuf' in project 'SwiftProtobuf'
+    Target 'reactive_ble_mobile' in project 'reactive_ble_mobile'
+        ➜ Explicit dependency on target 'FlutterFramework' in project 'FlutterFramework'
+        ➜ Explicit dependency on target 'SwiftProtobuf' in project 'SwiftProtobuf'
+    Target 'SwiftProtobuf' in project 'SwiftProtobuf'
+        ➜ Explicit dependency on target 'SwiftProtobuf' in project 'SwiftProtobuf'
+        ➜ Explicit dependency on target 'SwiftProtobuf_SwiftProtobuf' in project 'SwiftProtobuf'
+    Target 'SwiftProtobuf' in project 'SwiftProtobuf'
+        ➜ Explicit dependency on target 'SwiftProtobuf_SwiftProtobuf' in project 'SwiftProtobuf'
+    Target 'SwiftProtobuf_SwiftProtobuf' in project 'SwiftProtobuf' (no dependencies)
+    Target 'permission-handler-apple' in project 'permission_handler_apple'
+        ➜ Explicit dependency on target 'permission_handler_apple' in project 'permission_handler_apple'
+        ➜ Explicit dependency on target 'permission_handler_apple_permission_handler_apple' in project 'permission_handler_apple'
+    Target 'permission_handler_apple' in project 'permission_handler_apple'
+        ➜ Explicit dependency on target 'permission_handler_apple_permission_handler_apple' in project 'permission_handler_apple'
+    Target 'permission_handler_apple_permission_handler_apple' in project 'permission_handler_apple' (no dependencies)
+    Target 'integration-test' in project 'integration_test'
+        ➜ Explicit dependency on target 'integration_test' in project 'integration_test'
+        ➜ Explicit dependency on target 'FlutterFramework' in project 'FlutterFramework'
+    Target 'integration_test' in project 'integration_test'
+        ➜ Explicit dependency on target 'FlutterFramework' in project 'FlutterFramework'
+    Target 'FlutterFramework' in project 'FlutterFramework'
+        ➜ Explicit dependency on target 'FlutterFramework' in project 'FlutterFramework'
+    Target 'FlutterFramework' in project 'FlutterFramework' (no dependencies)
+
+GatherProvisioningInputs
+
+CreateBuildDescription
+
+ExecuteExternalTool /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -v -E -dM -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS26.2.sdk -x objective-c -c /dev/null
+
+ExecuteExternalTool /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc --version
+
+ExecuteExternalTool /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -v -E -dM -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS26.2.sdk -x c -c /dev/null
+
+ExecuteExternalTool /Applications/Xcode.app/Contents/Developer/usr/bin/ibtool --version --output-format xml1
+
+ExecuteExternalTool /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -v -E -dM -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS26.2.sdk -x c -c /dev/null
+
+ExecuteExternalTool /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/ld -version_details
+
+ExecuteExternalTool /Applications/Xcode.app/Contents/Developer/usr/bin/actool --print-asset-tag-combinations --output-format xml1 /Users/panfeng/code/robosen-k1/apps/kone_app/ios/Runner/Assets.xcassets
+
+ExecuteExternalTool /Applications/Xcode.app/Contents/Developer/usr/bin/actool --version --output-format xml1
+
+ReadFileContents /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/share/docc/features.json
+
+Build description signature: dbf2fc1d5911d015bdd2b9d18b1541b5
+Build description path: /Users/panfeng/Library/Developer/Xcode/DerivedData/Runner-fztdbxmpiguwtzgfztslkqhudlnp/Build/Intermediates.noindex/XCBuildData/dbf2fc1d5911d015bdd2b9d18b1541b5.xcbuilddata
+/Users/panfeng/code/robosen-k1/apps/kone_app/ios/Runner.xcodeproj: error: Communication with Apple failed: Your team has no devices from which to generate a provisioning profile. Connect a device to use or manually add device IDs in Certificates, Identifiers & Profiles. https://developer.apple.com/account/ (in target 'Runner' from project 'Runner')
+/Users/panfeng/code/robosen-k1/apps/kone_app/ios/Runner.xcodeproj: error: No profiles for 'com.kone.personal.koneApp' were found: Xcode couldn't find any iOS App Development provisioning profiles matching 'com.kone.personal.koneApp'. (in target 'Runner' from project 'Runner')
+note: Run script build phase 'Run Script' will be run during every build because the option to run the script phase "Based on dependency analysis" is unchecked. (in target 'Runner' from project 'Runner')
+note: Run script build phase 'Thin Binary' will be run during every build because the option to run the script phase "Based on dependency analysis" is unchecked. (in target 'Runner' from project 'Runner')
+** BUILD FAILED **
+
+
+The following build commands failed:
+	Building workspace Runner with scheme Runner and configuration Release
+(1 failure)

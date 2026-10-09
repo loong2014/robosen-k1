@@ -1,0 +1,34 @@
+Running Gradle task 'assembleRelease'...                        
+
+FAILURE: Build failed with an exception.
+
+* What went wrong:
+A problem occurred configuring project ':permission_handler_android'.
+> Failed to create parent directory '/Users/panfeng/.gradle/caches/9.3.1/kotlin-dsl/scripts/10f2946f8039fa531d0d2c9d17c24737-474fe8bc-d4f6-4b83-9954-8b79f72dd819' when creating directory '/Users/panfeng/.gradle/caches/9.3.1/kotlin-dsl/scripts/10f2946f8039fa531d0d2c9d17c24737-474fe8bc-d4f6-4b83-9954-8b79f72dd819/instrumented/classes'
+> Failed to notify project evaluation listener.
+   > java.lang.NullPointerException (no error message)
+   > java.lang.NullPointerException (no error message)
+   > Android Gradle Plugin: project ':permission_handler_android' does not specify `compileSdk` in build.gradle.kts (/Users/panfeng/.pub-cache/hosted/pub.dev/permission_handler_android-14.1.0/android/build.gradle.kts).
+
+* Try:
+> Run with --stacktrace option to get the stack trace.
+> Run with --info or --debug option to get more log output.
+> Run with --scan to get full insights from a Build Scan (powered by Develocity).
+> Get more help at https://help.gradle.org.
+
+BUILD FAILED in 1m 25s
+Running Gradle task 'assembleRelease'...                           86.5s
+
+┌─ Flutter Fix ────────────────────────────────────────────────────────────────────────┐
+│ [!] Starting AGP 9+, only the new DSL interface will be read.                        │
+│ This results in a build failure when applying the Flutter Gradle plugin at           │
+│ /Users/panfeng/code/robosen-k1/apps/kone_app/android/app/build.gradle.kts.           │
+│                                                                                      │
+│ To resolve this update flutter or opt out of `android.newDsl`.                       │
+│ For instructions on how to opt out, see:                                             │
+│ https://developer.android.com/build/releases/agp-9-0-0-release-notes                 │
+│                                                                                      │
+│ If you are not upgrading to AGP 9+, run `flutter analyze --suggestions` to check for │
+│ incompatible dependencies.                                                           │
+└──────────────────────────────────────────────────────────────────────────────────────┘
+Gradle task assembleRelease failed with exit code 1

@@ -1,0 +1,60 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-10-09",
+  "timezone": "Asia/Shanghai",
+  "scope": "K-One installation and running process only; unrelated apps and unique hardware identifiers omitted.",
+  "app": {
+    "name": "K-One",
+    "bundleIdentifier": "com.kone.personal.koneApp",
+    "version": "0.1.1",
+    "bundleVersion": "2"
+  },
+  "checks": {
+    "install": "success",
+    "installedApp": "success",
+    "launch": "success",
+    "processes": "success"
+  },
+  "process": {
+    "processIdentifier": 2314,
+    "executableName": "Runner.app/Runner",
+    "matchesLaunchedExecutable": true,
+    "presentInSubsequentProcessList": true
+  },
+  "rawEvidence": [
+    {
+      "file": "2026-10-09-iphone-install.json",
+      "sha256": "d575640ec86203ae07e5fced9d711be35323f79ca929f1744657c10732ad1aaa",
+      "retention": "repository"
+    },
+    {
+      "file": "2026-10-09-iphone-installed-app.json",
+      "sha256": "4337404fa3265183b691e8e60f87be120ea1eb5766c4c24d96e7d0419336bdd5",
+      "retention": "repository"
+    },
+    {
+      "file": "2026-10-09-iphone-launch.json",
+      "sha256": "3ea9d46f026ce4dc0fc787382fe5f6974266d10f815b4d4ce0beeb7439574f66",
+      "retention": "repository"
+    },
+    {
+      "file": "2026-10-09-iphone-processes.json",
+      "sha256": "16363a04fb1c725d9a44793f159b3702a2b35904c736ae4b50aaeac8ef8b30a5",
+      "retention": "local-only"
+    },
+    {
+      "file": "2026-10-09-iphone-device.json",
+      "sha256": "10af44a4c98134f53ace5b1deca14ca95047aee951240cdfe308e885606a538c",
+      "retention": "local-only"
+    }
+  ],
+  "device": {
+    "marketingName": "iPhone 13",
+    "productType": "iPhone14,5",
+    "osVersionNumber": "26.6.1",
+    "osBuildUpdate": "23G83",
+    "developerModeStatus": "enabled",
+    "transportType": "localNetwork",
+    "tunnelState": "connected"
+  }
+}

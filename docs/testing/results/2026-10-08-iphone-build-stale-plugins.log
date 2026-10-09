@@ -1,0 +1,9 @@
+Warning: Building for device with codesigning disabled. You will have to manually codesign before deploying to device.
+Building com.kone.personal.koneApp for device (ios-release)...
+Running Xcode build...                                          
+Xcode build done.                                           32.1s
+Failed to build iOS app
+Parse Issue (Xcode): Module 'integration_test' not found
+/Users/panfeng/code/robosen-k1/apps/kone_app/ios/Runner/GeneratedPluginRegistrant.m:11:8
+
+Encountered error while building for device.

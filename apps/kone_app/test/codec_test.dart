@@ -58,6 +58,8 @@ void main() {
     expect(K1Codec.encode(255, [1, 2, 3]), [1, 2, 3]);
     decoder.feed(List.filled(100000, 255));
     expect(decoder.bufferedBytes, lessThanOrEqualTo(258));
-    expect(RobotState.fromPayload([1]).raw, [1, 0, 0, 0, 0, 0, 0, 0]);
+    expect(RobotState.fromPayload([1]).raw, [1]);
+    expect(RobotState.fromPayload([1]).batteryRaw, isNull);
+    expect(RobotState.fromPayload([1, 0]).batteryRaw, 0);
   });
 }

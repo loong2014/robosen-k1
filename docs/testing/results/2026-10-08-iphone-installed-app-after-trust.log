@@ -1,0 +1,7 @@
+11:20:39  Enabling developer disk image services.
+11:20:40  Acquired usage assertion.
+Apps installed:
+Name    Bundle Identifier           Version   Bundle Version
+-----   -------------------------   -------   --------------
+K-One   com.kone.personal.koneApp   0.1.0     1             
+Saving JSON output file to /Users/panfeng/code/robosen-k1/docs/testing/results/2026-10-08-iphone-installed-app-after-trust.json

@@ -1,0 +1,8 @@
+11:13:35  Acquired tunnel connection to device.
+11:13:35  Enabling developer disk image services.
+11:13:35  Acquired usage assertion.
+Apps installed:
+Name    Bundle Identifier           Version   Bundle Version
+-----   -------------------------   -------   --------------
+K-One   com.kone.personal.koneApp   0.1.1     2             
+Saving JSON output file to /Users/panfeng/code/robosen-k1/docs/testing/results/2026-10-09-iphone-installed-app.json

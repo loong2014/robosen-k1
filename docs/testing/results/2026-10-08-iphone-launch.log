@@ -1,0 +1,15 @@
+11:03:33  Acquired tunnel connection to device.
+11:03:33  Enabling developer disk image services.
+11:03:34  Acquired usage assertion.
+ERROR: The application failed to launch. (com.apple.dt.CoreDeviceError error 10002 (0x2712))
+       BundleIdentifier = com.kone.personal.koneApp
+       ----------------------------------------
+           The request to open "com.kone.personal.koneApp" failed. (FBSOpenApplicationServiceErrorDomain error 1 (0x01))
+           BSErrorCodeDescription = RequestDenied
+           NSLocalizedFailureReason = The request was denied by service delegate (SBMainWorkspace) for reason: Security ("Unable to launch com.kone.personal.koneApp because it has an invalid code signature, inadequate entitlements or its profile has not been explicitly trusted by the user").
+           FBSOpenApplicationRequestID = 0x7113
+       ----------------------------------------
+               The operation couldn’t be completed. Unable to launch com.kone.personal.koneApp because it has an invalid code signature, inadequate entitlements or its profile has not been explicitly trusted by the user. (FBSOpenApplicationErrorDomain error 3 (0x03))
+               NSLocalizedFailureReason = Unable to launch com.kone.personal.koneApp because it has an invalid code signature, inadequate entitlements or its profile has not been explicitly trusted by the user.
+               BSErrorCodeDescription = Security
+Saving JSON output file to /Users/panfeng/code/robosen-k1/docs/testing/results/2026-10-08-iphone-launch.json

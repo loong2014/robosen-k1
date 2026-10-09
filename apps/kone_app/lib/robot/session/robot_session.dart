@@ -34,6 +34,30 @@ class RobotSession extends ChangeNotifier {
   Future<void> _writeTail = Future<void>.value();
   Completer<K1Command>? _pending;
   int? _expected;
+  Future<void> _requestTail = Future<void>.value();
+  List<List<int>>? _directoryNames;
+  bool _directoryUncertain = false;
+  Object? _operationOwner;
+  int get revision => _epoch;
+  bool get executionBusy => _operationOwner != null;
+  bool ownsOperation(Object owner) => identical(_operationOwner, owner);
+  bool acquireOperation(Object owner) {
+    if (!ready || (_operationOwner != null && !ownsOperation(owner))) {
+      return false;
+    }
+    _operationOwner = owner;
+    _changed();
+    return true;
+  }
+
+  void releaseOperation(Object owner) {
+    if (!ownsOperation(owner)) return;
+    _operationOwner = null;
+    _changed();
+  }
+
+  bool get directoryReading => _directoryNames != null;
+  bool get directoryNeedsReconnect => _directoryUncertain;
   bool get ready => phase == SessionPhase.ready;
   bool get busy => _opening;
 
@@ -62,6 +86,14 @@ class RobotSession extends ChangeNotifier {
       if (command.code == 15) {
         robotState = RobotState.fromPayload(command.payload);
       }
+      if (command.code == 0x16 && _directoryNames != null) {
+        if (_directoryNames!.length >= 10000) {
+          _directoryUncertain = true;
+          _cancelPending(StateError('动作列表超过应用资源限制，未读取完整'));
+        } else {
+          _directoryNames!.add(command.payload.toList());
+        }
+      }
       if (_expected == command.code &&
           _pending != null &&
           !_pending!.isCompleted) {
@@ -83,6 +115,7 @@ class RobotSession extends ChangeNotifier {
     if (_disposed || phase == SessionPhase.disconnected) return;
     _epoch++;
     phase = SessionPhase.failed;
+    _operationOwner = null;
     error = reason.toString();
     _decoder.clear();
     _cancelPending(StateError('连接已中断'));
@@ -135,6 +168,7 @@ class RobotSession extends ChangeNotifier {
     int code, [
     List<int> payload = const [],
     bool Function()? valid,
+    void Function()? onStart,
   ]) {
     if (!ready && phase != SessionPhase.handshaking) {
       return Future.error(StateError('机器人尚未就绪'));
@@ -143,8 +177,10 @@ class RobotSession extends ChangeNotifier {
     final epoch = _epoch;
     final work = _writeTail.then((_) async {
       if (epoch != _epoch || (valid != null && !valid())) return;
+      onStart?.call();
       for (var offset = 0; offset < bytes.length;) {
-        if (epoch != _epoch || (valid != null && !valid())) return;
+        // Finish a started frame before stop, rather than corrupting its payload.
+        if (epoch != _epoch) return;
         final end = math.min(offset + transport.writeLimit, bytes.length);
         if (end <= offset) throw StateError('无效 BLE 写入长度');
         await transport.write(bytes.sublist(offset, end));
@@ -158,11 +194,37 @@ class RobotSession extends ChangeNotifier {
     return work;
   }
 
-  Future<K1Command> request(int code, [List<int> payload = const []]) async {
+  Future<T> _coordinate<T>(
+    Future<T> Function() body, [
+    bool Function()? valid,
+  ]) {
+    final epoch = _epoch;
+    final work = _requestTail.then((_) {
+      if (epoch != _epoch || (valid != null && !valid())) {
+        throw StateError('读取已取消');
+      }
+      return body();
+    });
+    _requestTail = work.then<void>(
+      (_) {},
+      onError: (Object _, StackTrace _) {},
+    );
+    return work;
+  }
+
+  Future<K1Command> request(int code, [List<int> payload = const []]) =>
+      _coordinate(() => _request(code, payload));
+
+  Future<K1Command> _request(
+    int code,
+    List<int> payload, {
+    int? responseCode,
+    bool Function()? valid,
+  }) async {
     if (_pending != null) throw StateError('已有等待应答的事务');
     final pending = Completer<K1Command>();
     _pending = pending;
-    _expected = code;
+    _expected = responseCode ?? code;
     final response = pending.future.timeout(requestTimeout);
     // Install the error listener before write: a synchronous transport failure
     // can cancel the pending request before send has finished.
@@ -170,7 +232,7 @@ class RobotSession extends ChangeNotifier {
       response.then<void>((_) {}, onError: (Object _, StackTrace _) {}),
     );
     try {
-      await send(code, payload);
+      await send(code, payload, valid);
       return await response;
     } finally {
       if (identical(_pending, pending)) {
@@ -180,6 +242,33 @@ class RobotSession extends ChangeNotifier {
     }
   }
 
+  Future<void> readActionDirectory(
+    List<int> payload,
+    List<List<int>> names,
+    bool Function() valid,
+  ) => _coordinate(() async {
+    if (_directoryUncertain) throw StateError('上次目录读取未结束，请重新连接后刷新');
+    _directoryNames = names;
+    final epoch = _epoch;
+    try {
+      // 0xFA is a receive-only terminator here. Never send it: TX is shutdown.
+      await _request(0x16, payload, responseCode: 0xFA, valid: valid);
+    } catch (_) {
+      // There is no wire transaction ID. Do not attach late names/end to a retry.
+      if (epoch == _epoch) _directoryUncertain = true;
+      rethrow;
+    } finally {
+      if (identical(_directoryNames, names)) _directoryNames = null;
+      _changed();
+    }
+  }, valid);
+
+  void cancelDirectoryRead() {
+    if (_directoryNames == null) return;
+    _directoryUncertain = true;
+    _cancelPending(StateError('目录读取已取消，请重新连接后刷新'));
+  }
+
   Future<void> queryState() async {
     await request(15);
   }
@@ -187,6 +276,8 @@ class RobotSession extends ChangeNotifier {
   Future<void> disconnect() async {
     _epoch++;
     phase = SessionPhase.disconnected;
+    _operationOwner = null;
+    _directoryUncertain = false;
     _decoder.clear();
     _cancelPending(StateError('连接已关闭'));
     robotState = null;

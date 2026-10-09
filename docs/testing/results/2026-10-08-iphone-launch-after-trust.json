@@ -1,0 +1,60 @@
+{
+  "info" : {
+    "arguments" : [
+      "devicectl",
+      "device",
+      "process",
+      "launch",
+      "--device",
+      "2969CA3B-D050-5D5D-87AB-FA78661FD1E8",
+      "com.kone.personal.koneApp",
+      "--timeout",
+      "30",
+      "--json-output",
+      "/Users/panfeng/code/robosen-k1/docs/testing/results/2026-10-08-iphone-launch-after-trust.json",
+      "--log-output",
+      "/Users/panfeng/code/robosen-k1/docs/testing/results/2026-10-08-iphone-launch-after-trust.log"
+    ],
+    "commandType" : "devicectl.device.process.launch",
+    "environment" : {
+      "TERM" : "dumb"
+    },
+    "jsonVersion" : 3,
+    "outcome" : "success",
+    "version" : "506.7"
+  },
+  "result" : {
+    "deviceIdentifier" : "2969CA3B-D050-5D5D-87AB-FA78661FD1E8",
+    "launchOptions" : {
+      "activatedWhenStarted" : true,
+      "arguments" : [
+
+      ],
+      "environmentVariables" : {
+        "TERM" : "dumb"
+      },
+      "platformSpecificOptions" : {
+
+      },
+      "startStopped" : false,
+      "terminateExistingInstances" : false,
+      "user" : {
+        "active" : true
+      }
+    },
+    "process" : {
+      "auditToken" : [
+        4294967295,
+        501,
+        501,
+        501,
+        501,
+        1628,
+        0,
+        4566
+      ],
+      "executable" : "file:///private/var/containers/Bundle/Application/59A509C2-04C6-4B0F-A5BA-4F5773B15032/Runner.app/Runner",
+      "processIdentifier" : 1628
+    }
+  }
+}

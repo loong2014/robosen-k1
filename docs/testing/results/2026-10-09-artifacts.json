@@ -1,0 +1,12 @@
+[
+  {
+    "path": "apps/kone_app/build/app/outputs/flutter-apk/app-release.apk",
+    "bytes": 18732027,
+    "sha256": "76a141f63588231ce6aa7a60b9d0e9f6590d7d106dbc4cb4eafc8af24577be0c"
+  },
+  {
+    "path": "apps/kone_app/build/ios/K-One-0.1.1+2.ipa",
+    "bytes": 8404169,
+    "sha256": "d2720e506a577518fce051c98952cb579c0163bff8237dc171630a2d65580996"
+  }
+]

@@ -1,0 +1,11 @@
+11:13:15  Acquired tunnel connection to device.
+11:13:15  Enabling developer disk image services.
+11:13:15  Acquired usage assertion.
+App installed:
+• bundleID: com.kone.personal.koneApp
+• installationURL: file:///private/var/containers/Bundle/Application/85778ACD-0175-403F-88B5-8FD92F0F213A/Runner.app/
+• launchServicesIdentifier: unknown
+• databaseUUID: B7AE3DA9-49EB-4A1D-9E14-47398C91AAD2
+• databaseSequenceNumber: 2640
+• options: 
+Saving JSON output file to /Users/panfeng/code/robosen-k1/docs/testing/results/2026-10-09-iphone-install.json

@@ -1,0 +1,2 @@
+JVM GB18030: 8 independent encode/decode vectors and invalid-input check passed.
+Android runtime/channel not tested by this host check.

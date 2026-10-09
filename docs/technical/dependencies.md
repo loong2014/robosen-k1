@@ -45,3 +45,9 @@
 Dart 锁文件主要传递依赖：reactive_ble_mobile 5.6.0、permission_handler_android 14.1.0、permission_handler_apple 9.6.2、path_provider_android 2.3.1、path_provider_foundation 2.6.0。
 
 iOS 使用模板 Swift Package Manager；SwiftProtobuf 1.38.1，revision `55d7a1cc5666b85c13464aea1c4b4a90feccb4c8`，记录于 Runner.xcworkspace 和 Runner.xcodeproj 下的 Package.resolved。CocoaPods 已安装但本次未使用。
+
+2026-10-08 iPhone 构建补充：`pubspec.yaml` 显式设置 `flutter.config.enable-swift-package-manager: true`，确保工程沿用上述集成方式，不受本机全局禁用 SPM 设置影响。当前机器为 Xcode 26.3（17C529），Flutter/Dart 版本及所有依赖锁定版本不变；签名构建和安装证据见 [iPhone 记录](../testing/results/2026-10-08-iphone.md)。
+
+2026-10-09 CR-005：版本 0.1.1+2，无新增或升级产品依赖；GB18030 用 Android Charset 与 iOS CoreFoundation 系统能力，Flutter 平台通道封装。iOS 模拟器原生集成和 JVM 离线向量结果分开记录，Android 设备运行待验；SDK / Dart / Swift 锁文件保持。仅添加 17,128 B 的两张 PNG，资源提取用 UnityPy，不引入 Unity 产品依赖。Android 首次在这台 Mac 的构建自动安装已批准 compileSdk 37.0，遇磁盘不足 / 缓存写入错误，未改工具链版本；实际构建结果见 [本轮记录](../testing/results/2026-10-09-control-replica.md)。
+
+取证专用虚拟环境（不进入应用）：Cpp2IL 2022.1.0-pre-release.21、capstone 5.0.9、dnfile 0.18.0、pyelftools 0.32、UnityPy 1.25.4；版本与调用保存于 analysis/evidence/control-source 和复现脚本。提取出的 ELF / 元数据 / dummy DLL 是可重建分析缓存，磁盘清理时可移除，原 APK、选定汇编、哈希和图片保留。

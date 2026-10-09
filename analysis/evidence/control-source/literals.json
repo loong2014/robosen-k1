@@ -1,0 +1,362 @@
+[
+  {
+    "type": "BTDevice",
+    "method": "CommandInvoke",
+    "va": "0x2044c74",
+    "value": "固件版日期-->"
+  },
+  {
+    "type": "BTDevice",
+    "method": "CommandInvoke",
+    "va": "0x2044c80",
+    "value": "固件版本号-->"
+  },
+  {
+    "type": "BTDevice",
+    "method": "CommandInvoke",
+    "va": "0x2044d2c",
+    "value": "固件版本号-->"
+  },
+  {
+    "type": "BTDevice",
+    "method": "CommandInvoke",
+    "va": "0x20450ac",
+    "value": "固件版日期-->"
+  },
+  {
+    "type": "BTDevice",
+    "method": "CommandInvoke",
+    "va": "0x2045390",
+    "value": "."
+  },
+  {
+    "type": "BTDevice",
+    "method": "CommandInvoke",
+    "va": "0x20453dc",
+    "value": "-->"
+  },
+  {
+    "type": "PreActionBtnInfo",
+    "method": "Init",
+    "va": "0x20bcd84",
+    "value": "ProAction/打左拳"
+  },
+  {
+    "type": "PreActionBtnInfo",
+    "method": "Init",
+    "va": "0x20bcd90",
+    "value": "ProAction/Double Punch"
+  },
+  {
+    "type": "PreActionBtnInfo",
+    "method": "Init",
+    "va": "0x20bcd9c",
+    "value": "ProAction/Right Punch"
+  },
+  {
+    "type": "PreActionBtnInfo",
+    "method": "Init",
+    "va": "0x20bcda8",
+    "value": "ProAction/打右拳"
+  },
+  {
+    "type": "PreActionBtnInfo",
+    "method": "Init",
+    "va": "0x20bcdb4",
+    "value": "ProAction/打双拳"
+  },
+  {
+    "type": "PreActionBtnInfo",
+    "method": "Init",
+    "va": "0x20bcdc0",
+    "value": "ProAction/Left Punch"
+  },
+  {
+    "type": "PreActionBtnInfo",
+    "method": "Init",
+    "va": "0x20bcdfc",
+    "value": "ProAction/打左拳"
+  },
+  {
+    "type": "PreActionBtnInfo",
+    "method": "Init",
+    "va": "0x20bce14",
+    "value": "ProAction/打右拳"
+  },
+  {
+    "type": "PreActionBtnInfo",
+    "method": "Init",
+    "va": "0x20bce28",
+    "value": "ProAction/打双拳"
+  },
+  {
+    "type": "PreActionBtnInfo",
+    "method": "Init",
+    "va": "0x20bce38",
+    "value": "ProAction/Left Punch"
+  },
+  {
+    "type": "PreActionBtnInfo",
+    "method": "Init",
+    "va": "0x20bce50",
+    "value": "ProAction/Right Punch"
+  },
+  {
+    "type": "PreActionBtnInfo",
+    "method": "Init",
+    "va": "0x20bce64",
+    "value": "ProAction/Double Punch"
+  },
+  {
+    "type": "RobotActionInterfaceScript",
+    "method": "get_ActionDirectory",
+    "va": "0x20d1ab8",
+    "value": "Action/"
+  },
+  {
+    "type": "RobotActionInterfaceScript",
+    "method": "get_ActionDirectory",
+    "va": "0x20d1ac4",
+    "value": "Action/"
+  },
+  {
+    "type": "RobotActionInterfaceScript",
+    "method": "get_ActionSkillDirectory",
+    "va": "0x20d1af8",
+    "value": "Action/skill/"
+  },
+  {
+    "type": "RobotActionInterfaceScript",
+    "method": "get_ActionSkillDirectory",
+    "va": "0x20d1b04",
+    "value": "Action/skill/"
+  },
+  {
+    "type": "RobotActionInterfaceScript",
+    "method": "get_DownloadActionDirectory",
+    "va": "0x20d1b38",
+    "value": "DownloadAction/"
+  },
+  {
+    "type": "RobotActionInterfaceScript",
+    "method": "get_DownloadActionDirectory",
+    "va": "0x20d1b44",
+    "value": "DownloadAction/"
+  },
+  {
+    "type": "RobotActionInterfaceScript",
+    "method": ".cctor",
+    "va": "0x20d5154",
+    "value": "GB18030"
+  },
+  {
+    "type": "RobotActionInterfaceScript",
+    "method": ".cctor",
+    "va": "0x20d5188",
+    "value": "Action/"
+  },
+  {
+    "type": "RobotActionInterfaceScript",
+    "method": ".cctor",
+    "va": "0x20d51a4",
+    "value": "Action/"
+  },
+  {
+    "type": "RobotActionInterfaceScript",
+    "method": ".cctor",
+    "va": "0x20d5210",
+    "value": "Action/skill/"
+  },
+  {
+    "type": "RobotActionInterfaceScript",
+    "method": ".cctor",
+    "va": "0x20d521c",
+    "value": "Action/skill/"
+  },
+  {
+    "type": "RobotActionInterfaceScript",
+    "method": ".cctor",
+    "va": "0x20d5290",
+    "value": "DownloadAction/"
+  },
+  {
+    "type": "RobotActionInterfaceScript",
+    "method": ".cctor",
+    "va": "0x20d529c",
+    "value": "DownloadAction/"
+  },
+  {
+    "type": "RobotActionInterfaceScript",
+    "method": ".cctor",
+    "va": "0x20d52dc",
+    "value": "GB18030"
+  },
+  {
+    "type": "ActionRectScript",
+    "method": "MianBtnClick",
+    "va": "0x20e5360",
+    "value": "进入了手掰编程"
+  },
+  {
+    "type": "ActionRectScript",
+    "method": "MianBtnClick",
+    "va": "0x20e536c",
+    "value": "进入了图形化编程"
+  },
+  {
+    "type": "ActionRectScript",
+    "method": "MianBtnClick",
+    "va": "0x20e5378",
+    "value": "存储的名字："
+  },
+  {
+    "type": "ActionRectScript",
+    "method": "MianBtnClick",
+    "va": "0x20e54e0",
+    "value": "DownloadAction/"
+  },
+  {
+    "type": "ActionRectScript",
+    "method": "MianBtnClick",
+    "va": "0x20e54ec",
+    "value": "DownloadAction/"
+  },
+  {
+    "type": "ActionRectScript",
+    "method": "MianBtnClick",
+    "va": "0x20e55e8",
+    "value": "Action/skill/"
+  },
+  {
+    "type": "ActionRectScript",
+    "method": "MianBtnClick",
+    "va": "0x20e55f4",
+    "value": "Action/skill/"
+  },
+  {
+    "type": "ActionRectScript",
+    "method": "MianBtnClick",
+    "va": "0x20e5628",
+    "value": "进入了图形化编程"
+  },
+  {
+    "type": "ActionRectScript",
+    "method": "MianBtnClick",
+    "va": "0x20e5728",
+    "value": "存储的名字："
+  },
+  {
+    "type": "ActionRectScript",
+    "method": "MianBtnClick",
+    "va": "0x20e5794",
+    "value": "进入了手掰编程"
+  },
+  {
+    "type": "ActionRectScript",
+    "method": "MianBtnClick",
+    "va": "0x20e59e8",
+    "value": "Action/"
+  },
+  {
+    "type": "ActionRectScript",
+    "method": "MianBtnClick",
+    "va": "0x20e59f4",
+    "value": "Action/"
+  },
+  {
+    "type": "ActionRectScript",
+    "method": "MianBtnClick",
+    "va": "0x20e5c5c",
+    "value": "Action/"
+  },
+  {
+    "type": "ActionRectScript",
+    "method": "MianBtnClick",
+    "va": "0x20e5c70",
+    "value": "Action/"
+  },
+  {
+    "type": "ActionRectScript",
+    "method": "MianBtnClick",
+    "va": "0x20e5d58",
+    "value": "DownloadAction/"
+  },
+  {
+    "type": "ActionRectScript",
+    "method": "MianBtnClick",
+    "va": "0x20e5d6c",
+    "value": "DownloadAction/"
+  },
+  {
+    "type": "ActionRectScript",
+    "method": "MianBtnClick",
+    "va": "0x20e5e54",
+    "value": "Action/skill/"
+  },
+  {
+    "type": "ActionRectScript",
+    "method": "MianBtnClick",
+    "va": "0x20e5e68",
+    "value": "Action/skill/"
+  },
+  {
+    "type": "ActionRectScript",
+    "method": "SetProgress",
+    "va": "0x20d22f8",
+    "value": "当前动作进度："
+  },
+  {
+    "type": "ActionRectScript",
+    "method": "SetProgress",
+    "va": "0x20d2328",
+    "value": "当前动作进度："
+  },
+  {
+    "type": "<CheckBleConnecting>d__29",
+    "method": "MoveNext",
+    "va": "0x20aafec",
+    "value": "\n"
+  },
+  {
+    "type": "<CheckBleConnecting>d__29",
+    "method": "MoveNext",
+    "va": "0x20aaff8",
+    "value": ""
+  },
+  {
+    "type": "<CheckBleConnecting>d__29",
+    "method": "MoveNext",
+    "va": "0x20ab004",
+    "value": "."
+  },
+  {
+    "type": "<CheckBleConnecting>d__29",
+    "method": "MoveNext",
+    "va": "0x20ab010",
+    "value": "-->获取文件夹动作名"
+  },
+  {
+    "type": "<CheckBleConnecting>d__29",
+    "method": "MoveNext",
+    "va": "0x20ab4d8",
+    "value": "\n"
+  },
+  {
+    "type": "<CheckBleConnecting>d__29",
+    "method": "MoveNext",
+    "va": "0x20ab594",
+    "value": ""
+  },
+  {
+    "type": "<CheckBleConnecting>d__29",
+    "method": "MoveNext",
+    "va": "0x20ab790",
+    "value": "."
+  },
+  {
+    "type": "<CheckBleConnecting>d__29",
+    "method": "MoveNext",
+    "va": "0x20ab800",
+    "value": "-->获取文件夹动作名"
+  }
+]

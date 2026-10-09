@@ -8,4 +8,6 @@
 |---|---|---|
 | [CR-001：设备范围与执行方式确认](CR-001-设备范围与执行方式确认.md) | approved，仅明确的五项条款 | not_started |
 | [CR-002：平台与首版编程兼容边界](CR-002-平台与首版编程兼容边界.md) | approved，仅明确的三项条款 | not_started |
-| [CR-003：首版实施启动方案](CR-003-首版实施启动方案.md) | in_review | not_started |
+| [CR-003：首版实施启动方案](CR-003-首版实施启动方案.md) | approved，v0.1 | in_progress |
+| [CR-004：Unity 式积木编程画布交互](CR-004-Unity式积木画布交互.md) | approved，v0.1 | in_progress |
+| [CR-005：原版蓝牙控制界面复刻](CR-005-原版蓝牙控制界面复刻.md) | approved，v0.2（含全量动作中心） | implemented（代码 / 构建），实机 pending |

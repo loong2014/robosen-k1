@@ -1,0 +1,6 @@
+00:00 +0: loading /Users/panfeng/code/robosen-k1/apps/kone_app/integration_test/action_encoding_test.dart
+Running Xcode build...                                          
+Xcode build done.                                           19.5s
+00:00 +0: native GB18030 channel matches independent golden bytes and rejects invalid data
+00:00 +1: (tearDownAll)
+00:00 +1: All tests passed!

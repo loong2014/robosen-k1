@@ -1,0 +1,18 @@
+00:00 +0: loading /Users/panfeng/code/robosen-k1/apps/kone_app/test/diagnostic_log_test.dart
+00:00 +0: /Users/panfeng/code/robosen-k1/apps/kone_app/test/diagnostic_log_test.dart: local log rotates and preserves recent entries in send order
+00:00 +1: /Users/panfeng/code/robosen-k1/apps/kone_app/test/codec_test.dart: 96 original ARM64 encoder vectors match
+00:00 +2: /Users/panfeng/code/robosen-k1/apps/kone_app/test/codec_test.dart: every notification split preserves all frames
+00:00 +3: /Users/panfeng/code/robosen-k1/apps/kone_app/test/codec_test.dart: checksum noise, partial disconnect and boundaries
+00:00 +4: /Users/panfeng/code/robosen-k1/apps/kone_app/test/codec_test.dart: checksum noise, partial disconnect and boundaries
+00:00 +5: /Users/panfeng/code/robosen-k1/apps/kone_app/test/codec_test.dart: checksum noise, partial disconnect and boundaries
+00:00 +6: /Users/panfeng/code/robosen-k1/apps/kone_app/test/session_test.dart: release drops direction queued behind an in-flight write
+00:00 +7: /Users/panfeng/code/robosen-k1/apps/kone_app/test/session_test.dart: release drops direction queued behind an in-flight write
+00:00 +8: /Users/panfeng/code/robosen-k1/apps/kone_app/test/session_test.dart: release drops direction queued behind an in-flight write
+00:00 +9: /Users/panfeng/code/robosen-k1/apps/kone_app/test/widget_test.dart: offline project can be created, edited, saved and reopened
+00:01 +10: /Users/panfeng/code/robosen-k1/apps/kone_app/test/widget_test.dart: offline project can be created, edited, saved and reopened
+00:01 +11: /Users/panfeng/code/robosen-k1/apps/kone_app/test/widget_test.dart: offline project can be created, edited, saved and reopened
+00:01 +12: /Users/panfeng/code/robosen-k1/apps/kone_app/test/session_test.dart: release stops periodic movement; disconnect never resumes old direction
+00:01 +13: /Users/panfeng/code/robosen-k1/apps/kone_app/test/session_test.dart: release stops periodic movement; disconnect never resumes old direction
+00:01 +14: /Users/panfeng/code/robosen-k1/apps/kone_app/test/session_test.dart: release stops periodic movement; disconnect never resumes old direction
+00:02 +15: /Users/panfeng/code/robosen-k1/apps/kone_app/test/session_test.dart: disconnect cancels pending ACK instead of reporting success
+00:02 +16: All tests passed!

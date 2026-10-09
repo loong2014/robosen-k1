@@ -1,0 +1,43 @@
+{
+  "apk": "apk/base.apk",
+  "sha256": "1caf79aff1cd986b8245c6d2acef98fa35ea4319cb6f7a33c5d01f5361da75fe",
+  "package": "com.robosen.K1app",
+  "versionName": "4.77.20260617",
+  "versionCode": 77,
+  "unity": "6000.3.17f1",
+  "metadataVersion": 39,
+  "extractedNativeFiles": [
+    "lib/arm64-v8a/libil2cpp.so",
+    "assets/bin/Data/Managed/Metadata/global-metadata.dat"
+  ],
+  "assets": [
+    {
+      "source": "assets/bin/Data/f55516593bc3bd74287e509a752b7da4",
+      "path_id": 1,
+      "name": "摇杆帽_人",
+      "destination": "apps/kone_app/assets/control/joystick_robot.png",
+      "size": [
+        112,
+        116
+      ],
+      "bytes": 15506,
+      "sha256": "f8ad3eb7276f4b1c6d1211ca13995f5e883c67436d2e010aca202c6b7cc3caa9"
+    },
+    {
+      "source": "assets/bin/Data/c929a58a340180e489839b2e47272312",
+      "path_id": 1,
+      "name": "播放按钮",
+      "destination": "apps/kone_app/assets/control/play.png",
+      "size": [
+        73,
+        73
+      ],
+      "bytes": 1622,
+      "sha256": "df9048c9573575535ecb90bec29c01dba143f5a662e6c58a720ce33fe0f2d8bf"
+    }
+  ],
+  "tools": {
+    "Cpp2IL": "2022.1.0-pre-release.21",
+    "UnityPy": "1.25.4"
+  }
+}

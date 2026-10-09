@@ -7,6 +7,7 @@
 | 文件 | 内容 | 当前状态 |
 |---|---|---|
 | [architecture.md](architecture.md) | 分层、模块职责、依赖方向、核心状态与数据流、关联需求 | 首版 v0.1 已接受，实现进展单列 |
+| [control-replica.md](control-replica.md) | 八方向、三目录全量、播放、GB18030、快捷 / 音量与资源 | CR-005 v0.2 已接受；代码 / 离线与实机结果分开 |
 | `ble-protocol.md` | 设备协议、指令、握手、收发、异常处理及证据等级 | 待定版；已有 APK 分析可供参考 |
 | [data-model.md](data-model.md) | 工程/动作结构、版本、存储、迁移与兼容 | 自有 v1 模型已实现；机器人动作格式待 T06 |
 | [dependencies.md](dependencies.md) | 工具链、库、版本声明、锁定结果及限制 | 已固定直接依赖及解析锁文件；构建状态见测试记录 |
