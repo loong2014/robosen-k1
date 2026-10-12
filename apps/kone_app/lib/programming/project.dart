@@ -1,4 +1,5 @@
 import 'dart:math';
+import 'basic_actions.dart';
 import '../features/actions/robot_action.dart';
 
 class UnsupportedProjectFormat implements Exception {
@@ -16,6 +17,7 @@ enum BlockKind {
   robotPose,
   longPose,
   robotAction,
+  basicAction,
   wait,
 }
 
@@ -37,6 +39,7 @@ class BlockNode {
     this.value = 90,
     this.enabled = true,
     this.actionPath = '',
+    this.basicActionId = '',
     this.waitMs = 1000,
     this.x = 0,
     this.y = 0,
@@ -50,6 +53,7 @@ class BlockNode {
   final int joint, value;
   final bool enabled;
   final String actionPath;
+  final String basicActionId;
   final int waitMs;
   final double x, y;
   BlockNode copyWith({
@@ -62,6 +66,7 @@ class BlockNode {
     int? value,
     bool? enabled,
     String? actionPath,
+    String? basicActionId,
     int? waitMs,
     double? x,
     double? y,
@@ -77,6 +82,7 @@ class BlockNode {
     value: value ?? this.value,
     enabled: enabled ?? this.enabled,
     actionPath: actionPath ?? this.actionPath,
+    basicActionId: basicActionId ?? this.basicActionId,
     waitMs: waitMs ?? this.waitMs,
     x: x ?? this.x,
     y: y ?? this.y,
@@ -94,6 +100,7 @@ class BlockNode {
       'value': value,
       'enabled': enabled,
       'actionPath': actionPath,
+      'basicActionId': basicActionId,
       'waitMs': waitMs,
     },
     'position': {'x': x, 'y': y},
@@ -102,6 +109,7 @@ class BlockNode {
     Map<String, dynamic> m, {
     bool legacy = false,
     bool sequence = false,
+    bool basic = false,
   }) {
     _keys(m, {'id', 'type', 'orderedChildIds', 'params', 'position'});
     final params = m['params'] as Map<String, dynamic>;
@@ -120,10 +128,14 @@ class BlockNode {
               'enabled',
               if (sequence) 'actionPath',
               if (sequence) 'waitMs',
+              if (basic) 'basicActionId',
             },
     );
     _keys(position, {'x', 'y'});
     final kind = BlockKind.values.where((v) => v.name == m['type']).firstOrNull;
+    if (!basic && kind == BlockKind.basicAction) {
+      throw const UnsupportedProjectFormat('基础姿态需要工程版本6');
+    }
     if (kind == null) throw const UnsupportedProjectFormat('未知积木类型，请保留原文件');
     return BlockNode(
       id: m['id'] as String,
@@ -139,6 +151,7 @@ class BlockNode {
       value: legacy ? 90 : params['value'] as int,
       enabled: legacy ? true : params['enabled'] as bool,
       actionPath: sequence ? params['actionPath'] as String : '',
+      basicActionId: basic ? params['basicActionId'] as String : '',
       waitMs: sequence ? params['waitMs'] as int : 1000,
       x: (position['x'] as num).toDouble(),
       y: (position['y'] as num).toDouble(),
@@ -153,6 +166,36 @@ void _keys(Map<String, dynamic> m, Set<String> keys) {
   }
 }
 
+enum ProjectKind { blocks, manual }
+
+class ManualFrame {
+  ManualFrame({
+    required this.id,
+    required List<int> values,
+    List<int>? reference,
+  }) : values = List.unmodifiable(values),
+       reference = reference == null ? null : List.unmodifiable(reference);
+  final String id;
+  final List<int> values;
+  final List<int>? reference;
+  Map<String, dynamic> toJson() => {
+    'id': id,
+    'values': values,
+    'reference': reference,
+  };
+  factory ManualFrame.fromJson(
+    Map<String, dynamic> json, {
+    bool legacy = false,
+  }) {
+    _keys(json, {'id', 'values', if (!legacy) 'reference'});
+    return ManualFrame(
+      id: json['id'] as String,
+      values: (json['values'] as List).cast<int>(),
+      reference: legacy ? null : (json['reference'] as List?)?.cast<int>(),
+    );
+  }
+}
+
 class RobotProject {
   RobotProject({
     required this.id,
@@ -160,18 +203,28 @@ class RobotProject {
     required this.targetModel,
     required this.rootId,
     required Map<String, BlockNode> nodes,
+    this.kind = ProjectKind.blocks,
+    List<ManualFrame> manualFrames = const [],
     this.viewportX = 0,
     this.viewportY = 0,
     this.viewportScale = 1,
-  }) : nodes = Map.unmodifiable(nodes);
+  }) : nodes = Map.unmodifiable(nodes),
+       manualFrames = List.unmodifiable(manualFrames);
   final String id, name, targetModel, rootId;
   final Map<String, BlockNode> nodes;
+  final ProjectKind kind;
+  final List<ManualFrame> manualFrames;
   final double viewportX, viewportY, viewportScale;
-  factory RobotProject.create(String name, {String targetModel = 'K1AI'}) {
+  factory RobotProject.create(
+    String name, {
+    String targetModel = 'K1AI',
+    ProjectKind kind = ProjectKind.blocks,
+  }) {
     final root = BlockNode(id: newId(), kind: BlockKind.start);
     return RobotProject(
       id: newId(),
       name: name,
+      kind: kind,
       targetModel: targetModel,
       rootId: root.id,
       nodes: {root.id: root},
@@ -179,6 +232,7 @@ class RobotProject {
   }
   RobotProject copyWith({
     String? name,
+    List<ManualFrame>? manualFrames,
     Map<String, BlockNode>? nodes,
     double? viewportX,
     double? viewportY,
@@ -186,6 +240,8 @@ class RobotProject {
   }) => RobotProject(
     id: id,
     name: name ?? this.name,
+    kind: kind,
+    manualFrames: manualFrames ?? this.manualFrames,
     targetModel: targetModel,
     rootId: rootId,
     nodes: nodes ?? this.nodes,
@@ -194,7 +250,9 @@ class RobotProject {
     viewportScale: viewportScale ?? this.viewportScale,
   );
   Map<String, dynamic> toJson() => {
-    'schemaVersion': 3,
+    'schemaVersion': 6,
+    'kind': kind.name,
+    'manualFrames': manualFrames.map((f) => f.toJson()).toList(),
     'id': id,
     'name': name,
     'targetModel': targetModel,
@@ -204,7 +262,13 @@ class RobotProject {
   };
   factory RobotProject.fromJson(Map<String, dynamic> json) {
     final legacy = json['schemaVersion'] == 1;
-    if (!legacy && json['schemaVersion'] != 2 && json['schemaVersion'] != 3) {
+    final manual = {4, 5, 6}.contains(json['schemaVersion']);
+    if (!legacy &&
+        json['schemaVersion'] != 2 &&
+        json['schemaVersion'] != 3 &&
+        json['schemaVersion'] != 4 &&
+        json['schemaVersion'] != 5 &&
+        json['schemaVersion'] != 6) {
       throw const UnsupportedProjectFormat('不支持此工程版本，原文件不会被覆盖');
     }
     _keys(json, {
@@ -215,6 +279,8 @@ class RobotProject {
       'rootId',
       'nodes',
       if (!legacy) 'viewport',
+      if (manual) 'kind',
+      if (manual) 'manualFrames',
     });
     final viewport = legacy ? null : json['viewport'] as Map<String, dynamic>;
     if (viewport != null) _keys(viewport, {'x', 'y', 'scale'});
@@ -223,7 +289,8 @@ class RobotProject {
       final node = BlockNode.fromJson(
         value as Map<String, dynamic>,
         legacy: legacy,
-        sequence: json['schemaVersion'] == 3,
+        sequence: json['schemaVersion'] == 3 || manual,
+        basic: json['schemaVersion'] == 6,
       );
       if (nodes.containsKey(node.id)) throw const FormatException('重复积木编号');
       nodes[node.id] = node;
@@ -243,8 +310,23 @@ class RobotProject {
 
       place(json['rootId'] as String, 0);
     }
+    final kind = manual
+        ? ProjectKind.values.where((k) => k.name == json['kind']).firstOrNull
+        : ProjectKind.blocks;
+    if (kind == null) throw const UnsupportedProjectFormat('未知工程类型，请保留原文件');
     final result = RobotProject(
       id: json['id'] as String,
+      kind: kind,
+      manualFrames: manual
+          ? (json['manualFrames'] as List)
+                .map(
+                  (v) => ManualFrame.fromJson(
+                    v as Map<String, dynamic>,
+                    legacy: json['schemaVersion'] == 4,
+                  ),
+                )
+                .toList()
+          : const [],
       name: json['name'] as String,
       targetModel: json['targetModel'] as String,
       rootId: json['rootId'] as String,
@@ -257,6 +339,29 @@ class RobotProject {
     return result;
   }
   void validate({bool forExecution = false}) {
+    if (manualFrames.length > 1000) throw const FormatException('最多保存1000个姿态');
+    final frameIds = <String>{};
+    for (final frame in manualFrames) {
+      if (!RegExp(r'^[a-zA-Z0-9_-]{1,80}$').hasMatch(frame.id) ||
+          !frameIds.add(frame.id) ||
+          frame.values.length != 24 ||
+          frame.values.any((v) => v < 0 || v > 255) ||
+          (frame.reference != null &&
+              (frame.reference!.length != 24 ||
+                  frame.reference!.any((v) => v < 0 || v > 255)))) {
+        throw const FormatException('手掰姿态编号或24字节数据无效');
+      }
+    }
+    if (kind == ProjectKind.blocks && manualFrames.isNotEmpty) {
+      throw const FormatException('积木工程不能包含手掰姿态');
+    }
+    if (kind == ProjectKind.manual &&
+        (nodes.length != 1 || nodes[rootId]?.children.isNotEmpty == true)) {
+      throw const FormatException('手掰工程不能包含积木程序');
+    }
+    if (forExecution && kind == ProjectKind.manual) {
+      throw const FormatException('手掰工程不能作为积木程序执行');
+    }
     if (!RegExp(r'^[a-zA-Z0-9_-]{1,80}$').hasMatch(id) ||
         name.trim().isEmpty ||
         !{'K1', 'K1AI'}.contains(targetModel)) {
@@ -291,6 +396,7 @@ class RobotProject {
             BlockKind.robotPose,
             BlockKind.longPose,
             BlockKind.robotAction,
+            BlockKind.basicAction,
             BlockKind.wait,
           }.contains(node.kind) &&
           node.children.isNotEmpty) {
@@ -307,6 +413,16 @@ class RobotProject {
             (child) => nodes[child]?.kind == BlockKind.actionChild,
           )) {
         throw const FormatException('关节子积木只能连接到动作');
+      }
+      if (node.kind == BlockKind.basicAction) {
+        final basic = BasicAction.byId(node.basicActionId);
+        if (node.basicActionId.isNotEmpty && basic == null) {
+          throw const UnsupportedProjectFormat('未知基础姿态，请保留工程文件');
+        }
+        if (basic?.movement == true &&
+            (node.waitMs < 100 || node.waitMs > 60000)) {
+          throw const FormatException('移动持续时间应为0.1至60秒');
+        }
       }
       if (node.actionPath.isNotEmpty) RobotAction.validatePath(node.actionPath);
       if (node.waitMs < 0 || node.waitMs > 3600000) {
@@ -333,6 +449,7 @@ class RobotProject {
             BlockKind.robotPose,
             BlockKind.longPose,
             BlockKind.robotAction,
+            BlockKind.basicAction,
             BlockKind.wait,
           }.contains(node.kind)) {
         throw FormatException('积木 ${node.kind.name} 的机器人执行语义尚未验证');

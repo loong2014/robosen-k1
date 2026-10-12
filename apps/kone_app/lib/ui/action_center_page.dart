@@ -1,6 +1,7 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
 import '../app.dart';
+import 'action_directory_probe_page.dart';
 import '../features/actions/action_catalog.dart';
 import '../features/actions/action_player.dart';
 import '../features/actions/robot_action.dart';
@@ -70,6 +71,21 @@ class _ActionCenterPageState extends State<ActionCenterPage> {
         appBar: AppBar(
           title: Text(widget.selecting ? widget.selectionTitle : '动作中心'),
           actions: [
+            if (!widget.selecting)
+              IconButton(
+                tooltip: '读取基础动作目录',
+                icon: const Icon(Icons.manage_search),
+                onPressed: widget.session.ready && !widget.session.executionBusy
+                    ? () => Navigator.of(context).push(
+                        MaterialPageRoute<void>(
+                          builder: (_) => ActionDirectoryProbePage(
+                            session: widget.session,
+                            encoding: widget.catalog.encoding,
+                          ),
+                        ),
+                      )
+                    : null,
+              ),
             if (!widget.selecting && player.busy)
               IconButton(
                 tooltip: '停止当前动作',

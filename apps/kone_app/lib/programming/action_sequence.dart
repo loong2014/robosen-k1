@@ -3,9 +3,13 @@ import 'package:flutter/foundation.dart';
 import '../features/actions/action_catalog.dart';
 import '../features/actions/action_player.dart';
 import 'project.dart';
+import 'basic_actions.dart';
 
 List<BlockNode> compileSequence(RobotProject project, {int maxSteps = 10000}) {
   project.validate();
+  if (project.kind != ProjectKind.blocks) {
+    throw const FormatException('请在手掰编辑器打开此工程');
+  }
   final result = <BlockNode>[];
   final visited = <String>{};
   var visits = 0;
@@ -24,7 +28,15 @@ List<BlockNode> compileSequence(RobotProject project, {int maxSteps = 10000}) {
         }
       case BlockKind.robotAction:
         if (node.actionPath.isEmpty) {
-          throw const FormatException('请为已有动作积木选择动作');
+          throw const FormatException('请为预置机器人长姿态积木选择动作');
+        }
+        if (result.length >= maxSteps) throw const FormatException('程序展开超过上限');
+        result.add(node);
+      case BlockKind.basicAction:
+        final action = BasicAction.byId(node.basicActionId);
+        if (action == null) throw const FormatException('请为基础姿态积木选择动作');
+        if (!action.executable) {
+          throw FormatException('基础姿态“${action.name}”的执行指令待核实，本次程序未开始');
         }
         if (result.length >= maxSteps) throw const FormatException('程序展开超过上限');
         result.add(node);
@@ -32,7 +44,9 @@ List<BlockNode> compileSequence(RobotProject project, {int maxSteps = 10000}) {
         if (result.length >= maxSteps) throw const FormatException('程序展开超过上限');
         result.add(node);
       default:
-        throw const FormatException('本次播放支持已有动作、等待和循环；请将关节姿态积木放在单独工程中');
+        throw const FormatException(
+          '本次播放支持已接入的基础姿态、预置机器人长姿态、等待和循环；请将关节姿态积木放在单独工程中',
+        );
     }
   }
 
@@ -40,8 +54,10 @@ List<BlockNode> compileSequence(RobotProject project, {int maxSteps = 10000}) {
   if (visited.length != project.nodes.length) {
     throw const FormatException('存在未连接的积木');
   }
-  if (!result.any((n) => n.kind == BlockKind.robotAction)) {
-    throw const FormatException('请添加已有动作');
+  if (!result.any(
+    (n) => n.kind == BlockKind.robotAction || n.kind == BlockKind.basicAction,
+  )) {
+    throw const FormatException('请添加已接入的基础姿态或预置机器人长姿态');
   }
   return List.unmodifiable(result);
 }
@@ -66,7 +82,9 @@ class ActionSequenceRunner extends ChangeNotifier {
   Future<void> run(RobotProject project) async {
     if (_executing) throw StateError('程序正在运行或结束中');
     final plan = compileSequence(project);
-    if (!catalog.complete) throw StateError('请先连接机器人并读取完整动作列表');
+    if (plan.any((n) => n.kind == BlockKind.robotAction) && !catalog.complete) {
+      throw StateError('请先连接机器人并读取完整动作列表');
+    }
     for (final node in plan.where((n) => n.kind == BlockKind.robotAction)) {
       if (!catalog.contains(node.actionPath)) {
         throw StateError('当前机器人未找到动作：${node.actionPath}');
@@ -113,7 +131,10 @@ class ActionSequenceRunner extends ChangeNotifier {
           await pending.future;
           _delay = null;
         } else {
-          if (!catalog.contains(node.actionPath)) throw StateError('动作目录已失效');
+          if (node.kind == BlockKind.robotAction &&
+              !catalog.contains(node.actionPath)) {
+            throw StateError('动作目录已失效');
+          }
           void actionChanged() {
             if (pending.isCompleted) return;
             if (player.phase == ActionPhase.completed) {
@@ -129,7 +150,17 @@ class ActionSequenceRunner extends ChangeNotifier {
 
           player.addListener(actionChanged);
           try {
-            await player.play(node.actionPath, inSequence: true);
+            final basic = node.kind == BlockKind.basicAction
+                ? BasicAction.byId(node.basicActionId)
+                : null;
+            if (basic?.command != null) {
+              await player.moveInSequence(basic!.command!, basic.stopAfterMs!);
+            } else {
+              await player.play(
+                basic?.path ?? node.actionPath,
+                inSequence: true,
+              );
+            }
             if (!valid()) throw StateError('程序已取消');
             await pending.future;
           } finally {

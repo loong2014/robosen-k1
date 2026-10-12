@@ -10,6 +10,161 @@ import 'package:kone_app/storage/control_shortcuts.dart';
 import 'fake_transport.dart';
 
 void main() {
+  for (final ms in [100, 200, 300]) {
+    test('short probe $ms ms sends once then stops', () async {
+      final t = FakeTransport();
+      final s = RobotSession(t);
+      final c = ControlController(s);
+      addTearDown(() {
+        c.dispose();
+        s.dispose();
+      });
+      await s.connect(const RobotDevice('id', 'K1AI', -40));
+      await Future<void>.delayed(Duration.zero);
+      final clock = Stopwatch()..start();
+      final stamps = <(int, int)>[];
+      t.onCommand = (command) =>
+          stamps.add((command.code, clock.elapsedMilliseconds));
+      await c.probeOnce(Direction.forward, stopAfterMs: ms);
+      expect(stamps.where((x) => x.$1 == 1).length, 1);
+      expect(stamps.where((x) => x.$1 == 12).length, 5);
+      expect(
+        stamps.firstWhere((x) => x.$1 == 12).$2 - stamps.first.$2,
+        greaterThanOrEqualTo(ms - 5),
+      );
+      expect(c.probeResult, contains('$ms毫秒自动停止'));
+      expect(s.executionBusy, isFalse);
+    });
+  }
+  for (final disconnected in [false, true]) {
+    test('short probe cancellation disconnect=$disconnected', () async {
+      final t = FakeTransport();
+      final s = RobotSession(t);
+      final c = ControlController(s);
+      addTearDown(() {
+        c.dispose();
+        s.dispose();
+      });
+      await s.connect(const RobotDevice('id', 'K1AI', -40));
+      await Future<void>.delayed(Duration.zero);
+      final work = c.probeOnce(Direction.forward, stopAfterMs: 300);
+      await Future<void>.delayed(Duration.zero);
+      if (disconnected) {
+        await s.disconnect();
+      } else {
+        await c.stop(reason: '手动点击停止');
+      }
+      await work;
+      final count = t.sent.length;
+      await Future<void>.delayed(const Duration(milliseconds: 400));
+      expect(t.sent.length, count);
+      expect(s.executionBusy, isFalse);
+    });
+  }
+
+  for (final mode in ['manual', 'deadline', 'disconnect']) {
+    test('manual stop diagnostic $mode', () async {
+      final t = FakeTransport();
+      final s = RobotSession(t);
+      final c = ControlController(s);
+      addTearDown(() {
+        c.dispose();
+        s.dispose();
+      });
+      await s.connect(const RobotDevice('id', 'K1AI', -40));
+      await Future<void>.delayed(Duration.zero);
+      final work = c.probeOnce(Direction.forward, manualStop: true);
+      await Future<void>.delayed(const Duration(milliseconds: 2100));
+      expect(c.manualProbe, isTrue);
+      expect(
+        t.sent.where((x) => x.code == 12),
+        isEmpty,
+      ); // No old 2-second cutoff.
+      if (mode == 'manual') await c.stop(reason: '手动点击停止');
+      if (mode == 'disconnect') await s.disconnect();
+      await work;
+      expect(t.sent.where((x) => x.code == 1).length, 1);
+      expect(
+        t.sent.where((x) => x.code == 12).length,
+        mode == 'disconnect' ? 0 : 5,
+      );
+      expect(
+        c.probeResult,
+        contains(
+          mode == 'manual'
+              ? '手动点击停止'
+              : mode == 'deadline'
+              ? '达到5秒上限'
+              : '连接中断',
+        ),
+      );
+      expect(c.manualProbe, isFalse);
+      expect(s.executionBusy, isFalse);
+    });
+  }
+
+  for (final mode in ['deadline', 'stop', 'disconnect']) {
+    test('single forward diagnostic: $mode', () async {
+      final t = FakeTransport();
+      final s = RobotSession(t);
+      final c = ControlController(s);
+      addTearDown(() {
+        c.dispose();
+        s.dispose();
+      });
+      await s.connect(const RobotDevice('id', 'K1AI', -40));
+      await Future<void>.delayed(Duration.zero);
+      final work = c.probeOnce(Direction.forward);
+      await Future<void>.delayed(Duration.zero);
+      expect(c.singleProbe, isTrue);
+      expect(c.canMove, isFalse);
+      c.start(Direction.backward);
+      await c.probeOnce(Direction.forward);
+      expect(t.sent.where((x) => x.code == 1).length, 1);
+      expect(t.sent.where((x) => x.code == 5), isEmpty);
+      if (mode == 'stop') await c.stop();
+      if (mode == 'disconnect') await s.disconnect();
+      await work;
+      expect(t.sent.where((x) => x.code == 1).length, 1);
+      expect(
+        t.sent.where((x) => x.code == 12).length,
+        mode == 'disconnect' ? 0 : 5,
+      );
+      final count = t.sent.length;
+      await Future<void>.delayed(const Duration(milliseconds: 2200));
+      expect(
+        t.sent.length,
+        count,
+      ); // Canceled observation must never send later.
+      expect(c.singleProbe, isFalse);
+      expect(s.executionBusy, isFalse);
+    });
+  }
+
+  for (final entry in [
+    (Direction.backward, 5),
+    (Direction.left, 7),
+    (Direction.right, 3),
+  ]) {
+    test('single diagnostic direction code ${entry.$2}', () async {
+      final t = FakeTransport();
+      final s = RobotSession(t);
+      final c = ControlController(s);
+      addTearDown(() {
+        c.dispose();
+        s.dispose();
+      });
+      await s.connect(const RobotDevice('id', 'K1AI', -40));
+      await Future<void>.delayed(Duration.zero);
+      final work = c.probeOnce(entry.$1);
+      await Future<void>.delayed(Duration.zero);
+      expect(t.sent.where((x) => x.code == entry.$2).length, 1);
+      await work;
+      expect(t.sent.where((x) => x.code == entry.$2).length, 1);
+      expect(t.sent.where((x) => x.code == 12).length, 5);
+      expect(s.executionBusy, isFalse);
+    });
+  }
   test(
     'K1/k1 candidates include variants; unrelated names remain unsupported',
     () {

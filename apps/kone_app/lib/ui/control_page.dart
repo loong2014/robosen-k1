@@ -58,7 +58,7 @@ class ControlPage extends StatelessWidget {
     if (player.busy) {
       await player.stop();
     } else {
-      await control.stop();
+      await control.stop(reason: '手动点击停止');
     }
   }
 

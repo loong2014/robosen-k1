@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import '../programming/project.dart';
+import '../programming/basic_actions.dart';
 import '../programming/project_editor.dart';
 
 class BlockCanvas extends StatefulWidget {
@@ -116,6 +117,7 @@ class _BlockCanvasState extends State<BlockCanvas> {
             BlockNode(id: '__new__', kind: kind),
             at,
           );
+          String? added;
           if (kind == BlockKind.actionChild) {
             final parent =
                 widget.editor.project.nodes[nearest ?? widget.selected];
@@ -128,6 +130,7 @@ class _BlockCanvasState extends State<BlockCanvas> {
               insertionIndex(parent, at),
             );
             widget.editor.position(id, at.dx, at.dy);
+            added = id;
           } else if (nearest != null) {
             final parent = widget.editor.project.nodes[nearest]!;
             final id = widget.editor.add(
@@ -136,8 +139,13 @@ class _BlockCanvasState extends State<BlockCanvas> {
               insertionIndex(parent, at),
             );
             widget.editor.position(id, at.dx, at.dy);
+            added = id;
           } else {
-            widget.editor.addDetached(kind, at.dx, at.dy);
+            added = widget.editor.addDetached(kind, at.dx, at.dy);
+          }
+          if (kind == BlockKind.basicAction) {
+            widget.onSelect(added);
+            widget.onEdit(widget.editor.project.nodes[added]!);
           }
         } catch (e) {
           widget.onError(e);
@@ -256,7 +264,7 @@ class _BlockCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final color = switch (node.kind) {
-      BlockKind.robotAction => const Color(0xff267d90),
+      BlockKind.basicAction || BlockKind.robotAction => const Color(0xff267d90),
       BlockKind.wait => const Color(0xff8c6839),
       BlockKind.start => const Color(0xff16806f),
       BlockKind.action => const Color(0xff376ba8),
@@ -266,10 +274,14 @@ class _BlockCard extends StatelessWidget {
     };
     final title = switch (node.kind) {
       BlockKind.robotAction =>
-        node.actionPath.isEmpty ? '选择已有动作' : node.actionPath.split('/').last,
+        node.actionPath.isEmpty
+            ? '选择预置机器人长姿态'
+            : node.actionPath.split('/').last,
+      BlockKind.basicAction =>
+        BasicAction.byId(node.basicActionId)?.name ?? '选择基础姿态',
       BlockKind.wait => '等待 ${node.waitMs / 1000} 秒',
       BlockKind.start => '开始',
-      BlockKind.action => '动作',
+      BlockKind.action => '基础姿态',
       BlockKind.loop => '循环 ${node.repeat} 次',
       BlockKind.actionChild => '关节 ${node.joint} · ${node.value}',
       BlockKind.robotPose => '机器人姿态',
@@ -308,7 +320,14 @@ class _BlockCard extends StatelessWidget {
             ),
             const Spacer(),
             Text(
-              node.kind == BlockKind.action
+              node.kind == BlockKind.basicAction
+                  ? (BasicAction.byId(node.basicActionId)?.command != null
+                        ? '${BasicAction.byId(node.basicActionId)!.steps}步 · 固定模式'
+                        : BasicAction.byId(node.basicActionId)?.executable ==
+                              true
+                        ? '双击更换动作'
+                        : '${BasicAction.byId(node.basicActionId)?.movement == true ? '${node.waitMs / 1000}秒 · ' : ''}执行待核实')
+                  : node.kind == BlockKind.action
                   ? '速度 ${node.speed} · 延时 ${node.delay}'
                   : node.kind == BlockKind.actionChild
                   ? (node.enabled ? '已启用' : '已停用')

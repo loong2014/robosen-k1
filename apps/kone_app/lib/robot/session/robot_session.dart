@@ -34,9 +34,12 @@ class RobotSession extends ChangeNotifier {
   Future<void> _writeTail = Future<void>.value();
   Completer<K1Command>? _pending;
   int? _expected;
+  bool Function(K1Command)? _accept;
   Future<void> _requestTail = Future<void>.value();
   List<List<int>>? _directoryNames;
   bool _directoryUncertain = false;
+  int? _manualUncertainRevision;
+  int? _manualExitUncertainRevision;
   Object? _operationOwner;
   int get revision => _epoch;
   bool get executionBusy => _operationOwner != null;
@@ -96,7 +99,8 @@ class RobotSession extends ChangeNotifier {
       }
       if (_expected == command.code &&
           _pending != null &&
-          !_pending!.isCompleted) {
+          !_pending!.isCompleted &&
+          (_accept == null || _accept!(command))) {
         _pending!.complete(command);
       }
       _commands.add(command);
@@ -108,6 +112,7 @@ class RobotSession extends ChangeNotifier {
     final p = _pending;
     _pending = null;
     _expected = null;
+    _accept = null;
     if (p != null && !p.isCompleted) p.completeError(reason);
   }
 
@@ -212,6 +217,57 @@ class RobotSession extends ChangeNotifier {
     return work;
   }
 
+  Future<K1Command> readManualPose(bool Function() valid) =>
+      _coordinate(() async {
+        final revision = _epoch;
+        if (_manualUncertainRevision == revision) {
+          throw StateError('上次姿态读取未确认，请重新连接后重试');
+        }
+        try {
+          final response = await _request(0xE9, const [], valid: valid);
+          if (!valid() || response.payload.length != 24) {
+            throw StateError('姿态读取已取消或返回数据长度无效');
+          }
+          return response;
+        } catch (_) {
+          _manualUncertainRevision = revision;
+          rethrow;
+        }
+      }, valid);
+
+  bool get manualExitNeedsReconnect => _manualExitUncertainRevision == revision;
+  bool get manualNeedsReconnect => _manualUncertainRevision == revision;
+  void invalidateManual() {
+    _manualUncertainRevision = revision;
+  }
+
+  Future<K1Command> manualRequest(
+    int code,
+    List<int> payload,
+    bool Function() valid, {
+    bool Function(K1Command)? accept,
+  }) => _coordinate(() async {
+    final requestRevision = revision;
+    if (code == 0xe7 && manualExitNeedsReconnect) {
+      throw StateError('上次退出未确认，请重新连接');
+    }
+    if (manualNeedsReconnect && code != 0xe7) throw StateError('手掰事务未确认，请重新连接');
+    try {
+      final result = await _request(
+        code,
+        payload,
+        valid: valid,
+        accept: accept,
+      );
+      if (!valid()) throw StateError('手掰操作已取消');
+      return result;
+    } catch (_) {
+      _manualUncertainRevision = requestRevision;
+      if (code == 0xe7) _manualExitUncertainRevision = requestRevision;
+      rethrow;
+    }
+  }, valid);
+
   Future<K1Command> request(int code, [List<int> payload = const []]) =>
       _coordinate(() => _request(code, payload));
 
@@ -220,11 +276,13 @@ class RobotSession extends ChangeNotifier {
     List<int> payload, {
     int? responseCode,
     bool Function()? valid,
+    bool Function(K1Command)? accept,
   }) async {
     if (_pending != null) throw StateError('已有等待应答的事务');
     final pending = Completer<K1Command>();
     _pending = pending;
     _expected = responseCode ?? code;
+    _accept = accept;
     final response = pending.future.timeout(requestTimeout);
     // Install the error listener before write: a synchronous transport failure
     // can cancel the pending request before send has finished.
@@ -238,6 +296,7 @@ class RobotSession extends ChangeNotifier {
       if (identical(_pending, pending)) {
         _pending = null;
         _expected = null;
+        _accept = null;
       }
     }
   }

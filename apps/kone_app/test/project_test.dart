@@ -6,6 +6,17 @@ import 'package:kone_app/programming/project_editor.dart';
 import 'package:kone_app/storage/project_repository.dart';
 
 void main() {
+  test('schema5 old joint container is preserved in schema6', () {
+    final p = RobotProject.create('旧工程');
+    final old = p.toJson()..['schemaVersion'] = 5;
+    for (final n in old['nodes'] as List) {
+      (n['params'] as Map).remove('basicActionId');
+    }
+    final restored = RobotProject.fromJson(old);
+    expect(restored.toJson()['schemaVersion'], 6);
+    expect(restored.nodes.keys, p.nodes.keys);
+  });
+
   test('nested blocks reorder, round trip and expand deterministically', () {
     final editor = ProjectEditor(RobotProject.create('顺序工程'));
     final root = editor.project.rootId;
@@ -67,6 +78,8 @@ void main() {
     final p = RobotProject.create('旧工程');
     final v1 = p.toJson();
     v1['schemaVersion'] = 1;
+    v1.remove('kind');
+    v1.remove('manualFrames');
     v1.remove('viewport');
     for (final node in (v1['nodes'] as List)) {
       final params = node['params'] as Map<String, dynamic>;
@@ -75,9 +88,10 @@ void main() {
       params.remove('enabled');
       params.remove('actionPath');
       params.remove('waitMs');
+      params.remove('basicActionId');
     }
     final migrated = RobotProject.fromJson(v1);
-    expect(migrated.toJson()['schemaVersion'], 3);
+    expect(migrated.toJson()['schemaVersion'], 6);
     expect(migrated.nodes[migrated.rootId]!.x, 24);
     final editor = ProjectEditor(migrated);
     final action = editor.add(BlockKind.action, migrated.rootId, 0);

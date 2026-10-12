@@ -274,7 +274,7 @@ void main() {
         await tester.pumpAndSettle();
         expect(find.byType(ControlJoystick), findsOneWidget);
         // Scroll beside the joystick: its own drags belong to robot control.
-        for (var i = 0; i < 5 && find.byType(Slider).evaluate().isEmpty; i++) {
+        for (var i = 0; i < 20 && find.byType(Slider).evaluate().isEmpty; i++) {
           final scroll = await tester.startGesture(const Offset(8, 350));
           await scroll.moveBy(const Offset(0, -260));
           await scroll.up();

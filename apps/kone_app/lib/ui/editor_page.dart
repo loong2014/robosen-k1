@@ -10,6 +10,7 @@ import '../programming/project_editor.dart';
 import '../robot/session/robot_session.dart';
 import '../storage/project_repository.dart';
 import 'block_canvas.dart';
+import 'basic_action_picker.dart';
 
 class EditorPage extends StatefulWidget {
   const EditorPage({
@@ -121,10 +122,10 @@ class _EditorPageState extends State<EditorPage> with WidgetsBindingObserver {
         ? node
         : editor.project.nodes[editor.project.rootId]!;
     try {
-      if (parent == null) throw const FormatException('请先选中动作积木');
+      if (parent == null) throw const FormatException('请先选中基础姿态积木');
       final id = editor.add(kind, parent.id, parent.children.length);
       setState(() => selected = id);
-      if (kind == BlockKind.robotAction) {
+      if (kind == BlockKind.robotAction || kind == BlockKind.basicAction) {
         unawaited(edit(editor.project.nodes[id]!));
       }
     } catch (e) {
@@ -134,11 +135,16 @@ class _EditorPageState extends State<EditorPage> with WidgetsBindingObserver {
 
   Future<void> edit(BlockNode node) async {
     if (running) return;
+    if (node.kind == BlockKind.basicAction) {
+      final updated = await pickBasicAction(context, node);
+      if (updated != null && mounted) editor.change(updated);
+      return;
+    }
     if (node.kind == BlockKind.robotAction) {
       if (widget.catalog == null ||
           widget.player == null ||
           !widget.session.ready) {
-        showError(context, '请先连接机器人，再双击积木选择已有动作');
+        showError(context, '请先连接机器人，再双击积木选择预置机器人长姿态');
         return;
       }
       final path = await Navigator.of(context).push<String>(
@@ -148,7 +154,7 @@ class _EditorPageState extends State<EditorPage> with WidgetsBindingObserver {
             catalog: widget.catalog!,
             player: widget.player!,
             selecting: true,
-            selectionTitle: '选择编程动作',
+            selectionTitle: '选择预置机器人长姿态',
           ),
         ),
       );
@@ -229,7 +235,7 @@ class _EditorPageState extends State<EditorPage> with WidgetsBindingObserver {
                 ? '循环参数'
                 : node.kind == BlockKind.actionChild
                 ? '关节参数'
-                : '动作参数',
+                : '基础姿态参数',
           ),
           content: SingleChildScrollView(
             child: Column(
@@ -352,9 +358,12 @@ class _EditorPageState extends State<EditorPage> with WidgetsBindingObserver {
   Future<void> playSequence() async {
     if (runner == null) return;
     try {
-      compileSequence(editor.project);
+      final plan = compileSequence(editor.project);
       if (!widget.session.ready) throw StateError('请先连接机器人');
-      if (!widget.catalog!.complete) await widget.catalog!.refresh();
+      if (plan.any((n) => n.kind == BlockKind.robotAction) &&
+          !widget.catalog!.complete) {
+        await widget.catalog!.refresh();
+      }
       if (!mounted) return;
       if (WidgetsBinding.instance.lifecycleState != null &&
           WidgetsBinding.instance.lifecycleState != AppLifecycleState.resumed) {
@@ -369,7 +378,10 @@ class _EditorPageState extends State<EditorPage> with WidgetsBindingObserver {
   void preview() {
     try {
       final sequence = editor.project.nodes.values.any(
-        (n) => n.kind == BlockKind.robotAction || n.kind == BlockKind.wait,
+        (n) =>
+            n.kind == BlockKind.robotAction ||
+            n.kind == BlockKind.basicAction ||
+            n.kind == BlockKind.wait,
       );
       final count = sequence
           ? compileSequence(editor.project).length
@@ -381,7 +393,7 @@ class _EditorPageState extends State<EditorPage> with WidgetsBindingObserver {
           content: Text(
             sequence
                 ? '展开后共 $count 个步骤。连接机器人后点击播放，运行期间请保持应用在前台。'
-                : '展开后共 $count 个姿态步骤。姿态文件上传仍未开放；已有动作组合可直接播放。',
+                : '展开后共 $count 个姿态步骤。姿态文件上传仍未开放；预置机器人长姿态组合可直接播放。',
           ),
           actions: [
             TextButton(
@@ -444,13 +456,11 @@ class _EditorPageState extends State<EditorPage> with WidgetsBindingObserver {
                   padding: const EdgeInsets.all(8),
                   children: [
                     for (final item in <(BlockKind, String)>[
-                      (BlockKind.robotAction, '已有动作'),
+                      (BlockKind.robotAction, '预置机器人长姿态'),
                       (BlockKind.wait, '等待'),
-                      (BlockKind.action, '动作'),
+                      (BlockKind.basicAction, '基础姿态'),
                       (BlockKind.actionChild, '关节'),
                       (BlockKind.loop, '循环'),
-                      (BlockKind.robotPose, '机器人姿态'),
-                      (BlockKind.longPose, '长姿态'),
                     ])
                       Padding(
                         padding: const EdgeInsets.only(right: 8),
@@ -474,7 +484,7 @@ class _EditorPageState extends State<EditorPage> with WidgetsBindingObserver {
               ),
               const Padding(
                 padding: EdgeInsets.symmetric(horizontal: 12),
-                child: Text('长按上方积木拖入画布；拖动积木靠近开始、循环或动作连接。双指移动和缩放画布。'),
+                child: Text('长按上方积木拖入画布；拖动积木靠近开始、循环或基础姿态连接。双指移动和缩放画布。'),
               ),
               Expanded(
                 child: AbsorbPointer(
@@ -561,7 +571,7 @@ class _EditorPageState extends State<EditorPage> with WidgetsBindingObserver {
                                 : '组合已结束'),
                       ),
                     const Text(
-                      '已有动作、等待、循环可播放；运行时保持前台连接。姿态编程仍可编辑保存。',
+                      '已接入的基础姿态、预置机器人长姿态、等待、循环可播放；运行时保持前台连接。姿态编程仍可编辑保存。',
                       textAlign: TextAlign.center,
                     ),
                   ],
