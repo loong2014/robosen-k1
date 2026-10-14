@@ -66,7 +66,9 @@ class ProjectEditor extends ChangeNotifier {
                   parent.kind == BlockKind.longPose ||
                   parent.kind == BlockKind.robotAction ||
                   parent.kind == BlockKind.basicAction ||
-                  parent.kind == BlockKind.wait)) {
+                  parent.kind == BlockKind.wait ||
+                  parent.kind == BlockKind.jointPose ||
+                  parent.kind == BlockKind.resetPose)) {
       throw ArgumentError('无效积木连接');
     }
     final node = BlockNode(

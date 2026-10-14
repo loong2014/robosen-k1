@@ -1,5 +1,6 @@
 import 'dart:math';
 import 'basic_actions.dart';
+import 'joint_profile.dart';
 import '../features/actions/robot_action.dart';
 
 class UnsupportedProjectFormat implements Exception {
@@ -19,6 +20,8 @@ enum BlockKind {
   robotAction,
   basicAction,
   wait,
+  jointPose,
+  resetPose,
 }
 
 String newId() => List.generate(
@@ -57,6 +60,7 @@ class BlockNode {
   final int waitMs;
   final double x, y;
   BlockNode copyWith({
+    BlockKind? kind,
     List<String>? children,
     Map<int, int>? joints,
     int? speed,
@@ -72,7 +76,7 @@ class BlockNode {
     double? y,
   }) => BlockNode(
     id: id,
-    kind: kind,
+    kind: kind ?? this.kind,
     children: children ?? this.children,
     joints: joints ?? this.joints,
     speed: speed ?? this.speed,
@@ -110,6 +114,7 @@ class BlockNode {
     bool legacy = false,
     bool sequence = false,
     bool basic = false,
+    bool jointAngles = false,
   }) {
     _keys(m, {'id', 'type', 'orderedChildIds', 'params', 'position'});
     final params = m['params'] as Map<String, dynamic>;
@@ -137,6 +142,10 @@ class BlockNode {
       throw const UnsupportedProjectFormat('基础姿态需要工程版本6');
     }
     if (kind == null) throw const UnsupportedProjectFormat('未知积木类型，请保留原文件');
+    if (!jointAngles &&
+        {BlockKind.jointPose, BlockKind.resetPose}.contains(kind)) {
+      throw const UnsupportedProjectFormat('关节角度/恢复姿态需要工程版本7');
+    }
     return BlockNode(
       id: m['id'] as String,
       kind: kind,
@@ -250,7 +259,7 @@ class RobotProject {
     viewportScale: viewportScale ?? this.viewportScale,
   );
   Map<String, dynamic> toJson() => {
-    'schemaVersion': 6,
+    'schemaVersion': 7,
     'kind': kind.name,
     'manualFrames': manualFrames.map((f) => f.toJson()).toList(),
     'id': id,
@@ -262,13 +271,14 @@ class RobotProject {
   };
   factory RobotProject.fromJson(Map<String, dynamic> json) {
     final legacy = json['schemaVersion'] == 1;
-    final manual = {4, 5, 6}.contains(json['schemaVersion']);
+    final manual = {4, 5, 6, 7}.contains(json['schemaVersion']);
     if (!legacy &&
         json['schemaVersion'] != 2 &&
         json['schemaVersion'] != 3 &&
         json['schemaVersion'] != 4 &&
         json['schemaVersion'] != 5 &&
-        json['schemaVersion'] != 6) {
+        json['schemaVersion'] != 6 &&
+        json['schemaVersion'] != 7) {
       throw const UnsupportedProjectFormat('不支持此工程版本，原文件不会被覆盖');
     }
     _keys(json, {
@@ -290,7 +300,8 @@ class RobotProject {
         value as Map<String, dynamic>,
         legacy: legacy,
         sequence: json['schemaVersion'] == 3 || manual,
-        basic: json['schemaVersion'] == 6,
+        basic: {6, 7}.contains(json['schemaVersion']),
+        jointAngles: json['schemaVersion'] == 7,
       );
       if (nodes.containsKey(node.id)) throw const FormatException('重复积木编号');
       nodes[node.id] = node;
@@ -398,6 +409,8 @@ class RobotProject {
             BlockKind.robotAction,
             BlockKind.basicAction,
             BlockKind.wait,
+            BlockKind.jointPose,
+            BlockKind.resetPose,
           }.contains(node.kind) &&
           node.children.isNotEmpty) {
         throw const FormatException('此积木不能包含子积木');
@@ -439,7 +452,9 @@ class RobotProject {
           node.value < 0 ||
           node.value > 255 ||
           node.joints.entries.any(
-            (e) => e.key < 0 || e.key > 23 || e.value < 0 || e.value > 255,
+            (e) => node.kind == BlockKind.jointPose
+                ? !JointProfile.valid(e.key, e.value)
+                : e.key < 0 || e.key > 23 || e.value < 0 || e.value > 255,
           )) {
         throw const FormatException('积木参数超出本地原始值表示范围');
       }
@@ -451,6 +466,8 @@ class RobotProject {
             BlockKind.robotAction,
             BlockKind.basicAction,
             BlockKind.wait,
+            BlockKind.jointPose,
+            BlockKind.resetPose,
           }.contains(node.kind)) {
         throw FormatException('积木 ${node.kind.name} 的机器人执行语义尚未验证');
       }

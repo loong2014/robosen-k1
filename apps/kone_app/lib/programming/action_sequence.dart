@@ -5,7 +5,11 @@ import '../features/actions/action_player.dart';
 import 'project.dart';
 import 'basic_actions.dart';
 
-List<BlockNode> compileSequence(RobotProject project, {int maxSteps = 10000}) {
+List<BlockNode> compileSequence(
+  RobotProject project, {
+  int maxSteps = 10000,
+  bool inspectOnly = false,
+}) {
   project.validate();
   if (project.kind != ProjectKind.blocks) {
     throw const FormatException('请在手掰编辑器打开此工程');
@@ -20,6 +24,9 @@ List<BlockNode> compileSequence(RobotProject project, {int maxSteps = 10000}) {
     switch (node.kind) {
       case BlockKind.start:
       case BlockKind.loop:
+        if (node.kind == BlockKind.loop && node.children.isEmpty) {
+          throw const FormatException('循环内还没有卡片，请先添加内容');
+        }
         final count = node.kind == BlockKind.loop ? node.repeat : 1;
         for (var i = 0; i < count; i++) {
           for (final child in node.children) {
@@ -28,24 +35,34 @@ List<BlockNode> compileSequence(RobotProject project, {int maxSteps = 10000}) {
         }
       case BlockKind.robotAction:
         if (node.actionPath.isEmpty) {
-          throw const FormatException('请为预置机器人长姿态积木选择动作');
+          throw const FormatException('请为动作库动作积木选择动作');
         }
         if (result.length >= maxSteps) throw const FormatException('程序展开超过上限');
         result.add(node);
       case BlockKind.basicAction:
         final action = BasicAction.byId(node.basicActionId);
-        if (action == null) throw const FormatException('请为基础姿态积木选择动作');
+        if (action == null) throw const FormatException('请为基础动作积木选择动作');
+        if (BasicAction.retired.contains(action)) {
+          throw FormatException('基础动作“${action.name}”已移除，请删除或替换后再播放');
+        }
         if (!action.executable) {
-          throw FormatException('基础姿态“${action.name}”的执行指令待核实，本次程序未开始');
+          throw FormatException('基础动作“${action.name}”的执行指令待核实，本次程序未开始');
         }
         if (result.length >= maxSteps) throw const FormatException('程序展开超过上限');
         result.add(node);
+      case BlockKind.jointPose:
+        if (node.kind == BlockKind.jointPose && node.joints.isEmpty) {
+          throw const FormatException('请至少选择一个关节并设置角度');
+        }
+        if (result.length >= maxSteps) throw const FormatException('程序展开超过上限');
+        result.add(node);
+      case BlockKind.resetPose:
       case BlockKind.wait:
         if (result.length >= maxSteps) throw const FormatException('程序展开超过上限');
         result.add(node);
       default:
         throw const FormatException(
-          '本次播放支持已接入的基础姿态、预置机器人长姿态、等待和循环；请将关节姿态积木放在单独工程中',
+          '工程包含当前不支持播放的旧版积木，请删除或替换为动作库动作、基础动作、关节、初始姿态、等待或循环卡片',
         );
     }
   }
@@ -55,9 +72,13 @@ List<BlockNode> compileSequence(RobotProject project, {int maxSteps = 10000}) {
     throw const FormatException('存在未连接的积木');
   }
   if (!result.any(
-    (n) => n.kind == BlockKind.robotAction || n.kind == BlockKind.basicAction,
+    (n) =>
+        n.kind == BlockKind.robotAction ||
+        n.kind == BlockKind.basicAction ||
+        n.kind == BlockKind.jointPose ||
+        n.kind == BlockKind.resetPose,
   )) {
-    throw const FormatException('请添加已接入的基础姿态或预置机器人长姿态');
+    throw const FormatException('请添加动作库动作、基础动作、关节或初始姿态卡片');
   }
   return List.unmodifiable(result);
 }
@@ -107,6 +128,7 @@ class ActionSequenceRunner extends ChangeNotifier {
       if (!valid()) _failPending(StateError('连接已中断，程序已停止调度；机器人状态未知'));
     }
 
+    final jointTargets = List<int>.filled(17, 0);
     player.session.addListener(connectionChanged);
     try {
       for (final node in plan) {
@@ -153,7 +175,15 @@ class ActionSequenceRunner extends ChangeNotifier {
             final basic = node.kind == BlockKind.basicAction
                 ? BasicAction.byId(node.basicActionId)
                 : null;
-            if (basic?.command != null) {
+            if (node.kind == BlockKind.jointPose) {
+              for (final entry in node.joints.entries) {
+                jointTargets[entry.key] = entry.value;
+              }
+              await player.jointPoseInSequence(jointTargets);
+            } else if (node.kind == BlockKind.resetPose) {
+              jointTargets.fillRange(0, jointTargets.length, 0);
+              await player.initialPoseInSequence();
+            } else if (basic?.command != null) {
               await player.moveInSequence(basic!.command!, basic.stopAfterMs!);
             } else {
               await player.play(

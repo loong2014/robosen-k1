@@ -4,6 +4,7 @@ import '../../robot/protocol/action_encoding.dart';
 import '../../robot/protocol/k1_codec.dart';
 import '../../robot/session/robot_session.dart';
 import 'robot_action.dart';
+import '../../programming/graphical_pose_compiler.dart';
 
 enum ActionPhase {
   idle,
@@ -41,6 +42,8 @@ class ActionPlayer extends ChangeNotifier {
   bool _wireStarted = false;
   bool _sequenceReserved = false;
   bool _moving = false, _localMovementCompletion = false;
+  // Credit explicit waits after movement stops or file-action completion.
+  Stopwatch? _sincePosePredecessorEnd;
   Timer? _moveTimer;
   Completer<void>? _moveWaiter;
   void _cancelMoveWait() {
@@ -64,6 +67,8 @@ class ActionPlayer extends ChangeNotifier {
 
   Future<void> moveInSequence(int command, int stopAfterMs) async {
     if (!{
+      8: 500,
+      2: 500,
       1: 100,
       5: 100,
       7: 2000,
@@ -122,12 +127,105 @@ class ActionPlayer extends ChangeNotifier {
       if (i < 4) await _moveDelay(200);
     }
     if (!valid()) return;
+    _sincePosePredecessorEnd = Stopwatch()..start();
     _moving = false;
     _localMovementCompletion = true;
     phase = ActionPhase.completed;
     session.record('移动停止流程发送完成；无移动完成业务ACK，物理效果依据实测');
     _changed();
     if (!_sequenceReserved) session.releaseOperation(this);
+  }
+
+  bool _poseActive = false, _poseWireStarted = false;
+  int? _poseUncertainRevision;
+
+  Future<void> initialPoseInSequence() =>
+      jointPoseInSequence(List<int>.filled(17, 0));
+
+  Future<void> jointPoseInSequence(List<int> targets) async {
+    final frame = GraphicalPoseCompiler.frame(targets);
+    if (!_sequenceReserved || !busy || !session.ready) {
+      throw StateError('姿态需要编程序列独占连接');
+    }
+    if (_poseUncertainRevision == session.revision) {
+      throw StateError('上次姿态事务未确认，请重新连接机器人');
+    }
+    final generation = ++_generation;
+    final revision = session.revision;
+    bool valid() =>
+        !_disposed &&
+        generation == _generation &&
+        session.ready &&
+        session.revision == revision &&
+        busy;
+    _timer?.cancel();
+    _wireStarted = false;
+    _poseActive = true;
+    _poseWireStarted = false;
+    _localMovementCompletion = false;
+    progress = null;
+    error = null;
+    path = 'CacheAction/VisualEditorTemp';
+    phase = ActionPhase.preparing;
+    _changed();
+    var stage = '等待动作结束后的姿态切换间隔';
+    try {
+      final elapsed = _sincePosePredecessorEnd;
+      if (elapsed != null) {
+        // K1 tests: allow 500ms after movement stop or file-action completion.
+        while (elapsed.elapsedMilliseconds < 500) {
+          await _moveDelay(500 - elapsed.elapsedMilliseconds);
+          if (!valid()) return;
+        }
+        _sincePosePredecessorEnd = null;
+      }
+      if (!valid()) return;
+      // A complete graphical frame, not a direct single-motor BLE command.
+      for (final request in [(0xdc, '$path.sh'.codeUnits), (0xe3, frame)]) {
+        stage = request.$1 == 0xdc ? '准备姿态文件（0xDC）' : '上传姿态数据（0xE3）';
+        final ack = await session.guardedRequest(request.$1, request.$2, valid);
+        if (!valid()) return;
+        if (!listEquals(ack.payload, [0x4f, 0x4b])) {
+          throw StateError('机器人未确认姿态文件上传');
+        }
+      }
+      await _moveDelay(240);
+      if (!valid()) return;
+      phase = ActionPhase.playing;
+      _poseWireStarted = true;
+      _changed();
+      stage = '等待姿态播放完成（0x17）';
+      await session.guardedRequest(
+        0x17,
+        path!.codeUnits,
+        valid,
+        accept: (c) => c.payload.length == 1 && c.payload.single == 100,
+      );
+      if (!valid()) return;
+      _playedInSession = true;
+      for (var i = 0; i < 5; i++) {
+        await session.send(0x0c, const [], valid);
+        if (!valid()) return;
+        if (i < 4) await _moveDelay(230);
+        if (!valid()) return;
+      }
+      progress = 100;
+      phase = ActionPhase.completed;
+      _changed();
+    } catch (e) {
+      final failure = e is TimeoutException
+          ? TimeoutException('$stage未收到机器人确认，后续步骤已中止，请重新连接', e.duration)
+          : e;
+      _poseUncertainRevision = revision;
+      if (valid()) {
+        phase = ActionPhase.unknown;
+        error = '姿态未确认，后续步骤已中止，请重新连接：$failure';
+        _changed();
+      }
+      throw failure;
+    } finally {
+      if (generation == _generation) _poseActive = false;
+    }
   }
 
   void beginSequence() {
@@ -173,9 +271,11 @@ class ActionPlayer extends ChangeNotifier {
   void _connectionChanged() {
     if (_revision == session.revision) return;
     _revision = session.revision;
+    _sincePosePredecessorEnd = null;
     _generation++;
     _timer?.cancel();
     _playedInSession = false;
+    _poseActive = false;
     _cancelMoveWait();
     _moving = false;
     if ({
@@ -281,6 +381,9 @@ class ActionPlayer extends ChangeNotifier {
         session.record('动作结束反馈归属不明，等待本次开始进度');
         return;
       }
+      if (!_poseActive) {
+        _sincePosePredecessorEnd = Stopwatch()..start();
+      }
       progress = 100;
       phase = ActionPhase.completed;
       _timer?.cancel();
@@ -291,6 +394,32 @@ class ActionPlayer extends ChangeNotifier {
 
   Future<void> stop() async {
     if (!busy) return;
+    if (_poseActive) {
+      _poseUncertainRevision = session.revision;
+      final generation = ++_generation;
+      _cancelMoveWait();
+      _poseActive = false;
+      phase = ActionPhase.stopping;
+      _changed();
+      try {
+        for (var i = 0; _poseWireStarted && i < 5; i++) {
+          await session.send(
+            0x0c,
+            const [],
+            () => generation == _generation && session.ready && busy,
+          );
+          if (i < 4) await _moveDelay(230);
+        }
+        phase = ActionPhase.failed;
+        error = '姿态已取消；再次执行请重新连接';
+        session.releaseOperation(this);
+      } catch (e) {
+        phase = ActionPhase.unknown;
+        error = '停止发送未确认：$e';
+      }
+      _changed();
+      return;
+    }
     if (_moving) {
       final generation = ++_generation;
       _cancelMoveWait();

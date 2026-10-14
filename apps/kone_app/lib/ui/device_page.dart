@@ -79,13 +79,15 @@ class _DevicePageState extends State<DevicePage> with WidgetsBindingObserver {
     listenable: widget.session,
     builder: (context, _) {
       final session = widget.session;
-      final phase = switch (session.phase) {
-        SessionPhase.disconnected => '未连接',
-        SessionPhase.connecting => '正在连接',
-        SessionPhase.handshaking => '正在握手',
-        SessionPhase.ready => '可以控制机器人',
-        SessionPhase.failed => '连接失败',
-      };
+      final phase = session.disconnecting
+          ? '正在断开，请稍候'
+          : switch (session.phase) {
+              SessionPhase.disconnected => '未连接',
+              SessionPhase.connecting => '正在连接',
+              SessionPhase.handshaking => '正在握手',
+              SessionPhase.ready => '可以控制机器人',
+              SessionPhase.failed => '连接失败',
+            };
       return ListView(
         padding: const EdgeInsets.all(20),
         children: [
@@ -111,13 +113,15 @@ class _DevicePageState extends State<DevicePage> with WidgetsBindingObserver {
                     ),
                   if (session.phase != SessionPhase.disconnected)
                     TextButton(
-                      onPressed: () async {
-                        try {
-                          await session.disconnect();
-                        } catch (e) {
-                          if (context.mounted) showError(context, e);
-                        }
-                      },
+                      onPressed: session.disconnecting
+                          ? null
+                          : () async {
+                              try {
+                                await session.disconnect();
+                              } catch (e) {
+                                if (context.mounted) showError(context, e);
+                              }
+                            },
                       child: const Text('断开 / 取消'),
                     ),
                 ],

@@ -1,10 +1,10 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
 import '../app.dart';
+import '../programming/action_library.dart';
 import 'action_directory_probe_page.dart';
 import '../features/actions/action_catalog.dart';
 import '../features/actions/action_player.dart';
-import '../features/actions/robot_action.dart';
 import '../robot/session/robot_session.dart';
 
 class ActionCenterPage extends StatefulWidget {
@@ -14,22 +14,39 @@ class ActionCenterPage extends StatefulWidget {
     required this.catalog,
     required this.player,
     this.selecting = false,
+    this.programming = false,
+    this.initialPath,
     this.selectionTitle = '选择快捷动作',
   });
   final RobotSession session;
   final ActionCatalog catalog;
   final ActionPlayer player;
-  final bool selecting;
+  final bool selecting, programming;
   final String selectionTitle;
+  final String? initialPath;
   @override
   State<ActionCenterPage> createState() => _ActionCenterPageState();
 }
 
 class _ActionCenterPageState extends State<ActionCenterPage> {
-  ActionDirectory? filter;
+  LibraryCategory filter = LibraryCategory.performance;
   @override
   void initState() {
     super.initState();
+    final entries = libraryEntries([
+      ...widget.catalog.cachedEntries,
+      ...widget.catalog.entries,
+    ], programming: widget.programming);
+    filter =
+        entries
+            .where((e) => e.path == widget.initialPath)
+            .firstOrNull
+            ?.category ??
+        ((widget.initialPath?.startsWith('DownloadAction/') ?? false)
+            ? LibraryCategory.downloaded
+            : (widget.initialPath?.startsWith('Action/skill/') ?? false)
+            ? LibraryCategory.skill
+            : LibraryCategory.performance);
     WidgetsBinding.instance.addPostFrameCallback((_) {
       if (mounted &&
           widget.session.ready &&
@@ -64,9 +81,12 @@ class _ActionCenterPageState extends State<ActionCenterPage> {
     ]),
     builder: (context, _) {
       final catalog = widget.catalog, player = widget.player;
-      final entries = catalog.entries
-          .where((a) => filter == null || a.directory == filter)
-          .toList();
+      final usingCache = widget.selecting && !widget.session.ready;
+      final source = libraryEntries(
+        usingCache ? catalog.cachedEntries : catalog.entries,
+        programming: widget.programming,
+      );
+      final entries = source.where((a) => a.category == filter).toList();
       return Scaffold(
         appBar: AppBar(
           title: Text(widget.selecting ? widget.selectionTitle : '动作中心'),
@@ -107,90 +127,65 @@ class _ActionCenterPageState extends State<ActionCenterPage> {
         body: SafeArea(
           child: Column(
             children: [
-              Flexible(
-                child: SingleChildScrollView(
-                  child: Padding(
-                    padding: const EdgeInsets.all(16),
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text(widget.session.device?.name ?? '尚未连接机器人'),
-                        const SizedBox(height: 8),
-                        Text(
-                          catalog.complete
-                              ? '共 ${catalog.entries.length} 个动作'
-                              : '已读取 ${catalog.entries.length} 项 · 列表尚未完整',
-                        ),
-                        const SizedBox(height: 8),
-                        SingleChildScrollView(
-                          scrollDirection: Axis.horizontal,
-                          child: Row(
-                            children: [
-                              ChoiceChip(
-                                label: const Text('全部'),
-                                selected: filter == null,
-                                onSelected: (_) =>
-                                    setState(() => filter = null),
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 8),
+                child: Row(
+                  children: [
+                    for (final category in LibraryCategory.values)
+                      Expanded(
+                        child: InkWell(
+                          onTap: () => setState(() => filter = category),
+                          child: Container(
+                            padding: const EdgeInsets.symmetric(vertical: 12),
+                            decoration: BoxDecoration(
+                              border: Border(
+                                bottom: BorderSide(
+                                  width: 3,
+                                  color: filter == category
+                                      ? Theme.of(context).colorScheme.primary
+                                      : Colors.transparent,
+                                ),
                               ),
-                              for (final directory in ActionDirectory.values)
-                                Padding(
-                                  padding: const EdgeInsets.only(left: 8),
-                                  child: ChoiceChip(
-                                    label: Text(
-                                      '${directory.label} ${catalog.entries.where((a) => a.directory == directory).length}',
-                                    ),
-                                    selected: filter == directory,
-                                    onSelected: (_) =>
-                                        setState(() => filter = directory),
-                                  ),
-                                ),
-                            ],
+                            ),
+                            child: Text(
+                              category.label,
+                              textAlign: TextAlign.center,
+                              style: TextStyle(
+                                fontWeight: filter == category
+                                    ? FontWeight.bold
+                                    : FontWeight.normal,
+                              ),
+                            ),
                           ),
                         ),
-                        if (!catalog.available)
-                          const Padding(
-                            padding: EdgeInsets.only(top: 12),
-                            child: Text('动作目录读取尚待完成协议核对。'),
-                          ),
-                        if (!widget.session.ready) const Text('请先连接机器人。'),
-                        if (catalog.error != null)
-                          Text(
-                            catalog.error!,
-                            style: TextStyle(
-                              color: Theme.of(context).colorScheme.error,
-                            ),
-                          ),
-                        if (!widget.selecting && player.path != null)
-                          Padding(
-                            padding: const EdgeInsets.only(top: 12),
-                            child: Row(
-                              children: [
-                                Expanded(
-                                  child: Text(
-                                    '${player.path!.split('/').last} · ${player.status}',
-                                  ),
-                                ),
-                                TextButton(
-                                  onPressed: player.busy ? player.stop : null,
-                                  child: const Text('停止'),
-                                ),
-                              ],
-                            ),
-                          ),
-                        if (player.error != null && !widget.selecting)
-                          Text(player.error!),
-                      ],
-                    ),
-                  ),
+                      ),
+                  ],
                 ),
               ),
+              if (!widget.session.ready || catalog.error != null)
+                Padding(
+                  padding: const EdgeInsets.symmetric(
+                    horizontal: 16,
+                    vertical: 4,
+                  ),
+                  child: Text(
+                    catalog.error ??
+                        (widget.selecting ? '离线浏览，连接后可播放' : '请先连接机器人'),
+                  ),
+                ),
+              if (!widget.selecting && player.path != null)
+                Text('${player.path!.split('/').last} · ${player.status}'),
+              if (!widget.selecting && player.error != null)
+                Text(player.error!),
               if (catalog.loading) const LinearProgressIndicator(),
               Expanded(
                 flex: 2,
                 child: entries.isEmpty
                     ? Center(
                         child: Text(
-                          catalog.loading
+                          usingCache
+                              ? '此分类暂无已缓存动作，连接机器人后可刷新动作库。'
+                              : catalog.loading
                               ? '正在读取机器人动作…'
                               : catalog.complete
                               ? '这个分类没有动作'
@@ -204,12 +199,16 @@ class _ActionCenterPageState extends State<ActionCenterPage> {
                           final current =
                               player.path == action.path && player.busy;
                           final enabled =
+                              (widget.selecting &&
+                                  action.basic != null &&
+                                  !widget.session.executionBusy) ||
+                              (usingCache && !widget.session.executionBusy) ||
                               widget.session.ready &&
-                              catalog.complete &&
-                              !catalog.loading &&
-                              (widget.selecting
-                                  ? !widget.session.executionBusy
-                                  : current || player.canPlay);
+                                  catalog.complete &&
+                                  !catalog.loading &&
+                                  (widget.selecting
+                                      ? !widget.session.executionBusy
+                                      : current || player.canPlay);
                           Future<void> activate() async {
                             if (widget.selecting) {
                               Navigator.pop(context, action.path);
@@ -235,7 +234,6 @@ class _ActionCenterPageState extends State<ActionCenterPage> {
                                   : Icons.smart_toy_outlined,
                             ),
                             title: Text(action.name),
-                            subtitle: Text(action.directory.label),
                             trailing: widget.selecting || current
                                 ? Icon(
                                     widget.selecting

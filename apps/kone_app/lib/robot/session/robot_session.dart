@@ -31,6 +31,9 @@ class RobotSession extends ChangeNotifier {
   int _epoch = 0;
   bool _disposed = false;
   bool _opening = false;
+  Future<void>? _closing;
+  int _connectAttempt = 0;
+  bool get disconnecting => _closing != null;
   Future<void> _writeTail = Future<void>.value();
   Completer<K1Command>? _pending;
   int? _expected;
@@ -62,7 +65,7 @@ class RobotSession extends ChangeNotifier {
   bool get directoryReading => _directoryNames != null;
   bool get directoryNeedsReconnect => _directoryUncertain;
   bool get ready => phase == SessionPhase.ready;
-  bool get busy => _opening;
+  bool get busy => _opening || disconnecting;
 
   void _changed() {
     if (!_disposed) notifyListeners();
@@ -117,7 +120,9 @@ class RobotSession extends ChangeNotifier {
   }
 
   void _lost(Object reason) {
-    if (_disposed || phase == SessionPhase.disconnected) return;
+    if (_disposed || disconnecting || phase == SessionPhase.disconnected) {
+      return;
+    }
     _epoch++;
     phase = SessionPhase.failed;
     _operationOwner = null;
@@ -130,8 +135,10 @@ class RobotSession extends ChangeNotifier {
   Future<void> connect(RobotDevice target) async {
     if (_opening) throw StateError('正在连接，请先等待或取消');
     _opening = true;
+    final attempt = ++_connectAttempt;
     try {
-      await disconnect();
+      await _close();
+      if (attempt != _connectAttempt || _disposed) throw StateError('连接已取消');
       final epoch = ++_epoch;
       device = target;
       error = null;
@@ -160,8 +167,10 @@ class RobotSession extends ChangeNotifier {
         }),
       );
     } catch (e) {
-      _lost(e);
-      await transport.disconnect();
+      if (attempt == _connectAttempt) {
+        _lost(e);
+        await transport.disconnect();
+      }
       rethrow;
     } finally {
       _opening = false;
@@ -268,6 +277,16 @@ class RobotSession extends ChangeNotifier {
     }
   }, valid);
 
+  Future<K1Command> guardedRequest(
+    int code,
+    List<int> payload,
+    bool Function() valid, {
+    bool Function(K1Command)? accept,
+  }) => _coordinate(
+    () => _request(code, payload, valid: valid, accept: accept),
+    valid,
+  );
+
   Future<K1Command> request(int code, [List<int> payload = const []]) =>
       _coordinate(() => _request(code, payload));
 
@@ -332,7 +351,32 @@ class RobotSession extends ChangeNotifier {
     await request(15);
   }
 
-  Future<void> disconnect() async {
+  Future<void> disconnect() {
+    ++_connectAttempt;
+    return _close();
+  }
+
+  Future<void> _close() {
+    final previous = _closing;
+    if (previous != null) return previous;
+    final complete = Completer<void>();
+    _closing = complete.future;
+    _closeResources().then(
+      (_) {
+        _closing = null;
+        _changed();
+        complete.complete();
+      },
+      onError: (Object e, StackTrace stack) {
+        _closing = null;
+        _changed();
+        complete.completeError(e, stack);
+      },
+    );
+    return complete.future;
+  }
+
+  Future<void> _closeResources() async {
     _epoch++;
     phase = SessionPhase.disconnected;
     _operationOwner = null;

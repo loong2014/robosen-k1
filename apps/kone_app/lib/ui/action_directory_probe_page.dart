@@ -18,9 +18,9 @@ class ActionDirectoryProbePage extends StatefulWidget {
 
 class _ActionDirectoryProbePageState extends State<ActionDirectoryProbePage> {
   bool reading = false;
-  String result = '点击读取，查询机器人 ProAction 目录。此操作不会播放动作。';
+  String result = '选择读取 ProAction 或 SpeAction 目录。此操作不会播放动作。';
 
-  Future<void> read() async {
+  Future<void> read(String directory) async {
     final session = widget.session;
     if (!session.ready || !session.acquireOperation(this)) return;
     final revision = session.revision;
@@ -28,13 +28,13 @@ class _ActionDirectoryProbePageState extends State<ActionDirectoryProbePage> {
         mounted && reading && session.ready && session.revision == revision;
     setState(() {
       reading = true;
-      result = '正在读取 ProAction…';
+      result = '正在读取 $directory…';
     });
     final raw = <List<int>>[];
     Object? failure;
     final names = <String>[];
     try {
-      final payload = await widget.encoding.encode('ProAction');
+      final payload = await widget.encoding.encode(directory);
       if (!valid()) {
         throw StateError('连接已变化或读取已取消');
       }
@@ -54,7 +54,7 @@ class _ActionDirectoryProbePageState extends State<ActionDirectoryProbePage> {
     }
     session.releaseOperation(this);
     final report =
-        '目录：ProAction\n${failure == null ? '读取完整' : '读取失败或不完整：$failure'}\n收到 ${raw.length} 项\n${names.join('\n')}\n\n${failure == null && raw.isEmpty ? '机器人返回空目录，不代表语音动作不存在。' : '返回名称仅作取证，尚未自动加入可执行动作。'}';
+        '目录：$directory\n${failure == null ? '读取完整' : '读取失败或不完整：$failure'}\n收到 ${raw.length} 项\n${names.join('\n')}\n\n${failure == null && raw.isEmpty ? '机器人返回空目录，不代表语音动作不存在。' : '返回名称仅作取证，尚未自动加入可执行动作。'}';
     debugPrint('KONE_DIRECTORY_PROBE $report');
     if (mounted) {
       setState(() {
@@ -81,15 +81,16 @@ class _ActionDirectoryProbePageState extends State<ActionDirectoryProbePage> {
       builder: (context, _) => ListView(
         padding: const EdgeInsets.all(20),
         children: [
-          FilledButton(
-            onPressed:
-                !reading &&
-                    widget.session.ready &&
-                    !widget.session.executionBusy
-                ? read
-                : null,
-            child: const Text('读取 ProAction 目录'),
-          ),
+          for (final directory in const ['ProAction', 'SpeAction'])
+            FilledButton(
+              onPressed:
+                  !reading &&
+                      widget.session.ready &&
+                      !widget.session.executionBusy
+                  ? () => read(directory)
+                  : null,
+              child: Text('读取 $directory 目录'),
+            ),
           if (reading) const LinearProgressIndicator(),
           if (!widget.session.ready) const Text('请先连接机器人。'),
           const SizedBox(height: 16),

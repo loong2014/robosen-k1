@@ -6,14 +6,14 @@ import 'package:kone_app/programming/project_editor.dart';
 import 'package:kone_app/storage/project_repository.dart';
 
 void main() {
-  test('schema5 old joint container is preserved in schema6', () {
+  test('schema5 old joint container is preserved in schema7', () {
     final p = RobotProject.create('旧工程');
     final old = p.toJson()..['schemaVersion'] = 5;
     for (final n in old['nodes'] as List) {
       (n['params'] as Map).remove('basicActionId');
     }
     final restored = RobotProject.fromJson(old);
-    expect(restored.toJson()['schemaVersion'], 6);
+    expect(restored.toJson()['schemaVersion'], 7);
     expect(restored.nodes.keys, p.nodes.keys);
   });
 
@@ -91,7 +91,7 @@ void main() {
       params.remove('basicActionId');
     }
     final migrated = RobotProject.fromJson(v1);
-    expect(migrated.toJson()['schemaVersion'], 6);
+    expect(migrated.toJson()['schemaVersion'], 7);
     expect(migrated.nodes[migrated.rootId]!.x, 24);
     final editor = ProjectEditor(migrated);
     final action = editor.add(BlockKind.action, migrated.rootId, 0);

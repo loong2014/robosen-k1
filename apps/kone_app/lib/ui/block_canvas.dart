@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import '../programming/project.dart';
 import '../programming/basic_actions.dart';
 import '../programming/project_editor.dart';
+import 'block_layout.dart';
+import '../programming/joint_profile.dart';
 
 class BlockCanvas extends StatefulWidget {
   const BlockCanvas({
@@ -23,9 +25,9 @@ class BlockCanvas extends StatefulWidget {
 
 class _BlockCanvasState extends State<BlockCanvas> {
   late final TransformationController transform;
-  String? dragging;
+  String? dragging, candidate;
   Offset? dragPosition;
-  String? candidate;
+  BlockLayout get layout => BlockLayout(widget.editor.project);
   @override
   void initState() {
     super.initState();
@@ -43,22 +45,72 @@ class _BlockCanvasState extends State<BlockCanvas> {
     super.dispose();
   }
 
-  Offset position(BlockNode node) => dragging == node.id && dragPosition != null
-      ? dragPosition!
-      : Offset(node.x, node.y);
+  String? nearestParent(BlockNode moving, Offset at) {
+    final l = layout;
+    final nodes = widget.editor.project.nodes;
+    final containers = nodes.values.where(
+      (n) =>
+          !l.descendant(n.id, moving.id) &&
+          (moving.kind == BlockKind.actionChild
+              ? n.kind == BlockKind.action
+              : n.kind == BlockKind.loop),
+    );
+    // Innermost container wins; a container cannot be dropped into itself.
+    final inside =
+        containers
+            .where((n) => l.bounds[n.id]!.inflate(12).contains(at))
+            .toList()
+          ..sort((a, b) => l.depth(b.id).compareTo(l.depth(a.id)));
+    if (inside.isNotEmpty) return inside.first.id;
+    String? best;
+    var distance = 115.0;
+    for (final n in nodes.values) {
+      if (l.descendant(n.id, moving.id)) continue;
+      final parentId = n.kind == BlockKind.start ? n.id : l.parents[n.id];
+      final parent = nodes[parentId];
+      if (parent == null ||
+          (moving.kind == BlockKind.actionChild
+              ? parent.kind != BlockKind.action
+              : !{BlockKind.start, BlockKind.loop}.contains(parent.kind))) {
+        continue;
+      }
+      final r = l.bounds[n.id]!;
+      final d = (at - Offset(r.left, r.bottom + BlockLayout.gap)).distance;
+      if (d < distance) {
+        best = parentId;
+        distance = d;
+      }
+    }
+    return best;
+  }
+
+  int insertionIndex(BlockNode parent, Offset at, {String? movingId}) {
+    final l = layout;
+    final siblings = parent.children.where((id) => id != movingId);
+    final before = siblings
+        .where((id) => l.bounds[id]!.center.dy < at.dy)
+        .length;
+    final old = movingId == null ? -1 : parent.children.indexOf(movingId);
+    return old >= 0 && old <= before ? before + 1 : before;
+  }
 
   void finishDrag(BlockNode node) {
-    final p = dragPosition;
-    if (p == null) return;
+    final at = dragPosition;
+    if (at == null) return;
     try {
-      widget.editor.position(node.id, p.dx, p.dy);
       if (candidate != null) {
         final parent = widget.editor.project.nodes[candidate]!;
         widget.editor.move(
           node.id,
           parent.id,
-          insertionIndex(parent, p, movingId: node.id),
+          insertionIndex(parent, at, movingId: node.id),
         );
+      } else {
+        if (node.id != widget.editor.project.rootId &&
+            node.kind != BlockKind.actionChild) {
+          widget.editor.detach(node.id);
+        }
+        widget.editor.position(node.id, at.dx, at.dy);
       }
     } catch (e) {
       widget.onError(e);
@@ -70,92 +122,55 @@ class _BlockCanvasState extends State<BlockCanvas> {
     });
   }
 
-  String? nearestParent(BlockNode moving, Offset at) {
-    String? best;
-    var distance = 170.0;
-    for (final parent in widget.editor.project.nodes.values) {
-      if (parent.id == moving.id) continue;
-      final allowed = moving.kind == BlockKind.actionChild
-          ? parent.kind == BlockKind.action
-          : parent.kind == BlockKind.start || parent.kind == BlockKind.loop;
-      if (!allowed) continue;
-      final anchor = position(parent) + const Offset(90, 80);
-      final d = (at - anchor).distance;
-      if (d < distance) {
-        distance = d;
-        best = parent.id;
-      }
-    }
-    return best;
-  }
-
-  int insertionIndex(BlockNode parent, Offset at, {String? movingId}) {
-    final siblings = parent.children.where((id) => id != movingId).toList();
-    final before = siblings.where((id) {
-      final node = widget.editor.project.nodes[id];
-      return node != null && position(node).dy < at.dy;
-    }).length;
-    final oldIndex = movingId == null ? -1 : parent.children.indexOf(movingId);
-    return oldIndex >= 0 && oldIndex <= before ? before + 1 : before;
+  Offset scene(Offset global) {
+    final box = context.findRenderObject() as RenderBox;
+    final p = transform.toScene(box.globalToLocal(global));
+    return Offset(p.dx.clamp(0, 10000), p.dy.clamp(0, 100000));
   }
 
   @override
   Widget build(BuildContext context) {
-    final nodes = widget.editor.project.nodes.values.toList();
+    final l = layout;
+    final nodes = widget.editor.project.nodes.values.toList()
+      ..sort((a, b) => l.depth(a.id).compareTo(l.depth(b.id)));
     return DragTarget<BlockKind>(
       onAcceptWithDetails: (details) {
-        final box = context.findRenderObject() as RenderBox;
-        final local = box.globalToLocal(details.offset);
-        final scene = transform.toScene(local);
+        final at = scene(details.offset);
         try {
           final kind = details.data;
-          final at = Offset(
-            scene.dx.clamp(0, 1620).toDouble(),
-            scene.dy.clamp(0, 1424).toDouble(),
-          );
           final nearest = nearestParent(
             BlockNode(id: '__new__', kind: kind),
             at,
           );
-          String? added;
-          if (kind == BlockKind.actionChild) {
-            final parent =
-                widget.editor.project.nodes[nearest ?? widget.selected];
-            if (parent?.kind != BlockKind.action) {
-              throw const FormatException('将关节积木拖近动作，或先选中动作');
-            }
-            final id = widget.editor.add(
-              kind,
-              parent!.id,
-              insertionIndex(parent, at),
-            );
-            widget.editor.position(id, at.dx, at.dy);
-            added = id;
-          } else if (nearest != null) {
+          final String added;
+          if (nearest != null) {
             final parent = widget.editor.project.nodes[nearest]!;
-            final id = widget.editor.add(
+            added = widget.editor.add(
               kind,
-              parent.id,
+              nearest,
               insertionIndex(parent, at),
             );
-            widget.editor.position(id, at.dx, at.dy);
-            added = id;
           } else {
             added = widget.editor.addDetached(kind, at.dx, at.dy);
           }
-          if (kind == BlockKind.basicAction) {
-            widget.onSelect(added);
+          widget.onSelect(added);
+          if ({
+            BlockKind.basicAction,
+            BlockKind.robotAction,
+            BlockKind.jointPose,
+            BlockKind.loop,
+          }.contains(kind)) {
             widget.onEdit(widget.editor.project.nodes[added]!);
           }
         } catch (e) {
           widget.onError(e);
         }
       },
-      builder: (context, _, rejected) => InteractiveViewer(
+      builder: (context, _, _) => InteractiveViewer(
         transformationController: transform,
         constrained: false,
         boundaryMargin: const EdgeInsets.all(600),
-        minScale: 0.5,
+        minScale: .5,
         maxScale: 3,
         onInteractionEnd: (_) {
           final m = transform.value;
@@ -166,8 +181,8 @@ class _BlockCanvasState extends State<BlockCanvas> {
           );
         },
         child: SizedBox(
-          width: 1800,
-          height: 1500,
+          width: l.canvasSize.width,
+          height: l.canvasSize.height,
           child: Stack(
             children: [
               Positioned.fill(
@@ -177,31 +192,24 @@ class _BlockCanvasState extends State<BlockCanvas> {
                 ),
               ),
               Positioned.fill(
-                child: CustomPaint(
-                  painter: _ConnectionPainter(
-                    nodes: widget.editor.project.nodes,
-                    position: position,
-                  ),
-                ),
+                child: CustomPaint(painter: _ConnectionPainter(l.connections)),
               ),
               for (final node in nodes)
                 Positioned(
-                  left: position(node).dx,
-                  top: position(node).dy,
-                  width: 180,
+                  left: l.bounds[node.id]!.left,
+                  top: l.bounds[node.id]!.top,
+                  width: l.bounds[node.id]!.width,
+                  height: l.bounds[node.id]!.height,
                   child: LongPressDraggable<String>(
                     key: ValueKey('block-${node.id}'),
                     data: node.id,
                     onDragStarted: () => widget.onSelect(node.id),
                     onDragUpdate: (details) {
-                      final box = context.findRenderObject() as RenderBox;
-                      final scene = transform.toScene(
-                        box.globalToLocal(details.globalPosition),
-                      );
-                      final raw = scene - const Offset(90, 38);
+                      final p =
+                          scene(details.globalPosition) - const Offset(90, 38);
                       final at = Offset(
-                        raw.dx.clamp(0, 1620).toDouble(),
-                        raw.dy.clamp(0, 1424).toDouble(),
+                        p.dx.clamp(0, 10000),
+                        p.dy.clamp(0, 100000),
                       );
                       setState(() {
                         dragging = node.id;
@@ -214,21 +222,18 @@ class _BlockCanvasState extends State<BlockCanvas> {
                       color: Colors.transparent,
                       child: SizedBox(
                         width: 180,
-                        child: _BlockCard(
-                          node: node,
-                          selected: true,
-                          connecting: false,
-                        ),
+                        height: 76,
+                        child: _BlockCard(node: node, selected: true),
                       ),
                     ),
-                    childWhenDragging: const SizedBox(height: 76),
+                    childWhenDragging: const SizedBox(),
                     child: GestureDetector(
                       onTap: () => widget.onSelect(node.id),
                       onDoubleTap: () => widget.onEdit(node),
                       child: _BlockCard(
                         node: node,
-                        selected: widget.selected == node.id,
-                        connecting: candidate == node.id,
+                        selected:
+                            widget.selected == node.id || candidate == node.id,
                       ),
                     ),
                   ),
@@ -236,9 +241,9 @@ class _BlockCanvasState extends State<BlockCanvas> {
               if (candidate != null && dragPosition != null)
                 Positioned(
                   left: dragPosition!.dx,
-                  top: dragPosition!.dy + 80,
+                  top: dragPosition!.dy + 82,
                   child: const Text(
-                    '松开连接',
+                    '松开加入顺序',
                     style: TextStyle(
                       color: Colors.teal,
                       fontWeight: FontWeight.bold,
@@ -254,99 +259,133 @@ class _BlockCanvasState extends State<BlockCanvas> {
 }
 
 class _BlockCard extends StatelessWidget {
-  const _BlockCard({
-    required this.node,
-    required this.selected,
-    required this.connecting,
-  });
+  const _BlockCard({required this.node, required this.selected});
   final BlockNode node;
-  final bool selected, connecting;
+  final bool selected;
   @override
   Widget build(BuildContext context) {
     final color = switch (node.kind) {
       BlockKind.basicAction || BlockKind.robotAction => const Color(0xff267d90),
       BlockKind.wait => const Color(0xff8c6839),
-      BlockKind.start => const Color(0xff16806f),
-      BlockKind.action => const Color(0xff376ba8),
+      BlockKind.start || BlockKind.resetPose => const Color(0xff16806f),
       BlockKind.loop => const Color(0xffab7428),
-      BlockKind.actionChild => const Color(0xff627ab5),
+      BlockKind.action ||
+      BlockKind.actionChild ||
+      BlockKind.jointPose => const Color(0xff627ab5),
       BlockKind.robotPose || BlockKind.longPose => const Color(0xff86569b),
     };
     final title = switch (node.kind) {
       BlockKind.robotAction =>
-        node.actionPath.isEmpty
-            ? '选择预置机器人长姿态'
-            : node.actionPath.split('/').last,
+        node.actionPath.isEmpty ? '选择动作库动作' : node.actionPath.split('/').last,
       BlockKind.basicAction =>
-        BasicAction.byId(node.basicActionId)?.name ?? '选择基础姿态',
+        BasicAction.byId(node.basicActionId)?.name ?? '选择基础动作',
       BlockKind.wait => '等待 ${node.waitMs / 1000} 秒',
       BlockKind.start => '开始',
-      BlockKind.action => '基础姿态',
+      BlockKind.action => '旧版姿态',
       BlockKind.loop => '循环 ${node.repeat} 次',
-      BlockKind.actionChild => '关节 ${node.joint} · ${node.value}',
+      BlockKind.actionChild => '旧关节 ${node.joint} · ${node.value}',
+      BlockKind.jointPose =>
+        node.joints.length == 1
+            ? '${JointProfile.names[node.joints.keys.single]} · ${node.joints.values.single}°'
+            : '关节 · ${node.joints.length} 项',
+      BlockKind.resetPose => '初始姿态',
       BlockKind.robotPose => '机器人姿态',
       BlockKind.longPose => '长姿态',
     };
-    return Material(
-      elevation: selected ? 8 : 3,
-      color: color,
-      borderRadius: const BorderRadius.only(
-        topLeft: Radius.circular(15),
-        bottomRight: Radius.circular(15),
-        topRight: Radius.circular(5),
-        bottomLeft: Radius.circular(5),
-      ),
-      child: Container(
-        height: 76,
-        decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(12),
-          border: Border.all(
-            color: selected || connecting ? Colors.yellowAccent : Colors.white,
-            width: selected || connecting ? 3 : 1,
+    final basic = BasicAction.byId(node.basicActionId);
+    final subtitle = node.kind == BlockKind.loop
+        ? '内部按顺序执行整轮'
+        : node.kind == BlockKind.jointPose
+        ? '双击调整关节角度'
+        : node.kind == BlockKind.resetPose
+        ? '恢复原版编程初始姿态'
+        : node.kind == BlockKind.basicAction && basic?.command != null
+        ? basic!.steps == null
+              ? '500ms · 固定转向'
+              : '${basic.steps}步 · 固定模式'
+        : '双击编辑 · 长按移动';
+    final header = Padding(
+      padding: const EdgeInsets.all(10),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          Text(
+            title,
+            maxLines: 1,
+            overflow: TextOverflow.ellipsis,
+            style: const TextStyle(
+              color: Colors.white,
+              fontWeight: FontWeight.bold,
+            ),
           ),
-        ),
-        padding: const EdgeInsets.all(10),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Text(
-              title,
-              maxLines: 1,
-              overflow: TextOverflow.ellipsis,
-              style: const TextStyle(
-                color: Colors.white,
-                fontWeight: FontWeight.bold,
-              ),
-            ),
-            const Spacer(),
-            Text(
-              node.kind == BlockKind.basicAction
-                  ? (BasicAction.byId(node.basicActionId)?.command != null
-                        ? '${BasicAction.byId(node.basicActionId)!.steps}步 · 固定模式'
-                        : BasicAction.byId(node.basicActionId)?.executable ==
-                              true
-                        ? '双击更换动作'
-                        : '${BasicAction.byId(node.basicActionId)?.movement == true ? '${node.waitMs / 1000}秒 · ' : ''}执行待核实')
-                  : node.kind == BlockKind.action
-                  ? '速度 ${node.speed} · 延时 ${node.delay}'
-                  : node.kind == BlockKind.actionChild
-                  ? (node.enabled ? '已启用' : '已停用')
-                  : '拖动连接 · 双击编辑',
-              style: const TextStyle(color: Colors.white70, fontSize: 11),
-            ),
-          ],
-        ),
+          const SizedBox(height: 6),
+          Text(
+            subtitle,
+            maxLines: 1,
+            overflow: TextOverflow.ellipsis,
+            style: const TextStyle(color: Colors.white70, fontSize: 11),
+          ),
+        ],
       ),
     );
+    if (node.kind == BlockKind.loop || node.kind == BlockKind.action) {
+      return CustomPaint(
+        painter: _ContainerPainter(color, selected),
+        child: Align(alignment: Alignment.topLeft, child: header),
+      );
+    }
+    return Container(
+      decoration: BoxDecoration(
+        color: color,
+        borderRadius: BorderRadius.circular(12),
+        border: Border.all(
+          color: selected ? Colors.amberAccent : Colors.white,
+          width: selected ? 3 : 1,
+        ),
+      ),
+      child: header,
+    );
   }
+}
+
+class _ContainerPainter extends CustomPainter {
+  _ContainerPainter(this.color, this.selected);
+  final Color color;
+  final bool selected;
+  @override
+  void paint(Canvas canvas, Size size) {
+    final path = Path()
+      ..moveTo(size.width, 0)
+      ..lineTo(0, 0)
+      ..lineTo(0, size.height)
+      ..lineTo(size.width, size.height)
+      ..lineTo(size.width, size.height - 20)
+      ..lineTo(18, size.height - 20)
+      ..lineTo(18, 56)
+      ..lineTo(size.width, 56)
+      ..close();
+    canvas.drawPath(path, Paint()..color = color);
+    if (selected) {
+      canvas.drawPath(
+        path,
+        Paint()
+          ..color = Colors.amberAccent
+          ..style = PaintingStyle.stroke
+          ..strokeWidth = 3,
+      );
+    }
+  }
+
+  @override
+  bool shouldRepaint(covariant _ContainerPainter old) =>
+      color != old.color || selected != old.selected;
 }
 
 class _GridPainter extends CustomPainter {
   @override
   void paint(Canvas canvas, Size size) {
-    final p = Paint()
-      ..color = const Color(0xffdce5e1)
-      ..strokeWidth = 1;
+    final p = Paint()..color = const Color(0xffdce5e1);
     for (double x = 0; x < size.width; x += 32) {
       for (double y = 0; y < size.height; y += 32) {
         canvas.drawCircle(Offset(x, y), 1, p);
@@ -355,37 +394,30 @@ class _GridPainter extends CustomPainter {
   }
 
   @override
-  bool shouldRepaint(covariant CustomPainter oldDelegate) => false;
+  bool shouldRepaint(covariant CustomPainter old) => false;
 }
 
 class _ConnectionPainter extends CustomPainter {
-  _ConnectionPainter({required this.nodes, required this.position});
-  final Map<String, BlockNode> nodes;
-  final Offset Function(BlockNode) position;
+  _ConnectionPainter(this.edges);
+  final List<(Offset, Offset)> edges;
   @override
   void paint(Canvas canvas, Size size) {
     final p = Paint()
       ..color = const Color(0xff58877f)
-      ..strokeWidth = 3
+      ..strokeWidth = 2.5
       ..style = PaintingStyle.stroke;
-    for (final node in nodes.values) {
-      for (final childId in node.children) {
-        final child = nodes[childId];
-        if (child == null) continue;
-        final a = position(node) + const Offset(90, 76);
-        final b = position(child) + const Offset(90, 0);
-        final path = Path()
-          ..moveTo(a.dx, a.dy)
-          ..cubicTo(
-            a.dx,
-            (a.dy + b.dy) / 2,
-            b.dx,
-            (a.dy + b.dy) / 2,
-            b.dx,
-            b.dy,
-          );
-        canvas.drawPath(path, p);
-      }
+    for (final (a, b) in edges) {
+      final path = Path()
+        ..moveTo(a.dx, a.dy)
+        ..cubicTo(a.dx, (a.dy + b.dy) / 2, b.dx, (a.dy + b.dy) / 2, b.dx, b.dy);
+      canvas.drawPath(path, p);
+      canvas.drawPath(
+        Path()
+          ..moveTo(b.dx - 4, b.dy - 6)
+          ..lineTo(b.dx, b.dy)
+          ..lineTo(b.dx + 4, b.dy - 6),
+        p,
+      );
     }
   }
 

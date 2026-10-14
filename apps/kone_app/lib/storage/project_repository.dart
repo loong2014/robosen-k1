@@ -8,10 +8,17 @@ class LoadedProject {
   final bool recovered;
 }
 
+class ProjectLoadFailure {
+  const ProjectLoadFailure(this.id, this.message);
+  final String id, message;
+  @override
+  String toString() => '$id：$message';
+}
+
 class ProjectCatalog {
   const ProjectCatalog(this.projects, this.errors);
   final List<LoadedProject> projects;
-  final List<String> errors;
+  final List<ProjectLoadFailure> errors;
 }
 
 class ProjectRepository {
@@ -73,6 +80,20 @@ class ProjectRepository {
     return task;
   }
 
+  Future<void> delete(String id) {
+    // Validate before queueing; never accept filesystem paths as project IDs.
+    _file(id);
+    final task = _tail.then((_) async {
+      // Remove recovery sources before the primary so it cannot reappear.
+      for (final suffix in ['.tmp', '.corrupt', '.bak', '']) {
+        final file = _file(id, suffix);
+        if (await file.exists()) await file.delete();
+      }
+    });
+    _tail = task.catchError((Object _) {});
+    return task;
+  }
+
   Future<ProjectCatalog> list() async {
     await directory.create(recursive: true);
     final ids = <String>{};
@@ -83,12 +104,12 @@ class ProjectRepository {
       ).firstMatch(name);
       if (entity is File && match != null) ids.add(match[1]!);
     }
-    final projects = <LoadedProject>[], errors = <String>[];
+    final projects = <LoadedProject>[], errors = <ProjectLoadFailure>[];
     for (final id in ids) {
       try {
         projects.add(await load(id));
       } catch (e) {
-        errors.add('$id：$e');
+        errors.add(ProjectLoadFailure(id, '$e'));
       }
     }
     projects.sort((a, b) => a.project.name.compareTo(b.project.name));

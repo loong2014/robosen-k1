@@ -56,11 +56,49 @@ class _ProjectsPageState extends State<ProjectsPage> {
     if (mounted) refresh();
   }
 
+  String? deletingId;
+
+  Future<void> deleteProject(String id, String label) async {
+    if (deletingId != null) return;
+    setState(() => deletingId = id);
+    try {
+      final confirmed = await showDialog<bool>(
+        context: context,
+        builder: (context) => AlertDialog(
+          title: const Text('删除工程？'),
+          content: Text('确定删除“$label”吗？\n本地工程及备份将被删除，无法撤销。'),
+          actions: [
+            TextButton(
+              onPressed: () => Navigator.pop(context, false),
+              child: const Text('取消'),
+            ),
+            TextButton(
+              onPressed: () => Navigator.pop(context, true),
+              style: TextButton.styleFrom(
+                foregroundColor: Theme.of(context).colorScheme.error,
+              ),
+              child: const Text('删除'),
+            ),
+          ],
+        ),
+      );
+      if (confirmed != true || !mounted) return;
+      await widget.repository.delete(id);
+      if (mounted) refresh();
+    } catch (e) {
+      if (mounted) {
+        refresh();
+        showError(context, e);
+      }
+    } finally {
+      if (mounted) setState(() => deletingId = null);
+    }
+  }
+
   ProjectKind? filter;
 
   Future<void> create({ProjectKind initialKind = ProjectKind.blocks}) async {
     var name = '';
-    var model = 'K1AI';
     var kind = initialKind;
     final result = await showDialog<RobotProject>(
       context: context,
@@ -95,16 +133,6 @@ class _ProjectsPageState extends State<ProjectsPage> {
                   selected: {kind},
                   onSelectionChanged: (v) => setState(() => kind = v.single),
                 ),
-                const SizedBox(height: 12),
-                DropdownButtonFormField<String>(
-                  initialValue: model,
-                  decoration: const InputDecoration(labelText: '机器人型号'),
-                  items: const [
-                    DropdownMenuItem(value: 'K1AI', child: Text('K1AI')),
-                    DropdownMenuItem(value: 'K1', child: Text('K1')),
-                  ],
-                  onChanged: (v) => setState(() => model = v!),
-                ),
               ],
             ),
           ),
@@ -120,7 +148,8 @@ class _ProjectsPageState extends State<ProjectsPage> {
                   context,
                   RobotProject.create(
                     name.trim(),
-                    targetModel: model,
+                    // Legacy schema metadata; execution does not branch on model.
+                    targetModel: 'K1',
                     kind: kind,
                   ),
                 );
@@ -303,7 +332,20 @@ class _ProjectsPageState extends State<ProjectsPage> {
                 (e) => Card(
                   child: Padding(
                     padding: const EdgeInsets.all(12),
-                    child: Text('工程未能打开，原文件已保留。\n$e'),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text('工程未能打开，原文件已保留。\n$e'),
+                        TextButton.icon(
+                          onPressed: deletingId == null
+                              ? () =>
+                                    deleteProject(e.id, '无法打开的工程（文件编号：${e.id}）')
+                              : null,
+                          icon: const Icon(Icons.delete_outline),
+                          label: const Text('删除此工程'),
+                        ),
+                      ],
+                    ),
                   ),
                 ),
               ),
@@ -312,7 +354,9 @@ class _ProjectsPageState extends State<ProjectsPage> {
                   padding: const EdgeInsets.symmetric(vertical: 28),
                   child: Text(
                     data.projects.isEmpty
-                        ? '还没有工程，选择上方编程方式开始创作。'
+                        ? data.errors.isEmpty
+                              ? '还没有工程，选择上方编程方式开始创作。'
+                              : '暂无可打开的工程，请查看上方提示。'
                         : '暂无这类工程，可切换分类查看。',
                     textAlign: TextAlign.center,
                   ),
@@ -322,7 +366,7 @@ class _ProjectsPageState extends State<ProjectsPage> {
                   margin: const EdgeInsets.only(bottom: 12),
                   child: InkWell(
                     borderRadius: BorderRadius.circular(12),
-                    onTap: () => open(loaded),
+                    onTap: deletingId == null ? () => open(loaded) : null,
                     child: Padding(
                       padding: const EdgeInsets.all(16),
                       child: Row(
@@ -384,7 +428,9 @@ class _ProjectsPageState extends State<ProjectsPage> {
                                       ),
                                     ),
                                     Text(
-                                      '${loaded.project.targetModel} · ${loaded.project.kind == ProjectKind.manual ? '${loaded.project.manualFrames.length} 个姿态' : '${loaded.project.nodes.length - 1} 个积木'}',
+                                      loaded.project.kind == ProjectKind.manual
+                                          ? '${loaded.project.manualFrames.length} 个姿态'
+                                          : '${loaded.project.nodes.length - 1} 个积木',
                                       style: Theme.of(
                                         context,
                                       ).textTheme.bodySmall,
@@ -396,6 +442,16 @@ class _ProjectsPageState extends State<ProjectsPage> {
                             ),
                           ),
                           const SizedBox(width: 8),
+                          IconButton(
+                            tooltip: '删除工程',
+                            onPressed: deletingId == null
+                                ? () => deleteProject(
+                                    loaded.project.id,
+                                    loaded.project.name,
+                                  )
+                                : null,
+                            icon: const Icon(Icons.delete_outline),
+                          ),
                           const Icon(Icons.chevron_right),
                         ],
                       ),

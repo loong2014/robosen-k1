@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import '../features/actions/action_catalog.dart';
 import '../features/actions/action_player.dart';
 import '../programming/action_sequence.dart';
+import '../programming/basic_actions.dart';
 import 'action_center_page.dart';
 import '../app.dart';
 import '../programming/project.dart';
@@ -10,6 +11,7 @@ import '../programming/project_editor.dart';
 import '../robot/session/robot_session.dart';
 import '../storage/project_repository.dart';
 import 'block_canvas.dart';
+import 'joint_pose_editor.dart';
 import 'basic_action_picker.dart';
 
 class EditorPage extends StatefulWidget {
@@ -49,6 +51,7 @@ class _EditorPageState extends State<EditorPage> with WidgetsBindingObserver {
 
   late final editor = ProjectEditor(widget.loaded.project);
   String? selected;
+  void select(String id) => setState(() => selected = id);
   bool saving = false, canPop = false;
   @override
   void dispose() {
@@ -115,17 +118,29 @@ class _EditorPageState extends State<EditorPage> with WidgetsBindingObserver {
 
   void add(BlockKind kind) {
     if (running) return;
-    final node = editor.project.nodes[selected];
-    final parent = kind == BlockKind.actionChild
-        ? node
-        : node != null && {BlockKind.start, BlockKind.loop}.contains(node.kind)
-        ? node
-        : editor.project.nodes[editor.project.rootId]!;
+    final parent = editor.project.nodes[editor.project.rootId]!;
+    var anchor = selected;
+    // Clicking always inserts in the top-level sequence, even when a nested
+    // card is selected. Only an explicit drag can add a card inside a loop.
+    while (anchor != null && !parent.children.contains(anchor)) {
+      final id = anchor;
+      anchor = editor.project.nodes.values
+          .where((p) => p.children.contains(id))
+          .firstOrNull
+          ?.id;
+    }
     try {
-      if (parent == null) throw const FormatException('请先选中基础姿态积木');
-      final id = editor.add(kind, parent.id, parent.children.length);
-      setState(() => selected = id);
-      if (kind == BlockKind.robotAction || kind == BlockKind.basicAction) {
+      final index = anchor != null
+          ? parent.children.indexOf(anchor) + 1
+          : parent.children.length;
+      final id = editor.add(kind, parent.id, index);
+      select(id);
+      if ({
+        BlockKind.robotAction,
+        BlockKind.basicAction,
+        BlockKind.jointPose,
+        BlockKind.loop,
+      }.contains(kind)) {
         unawaited(edit(editor.project.nodes[id]!));
       }
     } catch (e) {
@@ -135,16 +150,25 @@ class _EditorPageState extends State<EditorPage> with WidgetsBindingObserver {
 
   Future<void> edit(BlockNode node) async {
     if (running) return;
-    if (node.kind == BlockKind.basicAction) {
+    if (node.kind == BlockKind.jointPose) {
+      final updated = await editJointPose(context, node);
+      if (updated != null && mounted) editor.change(updated);
+      return;
+    }
+    if (node.kind == BlockKind.resetPose || node.kind == BlockKind.start) {
+      return;
+    }
+    if (node.kind == BlockKind.basicAction &&
+        !(BasicAction.byId(node.basicActionId)?.inLibrary ?? false)) {
       final updated = await pickBasicAction(context, node);
       if (updated != null && mounted) editor.change(updated);
       return;
     }
-    if (node.kind == BlockKind.robotAction) {
-      if (widget.catalog == null ||
-          widget.player == null ||
-          !widget.session.ready) {
-        showError(context, '请先连接机器人，再双击积木选择预置机器人长姿态');
+    if (node.kind == BlockKind.robotAction ||
+        (node.kind == BlockKind.basicAction &&
+            (BasicAction.byId(node.basicActionId)?.inLibrary ?? false))) {
+      if (widget.catalog == null || widget.player == null) {
+        showError(context, '动作目录服务尚未初始化');
         return;
       }
       final path = await Navigator.of(context).push<String>(
@@ -154,12 +178,23 @@ class _EditorPageState extends State<EditorPage> with WidgetsBindingObserver {
             catalog: widget.catalog!,
             player: widget.player!,
             selecting: true,
-            selectionTitle: '选择预置机器人长姿态',
+            selectionTitle: '选择动作',
+            initialPath: node.kind == BlockKind.basicAction
+                ? BasicAction.byId(node.basicActionId)?.path
+                : node.actionPath,
+            programming: true,
           ),
         ),
       );
       if (path != null && mounted) {
-        editor.change(node.copyWith(actionPath: path));
+        final basic = BasicAction.libraryByPath(path);
+        editor.change(
+          node.copyWith(
+            kind: basic == null ? BlockKind.robotAction : BlockKind.basicAction,
+            actionPath: basic == null ? path : '',
+            basicActionId: basic?.id ?? '',
+          ),
+        );
       }
       return;
     }
@@ -235,7 +270,7 @@ class _EditorPageState extends State<EditorPage> with WidgetsBindingObserver {
                 ? '循环参数'
                 : node.kind == BlockKind.actionChild
                 ? '关节参数'
-                : '基础姿态参数',
+                : '基础动作参数',
           ),
           content: SingleChildScrollView(
             child: Column(
@@ -376,36 +411,89 @@ class _EditorPageState extends State<EditorPage> with WidgetsBindingObserver {
   }
 
   void preview() {
+    List<BlockNode> plan = [];
+    String? issue;
     try {
-      final sequence = editor.project.nodes.values.any(
-        (n) =>
-            n.kind == BlockKind.robotAction ||
-            n.kind == BlockKind.basicAction ||
-            n.kind == BlockKind.wait,
-      );
-      final count = sequence
-          ? compileSequence(editor.project).length
-          : compilePlan(editor.project).length;
-      showDialog<void>(
-        context: context,
-        builder: (context) => AlertDialog(
-          title: const Text('程序检查通过'),
-          content: Text(
-            sequence
-                ? '展开后共 $count 个步骤。连接机器人后点击播放，运行期间请保持应用在前台。'
-                : '展开后共 $count 个姿态步骤。姿态文件上传仍未开放；预置机器人长姿态组合可直接播放。',
-          ),
-          actions: [
-            TextButton(
-              onPressed: () => Navigator.pop(context),
-              child: const Text('知道了'),
+      plan = compileSequence(editor.project, inspectOnly: true);
+    } catch (e) {
+      issue = e.toString().replaceFirst('FormatException: ', '');
+    }
+    showModalBottomSheet<void>(
+      context: context,
+      isScrollControlled: true,
+      useSafeArea: true,
+      builder: (context) => Padding(
+        padding: const EdgeInsets.all(24),
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Row(
+              children: [
+                Icon(
+                  issue == null
+                      ? Icons.check_circle_outline
+                      : Icons.info_outline,
+                  color: issue == null ? Colors.teal : Colors.orange,
+                ),
+                const SizedBox(width: 12),
+                Text(
+                  issue == null ? '程序结构检查通过' : '需要调整程序',
+                  style: Theme.of(context).textTheme.titleLarge,
+                ),
+              ],
+            ),
+            const SizedBox(height: 16),
+            if (issue != null)
+              Text(issue)
+            else ...[
+              Text('按执行顺序展开，共 ${plan.length} 个步骤。循环每轮依次执行内部全部卡片。'),
+              const SizedBox(height: 12),
+              Text(widget.session.ready ? '机器人已连接，可以返回播放。' : '连接机器人后即可播放。'),
+            ],
+            const SizedBox(height: 20),
+            SizedBox(
+              width: double.infinity,
+              child: FilledButton(
+                onPressed: () => Navigator.pop(context),
+                child: const Text('返回编程'),
+              ),
             ),
           ],
         ),
-      );
-    } catch (e) {
-      showError(context, e);
-    }
+      ),
+    );
+  }
+
+  Widget tool(BlockKind? kind, String label, IconData icon) {
+    final button = OutlinedButton(
+      style: OutlinedButton.styleFrom(
+        padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 4),
+        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
+      ),
+      onPressed: running ? null : () => kind == null ? preview() : add(kind),
+      child: Column(
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          Icon(icon, size: 22),
+          const SizedBox(height: 5),
+          Text(label, maxLines: 1, style: const TextStyle(fontSize: 12)),
+        ],
+      ),
+    );
+    return Expanded(
+      child: Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 4),
+        child: kind == null
+            ? button
+            : LongPressDraggable<BlockKind>(
+                data: kind,
+                maxSimultaneousDrags: running ? 0 : 1,
+                feedback: Material(child: Chip(label: Text(label))),
+                child: button,
+              ),
+      ),
+    );
   }
 
   @override
@@ -449,42 +537,57 @@ class _EditorPageState extends State<EditorPage> with WidgetsBindingObserver {
                   padding: EdgeInsets.all(8),
                   child: Text('已从上次有效备份恢复。保存后替换损坏的工程文件。'),
                 ),
-              SizedBox(
-                height: 100,
-                child: ListView(
-                  scrollDirection: Axis.horizontal,
-                  padding: const EdgeInsets.all(8),
+              Padding(
+                padding: const EdgeInsets.fromLTRB(8, 6, 8, 0),
+                child: Column(
                   children: [
-                    for (final item in <(BlockKind, String)>[
-                      (BlockKind.robotAction, '预置机器人长姿态'),
-                      (BlockKind.wait, '等待'),
-                      (BlockKind.basicAction, '基础姿态'),
-                      (BlockKind.actionChild, '关节'),
-                      (BlockKind.loop, '循环'),
-                    ])
-                      Padding(
-                        padding: const EdgeInsets.only(right: 8),
-                        child: LongPressDraggable<BlockKind>(
-                          data: item.$1,
-                          maxSimultaneousDrags: running ? 0 : 1,
-                          feedback: Material(child: Chip(label: Text(item.$2))),
-                          child: ActionChip(
-                            label: Text(item.$2),
-                            onPressed: running ? null : () => add(item.$1),
-                          ),
+                    Row(
+                      children: [
+                        tool(
+                          BlockKind.robotAction,
+                          '动作库',
+                          Icons.smart_toy_outlined,
                         ),
-                      ),
-                    OutlinedButton.icon(
-                      onPressed: running ? null : preview,
-                      icon: const Icon(Icons.check),
-                      label: const Text('检查程序'),
+                        tool(
+                          BlockKind.basicAction,
+                          '基础动作',
+                          Icons.accessibility_new,
+                        ),
+                        tool(
+                          BlockKind.resetPose,
+                          '初始姿态',
+                          Icons.settings_backup_restore,
+                        ),
+                      ],
+                    ),
+                    const SizedBox(height: 6),
+                    Row(
+                      children: [
+                        tool(BlockKind.jointPose, '关节', Icons.tune),
+                        tool(BlockKind.wait, '等待', Icons.hourglass_empty),
+                        tool(BlockKind.loop, '循环', Icons.repeat),
+                      ],
                     ),
                   ],
                 ),
               ),
-              const Padding(
-                padding: EdgeInsets.symmetric(horizontal: 12),
-                child: Text('长按上方积木拖入画布；拖动积木靠近开始、循环或基础姿态连接。双指移动和缩放画布。'),
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 12),
+                child: Row(
+                  children: [
+                    const Expanded(
+                      child: Text(
+                        '点击添加到循环外 · 长按拖入循环',
+                        style: TextStyle(fontSize: 11),
+                      ),
+                    ),
+                    TextButton.icon(
+                      onPressed: running ? null : preview,
+                      icon: const Icon(Icons.fact_check_outlined),
+                      label: const Text('检查程序'),
+                    ),
+                  ],
+                ),
               ),
               Expanded(
                 child: AbsorbPointer(
@@ -492,7 +595,7 @@ class _EditorPageState extends State<EditorPage> with WidgetsBindingObserver {
                   child: BlockCanvas(
                     editor: editor,
                     selected: selected,
-                    onSelect: (id) => setState(() => selected = id),
+                    onSelect: select,
                     onEdit: edit,
                     onError: (e) => showError(context, e),
                   ),
@@ -502,12 +605,19 @@ class _EditorPageState extends State<EditorPage> with WidgetsBindingObserver {
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
                   TextButton(
-                    onPressed: running || selected == null
+                    onPressed:
+                        running ||
+                            selected == null ||
+                            {
+                              BlockKind.start,
+                              BlockKind.resetPose,
+                            }.contains(editor.project.nodes[selected]?.kind)
                         ? null
                         : () {
-                            editor.detach(selected!);
+                            final node = editor.project.nodes[selected];
+                            if (node != null) edit(node);
                           },
-                    child: const Text('断开'),
+                    child: const Text('编辑'),
                   ),
                   TextButton(
                     onPressed:
@@ -520,15 +630,6 @@ class _EditorPageState extends State<EditorPage> with WidgetsBindingObserver {
                             setState(() => selected = null);
                           },
                     child: const Text('删除'),
-                  ),
-                  TextButton(
-                    onPressed: running || selected == null
-                        ? null
-                        : () {
-                            final node = editor.project.nodes[selected];
-                            if (node != null) edit(node);
-                          },
-                    child: const Text('参数'),
                   ),
                 ],
               ),
@@ -571,7 +672,7 @@ class _EditorPageState extends State<EditorPage> with WidgetsBindingObserver {
                                 : '组合已结束'),
                       ),
                     const Text(
-                      '已接入的基础姿态、预置机器人长姿态、等待、循环可播放；运行时保持前台连接。姿态编程仍可编辑保存。',
+                      '关节按本轮已设角度依次执行；未设置的关节从0°开始，初始姿态全部归零。',
                       textAlign: TextAlign.center,
                     ),
                   ],

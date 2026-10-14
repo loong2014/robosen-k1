@@ -1,4 +1,5 @@
 import 'dart:async';
+import 'dart:io';
 import 'package:flutter/material.dart';
 import 'features/control/control_controller.dart';
 import 'features/control/shortcut_controller.dart';
@@ -68,7 +69,8 @@ class _HomeState extends State<_Home> with WidgetsBindingObserver {
     widget.session,
     widget.encoding,
     requestPath: (ActionDirectory directory) => directory.requestPath,
-  );
+    cacheFile: File('${widget.repository.directory.path}/actions.catalog'),
+  )..loadCache();
   late final ActionPlayer player = ActionPlayer(
     widget.session,
     widget.encoding,

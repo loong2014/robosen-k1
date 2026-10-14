@@ -81,7 +81,7 @@ void main() {
       await tester.enterText(find.byType(TextField), '离线预览');
       await tester.tap(find.text('创建'));
       await tester.pumpAndSettle();
-      await tester.tap(find.text('基础姿态'));
+      await tester.tap(find.text('基础动作'));
       await tester.pumpAndSettle();
       await tester.enterText(find.widgetWithText(TextField, '搜索动作'), '打左拳');
       await tester.pumpAndSettle();
@@ -265,7 +265,7 @@ void main() {
     await tester.enterText(find.byType(TextField), '保存重开测试');
     await tester.tap(find.text('创建'));
     await tester.pumpAndSettle();
-    await tester.tap(find.text('基础姿态'));
+    await tester.tap(find.text('基础动作'));
     await tester.pumpAndSettle();
     await tester.enterText(find.widgetWithText(TextField, '搜索动作'), '打左拳');
     await tester.pumpAndSettle();
@@ -285,63 +285,62 @@ void main() {
     await tester.pumpWidget(const SizedBox.shrink());
     await tester.pumpAndSettle();
   });
-  testWidgets(
-    'movement selection persists editable duration and rejects invalid time',
-    (tester) async {
-      final repository = MemoryRepository();
-      final session = RobotSession(FakeTransport());
-      addTearDown(session.dispose);
-      final project = RobotProject.create('移动工程');
-      await tester.pumpWidget(
-        MaterialApp(
-          home: EditorPage(
-            loaded: LoadedProject(project),
-            repository: repository,
-            session: session,
-          ),
+  testWidgets('turn selection uses fixed 500ms and survives reopen', (
+    tester,
+  ) async {
+    final repository = MemoryRepository();
+    final session = RobotSession(FakeTransport());
+    addTearDown(session.dispose);
+    final project = RobotProject.create('移动工程');
+    await tester.pumpWidget(
+      MaterialApp(
+        home: EditorPage(
+          loaded: LoadedProject(project),
+          repository: repository,
+          session: session,
         ),
-      );
-      await tester.tap(find.text('基础姿态'));
-      await tester.pumpAndSettle();
-      await tester.tap(find.widgetWithText(ListTile, '左转'));
-      await tester.pumpAndSettle();
-      final duration = find.widgetWithText(TextField, '移动持续时间（秒）');
-      await tester.enterText(duration, '0');
-      await tester.tap(find.text('应用'));
-      await tester.pumpAndSettle();
-      expect(find.text('请输入0.1至60秒'), findsOneWidget);
-      await tester.enterText(duration, '2.5');
-      await tester.tap(find.text('应用'));
-      await tester.pumpAndSettle();
-      await tester.tap(find.text('保存'));
-      await tester.pumpAndSettle();
-      final saved = repository.projects[project.id]!;
-      final node = saved.nodes.values.singleWhere(
-        (n) => n.kind == BlockKind.basicAction,
-      );
-      expect(node.basicActionId, 'turn_left');
-      expect(node.waitMs, 2500);
-      await tester.pumpWidget(
-        MaterialApp(
-          home: EditorPage(
-            key: const ValueKey('reopen'),
-            loaded: LoadedProject(saved),
-            repository: repository,
-            session: session,
-          ),
+      ),
+    );
+    await tester.tap(find.text('基础动作'));
+    await tester.pumpAndSettle();
+    await tester.tap(find.widgetWithText(ListTile, '左转'));
+    await tester.pumpAndSettle();
+    expect(find.widgetWithText(TextField, '移动持续时间（秒）'), findsNothing);
+    expect(find.text('固定转向：每次500ms后发送停止，旧秒数不参与执行。'), findsOneWidget);
+    await tester.tap(find.text('应用'));
+    await tester.pumpAndSettle();
+    await tester.tap(find.text('保存'));
+    await tester.pumpAndSettle();
+    final saved = repository.projects[project.id]!;
+    final node = saved.nodes.values.singleWhere(
+      (n) => n.kind == BlockKind.basicAction,
+    );
+    expect(node.basicActionId, 'turn_left');
+    expect(node.waitMs, 500);
+    await tester.pumpWidget(
+      MaterialApp(
+        home: EditorPage(
+          key: const ValueKey('reopen'),
+          loaded: LoadedProject(saved),
+          repository: repository,
+          session: session,
         ),
-      );
-      await tester.pumpAndSettle();
-      expect(find.text('左转'), findsOneWidget);
-      expect(find.text('2.5秒 · 执行待核实'), findsOneWidget);
-    },
-  );
+      ),
+    );
+    await tester.pumpAndSettle();
+    expect(find.text('左转'), findsOneWidget);
+    expect(find.text('500ms · 固定转向'), findsOneWidget);
+  });
   testWidgets('drag action into loop updates saved execution order', (
     tester,
   ) async {
     final repository = MemoryRepository();
     final session = RobotSession(FakeTransport());
     addTearDown(session.dispose);
+    tester.view.physicalSize = const Size(800, 1200);
+    tester.view.devicePixelRatio = 1;
+    addTearDown(tester.view.resetPhysicalSize);
+    addTearDown(tester.view.resetDevicePixelRatio);
     final project = RobotProject.create('拖动工程');
     await tester.pumpWidget(
       MaterialApp(
@@ -352,7 +351,7 @@ void main() {
         ),
       ),
     );
-    await tester.tap(find.text('基础姿态'));
+    await tester.tap(find.text('基础动作'));
     await tester.pumpAndSettle();
     await tester.enterText(find.widgetWithText(TextField, '搜索动作'), '打左拳');
     await tester.pumpAndSettle();
@@ -361,6 +360,8 @@ void main() {
     await tester.tap(find.text('应用'));
     await tester.pumpAndSettle();
     await tester.tap(find.text('循环'));
+    await tester.pumpAndSettle();
+    await tester.tap(find.text('应用'));
     await tester.pumpAndSettle();
     final start = tester.getCenter(find.text('打左拳'));
     final loopCenter = tester.getCenter(find.text('循环 2 次'));

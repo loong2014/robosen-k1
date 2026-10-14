@@ -44,20 +44,20 @@ void main() {
         ),
       );
       await tester.pumpAndSettle();
-      await tester.tap(find.text('预置机器人长姿态'));
+      await tester.tap(find.text('动作库'));
       await tester.pumpAndSettle();
-      expect(find.text('选择预置机器人长姿态'), findsOneWidget);
+      expect(find.text('选择动作'), findsOneWidget);
       await tester.tap(find.text('打招呼'));
       await tester.pumpAndSettle();
       expect(t.sent.where((c) => c.code == 0x17), isEmpty);
       await tester.tap(find.text('等待'));
       await tester.pumpAndSettle();
-      await tester.tap(find.text('参数'));
+      await tester.tap(find.text('编辑'));
       await tester.pumpAndSettle();
       await tester.enterText(find.byType(TextFormField), '2');
       await tester.tap(find.text('应用'));
       await tester.pumpAndSettle();
-      await tester.tap(find.text('预置机器人长姿态'));
+      await tester.tap(find.text('动作库'));
       await tester.pumpAndSettle();
       await tester.tap(find.text('打招呼'));
       await tester.pumpAndSettle();
@@ -75,7 +75,7 @@ void main() {
       expect(t.sent.where((c) => c.code == 0x17), hasLength(1));
       expect(
         tester
-            .widget<ActionChip>(find.widgetWithText(ActionChip, '预置机器人长姿态'))
+            .widget<OutlinedButton>(find.widgetWithText(OutlinedButton, '动作库'))
             .onPressed,
         isNull,
       );

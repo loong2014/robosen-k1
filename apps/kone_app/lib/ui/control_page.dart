@@ -190,6 +190,30 @@ class ControlPage extends StatelessWidget {
             ),
           ),
         ),
+        const SizedBox(height: 16),
+        Row(
+          children: [
+            Expanded(
+              child: OutlinedButton.icon(
+                icon: const Icon(Icons.rotate_left),
+                label: const Text('左转'),
+                onPressed: control.canMove && !session.executionBusy
+                    ? () => control.turnOnce(Direction.forwardLeft)
+                    : null,
+              ),
+            ),
+            const SizedBox(width: 12),
+            Expanded(
+              child: OutlinedButton.icon(
+                icon: const Icon(Icons.rotate_right),
+                label: const Text('右转'),
+                onPressed: control.canMove && !session.executionBusy
+                    ? () => control.turnOnce(Direction.forwardRight)
+                    : null,
+              ),
+            ),
+          ],
+        ),
         const SizedBox(height: 24),
         Row(
           children: [

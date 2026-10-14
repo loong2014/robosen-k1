@@ -32,6 +32,7 @@ class RobotAction {
   static void validatePath(String path) {
     final prefixes = [
       'ProAction/',
+      'SpeAction/',
       ...ActionDirectory.values.map((d) => d.path),
     ]..sort((a, b) => b.length.compareTo(a.length));
     for (final prefix in prefixes) {

@@ -33,8 +33,16 @@ RobotProject program({int? waitMs}) {
 
 void main() {
   test('retired choices remain readable in saved projects but cannot play', () {
-    expect(BasicAction.all.length, 30);
-    for (final id in ['dance', 'next_dance', 'show']) {
+    expect(BasicAction.all.length, 26);
+    for (final id in [
+      'dance',
+      'next_dance',
+      'show',
+      'raise_left',
+      'raise_right',
+      'turn',
+      'raise_both',
+    ]) {
       expect(BasicAction.all.any((a) => a.id == id), isFalse);
       final editor = ProjectEditor(RobotProject.create('旧工程'));
       final node = editor.add(BlockKind.basicAction, editor.project.rootId, 0);
@@ -47,39 +55,71 @@ void main() {
       editor.dispose();
     }
   });
-  test('enabled basic paths match captured robot directory exactly', () {
+  test('enabled basic paths match user-supplied action files exactly', () {
     final evidence =
         jsonDecode(
               File(
-                '../../analysis/evidence/2026-10-12-proaction-directory/directory.json',
+                '../../analysis/evidence/2026-10-13-basic-actions/local-action-manifest.json',
               ).readAsStringSync(),
             )
             as Map<String, dynamic>;
-    final expected = {
-      for (final a in evidence['exact_word_matches'] as List)
-        a['id']: a['path'],
+    final expected = <String, String>{
+      'punch_left': 'ProAction/打左拳',
+      'punch_right': 'ProAction/打右拳',
+      'punch_both': 'ProAction/打双拳',
+      'greet': 'ProAction/打招呼',
+      'combat': 'ProAction/近身格斗',
+      'push_up': 'ProAction/俯卧撑',
+      'play_dead': 'ProAction/装死',
+      'handstand': 'ProAction/倒立',
+      'drive_away': 'ProAction/赶走坏人',
+      'backbend': 'ProAction/下腰',
+      'sweep_fire': 'ProAction/扫射',
+      'swing_arms': 'ProAction/摆动双臂',
       'forward_roll': 'ProAction/前翻',
+      'drum': 'ProAction/打鼓',
+      'exercise': 'ProAction/锻炼身体',
+      'fire': 'ProAction/开火',
+      'cannon': 'ProAction/开炮',
+      'shoot': 'ProAction/开枪',
+      'grenade': 'ProAction/扔手雷',
+      'shake_head': 'SpeAction/摇头',
     };
     expect({
       for (final a in BasicAction.all.where((a) => a.path != null))
         a.id: a.path,
     }, expected);
-    for (final name in evidence['words_without_exact_match'] as List) {
-      if (['前滚翻', '前进', '后退', '左移', '右移'].contains(name)) {
-        continue; // CR-013 alias and CR-014 calibrated movement.
-      }
-      final action = [
-        ...BasicAction.all,
-        ...BasicAction.retired,
-      ].singleWhere((a) => a.name == name);
+    for (final path in expected.values) {
+      final parts = path.split('/');
+      expect(
+        (evidence[parts[0]] as List).any(
+          (entry) => entry['name'] == '${parts[1]}.sh',
+        ),
+        isTrue,
+        reason: path,
+      );
+    }
+    for (final id in ['turn', 'dance', 'next_dance', 'show']) {
+      final action = BasicAction.byId(id)!;
       expect(action.path, isNull);
       final editor = ProjectEditor(RobotProject.create('未核实'));
-      final id = editor.add(BlockKind.basicAction, editor.project.rootId, 0);
+      final node = editor.add(BlockKind.basicAction, editor.project.rootId, 0);
       editor.change(
-        editor.project.nodes[id]!.copyWith(basicActionId: action.id),
+        editor.project.nodes[node]!.copyWith(basicActionId: action.id),
       );
       expect(() => compileSequence(editor.project), throwsFormatException);
       editor.dispose();
+    }
+  });
+  test('SpeAction paths reject traversal and malformed names', () {
+    for (final path in [
+      'SpeAction/',
+      'SpeAction/../bad',
+      'SpeAction/..',
+      'SpeAction/a\\b',
+      'SpeAction/a\nb',
+    ]) {
+      expect(() => RobotAction.validatePath(path), throwsFormatException);
     }
   });
   test('schema 3 roundtrip, schema 2 migration and mixed/orphan preflight', () {
@@ -100,7 +140,7 @@ void main() {
         ..remove('waitMs')
         ..remove('basicActionId');
     }
-    expect(RobotProject.fromJson(old).toJson()['schemaVersion'], 6);
+    expect(RobotProject.fromJson(old).toJson()['schemaVersion'], 7);
     final e = ProjectEditor(p);
     e.add(BlockKind.action, p.rootId, 0);
     expect(() => compileSequence(e.project), throwsFormatException);
@@ -176,6 +216,8 @@ void main() {
   List<K1Command> plays() => t.sent.where((c) => c.code == 0x17).toList();
 
   for (final entry in [
+    ('turn_left', 8),
+    ('turn_right', 2),
     ('forward', 1),
     ('backward', 5),
     ('shift_left', 7),
@@ -220,22 +262,26 @@ void main() {
         expect(sent, [entry.$2, 12, 12, 12, 12, 12, 0x17]);
         expect(
           stoppedAt! - movedAt!,
-          greaterThanOrEqualTo(entry.$2 == 1 || entry.$2 == 5 ? 95 : 1995),
+          greaterThanOrEqualTo(BasicAction.byId(entry.$1)!.stopAfterMs! - 5),
         );
         expect(s.executionBusy, isFalse);
         editor.dispose();
       },
     );
   }
-  for (final disconnected in [false, true]) {
+  for (final cancelCase in [
+    for (final id in ['shift_left', 'turn_left', 'turn_right'])
+      for (final disconnected in [false, true]) (id, disconnected),
+  ]) {
+    final disconnected = cancelCase.$2;
     test(
-      'movement cancellation disconnect=$disconnected prevents next block',
+      'movement cancellation ${cancelCase.$1} disconnect=$disconnected prevents next block',
       () async {
         final editor = ProjectEditor(RobotProject.create('取消'));
         final root = editor.project.rootId;
         final id = editor.add(BlockKind.basicAction, root, 0);
         editor.change(
-          editor.project.nodes[id]!.copyWith(basicActionId: 'shift_left'),
+          editor.project.nodes[id]!.copyWith(basicActionId: cancelCase.$1),
         );
         final next = editor.add(BlockKind.basicAction, root, 1);
         editor.change(
@@ -258,15 +304,23 @@ void main() {
       },
     );
   }
-  for (final failedCode in [1, 12]) {
+  for (final failure in [
+    ('forward', 1, 1),
+    ('forward', 12, 1),
+    ('turn_left', 8, 8),
+    ('turn_left', 12, 8),
+    ('turn_right', 2, 2),
+    ('turn_right', 12, 2),
+  ]) {
+    final failedCode = failure.$2;
     test(
-      'movement write failure $failedCode blocks following action',
+      'movement ${failure.$1} write failure $failedCode blocks following action',
       () async {
         final editor = ProjectEditor(RobotProject.create('失败'));
         final root = editor.project.rootId;
         final id = editor.add(BlockKind.basicAction, root, 0);
         editor.change(
-          editor.project.nodes[id]!.copyWith(basicActionId: 'forward'),
+          editor.project.nodes[id]!.copyWith(basicActionId: failure.$1),
         );
         final next = editor.add(BlockKind.basicAction, root, 1);
         editor.change(
@@ -280,7 +334,7 @@ void main() {
         await runner.run(editor.project);
         expect(runner.phase, SequencePhase.failed);
         expect(plays(), isEmpty);
-        expect(t.sent.where((c) => c.code == 1).length, 1);
+        expect(t.sent.where((c) => c.code == failure.$3).length, 1);
         expect(player.phase, ActionPhase.unknown);
         expect(
           s.ready,
@@ -329,6 +383,35 @@ void main() {
     expect(runner.phase, SequencePhase.completed);
     editor.dispose();
   });
+  for (final entry in const {'shake_head': 'SpeAction/摇头'}.entries) {
+    test(
+      'SpeAction ${entry.key} uses exact path and business completion',
+      () async {
+        final editor = ProjectEditor(RobotProject.create('SpeAction试测'));
+        final id = editor.add(BlockKind.basicAction, editor.project.rootId, 0);
+        editor.change(
+          editor.project.nodes[id]!.copyWith(basicActionId: entry.key),
+        );
+        final restored = RobotProject.fromJson(
+          jsonDecode(jsonEncode(editor.project.toJson())),
+        );
+        expect(BasicAction.byId(entry.key)!.verified, isTrue);
+        catalog.entries.clear();
+        catalog.states.updateAll((_, _) => DirectoryLoad.idle);
+        final work = runner.run(restored);
+        await flush();
+        expect(utf8.decode(plays().single.payload), entry.value);
+        progress(100);
+        await flush();
+        expect(runner.running, isTrue);
+        progress(1);
+        progress(100);
+        await work;
+        expect(runner.phase, SequencePhase.completed);
+        editor.dispose();
+      },
+    );
+  }
   test('user-mapped forward roll waits for business completion', () async {
     final editor = ProjectEditor(RobotProject.create('基础动作'));
     final id = editor.add(BlockKind.basicAction, editor.project.rootId, 0);
@@ -350,26 +433,19 @@ void main() {
     editor.dispose();
   });
   test(
-    'unverified later basic action prevents entire program from starting',
+    'retired later basic action prevents entire program from starting',
     () async {
       final editor = ProjectEditor(program());
       final id = editor.add(BlockKind.basicAction, editor.project.rootId, 2);
       editor.change(
-        editor.project.nodes[id]!.copyWith(
-          basicActionId: 'turn_left',
-          waitMs: 2500,
-        ),
+        editor.project.nodes[id]!.copyWith(basicActionId: 'turn', waitMs: 2500),
       );
       await expectLater(runner.run(editor.project), throwsFormatException);
       expect(plays(), isEmpty);
       expect(s.executionBusy, isFalse);
       final restored = RobotProject.fromJson(editor.project.toJson());
-      expect(restored.nodes[id]!.basicActionId, 'turn_left');
+      expect(restored.nodes[id]!.basicActionId, 'turn');
       expect(restored.nodes[id]!.waitMs, 2500);
-      expect(
-        () => editor.change(editor.project.nodes[id]!.copyWith(waitMs: 0)),
-        throwsFormatException,
-      );
       editor.dispose();
     },
   );

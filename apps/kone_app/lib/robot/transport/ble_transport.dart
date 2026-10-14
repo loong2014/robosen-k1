@@ -17,6 +17,7 @@ class BleTransport implements RobotTransport {
   QualifiedCharacteristic? _characteristic;
   int _generation = 0;
   bool _disposed = false;
+  Future<void>? _closing;
   int _limit = 20;
   @override
   int get writeLimit => _limit;
@@ -70,15 +71,22 @@ class BleTransport implements RobotTransport {
 
   @override
   Future<void> connect(String deviceId) async {
-    await disconnect();
+    final cleanup = disconnect();
+    final cleanupGeneration = _generation;
+    await cleanup;
+    if (cleanupGeneration != _generation || _disposed) {
+      throw StateError('连接已取消');
+    }
     final generation = ++_generation;
     await _permissions();
     if (generation != _generation) throw StateError('连接已取消');
     final connected = Completer<void>();
     _connecting = connected;
     _connection = _ble
-        .connectToDevice(
+        .connectToAdvertisingDevice(
           id: deviceId,
+          withServices: const [],
+          prescanDuration: const Duration(seconds: 3),
           connectionTimeout: const Duration(seconds: 12),
         )
         .listen(
@@ -101,7 +109,7 @@ class BleTransport implements RobotTransport {
           },
         );
     try {
-      await connected.future.timeout(const Duration(seconds: 15));
+      await connected.future.timeout(const Duration(seconds: 18));
       await _ble
           .discoverAllServices(deviceId)
           .timeout(const Duration(seconds: 10));
@@ -154,7 +162,7 @@ class BleTransport implements RobotTransport {
             },
           );
     } catch (_) {
-      await disconnect();
+      if (generation == _generation) await disconnect();
       rethrow;
     } finally {
       if (identical(_connecting, connected)) _connecting = null;
@@ -172,8 +180,26 @@ class BleTransport implements RobotTransport {
   }
 
   @override
-  Future<void> disconnect() async {
+  Future<void> disconnect() {
     ++_generation;
+    final previous = _closing;
+    if (previous != null) return previous;
+    final complete = Completer<void>();
+    _closing = complete.future;
+    _disconnectResources().then(
+      (_) {
+        _closing = null;
+        complete.complete();
+      },
+      onError: (Object e, StackTrace stack) {
+        _closing = null;
+        complete.completeError(e, stack);
+      },
+    );
+    return complete.future;
+  }
+
+  Future<void> _disconnectResources() async {
     _characteristic = null;
     _limit = 20;
     final connecting = _connecting;
@@ -186,6 +212,11 @@ class BleTransport implements RobotTransport {
     _connection = null;
     await subscription?.cancel();
     await connection?.cancel();
+    // Plugin cancellation returns before Android's delayed physical teardown.
+    // Captured GATT133: new connect at 1030ms, old link closed at 1040ms.
+    if (Platform.isAndroid && connection != null) {
+      await Future<void>.delayed(const Duration(milliseconds: 1500));
+    }
   }
 
   @override

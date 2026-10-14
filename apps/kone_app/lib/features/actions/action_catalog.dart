@@ -1,3 +1,5 @@
+import 'dart:convert';
+import 'dart:io';
 import 'package:flutter/foundation.dart';
 import '../../robot/protocol/action_encoding.dart';
 import '../../robot/session/robot_session.dart';
@@ -6,11 +8,69 @@ import 'robot_action.dart';
 enum DirectoryLoad { idle, loading, complete, failed }
 
 class ActionCatalog extends ChangeNotifier {
-  ActionCatalog(this.session, this.encoding, {this.requestPath}) {
+  ActionCatalog(
+    this.session,
+    this.encoding, {
+    this.requestPath,
+    this.cacheFile,
+  }) {
     session.addListener(_connectionChanged);
     _revision = session.revision;
   }
+  final File? cacheFile;
+  final cachedEntries = <RobotAction>[];
+  String? cachedDevice;
   final RobotSession session;
+
+  Future<void> loadCache() async {
+    final file = cacheFile;
+    if (file == null) return;
+    try {
+      if (!await file.exists() || await file.length() > 1024 * 1024) return;
+      final data =
+          jsonDecode(await file.readAsString()) as Map<String, dynamic>;
+      if (data['schemaVersion'] != 1) return;
+      final entries = (data['entries'] as List)
+          .map(
+            (item) => RobotAction(
+              ActionDirectory.values.byName(item['directory'] as String),
+              item['name'] as String,
+            ),
+          )
+          .toList();
+      if (_disposed || cachedEntries.isNotEmpty) return;
+      cachedEntries.addAll(entries);
+      cachedDevice = data['device'] as String?;
+      _changed();
+    } catch (_) {
+      /* A missing or damaged preview cache is not a live directory. */
+    }
+  }
+
+  Future<void> _saveCache() async {
+    cachedEntries
+      ..clear()
+      ..addAll(entries);
+    cachedDevice = session.device?.name;
+    final file = cacheFile;
+    if (file == null) return;
+    final data = jsonEncode({
+      'schemaVersion': 1,
+      'device': cachedDevice,
+      'entries': cachedEntries
+          .map((a) => {'directory': a.directory.name, 'name': a.name})
+          .toList(),
+    });
+    try {
+      await file.parent.create(recursive: true);
+      final temporary = File('${file.path}.tmp');
+      await temporary.writeAsString(data, flush: true);
+      await temporary.rename(file.path);
+    } catch (_) {
+      /* Live catalog success must not depend on preview cache IO. */
+    }
+  }
+
   final ActionEncoding encoding;
   final String Function(ActionDirectory)? requestPath;
   final entries = <RobotAction>[];
@@ -83,6 +143,7 @@ class ActionCatalog extends ChangeNotifier {
         _changed();
         if (failure != null) throw failure;
       }
+      if (valid() && complete) await _saveCache();
     } catch (e) {
       if (generation == _generation) error = '未读取完整：$e';
     } finally {
