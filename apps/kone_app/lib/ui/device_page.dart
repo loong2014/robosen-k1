@@ -1,6 +1,6 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
-import '../app.dart';
+import 'connection_guidance.dart';
 import '../robot/session/robot_session.dart';
 import '../robot/transport/robot_transport.dart';
 
@@ -17,6 +17,7 @@ class _DevicePageState extends State<DevicePage> with WidgetsBindingObserver {
   StreamSubscription<RobotDevice>? scan;
   Timer? timer;
   bool scanning = false;
+  bool searched = false;
   String? scanError;
   @override
   void initState() {
@@ -50,13 +51,15 @@ class _DevicePageState extends State<DevicePage> with WidgetsBindingObserver {
       devices.clear();
       scanError = null;
       scanning = true;
+      searched = true;
     });
     scan = widget.session.transport.scan().listen(
       (d) {
         if (mounted) setState(() => devices[d.id] = d);
       },
       onError: (Object e) {
-        if (mounted) setState(() => scanError = e.toString());
+        widget.session.record('搜索失败：$e');
+        if (mounted) setState(() => scanError = connectionGuidance(e));
         unawaited(stopScan());
       },
       onDone: () {
@@ -84,9 +87,9 @@ class _DevicePageState extends State<DevicePage> with WidgetsBindingObserver {
           : switch (session.phase) {
               SessionPhase.disconnected => '未连接',
               SessionPhase.connecting => '正在连接',
-              SessionPhase.handshaking => '正在握手',
+              SessionPhase.handshaking => '正在准备连接',
               SessionPhase.ready => '可以控制机器人',
-              SessionPhase.failed => '连接失败',
+              SessionPhase.failed => '暂未连接机器人',
             };
       return ListView(
         padding: const EdgeInsets.all(20),
@@ -96,7 +99,7 @@ class _DevicePageState extends State<DevicePage> with WidgetsBindingObserver {
             style: TextStyle(fontSize: 26, fontWeight: FontWeight.bold),
           ),
           const SizedBox(height: 8),
-          const Text('打开机器人电源，在附近搜索 K1 或 K1AI。'),
+          const Text('先打开机器人电源，等它启动完成，再搜索连接。'),
           const SizedBox(height: 20),
           Card(
             child: Padding(
@@ -106,10 +109,11 @@ class _DevicePageState extends State<DevicePage> with WidgetsBindingObserver {
                 children: [
                   Text(phase, style: Theme.of(context).textTheme.titleLarge),
                   if (session.device != null) Text(session.device!.name),
-                  if (session.error != null)
+                  if (session.phase == SessionPhase.failed &&
+                      session.error != null)
                     Text(
-                      session.error!,
-                      style: const TextStyle(color: Colors.red),
+                      connectionGuidance(session.error!),
+                      style: Theme.of(context).textTheme.bodyMedium,
                     ),
                   if (session.phase != SessionPhase.disconnected)
                     TextButton(
@@ -119,7 +123,12 @@ class _DevicePageState extends State<DevicePage> with WidgetsBindingObserver {
                               try {
                                 await session.disconnect();
                               } catch (e) {
-                                if (context.mounted) showError(context, e);
+                                session.record('断开未完成：$e');
+                                if (mounted) {
+                                  setState(
+                                    () => scanError = connectionGuidance(e),
+                                  );
+                                }
                               }
                             },
                       child: const Text('断开 / 取消'),
@@ -144,14 +153,16 @@ class _DevicePageState extends State<DevicePage> with WidgetsBindingObserver {
               padding: const EdgeInsets.all(12),
               child: Text(
                 scanError!,
-                style: const TextStyle(color: Colors.red),
+                style: Theme.of(context).textTheme.bodyMedium,
               ),
             ),
-          if (devices.isEmpty && !scanning)
-            const Padding(
-              padding: EdgeInsets.symmetric(vertical: 32),
+          if (devices.isEmpty && !scanning && scanError == null)
+            Padding(
+              padding: const EdgeInsets.symmetric(vertical: 32),
               child: Text(
-                '搜索到的机器人会显示在这里。\n请保持应用在前台，并允许蓝牙权限。',
+                searched
+                    ? '暂未发现附近的机器人。\n请打开机器人电源，等待启动完成并靠近手机，然后重新搜索。如果其他应用已连接，请先断开。'
+                    : '搜索到的机器人会显示在这里。\n请保持应用在前台，并允许蓝牙权限。',
                 textAlign: TextAlign.center,
               ),
             ),
@@ -166,10 +177,16 @@ class _DevicePageState extends State<DevicePage> with WidgetsBindingObserver {
                       ? null
                       : () async {
                           await stopScan();
+                          if (!mounted) return;
+                          setState(() => scanError = null);
                           try {
                             await session.connect(device);
                           } catch (e) {
-                            if (context.mounted) showError(context, e);
+                            // Session retains the original failure for diagnostics.
+                            // A deliberate cancellation must not show an error toast.
+                            if (session.phase == SessionPhase.failed) {
+                              session.record('连接未完成：$e');
+                            }
                           }
                         },
                   child: const Text('连接'),
